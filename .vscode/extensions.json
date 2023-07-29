@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "vsls-contrib.codetour",
+        "editorconfig.editorconfig",
+        "dbaeumer.vscode-eslint",
+        "ms-vsliveshare.vsliveshare"
+    ]
+}
