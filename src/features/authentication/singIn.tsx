@@ -6,11 +6,9 @@ export default function SingIn() {
     elements:{
       footer:'hidden',
       socialButtons:'flex flex-col',
-      form:'hidden',
       dividerText:'hidden',
       header:'flex items-center',
-      headerSubtitle:'hidden'
     }
   }}
- />
+  />
 }
