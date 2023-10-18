@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import { ClerkProvider } from "@clerk/nextjs";
 import { ptBR } from "@clerk/localizations";
 import './globals.css'
+import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,11 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-
     <html lang='pt-Br'>
       <ClerkProvider localization={ptBR}>
         <body className={inter.className}>{children}</body>
-      </ClerkProvider>
+      </ClerkProvider>    
     </html>
   )
 }
