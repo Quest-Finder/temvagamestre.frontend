@@ -7,6 +7,7 @@ export default function SingIn() {
       socialButtons:'flex flex-col',
       dividerText:'hidden',
       header:'flex items-center',
+      footer:'hidden',
     }
   }}
   />
