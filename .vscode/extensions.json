@@ -3,6 +3,8 @@
         "vsls-contrib.codetour",
         "editorconfig.editorconfig",
         "dbaeumer.vscode-eslint",
-        "ms-vsliveshare.vsliveshare"
+        "ms-vsliveshare.vsliveshare",
+        "usernamehw.errorlens",
+        "github.vscode-pull-request-github"
     ]
 }
