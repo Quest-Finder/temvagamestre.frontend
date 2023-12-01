@@ -1,19 +1,18 @@
-FROM node:18.10.0-slim
+FROM node:lts AS development
 
-USER node
+# Set working directory
+WORKDIR /app
 
-RUN mkdir -p /home/node/app
+# 
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
 
-WORKDIR /home/node/app
+# Same as npm install
+RUN npm ci
 
-COPY --chown=node:node . .
+COPY . /app
 
-RUN yarn install
+ENV CI=true
+ENV PORT=3000
 
-RUN yarn build
-
-ENV NODE_ENV=production
-
-EXPOSE 3000
-
-CMD ["yarn", "start"]  
+CMD [ "npm", "start" ]
