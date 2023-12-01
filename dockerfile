@@ -1,18 +1,13 @@
-FROM node:lts AS development
+FROM node:18.17.0
 
-# Set working directory
-WORKDIR /app
+WORKDIR /usr/app
 
-# 
-COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
+COPY package.json package-lock.json ./
 
-# Same as npm install
-RUN npm ci
+RUN npm install
 
-COPY . /app
+COPY . .
 
-ENV CI=true
-ENV PORT=3000
+EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "npm","start" ]
