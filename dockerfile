@@ -1,19 +1,13 @@
-FROM node:18.10.0-slim
+FROM node:18.17.0
 
-USER node
+WORKDIR /usr/app
 
-RUN mkdir -p /home/node/app
+COPY package.json package-lock.json ./
 
-WORKDIR /home/node/app
+RUN npm install
 
-COPY --chown=node:node . .
-
-RUN yarn install
-
-RUN yarn build
-
-ENV NODE_ENV=production
+COPY . .
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]  
+CMD [ "npm","start" ]
