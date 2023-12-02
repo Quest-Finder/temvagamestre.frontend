@@ -1,9 +1,9 @@
-import SingIn from "@/features/authentication/singIn";
+import SingIn from '@/features/authentication/singIn'
 
 export default function SingInPage() {
   return (
-  <div className="flex h-screen items-center justify-center	"> 
-    <SingIn/>
-  </div>
+    <div className='flex h-screen items-center justify-center	'>
+      <SingIn />
+    </div>
   )
-} 
+}
