@@ -19,7 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='pt-Br'>
-      <ClerkProvider localization={ptBR}>
+      <ClerkProvider
+        localization={ptBR}
+        appearance={{
+          elements: {
+            footer: 'hidden',
+          },
+        }}
+      >
         <body className={inter.className}>{children}</body>
       </ClerkProvider>
     </html>
