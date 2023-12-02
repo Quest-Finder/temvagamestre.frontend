@@ -1,4 +1,4 @@
-import SingIn from '@/features/authentication/singIn'
+import SingIn from '@/features/authentication/sing-in/singIn'
 
 export default function SingInPage() {
   return (
