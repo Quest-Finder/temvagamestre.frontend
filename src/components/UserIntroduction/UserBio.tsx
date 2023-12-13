@@ -3,5 +3,5 @@ interface UserBioProps {
 }
 
 export function UserBio({ children }: UserBioProps) {
-  return <p>{children}</p>
+  return <p className='text-xl leading-6 text-zinc-500'>{children}</p>
 }

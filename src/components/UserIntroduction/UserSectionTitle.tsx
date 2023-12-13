@@ -3,5 +3,5 @@ interface UserSectionTitleProps {
 }
 
 export function UserSectionTitle({ title }: UserSectionTitleProps) {
-  return <h2>{title}</h2>
+  return <h2 className='text-2xl'>{title}</h2>
 }

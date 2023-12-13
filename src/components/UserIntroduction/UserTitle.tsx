@@ -5,5 +5,11 @@ interface UserTitleProps {
 }
 
 export function UserTitle({ userName, userClass, userRole }: UserTitleProps) {
-  return <h1>{`${userRole} ${userName} | ${userClass}`}</h1>
+  return (
+    <h1 className='mb-4 text-center text-2xl'>
+      <span className='font-bold'>{`${userRole} ${userName} |`}</span>
+      {` `}
+      {`${userClass}`}
+    </h1>
+  )
 }
