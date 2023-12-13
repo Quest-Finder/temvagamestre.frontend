@@ -1,7 +1,7 @@
 interface UserQuoteProps {
-  userQuote: string
+  children: string
 }
 
-export function UserQuote({ userQuote }: UserQuoteProps) {
-  return <q>{userQuote}</q>
+export function UserQuote({ children }: UserQuoteProps) {
+  return <q>{children}</q>
 }

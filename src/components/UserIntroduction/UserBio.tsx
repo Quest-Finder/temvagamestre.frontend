@@ -1,7 +1,7 @@
 interface UserBioProps {
-  bioDescription: string
+  children: string
 }
 
-export function UserBio({ bioDescription }: UserBioProps) {
-  return <p>{bioDescription}</p>
+export function UserBio({ children }: UserBioProps) {
+  return <p>{children}</p>
 }

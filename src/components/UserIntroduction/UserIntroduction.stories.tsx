@@ -1,16 +1,22 @@
-import { Separator } from '../ui/separator'
 import { UserInformation } from './UserInformation'
+import { Separator } from '../ui/separator'
+
+export default {
+  title: 'UserInformation',
+}
 
 export function UserIntroduction() {
   return (
     <>
       <UserInformation.UserTitle
-        userName=''
-        userClass=''
-        userRole=''
+        userName='Rodrigo'
+        userClass='Elfo experiente'
+        userRole='Mestre'
       />
       <Separator />
-      <UserInformation.Quote>Alguma frase muito leggal</UserInformation.Quote>
+      <UserInformation.Quote>
+        A vida não tem graça sem alguns dragões :)
+      </UserInformation.Quote>
       <UserInformation.Section>
         <UserInformation.SectionTitle title='Bio' />
         <UserInformation.Bio>
@@ -22,4 +28,8 @@ export function UserIntroduction() {
       </UserInformation.Section>
     </>
   )
+}
+
+UserIntroduction.story = {
+  name: 'User Introduction',
 }
