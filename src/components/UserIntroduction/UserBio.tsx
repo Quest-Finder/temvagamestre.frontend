@@ -10,6 +10,11 @@ interface UserBioProps {
 export function UserBio({ description }: UserBioProps) {
   const [showMore, setShowMore] = useState(description.length > 321)
 
+  if (description.length === 0) {
+    // eslint-disable-next-line no-param-reassign
+    description = 'Sem briografia definida.'
+  }
+
   return (
     <>
       <p className='text-xl leading-6 text-zinc-500'>
