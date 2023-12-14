@@ -51,8 +51,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           env:
-            - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}}
-            - CLERK_SECRET_KEY=${{secrets.CLERK_SECRET_KEY}} 
+            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}}
+            CLERK_SECRET_KEY=${{secrets.CLERK_SECRET_KEY}} 
           context: "{{defaultContext}}"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
