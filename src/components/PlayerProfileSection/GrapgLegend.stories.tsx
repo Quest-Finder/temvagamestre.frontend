@@ -8,7 +8,7 @@ const meta: Meta<typeof GraphLegend> = {
   parameters: {
     design: {
       type: 'figma',
-      url: '',
+      url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1685-5758&mode=design&t=oa2qNVMr0cRRhAkf-0',
     },
   },
 }
