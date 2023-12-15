@@ -1,44 +1,86 @@
-name: Build and Push Docker Image to Docker Hub
+name: Execução do CI/CD GCP
 
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# No 'on' deve ser escolhido gatilho que irá ativar o workflow, no nosso caso é um push pra testing-ci-cd-dont-messs-around
 on:
   push:
-    branches: "testing-ci-cd-dont-messs-around"
+    branches: 
+     - testing-ci-cd-dont-messs-around
+
+# Variáveis de ambiente para ser utilizado nos fluxos
 env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: docker.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  REGISTRY: sou-junior # repositorio artifact
+  SERVICE: sou-junior # cloud run
+  REGION: us-central1
 
+# Jobs são os trabalhos que serão executados neste fluxo
+# Separando os trabalhos podemos exigir que um dependa do sucesso do outro
+# e tbm reexecutar de forma independente
 jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
+
+  # aqui damos o nome ao nosso Job
+  create-docker-image-and-send-to-gcp:
+    # verifica se a referencia da Branch é a testing-ci-cd-dont-messs-around
+    # se estiver fazendo em outra branch deve escrever o nome da branch
+    if: github.ref == 'refs/heads/testing-ci-cd-dont-messs-around'
+    # Runs on é o OS da VM aqui sera executado em Linux Ubunto
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.meta.outputs.tags }}
+    # configuração de permissões 
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    # os passos são os comando a serem executados
+    # nessa fase podemos usar comandos feitos por empresas ou pessoas
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # aqui vamos usar os comandos criados pela google para instalar o GCLOUD CLI
+      - name: install gcloud CLI
+        uses: google-github-actions/setup-gcloud@v0
+        # with são os parametros da execução
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: vspedra/tem-vaga-mestre-frontend
+          # secrets são configurados no repositório para guardar dados sensíveis
+          project_id: ${{secrets.GOOGLE_PROJECT}}
+          service_account_key: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+          export_default_credentials: true
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        env:
+          GOOGGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
+          # run roda comandos de terminal
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev
+          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/testing-ci-cd-dont-messs-around:latest .
+          docker push us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/testing-ci-cd-dont-messs-around:latest
+      
+
+  deploy-to-gcp-cloud-run:
+    if: github.ref == 'refs/heads/testing-ci-cd-dont-messs-around'
+    # needs significa que só rodara se o especificado tiver
+    needs: create-docker-image-and-send-to-gcp
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
         with:
-          env:
-            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}}
-            CLERK_SECRET_KEY=${{secrets.CLERK_SECRET_KEY}} 
-          context: "{{defaultContext}}"
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          credentials_json: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+     
+      - name: 'Deploy to Cloud Run'
+        uses: 'google-github-actions/deploy-cloudrun@v0'
+        
+        with:
+          service: ${{ env.SERVICE }}
+          image: us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/testing-ci-cd-dont-messs-around:latest
+          region: ${{ env.REGION }}
+          
