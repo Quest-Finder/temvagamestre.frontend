@@ -1,9 +1,9 @@
-import { PieChart, Pie, Cell } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
 const data = [
-  { name: 'Group A', value: 100 },
-  { name: 'Group B', value: 100 },
-  { name: 'Group C', value: 400 },
+  { name: 'Group A', value: 10 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 600 },
 ]
 
 const COLORS = ['#16BFD6', '#00D3CF', '#CBFFFC']
@@ -48,24 +48,30 @@ const renderCustomizedLabel = ({
 
 export function PlayerGraph() {
   return (
-    <PieChart
+    <ResponsiveContainer
       width={200}
       height={200}
     >
-      <Pie
-        dataKey='value'
-        data={data}
-        label={renderCustomizedLabel}
-        labelLine={false}
+      <PieChart
+        width={200}
+        height={200}
       >
-        {data.map((entry, index) => (
-          <Cell
-            key={`cell-${entry}`}
-            fill={COLORS[index % COLORS.length]}
-            stroke='null'
-          />
-        ))}
-      </Pie>
-    </PieChart>
+        <Pie
+          dataKey='value'
+          data={data}
+          label={renderCustomizedLabel}
+          labelLine={false}
+          outerRadius='100'
+        >
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${entry}`}
+              fill={COLORS[index % COLORS.length]}
+              stroke='null'
+            />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
   )
 }
