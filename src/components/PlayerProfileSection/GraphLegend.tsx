@@ -1,6 +1,6 @@
-import { Skull } from './Icons/Skull'
-import { Union } from './Icons/Union'
-import AngryBear from './Icons/AngryBear'
+import { SkullIcon } from './Icons/SkullIcon'
+import { UnionIcon } from './Icons/UnionIcon'
+import AngryBearIcon from './Icons/AngryBearIcon'
 
 export interface GraphLegendItem {
   description: string
@@ -14,13 +14,13 @@ export interface GraphLegendProps {
 
 function getIcon(description: string): React.ReactNode {
   if (description === 'Matar, Pilhar e Destruir') {
-    return <Skull />
+    return <SkullIcon />
   }
   if (description === 'Interpretação') {
-    return <Union />
+    return <UnionIcon />
   }
   if (description === 'Dungeon') {
-    return <AngryBear />
+    return <AngryBearIcon />
   }
 }
 

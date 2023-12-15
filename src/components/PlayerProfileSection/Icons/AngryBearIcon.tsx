@@ -1,4 +1,4 @@
-export default function AngryBear() {
+export default function AngryBearIcon() {
   return (
     <svg
       width='17'
