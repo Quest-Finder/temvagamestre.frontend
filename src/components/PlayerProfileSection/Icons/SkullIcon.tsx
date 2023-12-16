@@ -1,4 +1,4 @@
-export function SkullIcon() {
+export default function SkullIcon() {
   return (
     <svg
       width='16'

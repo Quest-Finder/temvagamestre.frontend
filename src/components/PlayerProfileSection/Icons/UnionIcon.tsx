@@ -1,4 +1,4 @@
-export function UnionIcon() {
+export default function UnionIcon() {
   return (
     <svg
       width='16'

@@ -1,5 +1,5 @@
-import { SkullIcon } from './Icons/SkullIcon'
-import { UnionIcon } from './Icons/UnionIcon'
+import SkullIcon from './Icons/SkullIcon'
+import UnionIcon from './Icons/UnionIcon'
 import AngryBearIcon from './Icons/AngryBearIcon'
 
 export interface GraphLegendItem {
