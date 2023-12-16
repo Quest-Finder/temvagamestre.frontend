@@ -1,6 +1,7 @@
 import SkullIcon from './Icons/SkullIcon'
 import UnionIcon from './Icons/UnionIcon'
 import AngryBearIcon from './Icons/AngryBearIcon'
+import { LegendItem } from './LegendItem'
 
 export interface GraphLegendItem {
   description: string
@@ -12,7 +13,7 @@ export interface GraphLegendProps {
   legendList: GraphLegendItem[]
 }
 
-function getIcon(description: string): React.ReactNode {
+function getIcon(description: string) {
   if (description === 'Matar, Pilhar e Destruir') {
     return <SkullIcon />
   }
@@ -24,18 +25,31 @@ function getIcon(description: string): React.ReactNode {
   }
 }
 
+function filterOutItemWithoutData(list: GraphLegendItem[]) {
+  const legendListWithValidItems = list.filter(item => item.value !== 0)
+  return legendListWithValidItems
+}
+
+function reorderListInDescendingOrder(list: GraphLegendItem[]) {
+  list.sort((a, b) => a.value - b.value)
+  list.reverse()
+  return list
+}
+
 export function GraphLegend({ legendList }: GraphLegendProps) {
+  const filteredList = reorderListInDescendingOrder(
+    filterOutItemWithoutData(legendList),
+  )
+
   return (
-    <div className='flex flex-col gap-6'>
-      {legendList.map(item => (
-        <div
+    <ul className='flex flex-col gap-6'>
+      {filteredList.map(item => (
+        <LegendItem
           key={item.id}
-          className='flex items-center gap-3 text-xs'
-        >
-          {getIcon(item.description)}
-          <p>{item.description}</p>
-        </div>
+          legendType={item.description}
+          icon={() => getIcon(item.description)}
+        />
       ))}
-    </div>
+    </ul>
   )
 }
