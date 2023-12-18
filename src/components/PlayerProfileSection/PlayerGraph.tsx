@@ -1,12 +1,21 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import {
+  PlayerProfileData,
+  filterOutItemWithoutData,
+  reorderListInDescendingOrder,
+} from './GraphLegend'
 
-const data = [
-  { name: 'Group A', value: 10 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 600 },
-]
-
-const COLORS = ['#16BFD6', '#00D3CF', '#CBFFFC']
+function getColor(description: string) {
+  if (description === 'Matar, Pilhar e Destruir') {
+    return '#16BFD6'
+  }
+  if (description === 'Interpretação') {
+    return '#00D3CF'
+  }
+  if (description === 'Dungeon') {
+    return '#CBFFFC'
+  }
+}
 
 interface CustomLabelProps {
   cx: number
@@ -31,22 +40,32 @@ const renderCustomizedLabel = ({
   const y = cy + radius * Math.sin(-midAngle * RADIAN)
 
   return (
-    <foreignObject
-      x={x - 10}
-      y={y - 10}
-      width={43}
-      height={28}
-      fontWeight={500}
-      fontSize={14}
-    >
-      <div className='z-1000 bold rounded-md bg-white text-center shadow-md'>{`${(
-        percent * 100
-      ).toFixed(0)}%`}</div>
-    </foreignObject>
+    percent !== 0 && (
+      <foreignObject
+        x={percent === 1 ? x + 30 : x - 15}
+        y={y - 10}
+        width={43}
+        height={28}
+        fontWeight={500}
+        fontSize={14}
+      >
+        <div className='z-1000 bold rounded-md bg-white text-center shadow-md'>{`${(
+          percent * 100
+        ).toFixed(0)}%`}</div>
+      </foreignObject>
+    )
   )
 }
 
-export function PlayerGraph() {
+interface PlayerProfileGraphProps {
+  GraphData: PlayerProfileData[]
+}
+
+export function PlayerGraph({ GraphData }: PlayerProfileGraphProps) {
+  const filteredGraphData = reorderListInDescendingOrder(
+    filterOutItemWithoutData(GraphData),
+  )
+
   return (
     <ResponsiveContainer
       width={200}
@@ -58,15 +77,15 @@ export function PlayerGraph() {
       >
         <Pie
           dataKey='value'
-          data={data}
+          data={filteredGraphData}
           label={renderCustomizedLabel}
           labelLine={false}
           outerRadius='100'
         >
-          {data.map((entry, index) => (
+          {filteredGraphData.map(item => (
             <Cell
-              key={`cell-${entry}`}
-              fill={COLORS[index % COLORS.length]}
+              key={`cell-${item.id}`}
+              fill={getColor(item.description)}
               stroke='null'
             />
           ))}
