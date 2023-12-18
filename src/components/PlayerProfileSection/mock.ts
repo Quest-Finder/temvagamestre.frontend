@@ -1,6 +1,6 @@
-import { GraphLegendItem } from '@/components/PlayerProfileSection/GraphLegend'
+import { PlayerProfileData } from '@/components/PlayerProfileSection/GraphLegend'
 
-export const MockGraphLegend: GraphLegendItem[] = [
+export const MockGraphLegend: PlayerProfileData[] = [
   {
     description: 'Matar, Pilhar e Destruir',
     value: 4,

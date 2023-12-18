@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { PlayerGraph } from './PlayerGraph'
+import { MockGraphLegend } from './mock'
 
 const meta: Meta<typeof PlayerGraph> = {
   title: 'PlayerGraph',
@@ -17,5 +18,5 @@ export default meta
 type Story = StoryObj<typeof PlayerGraph>
 
 export const Graph: Story = {
-  render: () => <PlayerGraph />,
+  render: () => <PlayerGraph GraphData={MockGraphLegend} />,
 }

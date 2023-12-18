@@ -9,7 +9,7 @@ export function PlayerProfileSection() {
     <section>
       <SectionTitle title='Perfil do jogador' />
       <Card className='flex w-max items-center gap-4 px-4 py-6'>
-        <PlayerGraph />
+        <PlayerGraph GraphData={MockGraphLegend} />
         <GraphLegend legendList={MockGraphLegend} />
       </Card>
     </section>
