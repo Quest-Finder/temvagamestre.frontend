@@ -3,14 +3,14 @@ import UnionIcon from './Icons/UnionIcon'
 import AngryBearIcon from './Icons/AngryBearIcon'
 import { LegendItem } from './LegendItem'
 
-export interface GraphLegendItem {
+export interface PlayerProfileData {
   description: string
   value: number
   id: number
 }
 
-export interface GraphLegendProps {
-  legendList: GraphLegendItem[]
+export interface PlayerProfileDataProps {
+  legendList: PlayerProfileData[]
 }
 
 function getIcon(description: string) {
@@ -25,18 +25,18 @@ function getIcon(description: string) {
   }
 }
 
-function filterOutItemWithoutData(list: GraphLegendItem[]) {
+export function filterOutItemWithoutData(list: PlayerProfileData[]) {
   const legendListWithValidItems = list.filter(item => item.value !== 0)
   return legendListWithValidItems
 }
 
-function reorderListInDescendingOrder(list: GraphLegendItem[]) {
+export function reorderListInDescendingOrder(list: PlayerProfileData[]) {
   list.sort((a, b) => a.value - b.value)
   list.reverse()
   return list
 }
 
-export function GraphLegend({ legendList }: GraphLegendProps) {
+export function GraphLegend({ legendList }: PlayerProfileDataProps) {
   const filteredList = reorderListInDescendingOrder(
     filterOutItemWithoutData(legendList),
   )
