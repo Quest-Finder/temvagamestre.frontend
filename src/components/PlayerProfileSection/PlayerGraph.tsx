@@ -1,21 +1,8 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
-import {
-  PlayerProfileData,
-  filterOutItemWithoutData,
-  reorderListInDescendingOrder,
-} from './GraphLegend'
-
-function getColor(description: string) {
-  if (description === 'Matar, Pilhar e Destruir') {
-    return '#16BFD6'
-  }
-  if (description === 'Interpretação') {
-    return '#00D3CF'
-  }
-  if (description === 'Dungeon') {
-    return '#CBFFFC'
-  }
-}
+import { filterOutItemWithoutData } from '@/helpers/playerProfileSection/filterOutItemWithoutData'
+import { reorderListInDescendingOrder } from '@/helpers/playerProfileSection/reorderListInDescendingOrder'
+import { PlayerProfileDataProps } from '@/helpers/playerProfileSection/interfaces'
+import { getColor } from '@/helpers/playerProfileSection/getColor'
 
 interface CustomLabelProps {
   cx: number
@@ -57,13 +44,9 @@ const renderCustomizedLabel = ({
   )
 }
 
-interface PlayerProfileGraphProps {
-  GraphData: PlayerProfileData[]
-}
-
-export function PlayerGraph({ GraphData }: PlayerProfileGraphProps) {
+export function PlayerGraph({ graphData }: PlayerProfileDataProps) {
   const filteredGraphData = reorderListInDescendingOrder(
-    filterOutItemWithoutData(GraphData),
+    filterOutItemWithoutData(graphData),
   )
 
   return (

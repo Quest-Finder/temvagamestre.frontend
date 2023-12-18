@@ -18,5 +18,5 @@ export default meta
 type Story = StoryObj<typeof GraphLegend>
 
 export const Graph: Story = {
-  render: () => <GraphLegend legendList={MockGraphLegend} />,
+  render: () => <GraphLegend graphData={MockGraphLegend} />,
 }
