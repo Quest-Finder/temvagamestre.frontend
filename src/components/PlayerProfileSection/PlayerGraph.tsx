@@ -1,6 +1,4 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
-import { filterOutItemWithoutData } from '@/helpers/playerProfileSection/filterOutItemWithoutData'
-import { reorderListInDescendingOrder } from '@/helpers/playerProfileSection/reorderListInDescendingOrder'
 import { PlayerProfileDataProps } from '@/helpers/playerProfileSection/interfaces'
 import { getColor } from '@/helpers/playerProfileSection/getColor'
 
@@ -45,10 +43,6 @@ const renderCustomizedLabel = ({
 }
 
 export function PlayerGraph({ graphData }: PlayerProfileDataProps) {
-  const filteredGraphData = reorderListInDescendingOrder(
-    filterOutItemWithoutData(graphData),
-  )
-
   return (
     <ResponsiveContainer
       width={200}
@@ -60,12 +54,12 @@ export function PlayerGraph({ graphData }: PlayerProfileDataProps) {
       >
         <Pie
           dataKey='value'
-          data={filteredGraphData}
+          data={graphData}
           label={renderCustomizedLabel}
           labelLine={false}
           outerRadius='100'
         >
-          {filteredGraphData.map(item => (
+          {graphData.map(item => (
             <Cell
               key={`cell-${item.id}`}
               fill={getColor(item.description)}
