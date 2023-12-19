@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { PlayerProfileSection } from '../PlayerProfileSection'
 
 const meta: Meta<typeof PlayerProfileSection> = {
-  title: 'PlayerProfileSection',
+  title: 'PlayerProfileSection/PlayerProfileSection',
   component: PlayerProfileSection,
   parameters: {
     design: {
@@ -10,6 +10,7 @@ const meta: Meta<typeof PlayerProfileSection> = {
       url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1776-4416&mode=design&t=iN2EgkutdijNumqg-0',
     },
   },
+  tags: ['autodocs'],
 }
 
 export default meta
