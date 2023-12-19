@@ -42,7 +42,7 @@ const renderCustomizedLabel = ({
   )
 }
 
-export function PlayerGraph({ graphData }: PlayerProfileDataProps) {
+export function PlayerProfileGraph({ graphData }: PlayerProfileDataProps) {
   return (
     <ResponsiveContainer
       width={200}

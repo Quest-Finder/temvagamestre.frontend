@@ -2,7 +2,9 @@ import { PlayerProfileDataProps } from '@/helpers/playerProfileSection/interface
 import { getIcon } from '@/helpers/playerProfileSection/getIcon'
 import { LegendItem } from './LegendItem'
 
-export function GraphLegend({ graphData }: PlayerProfileDataProps) {
+export function PlayerProfileGraphLegend({
+  graphData,
+}: PlayerProfileDataProps) {
   return (
     <ul className='flex flex-col gap-6'>
       {graphData.map(item => (

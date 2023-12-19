@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PlayerProfileSection } from './PlayerProfileSection'
+import { PlayerProfileSection } from '../PlayerProfileSection'
 
 const meta: Meta<typeof PlayerProfileSection> = {
   title: 'PlayerProfileSection',
@@ -7,7 +7,7 @@ const meta: Meta<typeof PlayerProfileSection> = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1685-5758&mode=design&t=oa2qNVMr0cRRhAkf-0',
+      url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1776-4416&mode=design&t=iN2EgkutdijNumqg-0',
     },
   },
 }
