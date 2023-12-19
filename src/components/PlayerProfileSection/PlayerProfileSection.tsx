@@ -12,7 +12,7 @@ export function PlayerProfileSection() {
   return (
     <PlayerProfile.Root>
       <PlayerProfile.Title title='Perfil do jogador' />
-      <Card className='flex w-max items-center gap-4 px-4 py-6'>
+      <Card className='flex max-w-max items-center gap-4 px-4 py-6'>
         <PlayerProfile.Graph graphData={filteredGraphData} />
         <PlayerProfile.Legend graphData={filteredGraphData} />
       </Card>
