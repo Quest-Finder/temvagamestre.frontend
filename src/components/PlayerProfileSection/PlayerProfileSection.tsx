@@ -15,8 +15,14 @@ export function PlayerProfileSection() {
     <section>
       <SectionTitle title='Perfil do jogador' />
       <Card className='flex w-max items-center gap-4 px-4 py-6'>
-        <PlayerGraph graphData={filteredGraphData} />
-        <GraphLegend graphData={filteredGraphData} />
+        {filteredGraphData.length !== 0 && Array.isArray(filteredGraphData) ? (
+          <>
+            <PlayerGraph graphData={filteredGraphData} />
+            <GraphLegend graphData={filteredGraphData} />
+          </>
+        ) : (
+          <p>Não foi detectado nenhuma aventura cadastrada</p>
+        )}
       </Card>
     </section>
   )
