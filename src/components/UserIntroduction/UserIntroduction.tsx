@@ -10,7 +10,7 @@ export function UserIntroduction() {
         userNickname={UserIntroductionMock.user.nickname}
         userRole={UserIntroductionMock.user.role}
       />
-      <Separator />
+      <Separator className='hidden sm:block' />
       <UserInformation.Quote>
         {UserIntroductionMock.user.info.quote}
       </UserInformation.Quote>

@@ -4,7 +4,7 @@ interface UserQuoteProps {
 
 export function UserQuote({ children }: UserQuoteProps) {
   return (
-    <q className='block h-12 text-center text-xl leading-10 text-zinc-500 empty:hidden'>
+    <q className='block text-center text-zinc-500 empty:hidden sm:h-12 sm:text-xl sm:leading-10'>
       {children}
     </q>
   )

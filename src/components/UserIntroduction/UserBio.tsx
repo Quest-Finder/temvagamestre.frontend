@@ -17,7 +17,7 @@ export function UserBio({ description }: UserBioProps) {
 
   return (
     <>
-      <p className='text-xl leading-6 text-zinc-500'>
+      <p className='text-sm leading-6 text-zinc-500 sm:text-xl'>
         {showMore ? `${description.substring(0, 321)}...` : description}
       </p>
       {description.length > 321 && (
