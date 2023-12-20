@@ -4,9 +4,10 @@ import { UserIntroduction } from './UserIntroduction'
 const meta: Meta<typeof UserIntroduction> = {
   title: 'Exemple/UserIntro1',
   component: UserIntroduction,
+  tags: ['autodocs'],
   decorators: [
     Story => (
-      <div className='m-4 max-h-none max-w-4xl rounded-xl border-2 p-6'>
+      <div className='max-h-none max-w-4xl rounded-xl border-2 px-4 py-6 sm:px-6'>
         <Story />
       </div>
     ),
