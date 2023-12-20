@@ -1,7 +1,7 @@
 interface UserTitleProps {
   userName: string
   userRole: string
-  userNickname: string
+  userNickname?: string
 }
 
 export function UserTitle({
@@ -11,8 +11,10 @@ export function UserTitle({
 }: UserTitleProps) {
   return (
     <h1 className='mb-4 text-center text-2xl'>
-      <span className='font-bold'>{`${userRole} ${userName} |`}</span>
-      {` `}
+      <span className='font-bold'>
+        {`${userRole} ${userName}`}
+        {userNickname && ` | `}
+      </span>
       {`${userNickname}`}
     </h1>
   )
