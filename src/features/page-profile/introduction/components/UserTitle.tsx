@@ -15,7 +15,7 @@ export function UserTitle({
         {`${userRole} ${userName}`}
         {userNickname && ` | `}
       </span>
-      {`${userNickname}`}
+      {userNickname && `${userNickname}`}
     </h1>
   )
 }
