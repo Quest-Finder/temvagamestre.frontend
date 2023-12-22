@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { UserInformation } from './UserInformation'
-import { Separator } from '../ui/separator'
+import { Separator } from '@/components/ui/separator'
+import { UserIntroduction } from '.'
 
-const meta: Meta<typeof UserInformation> = {
-  title: 'Exemple/UserIntro',
+const meta: Meta<typeof UserIntroduction> = {
+  title: 'Profile Page/UserIntroduction',
   decorators: [
     Story => (
       <div className='max-h-none max-w-4xl rounded-xl border-2 px-4 py-6 sm:px-6'>
@@ -22,21 +22,21 @@ const meta: Meta<typeof UserInformation> = {
 
 export default meta
 
-type Story = StoryObj<typeof UserInformation>
+type Story = StoryObj<typeof UserIntroduction>
 
-export const Info: Story = {
+export const Introduction: Story = {
   render: () => (
     <>
-      <UserInformation.UserTitle
+      <UserIntroduction.UserTitle
         userName='Rodrigo'
         userNickname='Elfo experiente'
         userRole='Mestre'
       />
       <Separator />
-      <UserInformation.Quote>Alguma frase muito legal</UserInformation.Quote>
-      <UserInformation.Section>
-        <UserInformation.SectionTitle title='Bio' />
-        <UserInformation.Bio
+      <UserIntroduction.Quote>Alguma frase muito legal</UserIntroduction.Quote>
+      <UserIntroduction.Section>
+        <UserIntroduction.SectionTitle title='Bio' />
+        <UserIntroduction.Bio
           description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
           earum perferendis asperiores itaque culpa ratione nihil optio,
           temporibus omnis doloremque dolor consequuntur, accusamus suscipit
@@ -45,7 +45,7 @@ export const Info: Story = {
           eos, corporis suscipit laborum quibusdam quod voluptates, dolorem
           nulla ipsum magnam eum facilis ullam. Laudantium excepturi natus rem!'
         />
-      </UserInformation.Section>
+      </UserIntroduction.Section>
     </>
   ),
 }
