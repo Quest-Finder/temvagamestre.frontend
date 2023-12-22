@@ -33,7 +33,7 @@ export const Introduction: Story = {
         userRole='Mestre'
       />
       <Separator />
-      <UserIntroduction.Quote>Alguma frase muito legal</UserIntroduction.Quote>
+      <UserIntroduction.Quote text='Alguma frase legal' />
       <UserIntroduction.Section>
         <UserIntroduction.SectionTitle title='Bio' />
         <UserIntroduction.Bio
