@@ -1,17 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Separator } from '@/components/ui/separator'
+import { Card } from '@/components/ui/card'
 import { UserIntroduction } from '.'
 import { UserIntroductionMock } from './mock'
 
 const meta: Meta<typeof UserIntroduction> = {
   title: 'Profile Page/UserIntroduction',
-  decorators: [
-    Story => (
-      <div className='max-h-none max-w-[862px] rounded-xl border-2 px-4 py-6 sm:px-6'>
-        <Story />
-      </div>
-    ),
-  ],
   parameters: {
     design: {
       type: 'figma',
@@ -28,37 +22,46 @@ type Story = StoryObj<typeof UserIntroduction>
 export const FullIntroduction: Story = {
   render: () => (
     <>
-      <UserIntroduction.UserTitle
-        userName={UserIntroductionMock.user.first_name}
-        userNickname={UserIntroductionMock.user.nickname}
-        userRole={UserIntroductionMock.user.role}
+      <UserIntroduction.SectionTitle
+        title='Bio'
+        className='mb-4 block sm:hidden'
       />
-      <Separator className='hidden sm:block' />
-      <UserIntroduction.Quote text={UserIntroductionMock.user.info.quote} />
-      <UserIntroduction.Section>
-        <UserIntroduction.SectionTitle title='Bio' />
-        <UserIntroduction.Bio
-          description={UserIntroductionMock.user.info.bio}
+      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6'>
+        <UserIntroduction.UserTitle
+          userName={UserIntroductionMock.user.first_name}
+          userNickname={UserIntroductionMock.user.nickname}
+          userRole={UserIntroductionMock.user.role}
         />
-      </UserIntroduction.Section>
+        <Separator className='hidden sm:block' />
+        <UserIntroduction.Quote text={UserIntroductionMock.user.info.quote} />
+        <UserIntroduction.Section>
+          <UserIntroduction.SectionTitle
+            title='Bio'
+            className='hidden sm:block'
+          />
+          <UserIntroduction.Bio
+            description={UserIntroductionMock.user.info.bio}
+          />
+        </UserIntroduction.Section>
+      </Card>
     </>
   ),
 }
 
 export const MissingIntroduction: Story = {
   render: () => (
-    <>
+    <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6'>
       <UserIntroduction.UserTitle
         userName={UserIntroductionMock.user.first_name}
         userRole='Jogador'
       />
-      <Separator />
+      <Separator className='hidden sm:block' />
       <UserIntroduction.Section>
         <UserIntroduction.SectionTitle title='Bio' />
         <UserIntroduction.Bio
           description={UserIntroductionMock.user.info.bio}
         />
       </UserIntroduction.Section>
-    </>
+    </Card>
   ),
 }

@@ -1,7 +1,13 @@
-interface UserSectionTitleProps {
+import { cva } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
+
+interface UserSectionTitleProps
+  extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
   title: string
 }
 
-export function UserSectionTitle({ title }: UserSectionTitleProps) {
-  return <h2 className='text-2xl'>{title}</h2>
+const Title = cva('text-2xl')
+
+export function UserSectionTitle({ title, className }: UserSectionTitleProps) {
+  return <h2 className={cn(Title({ className }))}>{title}</h2>
 }
