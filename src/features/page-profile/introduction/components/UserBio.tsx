@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 
 interface UserBioProps {
@@ -8,25 +8,38 @@ interface UserBioProps {
 }
 
 export function UserBio({ description }: UserBioProps) {
-  const [showMore, setShowMore] = useState(description.length > 321)
+  const truncatedTextRef = useRef<HTMLParagraphElement | null>(null)
+  const [showMore, setShowMore] = useState(false)
+  const [truncateText, setTruncateText] = useState(true)
 
-  if (description.length === 0) {
-    // eslint-disable-next-line no-param-reassign
-    description = 'Sem briografia definida.'
-  }
+  useEffect(() => {
+    const text = truncatedTextRef.current
+    if (text && text.offsetHeight < text.scrollHeight) {
+      setShowMore(true)
+    }
+  }, [showMore])
 
   return (
     <>
-      <p className='text-sm leading-6 text-zinc-500 sm:text-xl'>
-        {showMore ? `${description.substring(0, 321)}...` : description}
+      <p
+        ref={truncatedTextRef}
+        className={`${
+          truncateText ? 'truncated-text ' : ''
+        } text-sm leading-6 text-zinc-500 sm:text-xl`}
+      >
+        {description.length === 0 || description === '' ? (
+          <span className='block text-center'>Nenhuma bio cadastrada</span>
+        ) : (
+          description
+        )}
       </p>
-      {description.length > 321 && (
+      {showMore && (
         <Button
-          onClick={() => setShowMore(!showMore)}
+          onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
           className='my-3.5 ml-auto h-auto max-w-max p-0 text-base font-medium leading-none hover:bg-transparent'
         >
-          Ver mais
+          {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>
       )}
     </>
