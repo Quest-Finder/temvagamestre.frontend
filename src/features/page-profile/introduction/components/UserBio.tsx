@@ -25,7 +25,7 @@ export function UserBio({ description }: UserBioProps) {
         ref={truncatedTextRef}
         className={`${
           truncateText ? 'truncated-text ' : ''
-        } text-sm leading-6 text-zinc-500 sm:text-xl`}
+        } text-sm leading-6 text-neutral-500 sm:text-xl`}
       >
         {description.length === 0 || description === '' ? (
           <span className='block text-center'>Nenhuma bio cadastrada</span>
@@ -37,7 +37,7 @@ export function UserBio({ description }: UserBioProps) {
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none hover:bg-transparent'
+          className='my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950 hover:bg-transparent'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>
