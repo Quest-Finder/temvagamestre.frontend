@@ -26,7 +26,7 @@ export const FullIntroduction: Story = {
         title='Bio'
         className='mb-4 block sm:hidden'
       />
-      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6'>
+      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
         <UserIntroduction.UserTitle
           userName={UserIntroductionMock.user.first_name}
           userNickname={UserIntroductionMock.user.nickname}
@@ -50,7 +50,7 @@ export const FullIntroduction: Story = {
 
 export const MissingIntroduction: Story = {
   render: () => (
-    <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6'>
+    <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
       <UserIntroduction.UserTitle
         userName={UserIntroductionMock.user.first_name}
         userRole='Jogador'

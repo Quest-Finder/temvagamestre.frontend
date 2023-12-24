@@ -17,7 +17,7 @@ export function UserBio({ description }: UserBioProps) {
     if (text && text.offsetHeight < text.scrollHeight) {
       setShowMore(true)
     }
-  }, [showMore])
+  }, [])
 
   return (
     <>
@@ -37,7 +37,7 @@ export function UserBio({ description }: UserBioProps) {
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='my-3.5 ml-auto h-auto max-w-max p-0 text-base font-medium leading-none hover:bg-transparent'
+          className='my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none hover:bg-transparent'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>
