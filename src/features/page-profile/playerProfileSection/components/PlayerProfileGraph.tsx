@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
-import { PlayerProfileDataProps } from '@/helpers/playerProfileSection/interfaces'
-import { getColor } from '@/helpers/playerProfileSection/getColor'
+import { PlayerProfileDataProps } from '../helpers/interfaces'
+import { getColor } from '../helpers/getColor'
 
 interface CustomLabelProps {
   cx: number
@@ -34,7 +34,7 @@ const renderCustomizedLabel = ({
         fontWeight={500}
         fontSize={14}
       >
-        <div className='z-1000 bold rounded-md bg-white text-center shadow-md'>{`${(
+        <div className='z-1000 bold rounded-md bg-white text-center text-[#095658] shadow-md'>{`${(
           percent * 100
         ).toFixed(0)}%`}</div>
       </foreignObject>

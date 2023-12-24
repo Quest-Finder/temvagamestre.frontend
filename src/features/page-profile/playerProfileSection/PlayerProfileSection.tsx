@@ -1,6 +1,6 @@
-import { filterOutItemWithoutData } from '@/helpers/playerProfileSection/filterOutItemWithoutData'
-import { reorderListInDescendingOrder } from '@/helpers/playerProfileSection/reorderListInDescendingOrder'
-import { Card } from '../ui/card'
+import { Card } from '@/components/ui/card'
+import { filterOutItemWithoutData } from './helpers/filterOutItemWithoutData'
+import { reorderListInDescendingOrder } from './helpers/reorderListInDescendingOrder'
 import { MockGraphLegend } from './mock'
 import { PlayerProfile } from '.'
 

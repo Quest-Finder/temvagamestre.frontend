@@ -1,4 +1,4 @@
-import { PlayerProfileData } from '@/helpers/playerProfileSection/interfaces'
+import { PlayerProfileData } from '@/features/page-profile/playerProfileSection/helpers/interfaces'
 
 export const MockGraphLegend: PlayerProfileData[] = [
   {

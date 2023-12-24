@@ -7,7 +7,7 @@ const meta: Meta<typeof PlayerProfileSection> = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1776-4416&mode=design&t=iN2EgkutdijNumqg-0',
+      url: 'https://www.figma.com/file/0NbHKoUNsH7gssqSRbAq1n/Tem-vaga-mestre%3F?type=design&node-id=1776-4416&mode=design&t=fwjZRwgX6q2ocY80-0',
     },
   },
   tags: ['autodocs'],

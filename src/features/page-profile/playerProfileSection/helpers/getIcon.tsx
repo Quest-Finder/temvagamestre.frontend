@@ -1,6 +1,6 @@
-import SkullIcon from '@/components/PlayerProfileSection/Icons/SkullIcon'
-import UnionIcon from '@/components/PlayerProfileSection/Icons/UnionIcon'
-import AngryBearIcon from '@/components/PlayerProfileSection/Icons/AngryBearIcon'
+import SkullIcon from '@/features/page-profile/playerProfileSection/Icons/SkullIcon'
+import UnionIcon from '@/features/page-profile/playerProfileSection/Icons/UnionIcon'
+import AngryBearIcon from '@/features/page-profile/playerProfileSection/Icons/AngryBearIcon'
 import { ElementType } from 'react'
 
 // export function getIcon(description: string) {

@@ -1,5 +1,5 @@
-import { PlayerProfileDataProps } from '@/helpers/playerProfileSection/interfaces'
-import { getIcon } from '@/helpers/playerProfileSection/getIcon'
+import { PlayerProfileDataProps } from '../helpers/interfaces'
+import { getIcon } from '../helpers/getIcon'
 import { LegendItem } from './LegendItem'
 
 export function PlayerProfileGraphLegend({
@@ -10,7 +10,7 @@ export function PlayerProfileGraphLegend({
       {graphData.map(item => (
         <LegendItem
           key={item.id}
-          legendType={item.description}
+          legend={item.description}
           icon={() => getIcon(item.description)}
         />
       ))}
