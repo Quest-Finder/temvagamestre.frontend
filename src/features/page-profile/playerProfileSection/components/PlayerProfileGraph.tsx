@@ -34,7 +34,7 @@ const renderCustomizedLabel = ({
         fontWeight={500}
         fontSize={14}
       >
-        <div className='z-1000 bold rounded-md bg-white text-center text-[#095658] shadow-md'>{`${(
+        <div className='bold box-shadow-tooltip h-full rounded-md bg-white px-2 py-1 text-center align-middle text-sm text-[#095658]'>{`${(
           percent * 100
         ).toFixed(0)}%`}</div>
       </foreignObject>
