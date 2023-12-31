@@ -1,20 +1,8 @@
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Tooltip,
-  TooltipProps,
-} from 'recharts'
-import {
-  ValueType,
-  NameType,
-} from 'recharts/types/component/DefaultTooltipContent'
-import {
-  PlayerProfileDataProps,
-  PlayerProfileData,
-} from '../helpers/interfaces'
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
+import { PlayerProfileDataProps } from '../helpers/interfaces'
 import { getColor } from '../helpers/getColor'
+import { totalPercentage } from '../helpers/totalPercentage'
+import { CustomTooltip } from './CustomTooltip'
 
 // interface CustomLabelProps {
 //   cx: number
@@ -56,31 +44,7 @@ import { getColor } from '../helpers/getColor'
 //   )
 // }
 
-interface CustomToolTipProps extends TooltipProps<ValueType, NameType> {
-  totalData: number
-}
-
-function CustomTooltip({ active, payload, totalData }: CustomToolTipProps) {
-  if (active && payload && payload.length) {
-    const data = payload?.[0].value?.toString()
-    const dataNumber = parseFloat(data!)
-    const dataPercent = (dataNumber * 100) / totalData
-    return (
-      <p className='box-shadow-tooltip rounded-md bg-neutral-50 px-2 py-1 text-sm font-medium text-[#095658]'>
-        {`${dataPercent.toFixed(0)}%`}
-      </p>
-    )
-  }
-  return null
-}
-
-function totalPercentage(userData: PlayerProfileData[]) {
-  const total = userData.reduce((soma, data) => soma + data.value, 0)
-  return total
-}
-
 export function PlayerProfileGraph({ graphData }: PlayerProfileDataProps) {
-  // console.log(graphData)
   return (
     <ResponsiveContainer
       width={200}
