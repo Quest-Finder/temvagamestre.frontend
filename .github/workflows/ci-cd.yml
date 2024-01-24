@@ -7,8 +7,8 @@ name: Execução do CI/CD GCP
 # No 'on' deve ser escolhido gatilho que irá ativar o workflow, no nosso caso é um push pra homolog
 on:
   push:
-    branches: 
-     - homolog
+    branches:
+      - homolog
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
@@ -20,7 +20,6 @@ env:
 # Separando os trabalhos podemos exigir que um dependa do sucesso do outro
 # e tbm reexecutar de forma independente
 jobs:
-
   # aqui damos o nome ao nosso Job
   create-docker-image-and-send-to-gcp:
     # verifica se a referencia da Branch é a homolog
@@ -30,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tags: ${{ steps.meta.outputs.tags }}
-    # configuração de permissões 
+    # configuração de permissões
     permissions:
       contents: read
       packages: write
@@ -58,7 +57,6 @@ jobs:
           gcloud auth configure-docker us-central1-docker.pkg.dev
           docker build -t us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest .
           docker push us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest
-      
 
   deploy-to-gcp-cloud-run:
     if: github.ref == 'refs/heads/homolog'
@@ -67,20 +65,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
-    
+
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-     
+
       - name: 'Deploy to Cloud Run'
         uses: 'google-github-actions/deploy-cloudrun@v0'
-        
+
         with:
           service: ${{ env.SERVICE }}
           image: us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest
           region: ${{ env.REGION }}
-          

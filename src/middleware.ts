@@ -1,9 +1,24 @@
 import { authMiddleware } from '@clerk/nextjs'
 
+const publicRoutes = ['/', '/user/profile']
+
 export default authMiddleware({
-  publicRoutes: ['/'],
+  publicRoutes,
 })
 
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+  async redirects() {
+    return [
+      {
+        source: '/((?!.+\\.[\\w]+$|_next).*)',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/(api|trpc)(.*)',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }

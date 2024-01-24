@@ -1,10 +1,10 @@
 {
-    "recommendations": [
-        "vsls-contrib.codetour",
-        "editorconfig.editorconfig",
-        "dbaeumer.vscode-eslint",
-        "ms-vsliveshare.vsliveshare",
-        "usernamehw.errorlens",
-        "github.vscode-pull-request-github"
-    ]
+  "recommendations": [
+    "vsls-contrib.codetour",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "ms-vsliveshare.vsliveshare",
+    "usernamehw.errorlens",
+    "github.vscode-pull-request-github"
+  ]
 }

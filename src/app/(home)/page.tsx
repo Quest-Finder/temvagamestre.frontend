@@ -9,6 +9,12 @@ export default function Home() {
       >
         <span className='text-white'>sign-in</span>
       </Link>
+      <Link
+        href='/user/profile'
+        className='bg-zinc-600 px-5 py-3'
+      >
+        <span className='text-white'>profile</span>
+      </Link>
     </main>
   )
 }
