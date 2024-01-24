@@ -1,36 +1,33 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
-interface WindowSize {
-  windowWidth: number
+interface WindowDimensions {
+  width: number
+  height: number
 }
 
-const useWindowWidth = (): WindowSize => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
-
-  const handleResize = () => {
-    setWindowWidth(prevWidth => {
-      const newWidth = window.innerWidth
-      if (prevWidth !== newWidth) {
-        return newWidth
-      }
-      return prevWidth
-    })
-  }
+export default function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
 
   useEffect(() => {
-    handleResize()
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
     window.addEventListener('resize', handleResize)
+
+    handleResize()
 
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
-  return {
-    windowWidth,
-  }
+  return windowDimensions
 }
-
-export default useWindowWidth

@@ -29,8 +29,8 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
                 />
               ))}
             </div>
-            <button className='bg-zinc-100 inline-flex h-8 w-10 items-start justify-start gap-2.5 rounded-[3px] px-3 py-1.5'>
-              <span className="text-zinc-700 font-['Roboto'] text-sm font-medium leading-tight">
+            <button className='inline-flex h-8 w-10 items-start justify-start gap-2.5 rounded-[3px] bg-zinc-100 px-3 py-1.5'>
+              <span className="font-['Roboto'] text-sm font-medium leading-tight text-zinc-700">
                 +2
               </span>
             </button>
