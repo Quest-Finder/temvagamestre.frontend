@@ -10,12 +10,13 @@ export const UserPreference = {
   Root,
 }
 
-export default function UserPreferencesExample() {
+export default function UserPreferences() {
   return (
     <UserPreference.Root>
       <Text
         as='h1'
         size='xl'
+        className='mb-4 text-2xl text-neutral-950'
       >
         Estilos preferidos
       </Text>
@@ -23,6 +24,8 @@ export default function UserPreferencesExample() {
       <Text
         as='h1'
         size='xl'
+        className='mb-4 text-2xl text-neutral-950'
+
       >
         Conquistas
       </Text>

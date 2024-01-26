@@ -1,4 +1,4 @@
-import { PlayerProfileSection } from '@/features/page-profile/playerProfileSection/PlayerProfileSection'
+import { PlayerProfileSection } from '@/features/page-profile/playerProfileSection/playerProfileSection2'
 import Link from 'next/link'
 
 export default function Home() {
