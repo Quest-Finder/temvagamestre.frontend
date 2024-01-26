@@ -1,3 +1,4 @@
+import { PlayerProfileSection } from '@/features/page-profile/playerProfileSection/PlayerProfileSection'
 import Link from 'next/link'
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       >
         <span className='text-white'>sign-in</span>
       </Link>
+      <PlayerProfileSection/>
     </main>
   )
 }
