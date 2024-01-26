@@ -43,7 +43,7 @@ export default function CalendarWithForm() {
           />
         </div>
 
-        <section className='flex w-96 items-center gap-3 tablet:w-56 tablet:flex-col tablet:justify-start'>
+        <section className='flex w-[220px] items-center gap-3 tablet:w-56 tablet:flex-col tablet:justify-start'>
           <CalendarScheduling.TimeOptionsHeader date={date} />
           <CalendarScheduling.TimeOptions onSubmitForm={handleGetValueHour} />
         </section>

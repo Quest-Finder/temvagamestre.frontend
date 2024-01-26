@@ -73,7 +73,10 @@ module.exports = {
       },
       maxWidth:{
         '8xl':'1440px'
-      }
+      },
+      screens: {
+        tablet: '836px',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
