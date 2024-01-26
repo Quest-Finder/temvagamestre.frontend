@@ -6,6 +6,7 @@ import { CalendarScheduling } from '.'
 import useWindowDimensions from '@/hooks/useWindowWidth'
 import Text from '@/components/typograph/text'
 import { cn } from '@/lib/utils'
+import GoogleProvider from './providers/google-provider'
 
 export default function CalendarWithForm() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -21,7 +22,8 @@ export default function CalendarWithForm() {
   const { width } = useWindowDimensions()
   const isMobile: boolean = width <= 835
   return (
-    <main className='mx-auto max-w-[813px] border-stone-300 px-5 pb-3 tablet:border-t-[1px] tablet:px-10'>
+    <GoogleProvider>
+      <main className='tablet:mx-auto max-w-[813px] border-stone-300 px-5 pb-3 tablet:border-t-[1px] tablet:px-10'>
       <div className='mb-14 mt-6'>
         <Text
           className={cn('h-8 text-2xl font-semibold leading-7 text-zinc-800')}
@@ -52,5 +54,6 @@ export default function CalendarWithForm() {
         )}
       </form>
     </main>
+    </GoogleProvider>
   )
 }
