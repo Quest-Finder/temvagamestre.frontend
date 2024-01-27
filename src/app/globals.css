@@ -84,6 +84,11 @@
   .invisible-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .backgroundHeaderProfile {
+    background-image: url("../features/page-profile/header/assets/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 
