@@ -41,5 +41,3 @@ const Text: React.FC<TextProps> = ({
 
 export default Text
 
-// `font-semibold leading-snug text-teal-700 sm:block`,
-// `font-normal leading-[48px] text-zinc-800`,

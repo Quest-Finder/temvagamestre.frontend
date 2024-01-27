@@ -3,5 +3,5 @@ interface PlayerProfileRootProps {
 }
 
 export function PlayerProfileRoot({ children }: PlayerProfileRootProps) {
-  return <section>{children}</section>
+  return <section className="tablet:px-10">{children}</section>
 }

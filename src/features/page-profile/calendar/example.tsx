@@ -23,7 +23,7 @@ export default function CalendarWithForm() {
   const isMobile: boolean = width <= 835
   return (
     <GoogleProvider>
-      <main className='tablet:mx-auto w-full border-stone-300 px-5 pb-3 tablet:border-t-[1px] tablet:px-10'>
+      <main className=' antialiased tablet:mx-auto w-full border-gray-300 px-5 pb-3 tablet:border-t-[1px] tablet:px-10 max-w-[862px]'>
       <div className='mb-14 mt-6'>
         <Text
           className={cn('h-8 text-2xl font-semibold leading-7 text-zinc-800')}
@@ -43,7 +43,7 @@ export default function CalendarWithForm() {
           />
         </div>
 
-        <section className='flex w-[220px] items-center gap-3 tablet:w-56 tablet:flex-col tablet:justify-start'>
+        <section className='flex max-w-[400px] items-center gap-3 tablet:w-56 tablet:flex-col tablet:justify-start tablet:mt-11'>
           <CalendarScheduling.TimeOptionsHeader date={date} />
           <CalendarScheduling.TimeOptions onSubmitForm={handleGetValueHour} />
         </section>

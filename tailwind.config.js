@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
+  darkMode: ['class'],
   content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
@@ -75,7 +80,7 @@ module.exports = {
         '8xl':'1440px'
       },
       screens: {
-        tablet: '836px',
+        tablet: '860px',
       },
     },
   },

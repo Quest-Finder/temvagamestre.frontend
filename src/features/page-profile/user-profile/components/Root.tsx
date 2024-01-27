@@ -5,7 +5,7 @@ interface RootProps {
 }
 export default function Root({ children }: RootProps) {
   return (
-    <div className='flex max-w-[416px] flex-col px-5 pb-3 tablet:px-10'>
+    <div className='flex w-full flex-col px-5 pb-3 tablet:px-10'>
       {children}
     </div>
   )

@@ -36,7 +36,7 @@ export function TimeOptions({
   }, [isMobile, onSubmitForm])
 
   return (
-    <section className='invisible-scrollbar flex w-[340px] items-center gap-4 overflow-auto md:w-[220px] md:flex-col'>
+    <section className='invisible-scrollbar flex w-full items-center gap-4 overflow-auto tablet:flex-col'>
       {timeSlotElements}
     </section>
   )
