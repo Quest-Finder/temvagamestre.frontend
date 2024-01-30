@@ -9,8 +9,6 @@ export default function SingIn() {
           dividerText: 'hidden',
           header: 'flex items-center',
           footer: 'hidden',
-          footerActionText: 'hidden',
-          footerActionLink: 'hidden',
         },
       }}
     />
