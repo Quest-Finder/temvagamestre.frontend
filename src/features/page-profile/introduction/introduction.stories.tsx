@@ -26,13 +26,14 @@ export const FullIntroduction: Story = {
         title='Bio'
         className='mb-4 block sm:hidden'
       />
-      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
+      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] border-neutral-100 px-4 py-6 sm:px-6 sm:pt-4'>
         <UserIntroduction.UserTitle
           userName={UserIntroductionMock.user.first_name}
           userNickname={UserIntroductionMock.user.nickname}
           userRole={UserIntroductionMock.user.role}
         />
-        {UserIntroductionMock.user.info.quote && (
+        {(UserIntroductionMock.user.info.quote ||
+          UserIntroductionMock.user.info.bio) && (
           <>
             <Separator className='mt-2 hidden sm:mt-4 sm:block' />
             <UserIntroduction.Quote
@@ -63,12 +64,12 @@ export const MissingQuote: Story = {
         title='Bio'
         className='mb-4 block sm:hidden'
       />
-      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
+      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] border-neutral-100 px-4 py-6 sm:px-6 sm:pt-4'>
         <UserIntroduction.UserTitle
           userName={UserIntroductionMock.user.first_name}
           userRole='Jogador'
         />
-        {'' && (
+        {('' || UserIntroductionMock.user.info.bio) && (
           <>
             <Separator className='mt-2 hidden sm:mt-4 sm:block' />
             <UserIntroduction.Quote text='' />
@@ -97,12 +98,13 @@ export const MissingBio: Story = {
         title='Bio'
         className='mb-4 block sm:hidden'
       />
-      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
+      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] border-neutral-100 px-4 py-6 sm:px-6 sm:pt-4'>
         <UserIntroduction.UserTitle
           userName={UserIntroductionMock.user.first_name}
           userRole='Jogador'
         />
-        {UserIntroductionMock.user.info.quote && (
+        {(UserIntroductionMock.user.info.quote ||
+          UserIntroductionMock.user.info.bio) && (
           <>
             <Separator className='mt-2 hidden sm:mt-4 sm:block' />
             <UserIntroduction.Quote
