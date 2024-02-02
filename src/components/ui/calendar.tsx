@@ -23,7 +23,7 @@ function Calendar({
       locale={ptBR}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
-        month: 'space-y-4 w-96 justify-between',
+        month: 'space-y-4 min-[440px]:w-96 w-full justify-between',
         caption: 'flex justify-center pt-1 relative items-center',
         caption_label:
           "text-center text-zinc-700 text-lg font-semibold font-['Inter'] leading-relaxed capitalize",

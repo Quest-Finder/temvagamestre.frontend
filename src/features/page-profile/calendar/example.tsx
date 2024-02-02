@@ -4,56 +4,42 @@ import React, { useState } from 'react'
 import useCustomForm from './form/useCustomForm'
 import { CalendarScheduling } from '.'
 import useWindowDimensions from '@/hooks/useWindowWidth'
-import Text from '@/components/typograph/text'
 import { cn } from '@/lib/utils'
-import GoogleProvider from './providers/google-provider'
+import { CalendarDesktop } from './desktop/calendar-desktop'
+import { CalendarMobile } from './mobile/calendar-mobile'
 
 export default function CalendarWithForm() {
-  const [date, setDate] = useState<Date | undefined>(new Date())
+  const [date, setDate] = useState<Date>(new Date())
 
   const {
     onSubmit,
     handleSubmit,
-    handleCalendarSelect,
-    handleSubmitForm,
-    handleGetValueHour,
   } = useCustomForm()
 
-  const { width } = useWindowDimensions()
-  const isMobile: boolean = width <= 835
   return (
-    <GoogleProvider>
-      <main className=' antialiased tablet:mx-auto w-full border-gray-300 px-5 pb-3 tablet:border-t-[1px] tablet:px-10 max-w-[862px]'>
-      <div className='mb-14 mt-6'>
-        <Text
+    <>
+      <CalendarScheduling.Root>
+        <div className='min-[704px]:col-span-12 col-span-8 row-span-1 h-8 '>
+        <CalendarScheduling.Text
           className={cn('h-8 text-2xl font-semibold leading-7 text-zinc-800')}
-        >
+          >
           Datas disponiveis
-        </Text>
-      </div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='mt-4 flex w-full flex-wrap items-center justify-center gap-3 tablet:justify-between'
-      >
-        <div className='border-stone-300 tablet:border-r-[1px] tablet:pr-16'>
-          <CalendarScheduling.Calendar
-            date={date}
-            setDate={setDate}
-            handleCalendarSelect={() => handleCalendarSelect(date)}
-          />
+        </CalendarScheduling.Text>
         </div>
-
-        <section className='flex max-w-[400px] items-center gap-3 tablet:w-56 tablet:flex-col tablet:justify-start tablet:mt-11'>
-          <CalendarScheduling.TimeOptionsHeader date={date} />
-          <CalendarScheduling.TimeOptions onSubmitForm={handleGetValueHour} />
-        </section>
-        {isMobile && (
-          <CalendarScheduling.ButtonMobile
-            handleSubmitForm={handleSubmitForm}
-          />
-        )}
-      </form>
-    </main>
-    </GoogleProvider>
+        <div className='col-span-12 row-span-2 flex'>
+        <CalendarScheduling.FormRoot
+          onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className='max-[900px]:hidden w-full'>
+              <CalendarDesktop date={date} setDate={setDate}/>
+            </div>
+            <div className='min-[900px]:hidden '>
+              <CalendarMobile date={date} setDate={setDate}/>
+            </div>
+          </CalendarScheduling.FormRoot>
+       </div>
+     
+    </CalendarScheduling.Root>
+    </>
   )
 }

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { PlayerProfileDataProps } from '../helpers/interfaces'
 import { getIcon } from '../helpers/getIcon'
 import { LegendItem } from './LegendItem'

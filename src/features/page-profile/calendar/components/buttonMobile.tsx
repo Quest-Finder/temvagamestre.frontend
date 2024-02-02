@@ -1,21 +1,26 @@
-import Text from '@/components/typograph/text'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import React from 'react'
+import { Text } from './typograph'
 
 interface ButtomMobileProps {
   handleSubmitForm: () => void
 }
 export default function ButtonMobile({ handleSubmitForm }: ButtomMobileProps) {
   return (
-    <section className='block tablet:hidden'>
+    <section className='tablet:hidden'>
       <Button
         onClick={handleSubmitForm}
         className={cn(
-          'inline-flex w-96 items-center justify-center gap-2.5 rounded-md bg-teal-800 px-4 py-3 hover:bg-teal-800/90',
+          'inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-teal-800 px-4 py-3',
         )}
       >
-        <Text>Agendar</Text>
+        <Text
+          as='p'
+          className={cn('text-white')}
+        >
+          Agendar
+        </Text>
       </Button>
     </section>
   )

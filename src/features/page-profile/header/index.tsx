@@ -1,5 +1,5 @@
-import { Root } from "./components/Root";
+import { Root } from './components/Root'
 
-export const Header= {
-    Root:Root
+export const Header = {
+  Root: Root,
 }

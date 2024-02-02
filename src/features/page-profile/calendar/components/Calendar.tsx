@@ -18,7 +18,6 @@ export default function Calendar({
       }
       initialFocus
       className='rounded-md border-none'
-      classNames={{}}
     />
   )
 }

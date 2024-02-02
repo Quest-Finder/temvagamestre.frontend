@@ -21,7 +21,7 @@ export default function Category({ content }: CategoriesProps) {
   return (
     <>
       <div
-        className={`inline-flex h-8 w-[78px] items-start justify-start gap-2.5 rounded-[3px] ${backgroundColor} px-3 py-1.5`}
+        className={`inline-flex h-8 w-20 items-start justify-start gap-2.5 rounded-[3px] ${backgroundColor} px-3 py-1.5`}
       >
         <p
           className={`bg-transparent font-['Roboto'] text-sm font-medium leading-tight`}

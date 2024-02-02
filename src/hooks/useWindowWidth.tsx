@@ -7,7 +7,7 @@ interface WindowDimensions {
   height: number
 }
 
-export default function useWindowDimensions() {
+export default function useWindowDimensions(width: number) {
   const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -29,5 +29,6 @@ export default function useWindowDimensions() {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-  return windowDimensions
+  const isWidthMobile: boolean = windowDimensions.width <= width
+  return { windowDimensions, isWidthMobile }
 }
