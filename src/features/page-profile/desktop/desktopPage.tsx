@@ -1,9 +1,8 @@
 import { UserIntroductionComponent } from '../introduction/UserIntroduction'
 import { BoxImage } from '../box-image/box-image'
-import CalendarWithForm from '../calendar/example'
+import CalendarWithForm from '../calendar/calendarWithForm'
 import UserDescriptionComponent from '../user-description/user-description'
 import UserPreferenceComponent from '../user-preference/userPreferences'
-
 export function DesktopPage() {
   return (
     <>

@@ -1,5 +1,5 @@
 import { BoxImage } from "../box-image/box-image";
-import CalendarWithForm from "../calendar/example";
+import CalendarWithForm from "../calendar/calendarWithForm";
 import { UserIntroductionComponent } from "../introduction/UserIntroduction";
 import { Mobile } from "../mobile/Mobile";
 import { SelectPage } from "../select-page/selectPage";

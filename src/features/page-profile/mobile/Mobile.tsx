@@ -1,7 +1,7 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
 import { BoxImage } from '../box-image/box-image'
-import CalendarWithForm from '../calendar/example'
+import CalendarWithForm from '../calendar/calendarWithForm'
 import UserPreferenceComponent from '../user-preference/userPreferences'
 
 export function Mobile() {
