@@ -1,12 +1,17 @@
 import { CardWithImgs } from '.'
 import img from '../../page-profile/header/assets/Rectangle.svg'
 
-const arrayImgs: string[] = [
+const arrayImgsMock: string[] = [
   img,
   img,
   img,
 ]
-export function BoxImage() {
+interface BoxImageProps{
+  arrayImgs?: string[]
+}
+export function BoxImage({
+  arrayImgs = arrayImgsMock
+}:BoxImageProps) {
   return (
     <CardWithImgs.Root>
       <CardWithImgs.Text content='Titulo - imagens' />

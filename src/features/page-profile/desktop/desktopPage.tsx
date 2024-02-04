@@ -1,7 +1,6 @@
 import { UserIntroductionComponent } from '../introduction/UserIntroduction'
 import { BoxImage } from '../box-image/box-image'
 import CalendarWithForm from '../calendar/example'
-import { cn } from '@/lib/utils'
 import UserDescriptionComponent from '../user-description/user-description'
 import UserPreferenceomponet from '../user-profile/userPreferences'
 

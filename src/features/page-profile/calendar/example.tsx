@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import useCustomForm from './form/useCustomForm'
 import { CalendarScheduling } from '.'
-import useWindowDimensions from '@/hooks/useWindowWidth'
 import { cn } from '@/lib/utils'
 import { CalendarDesktop } from './desktop/calendar-desktop'
 import { CalendarMobile } from './mobile/calendar-mobile'
