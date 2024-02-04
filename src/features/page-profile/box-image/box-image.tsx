@@ -6,7 +6,7 @@ const arrayImgsMock: string[] = [
   img,
   img,
 ]
-interface BoxImageProps{
+export interface BoxImageProps{
   arrayImgs?: string[]
 }
 export function BoxImage({
