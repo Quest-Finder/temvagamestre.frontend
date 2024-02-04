@@ -2,7 +2,7 @@ import { UserIntroductionComponent } from '../introduction/UserIntroduction'
 import { BoxImage } from '../box-image/box-image'
 import CalendarWithForm from '../calendar/example'
 import UserDescriptionComponent from '../user-description/user-description'
-import UserPreferenceomponet from '../user-profile/userPreferences'
+import UserPreferenceComponent from '../user-preference/userPreferences'
 
 export function DesktopPage() {
   return (
@@ -11,7 +11,7 @@ export function DesktopPage() {
         <aside className='col-span-4 min-w-[380px]'>
           <div>
             <UserDescriptionComponent />
-            <UserPreferenceomponet />
+            <UserPreferenceComponent />
           </div>
         </aside>
         <main className='col-span-8  col-start-6'>

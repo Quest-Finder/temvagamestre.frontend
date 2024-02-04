@@ -4,7 +4,6 @@ import { UserIntroductionComponent } from "../introduction/UserIntroduction";
 import { Mobile } from "../mobile/Mobile";
 import { SelectPage } from "../select-page/selectPage";
 import UserDescriptionComponent from "../user-description/user-description";
-import UserPreferenceomponet from "../user-profile/userPreferences";
 
 export function MobilePage() {
     return(

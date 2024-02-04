@@ -2,12 +2,15 @@ import React from 'react'
 import { UserPreference } from '.'
 import { userMock } from '../mocks/mock'
 import { Badge, RPGStyle } from '../types/user'
-interface UserPreferenceCompoenteProps{
+
+
+export interface UserPreferenceCompoenteProps{
   rpgStyle?: RPGStyle[]
   badges?: Badge[]
 
 }
-export default function UserPreferenceomponet({
+
+export default function UserPreferenceComponent({
   rpgStyle = userMock.preferences.rpgStyles,
   badges = userMock.badges
 }:UserPreferenceCompoenteProps) {

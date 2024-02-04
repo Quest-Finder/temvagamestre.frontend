@@ -1,8 +1,8 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
-import UserPreferenceomponet from '../user-profile/userPreferences'
 import { BoxImage } from '../box-image/box-image'
 import CalendarWithForm from '../calendar/example'
+import UserPreferenceComponent from '../user-preference/userPreferences'
 
 export function Mobile() {
   const searchParams = useSearchParams()
@@ -11,7 +11,7 @@ export function Mobile() {
   return (
     <>
       <div className='col-span-12 row-span-2  flex items-center justify-center'>
-        {showElemnt === 'profile' && <UserPreferenceomponet />}
+        {showElemnt === 'profile' && <UserPreferenceComponent />}
         {showElemnt === 'images' && <BoxImage />}
         {showElemnt === 'dates' && <CalendarWithForm />}
       </div>
