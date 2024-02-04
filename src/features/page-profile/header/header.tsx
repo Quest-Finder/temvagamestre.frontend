@@ -3,7 +3,7 @@ import { Header } from '.'
 export function HeaderProfile() {
   return (
     <Header.Root>
-      <p>header</p>
+      <div></div>
     </Header.Root>
   )
 }

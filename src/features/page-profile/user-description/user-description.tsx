@@ -4,7 +4,22 @@ import { cn } from '@/lib/utils'
 import { UserDescription } from '.'
 import { Card } from '@/components/ui/card'
 
-export default function UserDescriptionComponent() {
+interface UserDescriptionComponentProps{
+  username?:string
+  pronomes?:string
+  description?:string
+  localization?:string
+  age?:string
+}
+export default function UserDescriptionComponent({
+  username = 'Lucas Marcelo',
+  pronomes = 'Ele - Dele',
+  description = 'Mestre D&D com 15 anos de experiência',
+  localization = 'São Paulo | Brasil',
+  age = '30 - 35 anos'
+
+  
+}:UserDescriptionComponentProps) {
   return (
     <>
       <Avatar className={cn('mb-14 flex h-36 w-36 -mt-24 mx-auto')}>
@@ -17,11 +32,11 @@ export default function UserDescriptionComponent() {
           className={cn('inline-flex items-center justify-center border-none')}
         >
           <UserDescription.Typography as='h2'>
-            Lucas Marcelo
+            {username}
           </UserDescription.Typography>
           <Card className='inline-flex items-center justify-end border-none pb-px'>
             <UserDescription.Typography as='h2'>
-              (Ele - Dele)
+              ({pronomes})
             </UserDescription.Typography>
           </Card>
         </Card>
@@ -29,19 +44,19 @@ export default function UserDescriptionComponent() {
           as='h3'
           className="font-['Noto Sans'] text-xl font-semibold leading-normal text-stone-500"
         >
-          Mestre D&D com 15 anos de experiência
+          {description}
         </UserDescription.Typography>
         <UserDescription.Typography
           as='h3'
           className=" font-['Noto Sans'] text-center text-xl font-semibold leading-normal text-neutral-400"
         >
-          São Paulo | Brasil
+          {localization}
         </UserDescription.Typography>
         <UserDescription.Typography
           as='h2'
           className="font-['Noto Sans'] h-5 text-center text-xl font-semibold leading-normal text-black"
         >
-          30 - 35 anos
+          {age}
         </UserDescription.Typography>
         <Button
           className={cn(
