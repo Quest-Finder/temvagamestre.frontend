@@ -29,7 +29,7 @@ export function UserBio({ description }: UserBioProps) {
         ref={truncatedTextRef}
         className={`${
           truncateText ? 'truncated-text ' : ''
-        } text-sm leading-6 text-neutral-500 sm:text-xl`}
+        } font-['Roboto'] text-sm leading-6 text-neutral-500 sm:font-['Noto_Sans'] sm:text-xl`}
       >
         {description}
       </p>
@@ -37,7 +37,7 @@ export function UserBio({ description }: UserBioProps) {
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='hover:bg-transparent my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950'
+          className="hover:bg-transparent my-[9px] ml-auto h-auto max-w-max p-0 font-['Roboto'] text-base font-medium leading-none text-neutral-950 sm:font-['Noto_Sans']"
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>

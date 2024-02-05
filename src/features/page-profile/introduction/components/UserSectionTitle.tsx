@@ -6,7 +6,9 @@ interface UserSectionTitleProps
   title: string
 }
 
-const Title = cva('text-2xl text-neutral-950 h-10 leading-[3rem] sm:h-8')
+const Title = cva(
+  "font-['Roboto'] sm:font-['Noto_Sans'] text-2xl text-neutral-950 h-10 leading-[3rem] sm:h-8",
+)
 
 export function UserSectionTitle({ title, className }: UserSectionTitleProps) {
   return <h2 className={cn(Title({ className }))}>{title}</h2>
