@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { UserDescription } from '.'
 import { Card } from '@/components/ui/card'
+import avatarUrl from '@/assets/avatar.svg'
 
 interface UserDescriptionComponentProps{
   username?:string
@@ -10,13 +11,14 @@ interface UserDescriptionComponentProps{
   description?:string
   localization?:string
   age?:string
+  src?: string
 }
 export default function UserDescriptionComponent({
   username = 'Lucas Marcelo',
   pronomes = 'Ele - Dele',
   description = 'Mestre D&D com 15 anos de experiência',
   localization = 'São Paulo | Brasil',
-  age = '30 - 35 anos'
+  age = '30 - 35 anos',
 
   
 }:UserDescriptionComponentProps) {
@@ -24,7 +26,7 @@ export default function UserDescriptionComponent({
     <>
       <Avatar className={cn('mb-14 flex h-36 w-36 -mt-24 mx-auto')}>
         <AvatarImage src='https://github.com/shadcn.png' />
-        <AvatarFallback>CN</AvatarFallback>
+        <AvatarFallback>Profile</AvatarFallback>
       </Avatar>
       <UserDescription.Root>
         <UserDescription.BoxWithIcons />
@@ -34,7 +36,7 @@ export default function UserDescriptionComponent({
           <UserDescription.Typography as='h2'>
             {username}
           </UserDescription.Typography>
-          <Card className='inline-flex items-center justify-end border-none pb-px'>
+          <Card className='inline-flex items-center justify-end border-none pb-px shadow-none'>
             <UserDescription.Typography as='h2'>
               ({pronomes})
             </UserDescription.Typography>
@@ -42,7 +44,7 @@ export default function UserDescriptionComponent({
         </Card>
         <UserDescription.Typography
           as='h3'
-          className="font-['Noto Sans'] text-xl font-semibold leading-normal text-stone-500"
+          className="font-['Noto Sans'] text-xl font-semibold leading-normal text-stone-500 text-center"
         >
           {description}
         </UserDescription.Typography>

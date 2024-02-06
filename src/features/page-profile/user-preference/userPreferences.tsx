@@ -7,7 +7,6 @@ import { Badge, RPGStyle } from '../types/user'
 export interface UserPreferenceCompoenteProps{
   rpgStyle?: RPGStyle[]
   badges?: Badge[]
-
 }
 
 export default function UserPreferenceComponent({

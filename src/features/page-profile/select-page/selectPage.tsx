@@ -1,40 +1,16 @@
 'use client'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useSelectPage } from './useSelectPage'
 
-const linksWithPath = [
-  { text: 'perfil', path: `/user/profile?show=profile` },
-  { text: 'imagens', path: `/user/profile?show=images` },
-  { text: 'datas disponiveis', path: `/user/profile?show=dates` },
-]
 export function SelectPage() {
-  type LinkTexts = (typeof linksWithPath)[number]['text']
-
-  const [params, setParams] = useState<LinkTexts>('perfil')
-  const searchParams = useSearchParams()
-
-  const handleSetParams = (state: LinkTexts) => {
-    setParams(() => state)
-  }
-
-  let showElement = searchParams.get('show')
-  useEffect(() => {
-    if (showElement === 'images') {
-      return handleSetParams('imagens')
-    }
-    if (showElement === 'dates') {
-      return handleSetParams('datas disponiveis')
-    }
-  }, [])
-
+  
+const {handleSetParams,params,linksWithPath} = useSelectPage()
   return (
     <>
       <ul className='flex items-center justify-around gap-3 h-11 my-3 bg-[#EFEFEF] rounded-md max-w-[450px] mx-auto'>
         {linksWithPath.map(({ path, text }) => {
           const bgBLink = params === text && 'bg-[#FFFFFF]'
-          const bgText =
-            params === text ? 'text-black font-extrabold' : 'text-[#989898] '
+          const bgText = params === text ? 'text-black font-extrabold' : 'text-[#989898] '
           return (
             <>
               <li

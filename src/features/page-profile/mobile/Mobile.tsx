@@ -3,6 +3,7 @@ import { useSearchParams } from 'next/navigation'
 import { BoxImage } from '../box-image/box-image'
 import CalendarWithForm from '../calendar/calendarWithForm'
 import UserPreferenceComponent from '../user-preference/userPreferences'
+import { PlayerProfileSection } from '../playerProfileSection/PlayerProfileSection'
 
 export function Mobile() {
   const searchParams = useSearchParams()
@@ -11,8 +12,9 @@ export function Mobile() {
   return (
     <>
       <div className='col-span-12 row-span-2  flex items-center justify-center'>
-        <div>
+        <div className='flex flex-col items-center justify-center gap-3'>
           {showElemnt === 'profile' && <UserPreferenceComponent />}
+          {showElemnt === 'profile' && <PlayerProfileSection/>}
         </div>
         {showElemnt === 'images' && <BoxImage />}
         {showElemnt === 'dates' && <CalendarWithForm />}
