@@ -26,7 +26,7 @@ export function useSelectPage() {
     if (showElement === 'dates') {
       return handleSetParams('datas disponiveis')
     }
-  }, [])
+  }, [params])
 
   return { handleSetParams, params, linksWithPath }
 }

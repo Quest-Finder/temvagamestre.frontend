@@ -9,9 +9,9 @@ export default function Calendar({
 }: CalendarProps) {
   const safeHandleCalendarSelect = (value: Date | undefined) => {
     if (value !== undefined) {
-      setDate(value);
+      setDate(value)
     }
-  };
+  }
   return (
     <Box
       mode='single'
