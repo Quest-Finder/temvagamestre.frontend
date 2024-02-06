@@ -19,7 +19,7 @@ export default function Calendar({
       onSelect={safeHandleCalendarSelect}
       onDayClick={handleCalendarSelect}
       disabled={(dateDisabled: Date) =>
-        dateDisabled <= new Date() || dateDisabled < new Date('1900-01-01')
+        dateDisabled < new Date(new Date().setDate(new Date().getDate() - 1))
       }
       initialFocus
       className='rounded-md border-none'
