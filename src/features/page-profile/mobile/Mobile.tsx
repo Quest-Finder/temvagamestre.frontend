@@ -11,7 +11,9 @@ export function Mobile() {
   return (
     <>
       <div className='col-span-12 row-span-2  flex items-center justify-center'>
-        {showElemnt === 'profile' && <UserPreferenceComponent />}
+        <div>
+          {showElemnt === 'profile' && <UserPreferenceComponent />}
+        </div>
         {showElemnt === 'images' && <BoxImage />}
         {showElemnt === 'dates' && <CalendarWithForm />}
       </div>

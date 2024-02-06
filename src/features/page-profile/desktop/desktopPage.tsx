@@ -3,6 +3,7 @@ import { BoxImage } from '../box-image/box-image'
 import CalendarWithForm from '../calendar/calendarWithForm'
 import UserDescriptionComponent from '../user-description/user-description'
 import UserPreferenceComponent from '../user-preference/userPreferences'
+import { PlayerProfileSection } from '../playerProfileSection/PlayerProfileSection'
 export function DesktopPage() {
   return (
     <>
@@ -11,6 +12,7 @@ export function DesktopPage() {
           <div>
             <UserDescriptionComponent />
             <UserPreferenceComponent />
+            <PlayerProfileSection/>
           </div>
         </aside>
         <main className='col-span-8  col-start-6'>
