@@ -1,8 +1,6 @@
-interface RootProps {
-  children: React.ReactNode
-}
-export function Root({ children }: RootProps) {
+
+export function Root() {
   return (
-    <header className='backgroundHeaderProfile h-48 w-full'> {children}</header>
+    <header className='backgroundHeaderProfile h-48 w-full bg-center'/> 
   )
 }
