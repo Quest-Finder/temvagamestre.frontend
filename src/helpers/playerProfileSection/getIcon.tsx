@@ -1,19 +1,8 @@
-import SkullIcon from '@/components/PlayerProfileSection/Icons/SkullIcon'
-import UnionIcon from '@/components/PlayerProfileSection/Icons/UnionIcon'
-import AngryBearIcon from '@/components/PlayerProfileSection/Icons/AngryBearIcon'
+import AngryBearIcon from '@/features/page-profile/playerProfileSection/Icons/AngryBearIcon'
+import SkullIcon from '@/features/page-profile/playerProfileSection/Icons/SkullIcon'
+import UnionIcon from '@/features/page-profile/playerProfileSection/Icons/UnionIcon'
 import { ElementType } from 'react'
 
-// export function getIcon(description: string) {
-//   if (description === 'Matar, Pilhar e Destruir') {
-//     return <SkullIcon />
-//   }
-//   if (description === 'Interpretação') {
-//     return <UnionIcon />
-//   }
-//   if (description === 'Dungeon') {
-//     return <AngryBearIcon />
-//   }
-// }
 interface IconMap {
   [key: string]: ElementType
 }

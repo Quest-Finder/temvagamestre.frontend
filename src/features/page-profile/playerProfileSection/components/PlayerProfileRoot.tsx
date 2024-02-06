@@ -1,7 +1,7 @@
 interface PlayerProfileRootProps
   extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode
-  className?:string
+  className?: string
 }
 
 export function PlayerProfileRoot({

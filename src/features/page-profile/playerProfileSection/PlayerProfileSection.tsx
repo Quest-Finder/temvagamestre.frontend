@@ -1,4 +1,5 @@
 'use client'
+
 import { Card } from '@/components/ui/card'
 import { MockGraphLegend } from './mock'
 import { PlayerProfile } from '.'

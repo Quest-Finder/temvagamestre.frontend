@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import React, { ElementType } from 'react'
+
 interface TypographyH2Pros {
   children: React.ReactNode
   as?: ElementType

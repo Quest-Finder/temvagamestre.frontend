@@ -2,15 +2,15 @@
 
 import useWindowDimensions from '@/hooks/useWindowWidth'
 import { useMemo } from 'react'
-import { getButtonVariants } from '../js/getButtonVariantsTimeOptions'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { getButtonVariants } from '../js/getButtonVariantsTimeOptions'
 import { Text } from './typograph'
 
-const availableTimeSlotsMocks = ['09:00am', '10:00am', '14:00am', '17:00am']                    
+const availableTimeSlotsMocks = ['09:00am', '10:00am', '14:00am', '17:00am']
 export function TimeOptions({
   onSubmitForm,
-  availableTimeSlots = availableTimeSlotsMocks
+  availableTimeSlots = availableTimeSlotsMocks,
 }: {
   onSubmitForm: (hour: string) => void
   availableTimeSlots?: string[]
@@ -19,7 +19,6 @@ export function TimeOptions({
   const isMobile = isWidthMobile
 
   const timeSlotElements = useMemo(() => {
-
     return availableTimeSlots.map((time, index) => {
       const { color, variant, hover } = getButtonVariants(index, isMobile)
 

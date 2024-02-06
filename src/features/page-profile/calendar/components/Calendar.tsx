@@ -7,11 +7,16 @@ export default function Calendar({
   setDate,
   handleCalendarSelect,
 }: CalendarProps) {
+  const safeHandleCalendarSelect = (value: Date | undefined) => {
+    if (value !== undefined) {
+      setDate(value);
+    }
+  };
   return (
     <Box
       mode='single'
       selected={date}
-      onSelect={setDate}
+      onSelect={safeHandleCalendarSelect}
       onDayClick={handleCalendarSelect}
       disabled={(dateDisabled: Date) =>
         dateDisabled <= new Date() || dateDisabled < new Date('1900-01-01')

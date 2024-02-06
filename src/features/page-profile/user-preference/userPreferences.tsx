@@ -3,16 +3,15 @@ import { UserPreference } from '.'
 import { userMock } from '../mocks/mock'
 import { Badge, RPGStyle } from '../types/user'
 
-
-export interface UserPreferenceCompoenteProps{
+export interface UserPreferenceCompoenteProps {
   rpgStyle?: RPGStyle[]
   badges?: Badge[]
 }
 
 export default function UserPreferenceComponent({
   rpgStyle = userMock.preferences.rpgStyles,
-  badges = userMock.badges
-}:UserPreferenceCompoenteProps) {
+  badges = userMock.badges,
+}: UserPreferenceCompoenteProps) {
   return (
     <UserPreference.Root>
       <UserPreference.Typography

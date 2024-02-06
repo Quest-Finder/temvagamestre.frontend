@@ -1,7 +1,5 @@
 import { Header } from '.'
 
 export function HeaderProfile() {
-  return (
-    <Header.Root/>
-  )
+  return <Header.Root />
 }

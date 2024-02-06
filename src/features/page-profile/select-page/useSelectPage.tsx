@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -18,7 +18,7 @@ export function useSelectPage() {
     setParams(() => state)
   }
 
-  let showElement = searchParams.get('show')
+  const showElement = searchParams.get('show')
   useEffect(() => {
     if (showElement === 'images') {
       return handleSetParams('imagens')
@@ -28,5 +28,5 @@ export function useSelectPage() {
     }
   }, [])
 
-  return {handleSetParams,params,linksWithPath}
+  return { handleSetParams, params, linksWithPath }
 }

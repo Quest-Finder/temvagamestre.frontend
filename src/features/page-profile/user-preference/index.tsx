@@ -7,5 +7,5 @@ export const UserPreference = {
   CardBadge,
   CardCategory,
   Root,
-  Typography: Typography,
+  Typography,
 }

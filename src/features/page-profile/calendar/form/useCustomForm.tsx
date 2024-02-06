@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import useWindowDimensions from '@/hooks/useWindowWidth'
 import { Schema } from './calendar-types'
 import { schema } from './validation'
-import useWindowDimensions from '@/hooks/useWindowWidth'
 
 export default function useCustomForm() {
   const {

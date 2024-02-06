@@ -1,17 +1,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { UserDescription } from '.'
 import { Card } from '@/components/ui/card'
-import avatarUrl from '@/assets/avatar.svg'
+import { UserDescription } from '@/features/page-profile/user-description'
 
-interface UserDescriptionComponentProps{
-  username?:string
-  pronomes?:string
-  description?:string
-  localization?:string
-  age?:string
-  src?: string
+interface UserDescriptionComponentProps {
+  username?: string
+  pronomes?: string
+  description?: string
+  localization?: string
+  age?: string
 }
 export default function UserDescriptionComponent({
   username = 'Lucas Marcelo',
@@ -19,12 +17,10 @@ export default function UserDescriptionComponent({
   description = 'Mestre D&D com 15 anos de experiência',
   localization = 'São Paulo | Brasil',
   age = '30 - 35 anos',
-
-  
-}:UserDescriptionComponentProps) {
+}: UserDescriptionComponentProps) {
   return (
     <>
-      <Avatar className={cn('mb-14 flex h-36 w-36 -mt-24 mx-auto')}>
+      <Avatar className={cn('mx-auto -mt-24 mb-14 flex h-36 w-36')}>
         <AvatarImage src='https://github.com/shadcn.png' />
         <AvatarFallback>Profile</AvatarFallback>
       </Avatar>
@@ -44,7 +40,7 @@ export default function UserDescriptionComponent({
         </Card>
         <UserDescription.Typography
           as='h3'
-          className="font-['Noto Sans'] text-xl font-semibold leading-normal text-stone-500 text-center"
+          className="font-['Noto Sans'] text-center text-xl font-semibold leading-normal text-stone-500"
         >
           {description}
         </UserDescription.Typography>
@@ -62,8 +58,7 @@ export default function UserDescriptionComponent({
         </UserDescription.Typography>
         <Button
           className={cn(
-            'inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-md bg-teal-800 px-4 py-3 max-w-[415px]' ,
-            
+            'inline-flex h-12 w-full max-w-[415px] items-center justify-center gap-2.5 rounded-md bg-teal-800 px-4 py-3',
           )}
         >
           <UserDescription.Typography

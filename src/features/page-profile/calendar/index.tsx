@@ -7,11 +7,11 @@ import TimeOptionsHeader from './components/timeOptionsHeader'
 import { Text } from './components/typograph'
 
 export const CalendarScheduling = {
-  Root: Root,
+  Root,
   TimeOptions,
   TimeOptionsHeader,
   Calendar,
   ButtonMobile,
-  Text: Text,
-  FormRoot: FormRoot,
+  Text,
+  FormRoot,
 }
