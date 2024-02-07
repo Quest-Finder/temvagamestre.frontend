@@ -5,13 +5,13 @@ const preview: Preview = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
   },
-};
+}
 
-import "../src/app/globals.css"
+import '../src/app/globals.css'
 
-export default preview;
+export default preview
