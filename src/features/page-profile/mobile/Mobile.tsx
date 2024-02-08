@@ -12,7 +12,7 @@ export function Mobile() {
   const showElemnt: ShowElement = searchParams.get('show') as ShowElement
   return (
     <div className='col-span-12 row-span-2  flex items-center justify-center'>
-      <div className='flex flex-col items-center justify-center gap-3'>
+      <div className='flex flex-col items-center justify-center gap-3 max-w-[430px]'>
         {showElemnt === 'profile' && <UserPreferenceComponent />}
         {showElemnt === 'profile' && <PlayerProfileSection />}
       </div>
