@@ -11,7 +11,7 @@ import { ptBR } from 'date-fns/locale'
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 function Calendar({
-  className,
+  className = '',
   classNames,
   showOutsideDays = true,
   ...props
@@ -59,9 +59,17 @@ function Calendar({
       }}
       components={{
         IconLeft: ({ ...props }) => (
-          <ChevronLeft className='h-10 w-10  border-none' />
+          <ChevronLeft
+            className='h-10 w-10  border-none'
+            {...props}
+          />
         ),
-        IconRight: ({ ...props }) => <ChevronRight className='h-10 w-10' />,
+        IconRight: ({ ...props }) => (
+          <ChevronRight
+            className='h-10 w-10'
+            {...props}
+          />
+        ),
       }}
       {...props}
     />

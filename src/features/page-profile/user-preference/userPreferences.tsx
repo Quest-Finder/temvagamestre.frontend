@@ -1,7 +1,7 @@
 import React from 'react'
 import { UserPreference } from '.'
 import { userMock } from '../mocks/mock'
-import { Badge, RPGStyle } from '../types/user'
+import { Badge, RPGStyle } from './types'
 
 export interface UserPreferenceCompoenteProps {
   rpgStyle?: RPGStyle[]
