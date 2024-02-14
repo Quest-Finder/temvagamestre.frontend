@@ -6,8 +6,10 @@ export function useSendTokenToBackend() {
         headers: {},
         body: JSON.stringify({ token }),
       })
-      await response.json()
-    } catch (error) {}
+      return await response.json()
+    } catch (error) {
+      return error
+    }
   }
   return { sendTokenToBackend }
 }
