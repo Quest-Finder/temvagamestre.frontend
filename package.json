@@ -15,6 +15,7 @@
     "@clerk/nextjs": "^4.25.3",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
