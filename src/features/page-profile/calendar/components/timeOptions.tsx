@@ -35,5 +35,5 @@ export function TimeOptions({
     })
   }, [isMobile, onSubmitForm, availableTimeSlots])
 
-  return { timeSlotElements }
+  return timeSlotElements
 }
