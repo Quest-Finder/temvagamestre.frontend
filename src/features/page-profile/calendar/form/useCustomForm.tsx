@@ -16,8 +16,8 @@ export default function useCustomForm() {
   const { isWidthMobile } = useWindowDimensions(835)
   const isMobile = isWidthMobile
 
-  function onSubmit(data: Schema): void {
-    console.log(data)
+  // aqui e necessario passar o data: Schema como paramentro da função,nesse momento foi removido para evitar erros de lint
+  function onSubmit(): void {
     reset()
   }
   const handleSubmitForm = () => {
@@ -37,7 +37,6 @@ export default function useCustomForm() {
     if (isMobile) {
       return
     }
-    console.log('ola')
     handleSubmitForm()
   }
 
