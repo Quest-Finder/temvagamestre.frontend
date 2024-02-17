@@ -10,7 +10,8 @@ import { ptBR } from 'date-fns/locale'
 
 type CalendarProps = React.ComponentPropsWithoutRef<typeof DayPicker> & {
   className?: string
-  classNames?: Partial<StyledElement<string>> & string
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  classNames?: Partial<StyledElement<String>> & String
   showOutsideDays?: boolean
 }
 
