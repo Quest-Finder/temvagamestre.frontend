@@ -58,8 +58,15 @@
         "tsx": "never"
       }
     ],
-    "jsx-a11y/media-has-caption": "off"
+    "jsx-a11y/media-has-caption": "off",
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ]
   },
+  
   "settings": {
     "react": {
       "version": "detect"
@@ -67,5 +74,15 @@
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  
+  "overrides": [
+    {
+      "files": ["**/components/ui/*.tsx"], 
+      "rules": {
+        "react/prop-types": [2, { "ignore": ["className"] }],
+        "react-refresh/only-export-components": "off"
+      }
+    }
+  ]
 }
