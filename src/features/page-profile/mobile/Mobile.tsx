@@ -2,7 +2,6 @@
 
 import { useSearchParams } from 'next/navigation'
 import { BoxImage } from '../box-image/box-image'
-import CalendarWithForm from '../calendar/calendarWithForm'
 import UserPreferenceComponent from '../user-preference/userPreferences'
 import { PlayerProfileSection } from '../playerProfileSection/PlayerProfileSection'
 
@@ -17,7 +16,7 @@ export function Mobile() {
         {showElemnt === 'profile' && <PlayerProfileSection />}
       </div>
       {showElemnt === 'images' && <BoxImage />}
-      {showElemnt === 'dates' && <CalendarWithForm />}
+      {/* {showElemnt === 'dates' && <CalendarWithForm />} */}
     </div>
   )
 }

@@ -2,13 +2,18 @@
 
 import * as React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker } from 'react-day-picker'
+import { DayPicker, StyledElement } from 'react-day-picker'
 
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { ptBR } from 'date-fns/locale'
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+type CalendarProps = React.ComponentPropsWithoutRef<typeof DayPicker> & {
+  className?: string
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  classNames?: Partial<StyledElement<String>> & String
+  showOutsideDays?: boolean
+}
 
 function Calendar({
   className,
@@ -58,15 +63,24 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => (
-          <ChevronLeft className='h-10 w-10  border-none' />
+        IconLeft: ({ ...iconProps }) => (
+          <ChevronLeft
+            className='h-10 w-10  border-none'
+            {...iconProps}
+          />
         ),
-        IconRight: ({ ...props }) => <ChevronRight className='h-10 w-10' />,
+        IconRight: ({ ...iconProps }) => (
+          <ChevronRight
+            className='h-10 w-10'
+            {...iconProps}
+          />
+        ),
       }}
       {...props}
     />
   )
 }
+
 Calendar.displayName = 'Calendar'
 
 export { Calendar }
