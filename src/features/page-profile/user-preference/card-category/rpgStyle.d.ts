@@ -1,4 +1,4 @@
 export type RPGStyle = {
-    id: string
-    name: string;
-};
+  id: string
+  name: string
+}

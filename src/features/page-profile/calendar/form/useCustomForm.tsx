@@ -17,7 +17,6 @@ export default function useCustomForm() {
   const isMobile = isWidthMobile
 
   function onSubmit(data: Schema): void {
-    console.log(data)
     reset()
   }
   const handleSubmitForm = () => {
@@ -37,7 +36,6 @@ export default function useCustomForm() {
     if (isMobile) {
       return
     }
-    console.log('ola')
     handleSubmitForm()
   }
 
