@@ -3,17 +3,6 @@ import UnionIcon from '@/features/page-profile/playerProfileSection/Icons/UnionI
 import AngryBearIcon from '@/features/page-profile/playerProfileSection/Icons/AngryBearIcon'
 import { ElementType } from 'react'
 
-// export function getIcon(description: string) {
-//   if (description === 'Matar, Pilhar e Destruir') {
-//     return <SkullIcon />
-//   }
-//   if (description === 'Interpretação') {
-//     return <UnionIcon />
-//   }
-//   if (description === 'Dungeon') {
-//     return <AngryBearIcon />
-//   }
-// }
 interface IconMap {
   [key: string]: ElementType
 }

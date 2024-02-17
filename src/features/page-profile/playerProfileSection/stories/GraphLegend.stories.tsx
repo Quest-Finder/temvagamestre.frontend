@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { PlayerProfileGraphLegend } from '../components/PlayerProfileGraphLegend'
 import { MockGraphLegend } from '../mock'
 
+
 const meta: Meta<typeof PlayerProfileGraphLegend> = {
   title: 'PlayerProfileSection/PlayerProfileGraphLegend ',
   component: PlayerProfileGraphLegend,
