@@ -1,6 +1,6 @@
 import { authMiddleware } from '@clerk/nextjs'
 
-const publicRoutes = ['/', '/user/profile']
+const publicRoutes = ['/', '/user/profile', '/user/sign-in']
 
 export default authMiddleware({
   publicRoutes,
