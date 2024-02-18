@@ -8,11 +8,6 @@ const envSchema = z.object({
 const parsEnv = envSchema.safeParse(process.env)
 
 if (!parsEnv.success) {
-  console.error(
-    'Invalid enviroment variables',
-    parsEnv.error.flatten().fieldErrors,
-  )
-
   throw new Error('Invalid enviroment variables')
 }
 

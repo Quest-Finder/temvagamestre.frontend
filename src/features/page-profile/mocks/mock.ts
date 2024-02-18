@@ -48,12 +48,16 @@ export const userMock: User = {
     },
     rpgStyles: [
       {
-        id: '71d91c56-fd2e-4adf-8521-f2252fa0dc2e',
-        name: 'Fantasia',
+        id: '1',
+        name: 'Fantasia heroica',
       },
       {
-        id: 'f58c7a9d-28b4-4443-bd1b-2d25e1ac59dc',
-        name: 'Misterio',
+        id: '2',
+        name: 'Ninja vs Samurai',
+      },
+      {
+        id: '3',
+        name: 'Espada e feitiçaria',
       },
     ],
   },

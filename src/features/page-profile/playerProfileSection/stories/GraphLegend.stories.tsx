@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { MockGraphLegend } from '../mock'
 import { PlayerProfileGraphLegend } from '../components/PlayerProfileGraphLegend'
+import { MockGraphLegend } from '../mock'
 
 const meta: Meta<typeof PlayerProfileGraphLegend> = {
   title: 'PlayerProfileSection/PlayerProfileGraphLegend ',

@@ -33,7 +33,7 @@ export function TimeOptions({
         </Button>
       )
     })
-  }, [isMobile, onSubmitForm])
+  }, [isMobile, onSubmitForm, availableTimeSlots])
 
-  return <>{timeSlotElements}</>
+  return timeSlotElements
 }

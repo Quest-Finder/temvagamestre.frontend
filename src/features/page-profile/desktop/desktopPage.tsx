@@ -1,6 +1,5 @@
 import { UserIntroductionComponent } from '../introduction/UserIntroduction'
 import { BoxImage } from '../box-image/box-image'
-import CalendarWithForm from '../calendar/calendarWithForm'
 import UserDescriptionComponent from '../user-description/user-description'
 import UserPreferenceComponent from '../user-preference/userPreferences'
 import { PlayerProfileSection } from '../playerProfileSection/PlayerProfileSection'
@@ -18,7 +17,7 @@ export function DesktopPage() {
       <main className='col-span-8  col-start-6'>
         <UserIntroductionComponent />
         <BoxImage />
-        <CalendarWithForm />
+        {/* <CalendarWithForm /> */}
       </main>
     </section>
   )
