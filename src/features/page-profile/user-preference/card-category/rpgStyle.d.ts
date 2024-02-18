@@ -1,4 +1,4 @@
-export type RPGStyle = {
-    id: string
-    name: string;
-};
+export type TypeRPGStyle = {
+  id: string
+  name: string
+}
