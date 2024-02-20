@@ -16,7 +16,7 @@ export default function TimeOptionsHeader({
     <section className='mt-auto flex flex-col items-center justify-center'>
       <Text
         className={cn(
-          'font-inter text-sm font-semibold leading-snug text-teal-700 tablet:text-base',
+          'font-inter text-teal-700 text-sm font-semibold leading-snug tablet:text-base',
         )}
       >
         {isMobile ? 'Horarios dsponiveis' : 'agendar'}
