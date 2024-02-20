@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer base {
   .box-shadow-tooltip {
     box-shadow: 0px 2px 4px 0px rgba(30, 41, 59, 0.25);
   }
