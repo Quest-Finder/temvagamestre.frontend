@@ -37,7 +37,7 @@ export function UserBio({ description }: UserBioProps) {
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950 hover:bg-transparent'
+          className='hover:bg-transparent my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>

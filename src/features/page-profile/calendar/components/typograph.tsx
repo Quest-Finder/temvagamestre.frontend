@@ -14,7 +14,7 @@ export function Text({
   return (
     <Component
       className={cn(
-        'rounded-lg border border-none bg-transparent text-card-foreground shadow-sm',
+        'bg-transparent text-card-foreground rounded-lg border border-none shadow-sm',
         className,
       )}
     >

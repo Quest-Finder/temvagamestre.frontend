@@ -11,7 +11,7 @@ export function BoxWithIcons() {
   return (
     <section className='flex items-center justify-center gap-3'>
       {socialMedia.map(icon => (
-        <div className='flex h-11 w-11 items-center justify-center rounded-md bg-black p-3'>
+        <div className='bg-black flex h-11 w-11 items-center justify-center rounded-md p-3'>
           <Image
             src={icon}
             alt=''

@@ -40,7 +40,7 @@ export default function UserDescriptionComponent({
         </Card>
         <UserDescription.Typography
           as='h3'
-          className="font-['Noto Sans'] text-center text-xl font-semibold leading-normal text-stone-500"
+          className="font-['Noto Sans'] text-stone-500 text-center text-xl font-semibold leading-normal"
         >
           {description}
         </UserDescription.Typography>
@@ -52,18 +52,18 @@ export default function UserDescriptionComponent({
         </UserDescription.Typography>
         <UserDescription.Typography
           as='h2'
-          className="font-['Noto Sans'] h-5 text-center text-xl font-semibold leading-normal text-black"
+          className="font-['Noto Sans'] text-black h-5 text-center text-xl font-semibold leading-normal"
         >
           {age}
         </UserDescription.Typography>
         <Button
           className={cn(
-            'inline-flex h-12 w-full max-w-[415px] items-center justify-center gap-2.5 rounded-md bg-teal-800 px-4 py-3',
+            'bg-teal-800 inline-flex h-12 w-full max-w-[415px] items-center justify-center gap-2.5 rounded-md px-4 py-3',
           )}
         >
           <UserDescription.Typography
             as='p'
-            className="border-none bg-transparent font-['Inter'] text-base font-semibold leading-snug text-white"
+            className="bg-transparent text-white border-none font-['Inter'] text-base font-semibold leading-snug"
           >
             Enviar Mensagem
           </UserDescription.Typography>

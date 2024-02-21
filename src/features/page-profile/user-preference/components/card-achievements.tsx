@@ -20,7 +20,7 @@ export default function CardAchievements({ text, src }: CardAchievementsProps) {
         </div>
       )}
       {text && (
-        <p className="font-['Roboto'] text-xl font-normal leading-[48px] text-zinc-700">
+        <p className="text-zinc-700 font-['Roboto'] text-xl font-normal leading-[48px]">
           {text}
         </p>
       )}
