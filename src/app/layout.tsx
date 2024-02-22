@@ -33,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang='pt-Br'>
       <ClerkProvider localization={ptBR}>
-        <body className={`${inter.variable} ${roboto.variable} ${notoSans.variable}`}>
+        <body
+          className={`${inter.variable} ${roboto.variable} ${notoSans.variable}`}
+        >
           {children}
         </body>
       </ClerkProvider>
