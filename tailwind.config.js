@@ -91,7 +91,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        mono: ['var(--font-roboto))'],
+        mono: ['var(--font-roboto)'],
+        notoSans: ['var(--font-notoSans)'],
       },
       keyframes: {
         'accordion-down': {
