@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           'bg-primary-900  hover:bg-primary-900/95 text-neutral-50 font-mono text-sm gap-2',
         secondary:
-          'bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80',
+          'bg-primary-300  hover:bg-primary-300/95 text-neutral-900 text-base gap-2',
       },
       size: {
         default: 'h-10 px-8 py-4',
