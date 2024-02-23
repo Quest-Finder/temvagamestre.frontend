@@ -9,11 +9,11 @@ interface MultiStepProps {
 
 function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
   return (
-    <div className='flex items-center justify-center gap-2'>
+    <div className='flex min-h-[40px] items-center justify-center  gap-2 '>
       {Array.from({ length: size }, (_, i) => i + 1).map(step => {
         return (
-          <div className='flex  items-center justify-center gap-2'>
-            <div>
+          <>
+            <div className='mb-auto flex flex-wrap  items-center justify-center gap-2 max-[450px]:w-14'>
               <div
                 key={step}
                 className={`
@@ -38,16 +38,18 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                 )}
                 {currentStep >= step && <CheckComponent />}
               </div>
+              {arrayText && arrayText[step - 1] && (
+                <p className='text-center font-mono text-primary-900 '>
+                  {arrayText[step - 1]}
+                </p>
+              )}
             </div>
-            {arrayText && arrayText[step - 1] && (
-              <p className='text-center font-mono text-primary-900 '>
-                {arrayText[step - 1]}
-              </p>
-            )}
-            {step !== size && (
-              <div className='w-8  border border-neutral-200' />
-            )}
-          </div>
+            <div
+              className={`w-6 border  border-neutral-200 min-[450px]:w-8  ${
+                step !== size ? 'block' : 'hidden'
+              }`}
+            />
+          </>
         )
       })}
     </div>
