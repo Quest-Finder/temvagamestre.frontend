@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { CheckComponent } from '../icons/checkComponent'
 
 interface MultiStepProps {
     size: number
@@ -34,6 +34,7 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                                         {step}
                                     </p>
                                 )}
+                                {currentStep >= step && <CheckComponent />}
                             </div>
                         </div>
                         {arrayText && arrayText[step - 1] && (
