@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-interface SvgComponentProps extends React.SVGProps<SVGSVGElement> { }
+interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {}
 
-interface SvgComponentProps extends React.SVGProps<SVGSVGElement> { }
+interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {}
 export function InstagramIcon({ ...props }: SvgComponentProps) {
   return (
     <figure className='my-auto flex h-10 w-10 items-center justify-center gap-2 rounded-md bg-[#222222]'>
