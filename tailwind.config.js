@@ -90,6 +90,10 @@ module.exports = {
           950: '#2C2423',
         },
       },
+      fontFamily: {
+        mono: ['var(--font-roboto)'],
+        notoSans: ['var(--font-notoSans)'],
+      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
