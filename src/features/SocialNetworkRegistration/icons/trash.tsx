@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {}
 
 export function TrashIcon({ ...props }: SvgComponentProps) {
