@@ -6,28 +6,9 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
   ],
   prefix: '',
   theme: {
-    colors: {
-      neutral: {
-        50: '#FFFFFF',
-        100: '#EFEFEF',
-        200: '#DCDCDC',
-        300: '#BDBDBD',
-        400: '#989898',
-        500: '#7C7C7C',
-        600: '#656565',
-        700: '#525252',
-        800: '#464646',
-        900: '#3D3D3D',
-        950: '#292929',
-      },
-    },
     container: {
       center: true,
       padding: '2rem',
@@ -37,6 +18,19 @@ module.exports = {
     },
     extend: {
       colors: {
+        neutral: {
+          50: '#FFFFFF',
+          100: '#EFEFEF',
+          200: '#DCDCDC',
+          300: '#BDBDBD',
+          400: '#989898',
+          500: '#7C7C7C',
+          600: '#656565',
+          700: '#525252',
+          800: '#464646',
+          900: '#3D3D3D',
+          950: '#292929',
+        },
         primary: {
           50: '#EEFFFD',
           100: '#C4FFFB',
@@ -89,6 +83,10 @@ module.exports = {
           900: '#564746',
           950: '#2C2423',
         },
+      },
+      fontFamily: {
+        mono: ['var(--font-roboto)'],
+        notoSans: ['var(--font-notoSans)'],
       },
       keyframes: {
         'accordion-down': {
