@@ -61,14 +61,14 @@ export function FormSetpOne() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-5'
+        className='max-w-[340px] space-y-5'
       >
         <FormField
           control={form.control}
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nome</FormLabel>
+              <FormLabel>Nome*</FormLabel>
               <FormControl>
                 <Input
                   placeholder='Exemplo: Pedro da Silva Sauro'
@@ -84,7 +84,7 @@ export function FormSetpOne() {
           name='username'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Username*</FormLabel>
               <FormControl>
                 <Input
                   placeholder='Exemplo: Pedrosauro'
@@ -107,21 +107,97 @@ export function FormSetpOne() {
               >
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder='Selecione uma opção' />
+                    <SelectValue
+                      placeholder='Selecione uma opção'
+                      defaultValue='none'
+                    />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
                   <SelectItem value='ele/dele'>Ele / Dele</SelectItem>
                   <SelectItem value='ela/dela'>Ela / Dela</SelectItem>
                   <SelectItem value='elu/delu'>Elu / Delu</SelectItem>
-                  <SelectItem value='prefereNãoResponder'>
-                    Prefiro não responder
-                  </SelectItem>
+                  <SelectItem value='none'>Prefiro não responder</SelectItem>
                 </SelectContent>
               </Select>
             </FormItem>
           )}
         />
+        <FormLabel>Data de nascimento</FormLabel>
+        <div className='flex gap-6'>
+          <FormField
+            control={form.control}
+            name='dateOfBirth'
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Dia' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value='1'>1</SelectItem>
+                    <SelectItem value='2'>2</SelectItem>
+                    <SelectItem value='3'>3</SelectItem>
+                    <SelectItem value='4'>4</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='dateOfBirth'
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={`${field.value}-`}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Selecionar Mes' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value='1'>1</SelectItem>
+                    <SelectItem value='2'>2</SelectItem>
+                    <SelectItem value='3'>3</SelectItem>
+                    <SelectItem value='4'>4</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='dateOfBirth'
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={`${field.value}`}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Ano' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value='1'>1</SelectItem>
+                    <SelectItem value='2'>2</SelectItem>
+                    <SelectItem value='3'>3</SelectItem>
+                    <SelectItem value='4'>4</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormItem>
+            )}
+          />
+        </div>
         <Button
           variant='outline'
           type='submit'
