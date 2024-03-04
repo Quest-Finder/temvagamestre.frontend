@@ -13,7 +13,7 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
       {Array.from({ length: size }, (_, i) => i + 1).map(step => {
         return (
           <>
-            <div className='mb-auto flex flex-wrap  items-center justify-center gap-2 max-[450px]:w-14'>
+            <div className='mb-auto flex flex-wrap  items-center justify-center gap-2 '>
               <div
                 key={step}
                 className={`
