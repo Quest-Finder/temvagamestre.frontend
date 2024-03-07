@@ -20,6 +20,8 @@ import {
 } from '@/components/ui/select'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+import { useEffect, useState } from 'react'
+import { DateOfBirth } from './components/DateOfBirth'
 
 const FormSchema = z.object({
   name: z
@@ -38,23 +40,33 @@ const FormSchema = z.object({
     .max(15, 'O username deve conter no máximo 15 caracteres')
     .regex(/^[a-zA-Z0-9'-]*$/, 'Caracteres especiais não são disponiveis'),
   pronoun: z.string(),
-  dateOfBirth: z.string(),
+  dateOfBirth: z.string().min(2),
 })
 
 export function FormSetpOne() {
+  const [date, setDate] = useState('')
+
   const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
     defaultValues: {
-      name: '', // adicionar nome do usuario cadastrado no clerk - buscar do clerk
+      name: '',
       username: '',
       pronoun: '',
       dateOfBirth: '',
     },
-    criteriaMode: 'all',
+    resolver: zodResolver(FormSchema),
   })
+  useEffect(() => {
+    form.setValue('dateOfBirth', date)
+  }, [date, form])
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data)
+    const formData = { ...data, dateOfBirth: date }
+    console.log('form', formData)
+  }
+
+  const handleSelectDate = (selectedDate: string) => {
+    setDate(selectedDate)
+    console.log(selectedDate)
   }
 
   return (
@@ -123,81 +135,21 @@ export function FormSetpOne() {
             </FormItem>
           )}
         />
-        <FormLabel>Data de nascimento</FormLabel>
-        <div className='flex gap-6'>
-          <FormField
-            control={form.control}
-            name='dateOfBirth'
-            render={({ field }) => (
-              <FormItem>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder='Dia' />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value='1'>1</SelectItem>
-                    <SelectItem value='2'>2</SelectItem>
-                    <SelectItem value='3'>3</SelectItem>
-                    <SelectItem value='4'>4</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='dateOfBirth'
-            render={({ field }) => (
-              <FormItem>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={`${field.value}-`}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder='Selecionar Mes' />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value='1'>1</SelectItem>
-                    <SelectItem value='2'>2</SelectItem>
-                    <SelectItem value='3'>3</SelectItem>
-                    <SelectItem value='4'>4</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='dateOfBirth'
-            render={({ field }) => (
-              <FormItem>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={`${field.value}`}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder='Ano' />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value='1'>1</SelectItem>
-                    <SelectItem value='2'>2</SelectItem>
-                    <SelectItem value='3'>3</SelectItem>
-                    <SelectItem value='4'>4</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormItem>
-            )}
-          />
-        </div>
+        <FormField
+          control={form.control}
+          name='dateOfBirth'
+          render={({ field }) => (
+            <FormItem>
+              <DateOfBirth
+                onSelectedDate={handleSelectDate}
+                {...field}
+              />
+            </FormItem>
+          )}
+        />
+        {/* <FormItem>
+          <DateOfBirth onSelectedDate={handleSelectDate} />
+        </FormItem> */}
         <Button
           variant='outline'
           type='submit'
