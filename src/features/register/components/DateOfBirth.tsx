@@ -54,24 +54,32 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
   const [monthForm, setMonthForm] = useState('')
   const [yearForm, setYearForm] = useState('')
 
+  // function handleSelectDate() {
+  //   onSelectedDate(`${monthForm}-${dayForm}-${yearForm}`)
+  // }
+
   useEffect(() => {
-    const handleSelectDate = () => {
-      if (dayForm !== '' && monthForm !== '' && yearForm !== '') {
-        onSelectedDate(`${monthForm}-${dayForm}-${yearForm}`)
-      }
+    // handleSelectDate()
+    if (dayForm !== '' && monthForm !== '' && yearForm !== '') {
+      onSelectedDate(`${monthForm}-${dayForm}-${yearForm}`)
     }
-    handleSelectDate()
+    // const handleSelectDate = () => {
+    //   if (dayForm !== '' && monthForm !== '' && yearForm !== '') {
+    //     onSelectedDate(`${monthForm}-${dayForm}-${yearForm}`)
+    //   }
+    // }
+    // handleSelectDate()
   }, [dayForm, monthForm, yearForm, onSelectedDate])
 
   return (
     <>
       <FormLabel>Data de nascimento*</FormLabel>
-      <div className='flex gap-6'>
+      <div className='flex justify-between'>
         <Select onValueChange={e => setDayForm(e)}>
-          <SelectTrigger>
+          <SelectTrigger className='w-16'>
             <SelectValue placeholder='Dia' />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className='w-16'>
             {generateDayFromMonth().map(day => {
               return (
                 <SelectItem
@@ -86,7 +94,7 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
         </Select>
 
         <Select onValueChange={e => setMonthForm(e)}>
-          <SelectTrigger>
+          <SelectTrigger className='w-40'>
             <SelectValue placeholder='Selecionar mes' />
           </SelectTrigger>
           <SelectContent>
@@ -104,7 +112,7 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
         </Select>
 
         <Select onValueChange={e => setYearForm(e)}>
-          <SelectTrigger>
+          <SelectTrigger className='w-20'>
             <SelectValue placeholder='Ano' />
           </SelectTrigger>
           <SelectContent>
