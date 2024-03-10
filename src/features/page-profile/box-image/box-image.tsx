@@ -1,7 +1,7 @@
 import { CardWithImgs } from '.'
 import img from '../header/assets/Rectangle.svg'
 
-const arrayImgsMock: string[] = [img, img, img]
+const arrayImgsMock: string[] = [img, img, img, img, img]
 export interface BoxImageProps {
   arrayImgs?: string[]
 }

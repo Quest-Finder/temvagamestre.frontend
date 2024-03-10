@@ -6,7 +6,7 @@ import { PlayerProfileSection } from '../playerProfileSection/PlayerProfileSecti
 
 export function DesktopPage() {
   return (
-    <section className='mx-auto mt-4 hidden min-h-screen max-w-[1140px] grid-cols-12 px-3 pb-5 min-[900px]:grid'>
+    <section className='mx-auto mt-4 hidden min-h-screen max-w-[1440px] grid-cols-12 px-3 pb-5 min-[900px]:grid'>
       <aside className='col-span-4 min-w-[380px]'>
         <div>
           <UserDescriptionComponent />
@@ -14,10 +14,9 @@ export function DesktopPage() {
           <PlayerProfileSection />
         </div>
       </aside>
-      <main className='col-span-8  col-start-6'>
+      <main className='col-span-8  col-start-6 flex flex-col gap-2'>
         <UserIntroductionComponent />
         <BoxImage />
-        {/* <CalendarWithForm /> */}
       </main>
     </section>
   )

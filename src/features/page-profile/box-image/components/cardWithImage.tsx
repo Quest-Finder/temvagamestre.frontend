@@ -1,26 +1,29 @@
-'use client'
-
 import Image from 'next/image'
-import { Card } from '@/components/ui/card'
+import { Suspense } from 'react'
 
 interface CardWithImgProps {
   urlImgs: string[]
 }
 export function CardWithImg({ urlImgs }: CardWithImgProps) {
   return (
-    <Card
+    <section
       key={new Date().getTime().toString()}
-      className='invisible-scrollbar flex min-h-[280px] max-w-[862px] gap-4 overflow-auto rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'
+      className='flex items-center justify-center  gap-4  overflow-x-auto rounded-xl pr-1'
     >
       {urlImgs.map(url => (
-        <Image
-          src={url}
-          alt=''
-          width={259}
-          height={208}
-          className='rounded-xl'
-        />
+        <Suspense
+          fallback={<div className='h-52 w-64 bg-red-600'>Loading...</div>}
+        >
+          <Image
+            src={url}
+            alt=''
+            width={259}
+            height={208}
+            className='rounded-xl'
+            loading='lazy'
+          />
+        </Suspense>
       ))}
-    </Card>
+    </section>
   )
 }
