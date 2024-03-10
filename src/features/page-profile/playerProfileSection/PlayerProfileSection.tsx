@@ -7,7 +7,6 @@ import { filteredGraphData } from './helpers/filterGraphData'
 
 export function PlayerProfileSection() {
   const filteredData = filteredGraphData(MockGraphLegend)
-
   return (
     <PlayerProfile.Root className={`${filteredData.length === 0 && 'hidden'}`}>
       <PlayerProfile.Title title='Perfil do jogador' />

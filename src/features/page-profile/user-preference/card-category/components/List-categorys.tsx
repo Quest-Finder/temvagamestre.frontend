@@ -9,7 +9,7 @@ export default function ListCategorys({
 }) {
   return (
     <>
-      {Array.from({ length: 2 }, (_, i) => i + 1).map(i => (
+      {Array.from({ length: 1 }, (_, i) => i + 1).map(i => (
         <div
           key={i}
           className='flex w-full items-center justify-start gap-4 p-4'

@@ -4,18 +4,18 @@ import { Card } from '@/components/ui/card'
 import { UserDescription } from '@/features/page-profile/user-description'
 
 interface UserDescriptionComponentProps {
-  username?: string
-  pronomes?: string
-  description?: string
-  localization?: string
-  age?: string
+  username: string
+  pronomes: string
+  description: string
+  localization: string
+  age: string
 }
 export default function UserDescriptionComponent({
-  username = 'Lucas Marcelo',
-  pronomes = 'Ele - Dele',
-  description = 'Mestre D&D com 15 anos de experiência',
-  localization = 'São Paulo | Brasil',
-  age = '35 anos',
+  username,
+  pronomes,
+  description,
+  localization,
+  age,
 }: UserDescriptionComponentProps) {
   return (
     <div className='mb-8 w-full'>

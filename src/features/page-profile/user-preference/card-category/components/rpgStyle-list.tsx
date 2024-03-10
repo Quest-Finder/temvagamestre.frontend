@@ -25,7 +25,7 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
   const { getBackgroundColor } = useCategory()
   return (
     <div className='invisible-scrollbar flex w-full items-center gap-4 overflow-auto '>
-      <form className='invisible-scrollbar flex w-full items-center gap-4 overflow-auto '>
+      <form className='flex w-full items-center gap-4 overflow-auto '>
         {selectValue.map(({ id, name }) => {
           const backgroundColor = getBackgroundColor(name as EnumRPGTypes)
           return (
@@ -47,9 +47,12 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
                 id='styles'
               >
                 <SelectGroup className={cn(`focus:outline-none`)}>
-                  <SelectLabel>estilos de jogo</SelectLabel>
+                  <SelectLabel className='bg-neutral-50'>
+                    estilos de jogo
+                  </SelectLabel>
                   {listValues.map(item => (
                     <SelectItem
+                      className='z-30 bg-neutral-50'
                       key={item.id}
                       value={item.id}
                     >

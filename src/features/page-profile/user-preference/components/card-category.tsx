@@ -16,7 +16,12 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
     <CardCategoryComponents.Root>
       <CardCategoryComponents.ListCategorys>
         <CardCategoryComponents.RpgStylelist rpgStyle={rpgStyle} />
-        <Button variant='outline'>+ 2</Button>
+        <Button
+          variant='outline'
+          size='sm'
+        >
+          + {rpgStyle?.length}
+        </Button>
       </CardCategoryComponents.ListCategorys>
     </CardCategoryComponents.Root>
   )
