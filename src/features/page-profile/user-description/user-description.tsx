@@ -15,7 +15,7 @@ export default function UserDescriptionComponent({
   pronomes = 'Ele - Dele',
   description = 'Mestre D&D com 15 anos de experiência',
   localization = 'São Paulo | Brasil',
-  age = '30 - 35 anos',
+  age = '35 anos',
 }: UserDescriptionComponentProps) {
   return (
     <div className='mb-8 w-full'>

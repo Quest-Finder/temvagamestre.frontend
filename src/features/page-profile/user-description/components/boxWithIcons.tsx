@@ -16,7 +16,7 @@ export function BoxWithIcons() {
       {socialMedia.map(icon => {
         const IconName = icon
         return (
-          <IconName className='my-auto flex h-10 w-10 items-center justify-center gap-2 rounded-md bg-[#222222] p-2' />
+          <IconName className='cursor-pointer items-center justify-center gap-2 rounded-md bg-[#222222] p-2' />
         )
       })}
     </section>
