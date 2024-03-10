@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Card } from '@/components/ui/card'
 import { UserDescription } from '@/features/page-profile/user-description'
@@ -19,7 +18,7 @@ export default function UserDescriptionComponent({
   age = '30 - 35 anos',
 }: UserDescriptionComponentProps) {
   return (
-    <>
+    <div className='mb-8 w-full'>
       <Avatar className={cn('mx-auto -mt-24 mb-14 flex h-36 w-36')}>
         <AvatarImage src='https://github.com/shadcn.png' />
         <AvatarFallback>Profile</AvatarFallback>
@@ -40,7 +39,7 @@ export default function UserDescriptionComponent({
         </Card>
         <UserDescription.Typography
           as='h3'
-          className="font-['Noto Sans'] text-stone-500 text-center text-xl font-semibold leading-normal"
+          className="font-['Noto Sans'] text-center text-xl font-semibold leading-normal text-stone-500"
         >
           {description}
         </UserDescription.Typography>
@@ -52,23 +51,11 @@ export default function UserDescriptionComponent({
         </UserDescription.Typography>
         <UserDescription.Typography
           as='h2'
-          className="font-['Noto Sans'] text-black h-5 text-center text-xl font-semibold leading-normal"
+          className="font-['Noto Sans'] h-5 text-center text-xl font-semibold leading-normal text-black"
         >
           {age}
         </UserDescription.Typography>
-        <Button
-          className={cn(
-            'bg-teal-800 inline-flex h-12 w-full max-w-[415px] items-center justify-center gap-2.5 rounded-md px-4 py-3',
-          )}
-        >
-          <UserDescription.Typography
-            as='p'
-            className="bg-transparent text-white border-none font-['Inter'] text-base font-semibold leading-snug"
-          >
-            Enviar Mensagem
-          </UserDescription.Typography>
-        </Button>
       </UserDescription.Root>
-    </>
+    </div>
   )
 }
