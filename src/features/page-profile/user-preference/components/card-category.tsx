@@ -23,7 +23,7 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
           variant='outline'
           size='sm'
         >
-          + {listValues?.length - 3}
+          + {(listValues?.length ?? 0) - 3}
         </Button>
       </CardCategoryComponents.ListCategorys>
     </CardCategoryComponents.Root>
