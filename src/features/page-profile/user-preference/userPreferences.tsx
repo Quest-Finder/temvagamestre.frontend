@@ -11,11 +11,8 @@ export default function UserPreferenceCategorys({
   rpgStyle,
   badges,
 }: UserPreferenceCompoenteProps) {
-  // console.table(badges)
-  // console.table(rpgStyle)
   return (
     <UserPreference.Root>
-      <p>ola</p>
       <UserPreference.Typography
         as='h1'
         className='mb-4 text-2xl text-neutral-950'

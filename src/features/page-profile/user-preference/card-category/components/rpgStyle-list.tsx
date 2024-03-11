@@ -35,8 +35,9 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
               onValueChange={(value: string) => handleSelectValue(value, id)}
             >
               <SelectTrigger
+                title={name}
                 className={cn(
-                  `h-8 min-w-[155px] rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none ${backgroundColor}`,
+                  `h-8  rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none  ${backgroundColor}`,
                 )}
               >
                 <SelectValue>{name}</SelectValue>
