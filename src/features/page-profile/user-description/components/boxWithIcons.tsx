@@ -12,11 +12,11 @@ const socialMedia: ElementType[] = [
 ]
 export function BoxWithIcons() {
   return (
-    <section className='flex items-center justify-center gap-3'>
+    <section className='flex flex-wrap items-center justify-center gap-3 '>
       {socialMedia.map(icon => {
         const IconName = icon
         return (
-          <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-[#222222] p-2' />
+          <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-[#222222] p-2 transition-all delay-75' />
         )
       })}
     </section>
