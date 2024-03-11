@@ -3,6 +3,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { CardCategoryComponents } from '../card-category'
+import { useRpgStyle } from '../card-category/hooks/useRpgStyle'
 
 export type RPGStyle = {
   id: string
@@ -12,6 +13,8 @@ interface CardCategoryProps {
   rpgStyle: RPGStyle[]
 }
 export default function CardCategory({ rpgStyle }: CardCategoryProps) {
+  const { listValues } = useRpgStyle(rpgStyle)
+
   return (
     <CardCategoryComponents.Root>
       <CardCategoryComponents.ListCategorys>
@@ -20,7 +23,7 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
           variant='outline'
           size='sm'
         >
-          + {rpgStyle?.length}
+          + {listValues?.length - 3}
         </Button>
       </CardCategoryComponents.ListCategorys>
     </CardCategoryComponents.Root>
