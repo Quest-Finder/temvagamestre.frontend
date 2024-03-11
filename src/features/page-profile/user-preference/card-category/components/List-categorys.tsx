@@ -12,7 +12,7 @@ export default function ListCategorys({
       {Array.from({ length: 1 }, (_, i) => i + 1).map(i => (
         <div
           key={i}
-          className='flex w-full items-center md:justify-start justify-center gap-4 p-4 flex-wrap'
+          className='flex w-full flex-wrap items-center justify-center gap-4 p-4 md:justify-start'
         >
           <h3 className="mr-auto min-w-[90px] font-['Roboto'] text-base font-normal leading-[48px] text-neutral-700">
             Categoria #{i}

@@ -10,7 +10,7 @@ export function CardWithImg({ urlImgs }: CardWithImgProps) {
   return (
     <Card
       key={new Date().getTime().toString()}
-      className='pl-[68%] flex items-center justify-center gap-4 overflow-x-auto rounded-xl w-full border-none'
+      className='flex w-full items-center justify-center gap-4 overflow-x-auto rounded-xl border-none pl-[68%]'
     >
       {urlImgs.map(url => (
         <Image

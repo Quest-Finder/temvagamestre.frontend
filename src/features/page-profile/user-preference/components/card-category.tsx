@@ -18,7 +18,7 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
   return (
     <CardCategoryComponents.Root>
       <CardCategoryComponents.ListCategorys>
-        <div className='flex overflow-auto gap-3 max-w-[380px]'>
+        <div className='flex max-w-[380px] gap-3 overflow-auto'>
           <CardCategoryComponents.RpgStylelist rpgStyle={rpgStyle} />
           <Button
             variant='outline'

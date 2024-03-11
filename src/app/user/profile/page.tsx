@@ -9,9 +9,9 @@ import UserDescriptionComponent from '@/features/page-profile/user-description/u
 import UserPreferenceCategorys from '@/features/page-profile/user-preference/userPreferences'
 import { useSearchParams } from 'next/navigation'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { CardWithImgs } from '@/features/page-profile/box-image'
 import { cn } from '@/lib/utils'
 import img from '../../../features/page-profile/header/assets/Rectangle.svg'
-import { CardWithImgs } from '@/features/page-profile/box-image'
 
 const arrayImgsMock: string[] = [img, img, img, img, img]
 export default function Profile() {
