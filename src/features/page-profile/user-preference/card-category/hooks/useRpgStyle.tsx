@@ -37,5 +37,5 @@ export function useRpgStyle(rpgStyle: TypeRPGStyle[]) {
     }
   }
 
-  return { selectValue, setSelectValue, handleSelectValue }
+  return { selectValue, setSelectValue, handleSelectValue, listValues }
 }
