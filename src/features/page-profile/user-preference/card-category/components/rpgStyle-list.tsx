@@ -37,7 +37,7 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
               <SelectTrigger
                 title={name}
                 className={cn(
-                  `h-8  rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none  ${backgroundColor}`,
+                  `h-8  rounded-md px-4 py-2 text-center font-[Roboto] min-w-[150px] text-sm font-medium leading-tight shadow-none focus:outline-none  ${backgroundColor}`,
                 )}
               >
                 <SelectValue>{name}</SelectValue>

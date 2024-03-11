@@ -18,13 +18,15 @@ export default function CardCategory({ rpgStyle }: CardCategoryProps) {
   return (
     <CardCategoryComponents.Root>
       <CardCategoryComponents.ListCategorys>
-        <CardCategoryComponents.RpgStylelist rpgStyle={rpgStyle} />
-        <Button
-          variant='outline'
-          size='sm'
-        >
-          + {(listValues?.length ?? 0) - 3}
-        </Button>
+        <div className='flex overflow-auto gap-3 max-w-[380px]'>
+          <CardCategoryComponents.RpgStylelist rpgStyle={rpgStyle} />
+          <Button
+            variant='outline'
+            size='sm'
+          >
+            + {(listValues?.length ?? 0) - 3}
+          </Button>
+        </div>
       </CardCategoryComponents.ListCategorys>
     </CardCategoryComponents.Root>
   )
