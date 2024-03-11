@@ -10,7 +10,7 @@ export function CardWithImg({ urlImgs }: CardWithImgProps) {
   return (
     <Card
       key={new Date().getTime().toString()}
-      className='invisible-scrollbar flex min-h-[280px] w-full gap-4 overflow-auto rounded-xl border-[1px] px-4 py-6 '
+      className='pl-[68%] flex items-center justify-center gap-4 overflow-x-auto rounded-xl w-full border-none'
     >
       {urlImgs.map(url => (
         <Image

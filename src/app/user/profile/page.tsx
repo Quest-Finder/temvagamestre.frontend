@@ -1,6 +1,5 @@
 'use client'
 
-import { BoxImage } from '@/features/page-profile/box-image/box-image'
 import { HeaderProfile } from '@/features/page-profile/header/header'
 import { UserIntroductionComponent } from '@/features/page-profile/introduction/UserIntroduction'
 import { userMock } from '@/features/page-profile/mocks/mock'
@@ -12,8 +11,9 @@ import { useSearchParams } from 'next/navigation'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { cn } from '@/lib/utils'
 import img from '../../../features/page-profile/header/assets/Rectangle.svg'
+import { CardWithImgs } from '@/features/page-profile/box-image'
 
-const arrayImgsMock: string[] = [img, img, img]
+const arrayImgsMock: string[] = [img, img, img, img, img]
 export default function Profile() {
   const searchParams = useSearchParams()
   type ShowElement = 'profile' | 'images' | 'dates' | null
@@ -46,9 +46,12 @@ export default function Profile() {
             <PlayerProfileSection />
           </div>
         </aside>
-        <main className='hidden  flex-col gap-2 md:col-span-9 md:col-start-5 md:flex'>
+        <main className='hidden  flex-col gap-2 md:col-span-7 md:col-start-5 md:flex'>
           <UserIntroductionComponent />
-          <BoxImage arrayImgs={arrayImgsMock} />
+          <CardWithImgs.Root>
+            <CardWithImgs.Text content='Titulo - imagens' />
+            <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
+          </CardWithImgs.Root>
         </main>
         {/* mobile */}
         <div className='md:hidden'>
@@ -68,7 +71,10 @@ export default function Profile() {
               )}
               {showElemnt === 'profile' && <PlayerProfileSection />}
               {showElemnt === 'images' && (
-                <BoxImage arrayImgs={arrayImgsMock} />
+                <CardWithImgs.Root>
+                  <CardWithImgs.Text content='Titulo - imagens' />
+                  <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
+                </CardWithImgs.Root>
               )}
             </div>
           </main>
