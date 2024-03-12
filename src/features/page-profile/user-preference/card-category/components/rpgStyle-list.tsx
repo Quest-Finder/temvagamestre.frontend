@@ -25,7 +25,7 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
   const { getBackgroundColor } = useCategory()
   return (
     <div className='invisible-scrollbar flex w-full items-center gap-4 overflow-auto '>
-      <form className='invisible-scrollbar flex w-full items-center gap-4 overflow-auto '>
+      <form className='flex w-full items-center gap-4 overflow-auto '>
         {selectValue.map(({ id, name }) => {
           const backgroundColor = getBackgroundColor(name as EnumRPGTypes)
           return (
@@ -35,8 +35,9 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
               onValueChange={(value: string) => handleSelectValue(value, id)}
             >
               <SelectTrigger
+                title={name}
                 className={cn(
-                  `h-8 min-w-[155px] rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none ${backgroundColor}`,
+                  `h-8  min-w-[150px] rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none  ${backgroundColor}`,
                 )}
               >
                 <SelectValue>{name}</SelectValue>
@@ -47,9 +48,12 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
                 id='styles'
               >
                 <SelectGroup className={cn(`focus:outline-none`)}>
-                  <SelectLabel>estilos de jogo</SelectLabel>
+                  <SelectLabel className='bg-neutral-50'>
+                    estilos de jogo
+                  </SelectLabel>
                   {listValues.map(item => (
                     <SelectItem
+                      className='z-30 bg-neutral-50'
                       key={item.id}
                       value={item.id}
                     >

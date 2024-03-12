@@ -14,7 +14,7 @@ export default function CardBadge({ badges }: CardBadgeProps) {
   return (
     <main>
       <section className='flex flex-col'>
-        {badges.map(({ id, icon, name }) => (
+        {badges?.map(({ id, icon, name }) => (
           <div
             key={id}
             className='flex items-center justify-start gap-4 p-4'

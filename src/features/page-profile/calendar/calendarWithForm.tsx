@@ -16,7 +16,7 @@ export default function CalendarWithForm() {
     <CalendarScheduling.Root>
       <div className='col-span-8 row-span-1 h-8 min-[704px]:col-span-12 '>
         <CalendarScheduling.Text
-          className={cn('text-zinc-800 h-8 text-2xl font-semibold leading-7')}
+          className={cn('h-8 text-2xl font-semibold leading-7 text-zinc-800')}
         >
           Datas disponiveis
         </CalendarScheduling.Text>

@@ -6,7 +6,7 @@ import { useSelectPage } from './useSelectPage'
 export function SelectPage() {
   const { handleSetParams, params, linksWithPath } = useSelectPage()
   return (
-    <ul className='mx-auto my-3 flex h-11 max-w-[450px] items-center justify-around gap-3 rounded-md bg-[#EFEFEF]'>
+    <ul className='mx-auto my-3 flex min-h-[43px] w-full max-w-[450px] flex-wrap items-center justify-center gap-3 rounded-md bg-[#EFEFEF] p-2'>
       {linksWithPath.map(({ path, text }) => {
         const bgBLink = params === text && 'bg-[#FFFFFF]'
         const bgText =
@@ -14,7 +14,7 @@ export function SelectPage() {
         return (
           <li
             key={text}
-            className={` flex items-center rounded-md px-4 py-2 ${bgBLink} min-w-[100px] min-[430px]:min-w-[120px]`}
+            className={` flex items-center rounded-md px-4 py-2 ${bgBLink} w-[50px] min-w-[100px]`}
           >
             <Link
               href={path}

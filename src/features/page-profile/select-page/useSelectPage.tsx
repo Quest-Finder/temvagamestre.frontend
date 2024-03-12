@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 const linksWithPath = [
   { text: 'perfil', path: `/user/profile?show=profile` },
   { text: 'imagens', path: `/user/profile?show=images` },
-  { text: 'datas disponiveis', path: `/user/profile?show=dates` },
+  // { text: 'datas disponiveis', path: `/user/profile?show=dates` },
 ]
 
 export function useSelectPage() {
