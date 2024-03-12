@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
 import { UserIntroduction } from '.'
 import { UserIntroductionMock } from './mock'
 

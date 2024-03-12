@@ -23,7 +23,7 @@ export default function Profile() {
     <>
       <HeaderProfile />
       <section className='mx-auto mt-4 grid min-h-screen max-w-[1440px] grid-cols-1 gap-2 px-3 pb-5 md:grid-cols-12 md:grid-rows-none'>
-        <aside className='flex flex-col gap-8 md:col-span-4 -mt-24'>
+        <aside className='-mt-24 flex flex-col gap-8 md:col-span-4'>
           <div className=' flex flex-col items-center justify-start gap-2'>
             <Avatar className={cn(' flex h-36 w-36')}>
               <AvatarImage src='https://github.com/shadcn.png' />
@@ -54,14 +54,14 @@ export default function Profile() {
           </CardWithImgs.Root>
         </main>
         {/* mobile */}
-        <div className='md:hidden min-h-screen'>
+        <div className='min-h-screen md:hidden'>
           <aside>
             <SelectPage />
           </aside>
           <main className='col-span-12  flex items-center justify-center'>
             <div className='flex w-full max-w-[400px] flex-col items-center justify-center'>
               {showElemnt === 'profile' && (
-                <div className='w-full flex flex-col gap-8'>
+                <div className='flex w-full flex-col gap-8'>
                   <UserIntroductionComponent />
                   <UserPreferenceCategorys
                     rpgStyle={userMock.preferences.rpgStyles}
