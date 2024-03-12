@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useResize } from '../hooks/useResize'
 
 interface UserBioProps {
   description: string
 }
 
 export function UserBio({ description }: UserBioProps) {
+  const size = useResize()
   const truncatedTextRef = useRef<HTMLParagraphElement | null>(null)
   const [showMore, setShowMore] = useState(false)
   const [truncateText, setTruncateText] = useState(true)
@@ -16,8 +18,10 @@ export function UserBio({ description }: UserBioProps) {
     const text = truncatedTextRef.current
     if (text && text.offsetHeight < text.scrollHeight) {
       setShowMore(true)
+    } else {
+      setShowMore(false)
     }
-  }, [])
+  }, [size])
 
   return (
     <>
