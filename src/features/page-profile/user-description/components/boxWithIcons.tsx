@@ -14,9 +14,14 @@ export function BoxWithIcons() {
   return (
     <section className='flex flex-wrap items-center justify-center gap-3 '>
       {socialMedia.map(icon => {
+
         const IconName = icon
+        const name = String(icon)
         return (
-          <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-[#222222] p-2 transition-all delay-75' />
+          <button
+          >
+            <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 hover:bg-neutral-900 p-2 transition-all delay-75 transition-all' />
+          </button>
         )
       })}
     </section>
