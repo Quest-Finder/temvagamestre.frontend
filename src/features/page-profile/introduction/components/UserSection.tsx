@@ -3,5 +3,5 @@ interface UserSectionProps {
 }
 
 export function UserSection({ children }: UserSectionProps) {
-  return <section className='mt-6 flex flex-col gap-4'>{children}</section>
+  return <section className='mt-[52px] flex flex-col gap-4'>{children}</section>
 }

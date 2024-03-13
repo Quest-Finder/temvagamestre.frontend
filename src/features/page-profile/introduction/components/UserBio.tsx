@@ -29,19 +29,15 @@ export function UserBio({ description }: UserBioProps) {
         ref={truncatedTextRef}
         className={`${
           truncateText ? 'truncated-text ' : ''
-        } text-sm leading-6 text-neutral-500 sm:text-xl`}
+        } text-sm leading-6 text-neutral-400 sm:text-base`}
       >
-        {description.length === 0 || description === '' ? (
-          <span className='block text-center'>Nenhuma bio cadastrada</span>
-        ) : (
-          description
-        )}
+        {description}
       </p>
       {showMore && (
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950 hover:bg-transparent'
+          className='my-[5px] ml-auto h-auto max-w-max p-0 text-base font-semibold text-neutral-950 hover:bg-transparent'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>
