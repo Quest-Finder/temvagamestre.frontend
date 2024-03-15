@@ -21,7 +21,7 @@ export default function Profile() {
   return (
     <>
       <HeaderProfile />
-      <div className='mx-auto mt-4 grid min-h-screen max-w-[1440px] grid-cols-1 px-6 pb-5 md:grid-cols-12 md:grid-rows-none md:space-x-14 md:px-[4.844rem]'>
+      <div className='mx-auto mt-4 grid min-h-screen max-w-[90rem] grid-cols-1 px-6 pb-5 md:grid-cols-12 md:grid-rows-none md:space-x-14 md:px-[4.844rem]'>
         <aside className='-mt-24 flex flex-col gap-8 md:col-span-4'>
           <div className=' flex flex-col items-center justify-start gap-2'>
             <Avatar className={cn(' flex h-36 w-36')}>
@@ -52,7 +52,7 @@ export default function Profile() {
           </CardWithImgs.Root>
         </section>
         {/* mobile */}
-        <div className='mx-auto mt-8 flex min-h-screen w-full max-w-[450px] flex-col gap-8 md:mt-0 md:hidden'>
+        <div className='mx-auto mt-8 flex min-h-screen w-full max-w-[28.125rem] flex-col gap-8 md:mt-0 md:hidden'>
           <SelectPage />
 
           {showElemnt === 'profile' && (
