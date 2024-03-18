@@ -17,8 +17,9 @@ export const listValues: TypeRPGStyle[] = [
   { id: '10', name: EnumRPGTypes.NaveMae },
 ]
 export function useRpgStyle(rpgStyle: TypeRPGStyle[]) {
-  const [selectValue, setSelectValue] = useState<TypeRPGStyle[]>([...rpgStyle])
-
+  const [selectValue, setSelectValue] = useState<TypeRPGStyle[]>(
+    [...rpgStyle].slice(0, 3),
+  )
   const handleSelectValue = (value: string, oldValue: string) => {
     const selectedRPGStyle = listValues.find(
       rpgStyled => rpgStyled.id === value,
@@ -28,10 +29,13 @@ export function useRpgStyle(rpgStyle: TypeRPGStyle[]) {
       if (isExists === undefined) {
         setSelectValue(prev => {
           const updatedValue = prev.filter(rpg => rpg.id !== oldValue)
-          return [...updatedValue, selectedRPGStyle]
+          const index = prev.findIndex(rpg => rpg.id === oldValue)
+          updatedValue.splice(index, 0, selectedRPGStyle)
+          return updatedValue
         })
       }
     }
   }
-  return { selectValue, setSelectValue, handleSelectValue }
+
+  return { selectValue, setSelectValue, handleSelectValue, listValues }
 }

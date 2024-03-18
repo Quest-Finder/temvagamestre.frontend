@@ -2,23 +2,23 @@ import { cn } from '@/lib/utils'
 import React, { ElementType } from 'react'
 
 interface TypographyH2Pros {
-  children: React.ReactNode
+  content: string
   as?: ElementType
   className?: string
 }
 export function Typography({
-  children,
+  content,
   as: Component = 'p',
   className,
 }: TypographyH2Pros) {
   return (
     <Component
       className={cn(
-        'rounded-lg border border-none bg-card text-card-foreground',
+        'bg-card  text-card-foreground rounded-lg border border-none text-center font-notoSans text-xl font-semibold leading-normal',
         className,
       )}
     >
-      {children}
+      {content}
     </Component>
   )
 }

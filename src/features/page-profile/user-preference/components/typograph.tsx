@@ -14,7 +14,7 @@ export function Typography({
   return (
     <Component
       className={cn(
-        'rounded-lg border  border-none bg-transparent text-card-foreground shadow-sm',
+        'text-card-foreground w-full  rounded-lg border border-none bg-transparent pb-2 shadow-sm',
         className,
       )}
     >

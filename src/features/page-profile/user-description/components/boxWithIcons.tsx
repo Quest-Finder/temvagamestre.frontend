@@ -1,26 +1,28 @@
-import React from 'react'
-import facebook from '@/assets/social-medias/facebook.svg'
-import instagram from '@/assets/social-medias/instagram.svg'
-import reedit from '@/assets/social-medias/reedit.svg'
-import tiktok from '@/assets/social-medias/tiktok.svg'
-import whatsapp from '@/assets/social-medias/whatsapp.svg'
-import Image from 'next/image'
+import Discord from '@/components/icons/discord'
+import FacebookIcon from '@/components/icons/facebookIcon'
+import { InstagramIcon } from '@/components/icons/instagram'
+import ReeditIcon from '@/components/icons/reeditIcon'
+import XIcon from '@/components/icons/xIcon'
+import React, { ElementType } from 'react'
 
-const socialMedia = [tiktok, instagram, facebook, whatsapp, reedit]
+const socialMedia: ElementType[] = [
+  InstagramIcon,
+  XIcon,
+  Discord,
+  FacebookIcon,
+  ReeditIcon,
+]
 export function BoxWithIcons() {
   return (
-    <section className='flex items-center justify-center gap-3'>
-      {socialMedia.map(icon => (
-        <div className='flex h-11 w-11 items-center justify-center rounded-md bg-black p-3'>
-          <Image
-            src={icon}
-            alt=''
-            width={100}
-            height={100}
-            quality={100}
-          />
-        </div>
-      ))}
+    <section className='flex flex-wrap items-center justify-center gap-3 '>
+      {socialMedia.map(icon => {
+        const IconName = icon
+        return (
+          <button>
+            <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 p-2 transition-all transition-all delay-75 hover:bg-neutral-900' />
+          </button>
+        )
+      })}
     </section>
   )
 }

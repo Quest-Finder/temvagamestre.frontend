@@ -1,13 +1,85 @@
-import { DesktopPage } from '@/features/page-profile/desktop/desktopPage'
-import { MobilePage } from '@/features/page-profile/desktop/mobile-page'
-import { HeaderProfile } from '@/features/page-profile/header/header'
+'use client'
 
+import { HeaderProfile } from '@/features/page-profile/header/header'
+import { UserIntroductionComponent } from '@/features/page-profile/introduction/UserIntroduction'
+import { userMock } from '@/features/page-profile/mocks/mock'
+import { PlayerProfileSection } from '@/features/page-profile/playerProfileSection/PlayerProfileSection'
+import { SelectPage } from '@/features/page-profile/select-page/selectPage'
+import UserDescriptionComponent from '@/features/page-profile/user-description/user-description'
+import UserPreferenceCategorys from '@/features/page-profile/user-preference/userPreferences'
+import { useSearchParams } from 'next/navigation'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { CardWithImgs } from '@/features/page-profile/box-image'
+import { cn } from '@/lib/utils'
+import img from '../../../features/page-profile/header/assets/Rectangle.svg'
+
+const arrayImgsMock: string[] = [img, img, img, img, img]
 export default function Profile() {
+  const searchParams = useSearchParams()
+  type ShowElement = 'profile' | 'images' | 'dates' | null
+  const showElemnt: ShowElement = searchParams.get('show') as ShowElement
+
   return (
     <>
       <HeaderProfile />
-      <DesktopPage />
-      <MobilePage />
+      <section className='mx-auto mt-4 grid min-h-screen max-w-[1440px] grid-cols-1 gap-2 px-3 pb-5 md:grid-cols-12 md:grid-rows-none'>
+        <aside className='-mt-24 flex flex-col gap-8 md:col-span-4'>
+          <div className=' flex flex-col items-center justify-start gap-2'>
+            <Avatar className={cn(' flex h-36 w-36')}>
+              <AvatarImage src='https://github.com/shadcn.png' />
+              <AvatarFallback>Profile</AvatarFallback>
+            </Avatar>
+            <UserDescriptionComponent
+              username='Lucas Marcelo'
+              nickname='mestremarcelo'
+              pronomes='Ele - Dele'
+              description='Mestre D&D com 15 anos de experiência'
+              localization='São Paulo | Brasil'
+              age='35 anos'
+            />
+          </div>
+          <div className='hidden flex-col gap-2 md:flex'>
+            <UserPreferenceCategorys
+              rpgStyle={userMock.preferences.rpgStyles}
+              badges={userMock.badges}
+            />
+            <PlayerProfileSection />
+          </div>
+        </aside>
+        <main className='hidden  flex-col gap-2 md:col-span-7 md:col-start-5 md:flex'>
+          <UserIntroductionComponent />
+          <CardWithImgs.Root>
+            <CardWithImgs.Text content='Titulo - imagens' />
+            <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
+          </CardWithImgs.Root>
+        </main>
+        {/* mobile */}
+        <div className='min-h-screen md:hidden'>
+          <aside>
+            <SelectPage />
+          </aside>
+          <main className='col-span-12  flex items-center justify-center'>
+            <div className='flex w-full max-w-[400px] flex-col items-center justify-center'>
+              {showElemnt === 'profile' && (
+                <div className='flex w-full flex-col gap-8'>
+                  <UserIntroductionComponent />
+                  <UserPreferenceCategorys
+                    rpgStyle={userMock.preferences.rpgStyles}
+                    badges={userMock.badges}
+                  />
+                </div>
+              )}
+              {showElemnt === 'profile' && <PlayerProfileSection />}
+              {showElemnt === 'images' && (
+                <CardWithImgs.Root>
+                  <CardWithImgs.Text content='Titulo - imagens' />
+                  <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
+                </CardWithImgs.Root>
+              )}
+            </div>
+          </main>
+        </div>
+      </section>
     </>
   )
 }
