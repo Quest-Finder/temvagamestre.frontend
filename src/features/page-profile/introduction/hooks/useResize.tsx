@@ -16,5 +16,5 @@ export function useResize() {
     }
   }, [])
 
-  return size
+  return { width: size[0], height: size[1] }
 }

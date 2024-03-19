@@ -9,7 +9,7 @@ interface UserBioProps {
 }
 
 export function UserBio({ description }: UserBioProps) {
-  const size = useResize()
+  const { width } = useResize()
   const truncatedTextRef = useRef<HTMLParagraphElement | null>(null)
   const [showMore, setShowMore] = useState(false)
   const [truncateText, setTruncateText] = useState(true)
@@ -21,7 +21,7 @@ export function UserBio({ description }: UserBioProps) {
     } else {
       setShowMore(false)
     }
-  }, [size])
+  }, [width])
 
   return (
     <>
