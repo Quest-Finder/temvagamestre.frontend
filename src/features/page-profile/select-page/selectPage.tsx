@@ -6,11 +6,11 @@ import { useSelectPage } from './useSelectPage'
 export function SelectPage() {
   const { handleSetParams, params, linksWithPath } = useSelectPage()
   return (
-    <ul className='mx-auto flex min-h-[43px] w-full flex-wrap items-center justify-center gap-3 rounded-md bg-[#EFEFEF] p-2'>
+    <ul className='mx-auto flex min-h-[43px] w-full flex-wrap items-center justify-center gap-3 rounded-md bg-neutral-100 p-2'>
       {linksWithPath.map(({ path, text }) => {
-        const bgBLink = params === text && 'bg-[#FFFFFF]'
+        const bgBLink = params === text && 'bg-neutral-50'
         const bgText =
-          params === text ? 'text-black font-extrabold' : 'text-[#989898] '
+          params === text ? 'text-black font-extrabold' : 'text-neutral-400 '
         return (
           <li
             key={text}

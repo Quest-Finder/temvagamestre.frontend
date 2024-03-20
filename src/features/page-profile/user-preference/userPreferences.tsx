@@ -14,19 +14,13 @@ export default function UserPreferenceCategorys({
   return (
     <>
       <UserPreference.Root>
-        <UserPreference.Typography
-          as='h1'
-          className='mb-4 text-2xl text-neutral-950'
-        >
+        <UserPreference.Typography as='h1'>
           Estilos preferidos
         </UserPreference.Typography>
         <UserPreference.CardCategory rpgStyle={rpgStyle} />
       </UserPreference.Root>
       <UserPreference.Root>
-        <UserPreference.Typography
-          as='h1'
-          className='mb-4 text-2xl text-neutral-950'
-        >
+        <UserPreference.Typography as='h1'>
           Conquistas
         </UserPreference.Typography>
         <UserPreference.CardBadge badges={badges} />

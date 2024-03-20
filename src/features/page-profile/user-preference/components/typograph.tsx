@@ -14,7 +14,7 @@ export function Typography({
   return (
     <Component
       className={cn(
-        'text-card-foreground w-full  rounded-lg border border-none bg-transparent pb-2 shadow-sm',
+        'mb-4 w-full font-mono text-2xl text-neutral-950',
         className,
       )}
     >
