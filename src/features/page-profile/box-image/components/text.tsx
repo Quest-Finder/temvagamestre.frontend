@@ -10,7 +10,7 @@ export function Text({ content, as: Component = 'p', className }: TextProps) {
   return (
     <Component
       className={cn(
-        'color-neutral-950 pl-2 text-lg font-semibold leading-7',
+        'text-2xl font-semibold leading-10 text-neutral-950 md:leading-8',
         className,
       )}
     >
