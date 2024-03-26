@@ -1,4 +1,3 @@
-import { cva } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 interface UserSectionTitleProps
@@ -6,8 +5,15 @@ interface UserSectionTitleProps
   title: string
 }
 
-const Title = cva('text-2xl text-neutral-950 h-10 leading-[3rem] sm:h-8 w-full')
-
 export function UserSectionTitle({ title, className }: UserSectionTitleProps) {
-  return <h2 className={cn(Title({ className }))}>{title}</h2>
+  return (
+    <h2
+      className={cn(
+        'w-full font-notoSans text-2xl font-semibold leading-10 text-neutral-950 md:leading-8',
+        className,
+      )}
+    >
+      {title}
+    </h2>
+  )
 }

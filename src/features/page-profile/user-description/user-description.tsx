@@ -19,15 +19,15 @@ export default function UserDescriptionComponent({
   return (
     <UserDescription.Root>
       <div className='flex flex-col items-center gap-2'>
-        <div className='flex flex-wrap items-end justify-center'>
+        <div className='flex flex-wrap items-end justify-center gap-1.5'>
           <UserDescription.Typography
             as='h2'
-            className=' text-2xl font-semibold'
+            className='text-2xl tracking-[0.0206em] text-neutral-950'
             content={username}
           />
           <UserDescription.Typography
             as='h2'
-            className='text-xl font-semibold text-neutral-500'
+            className='text-neutral-500'
             content={`(${pronomes})`}
           />
         </div>
@@ -40,7 +40,7 @@ export default function UserDescriptionComponent({
       <UserDescription.BoxWithIcons />
       <UserDescription.Typography
         as='h2'
-        className=' text-neutral-500 '
+        className=' text-neutral-600 '
         content={`${description}`}
       />
       <UserDescription.Typography
@@ -50,7 +50,7 @@ export default function UserDescriptionComponent({
       />
       <UserDescription.Typography
         as='h2'
-        className='text-xl font-semibold text-black'
+        className='text-black'
         content={age}
       />
     </UserDescription.Root>

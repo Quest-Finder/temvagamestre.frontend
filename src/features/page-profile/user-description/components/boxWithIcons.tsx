@@ -18,8 +18,8 @@ export function BoxWithIcons() {
       {socialMedia.map(icon => {
         const IconName = icon
         return (
-          <button>
-            <IconName className='h-10  w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 p-2 transition-all transition-all delay-75 hover:bg-neutral-900' />
+          <button key={new Date().getTime() * Math.random()}>
+            <IconName className='h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 p-2 transition-all delay-75 hover:bg-neutral-900' />
           </button>
         )
       })}

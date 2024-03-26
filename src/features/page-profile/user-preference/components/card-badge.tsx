@@ -1,4 +1,5 @@
 import React from 'react'
+import { Card } from '@/components/ui/card'
 import CardAchievements from './card-achievements'
 
 type Badge = {
@@ -13,11 +14,11 @@ interface CardBadgeProps {
 export default function CardBadge({ badges }: CardBadgeProps) {
   return (
     <main>
-      <section className='flex flex-col'>
+      <Card className='flex flex-col'>
         {badges?.map(({ id, icon, name }) => (
           <div
             key={id}
-            className='flex items-center justify-start gap-4 p-4'
+            className='flex items-center justify-start gap-4 border-neutral-100 p-4 [&:not(:last-child)]:border-b'
           >
             <CardAchievements
               src={icon}
@@ -25,7 +26,7 @@ export default function CardBadge({ badges }: CardBadgeProps) {
             />
           </div>
         ))}
-      </section>
+      </Card>
     </main>
   )
 }

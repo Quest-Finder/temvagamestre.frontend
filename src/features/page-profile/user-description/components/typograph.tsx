@@ -14,7 +14,7 @@ export function Typography({
   return (
     <Component
       className={cn(
-        'bg-card  text-card-foreground rounded-lg border border-none text-center font-notoSans text-xl font-semibold leading-normal',
+        'text-center font-notoSans text-xl font-semibold leading-normal',
         className,
       )}
     >
