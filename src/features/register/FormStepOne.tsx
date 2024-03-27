@@ -21,12 +21,12 @@ import {
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { useEffect, useState } from 'react'
+
+import { filter } from './helper/badWordsFilter'
+
 import { DateOfBirth } from './components/DateOfBirth'
 
 import { Arrow } from './icons/Arrow'
-
-import { badWords } from './helper/badWords'
-import { checkTerm } from './helper/checkTerm'
 import { NotValid } from './icons/NotValid'
 
 const FormSchema = z.object({
@@ -45,7 +45,7 @@ const FormSchema = z.object({
     .min(1, 'Campo obrigatório')
     .max(15, 'O username deve conter no máximo 15 caracteres')
     .regex(/^[a-zA-Z0-9'-]*$/, 'Caracteres especiais não são disponiveis')
-    .refine(username => !checkTerm(username, badWords), {
+    .refine(username => !filter.isProfane(username), {
       message: 'Palavras de baixo calão não são permitidas',
     }),
   pronoun: z.string(),
@@ -92,15 +92,16 @@ export function FormSetpOne() {
     }
   }, [date, form])
 
-  console.log(form.getValues('dateOfBirth'))
+  // console.log(form.getValues('dateOfBirth'))
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    const dataToBackEnd = {
-      ...data,
-      firstName: data.name.substring(0, data.name.indexOf(' ')),
-      lastName: data.name.substring(data.name.indexOf(' ') + 1),
-    }
-    console.log('form', dataToBackEnd)
+    console.log(data)
+    // const dataToBackEnd = {
+    //   ...data,
+    //   firstName: data.name.substring(0, data.name.indexOf(' ')),
+    //   lastName: data.name.substring(data.name.indexOf(' ') + 1),
+    // }
+    // console.log('form', dataToBackEnd)
   }
 
   const handleSelectDate = (selectedDate: string) => {
@@ -154,7 +155,7 @@ export function FormSetpOne() {
                   <div className='relative'>
                     <Input
                       className={`${
-                        form.formState.errors.name
+                        form.formState.errors.username
                           ? 'border-red-500 bg-red-100 text-red-500'
                           : ''
                       }`}
