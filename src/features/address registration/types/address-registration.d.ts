@@ -1,3 +1,5 @@
-import { addressRegistrationValidation } from "../utils/address-registration-validation";
+import { addressRegistrationValidation } from '../utils/address-registration-validation'
 
-export type addressRegistrationValidationT = z.infer<typeof addressRegistrationValidation>
+export type addressRegistrationValidationT = z.infer<
+  typeof addressRegistrationValidation
+>
