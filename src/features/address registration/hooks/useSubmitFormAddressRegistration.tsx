@@ -1,15 +1,17 @@
 import { useCallback } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 import { addressRegistrationValidationT } from '../types/address-registration'
-import useNavigation from './useNavigation'
 import uselocalStorageSetItem from './uselocalStorageSetItem'
+import { useRouter } from 'next/navigation'
+
 
 
 export default function useSubmitFormAddressRegistration(
     form: UseFormReturn<addressRegistrationValidationT>,
     navigateToPlayerProfileUrl: string,
 ) {
-    const { navigateToPlayerProfile } = useNavigation()
+    const router = useRouter()
+
 
     return useCallback(
         (values: addressRegistrationValidationT) => {
@@ -28,10 +30,9 @@ export default function useSubmitFormAddressRegistration(
                 return
             }
             uselocalStorageSetItem('form_data_adress', values)
-            // navigateToPlayerProfile(navigateToPlayerProfileUrl)
-            console.table(values)
+            router.push(navigateToPlayerProfileUrl)
         },
-        [navigateToPlayerProfile, navigateToPlayerProfileUrl, form],
+        [navigateToPlayerProfileUrl, form],
     )
 }
 
