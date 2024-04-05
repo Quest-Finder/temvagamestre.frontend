@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button'
-import SocialNetworkRegistration from '@/features/social network registration/social-network-registration'
 import Link from 'next/link'
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
           <Button>profile</Button>
         </Link>
       </div>
-      <SocialNetworkRegistration />
     </main>
   )
 }
