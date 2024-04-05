@@ -26,13 +26,13 @@ import { useUser } from '@clerk/nextjs'
 
 import { DateOfBirth } from './components/DateOfBirth'
 
-import { Arrow } from './icons/Arrow'
-import { NotValid } from './icons/NotValid'
+import { Arrow } from '../../../components/icons/Arrow'
+import { NotValid } from '../../../components/icons/NotValid'
 
 import { FormStepOneSchema } from './validation'
 import { FormTitle } from './components/FormTitle'
 import { FormInputField } from './components/FormInputField'
-import { Update } from './icons/Update'
+import { Update } from '../../../components/icons/Update'
 import { InputIcon } from './components/InputIcon'
 
 export function FormSetpOne() {
