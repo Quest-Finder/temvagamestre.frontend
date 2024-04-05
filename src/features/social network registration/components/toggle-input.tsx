@@ -1,15 +1,14 @@
 import React from 'react'
 import {
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useFormContext } from 'react-hook-form'
-import { Label } from '@/components/ui/label'
 import { TsocialNetworkValidation } from '../types/social-network'
+import { Toogle } from '@/components/ui/toggle'
 
 interface FormFieldInputProps {
   fieldName:
@@ -33,10 +32,7 @@ export default function ToggleInput({ fieldName }: FormFieldInputProps) {
       name={fieldName}
       render={({ field }) => (
         <FormItem>
-          <Label
-            className='relative inline-flex cursor-pointer items-center outline-none '
-            htmlFor={fieldName}
-          >
+          <Toogle.ToogleLabel fieldName={fieldName}>
             <FormControl>
               <Input
                 className='peer sr-only outline-none'
@@ -46,16 +42,10 @@ export default function ToggleInput({ fieldName }: FormFieldInputProps) {
                 value={field.value ? 'true' : 'false'}
               />
             </FormControl>
-            <div
-              aria-hidden='true'
-              className='h-6 w-11 cursor-pointer rounded-xl bg-[#E2E8F0] transition-all  peer-checked:bg-[#0F172A] peer-focus:outline-none peer-focus:ring-[#0F172A]'
-            />
-            <span
-              aria-hidden='true'
-              className='absolute left-1 top-[2px]  z-10 h-5 w-5 rounded-full bg-[#FFFFFF] shadow-md transition-all peer-checked:left-5'
-            />
-            <FormDescription className='pl-2'>Visibilidade</FormDescription>
-          </Label>
+            <Toogle.BackgroundToogle />
+            <Toogle.ButtonToogle />
+            <Toogle.ToogleDescripription text='Visibilidade' />
+          </Toogle.ToogleLabel>
           <FormMessage />
         </FormItem>
       )}

@@ -10,14 +10,13 @@ import { getIconByName } from './utils/get-icon-by-name'
 import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
 
 export default function SocialNetworkRegistration() {
-  const { form } = useFormSocialMedia()
   const socialMediaMap = parseSocialValidationInArray()
-
+  const form = useFormSocialMedia()
   return (
     <FormProvider {...form}>
       <form
         onSubmit={form.handleSubmit(
-          useSubmitFormAddressRegistration(form, '/cadastro/sobre-voce'),
+          useSubmitFormAddressRegistration('/cadastro/sobre-voce'),
         )}
         id='form-social-media'
         className='flex min-h-screen flex-col items-center justify-center gap-14 '
