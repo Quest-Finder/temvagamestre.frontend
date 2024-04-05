@@ -22,68 +22,38 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { useEffect, useState } from 'react'
 
-import { filter } from './helper/badWordsFilter'
+import { useUser } from '@clerk/nextjs'
 
 import { DateOfBirth } from './components/DateOfBirth'
 
 import { Arrow } from './icons/Arrow'
 import { NotValid } from './icons/NotValid'
 
-const FormSchema = z.object({
-  name: z
-    .string()
-    .min(1, 'Campo obrigatório')
-    .min(3, 'Nome deve conter no minimo 3 caracteres')
-    .max(30, 'Nome deve conter no máximo 30 caracteres')
-    .regex(
-      /^[A-Za-z]+( [A-Za-z]+)*$/,
-      'Caracteres especiais e numeros não são disponiveis',
-    )
-    .regex(/\w+(?:\s+\w+)+/, 'Necessário preencher nome e sobrenome'),
-  username: z
-    .string()
-    .min(1, 'Campo obrigatório')
-    .max(15, 'O username deve conter no máximo 15 caracteres')
-    .regex(/^[a-zA-Z0-9'-]*$/, 'Caracteres especiais não são disponiveis')
-    .refine(username => !filter.isProfane(username), {
-      message: 'Palavras de baixo calão não são permitidas',
-    }),
-  pronoun: z.string(),
-  dateOfBirth: z.string().min(10, 'Campo obrigatório'),
-})
+import { FormStepOneSchema } from './validation'
+import { FormTitle } from './components/FormTitle'
+import { FormInputField } from './components/FormInputField'
+import { Update } from './icons/Update'
+import { InputIcon } from './components/InputIcon'
 
 export function FormSetpOne() {
   const [date, setDate] = useState('')
+  const { user, isLoaded } = useUser()
 
-  const form = useForm<z.infer<typeof FormSchema>>({
+  const form = useForm<z.infer<typeof FormStepOneSchema>>({
     defaultValues: {
       name: '',
       username: '',
       pronoun: '',
       dateOfBirth: '',
     },
-    resolver: zodResolver(FormSchema),
+    resolver: zodResolver(FormStepOneSchema),
   })
 
-  // async function getUserName() {
-  //   const response = await fetch(
-  //     'https://tem-vaga-mestre-api-nnf7bytugq-uc.a.run.app/user',
-  //   )
-
-  //   if (!response.ok) {
-  //     throw new Error('Failed to fetch data')
-  //   }
-
-  //   return response.json()
-  // }
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const { firstName, lastName } = await getUserName()
-  //     form.setValue('name', firstName.concat(' ', lastName))
-  //   }
-  //   fetchData()
-  // })
+  useEffect(() => {
+    if (user?.fullName) {
+      form.setValue('name', user?.fullName)
+    }
+  }, [user, form])
 
   useEffect(() => {
     form.setValue('dateOfBirth', date)
@@ -92,26 +62,18 @@ export function FormSetpOne() {
     }
   }, [date, form])
 
-  // console.log(form.getValues('dateOfBirth'))
-
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
+  const onSubmit = (data: z.infer<typeof FormStepOneSchema>) => {
+    // send pronoum = 'Prefiro nao responder'value se estiver vazio (usuario nao preencheu / opcional)
     console.log(data)
-    // const dataToBackEnd = {
-    //   ...data,
-    //   firstName: data.name.substring(0, data.name.indexOf(' ')),
-    //   lastName: data.name.substring(data.name.indexOf(' ') + 1),
-    // }
-    // console.log('form', dataToBackEnd)
   }
 
   const handleSelectDate = (selectedDate: string) => {
     setDate(selectedDate)
   }
+
   return (
     <section className='flex flex-col items-center'>
-      <h1 className='mb-4 text-[32px] text-neutral-950'>
-        Deixe-nos sabes mais sobre você
-      </h1>
+      <FormTitle>Deixe-nos sabes mais sobre você</FormTitle>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -124,22 +86,24 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Nome*</FormLabel>
                 <FormControl>
-                  <div className='relative'>
+                  <FormInputField>
                     <Input
-                      className={`${
-                        form.formState.errors.name
-                          ? 'border-red-500 bg-red-100 text-red-500'
-                          : ''
-                      }`}
+                      disabled={!isLoaded}
+                      error={form.formState.errors.name}
+                      className='disabled:bg-neutral-300 disabled:placeholder:text-transparent'
                       placeholder='Exemplo: Pedro da Silva Sauro'
                       {...field}
                     />
-                    <NotValid
-                      className={`absolute right-4 top-1/2 -translate-y-1/2 ${
-                        form.formState.errors.name ? '' : 'hidden'
-                      }`}
-                    />
-                  </div>
+                    {form.formState.errors.name && (
+                      <InputIcon icon={NotValid} />
+                    )}
+                    {!isLoaded && (
+                      <InputIcon
+                        icon={Update}
+                        className='motion-safe:animate-pulse'
+                      />
+                    )}
+                  </FormInputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -152,22 +116,16 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Username*</FormLabel>
                 <FormControl>
-                  <div className='relative'>
+                  <FormInputField>
                     <Input
-                      className={`${
-                        form.formState.errors.username
-                          ? 'border-red-500 bg-red-100 text-red-500'
-                          : ''
-                      }`}
+                      error={form.formState.errors.username}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
-                    <NotValid
-                      className={`absolute right-4 top-1/2 -translate-y-1/2 ${
-                        form.formState.errors.name ? '' : 'hidden'
-                      }`}
-                    />
-                  </div>
+                    {form.formState.errors.username && (
+                      <InputIcon icon={NotValid} />
+                    )}
+                  </FormInputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -181,7 +139,7 @@ export function FormSetpOne() {
                 <FormLabel>Pronome</FormLabel>
                 <Select
                   onValueChange={field.onChange}
-                  // defaultValue={field.value}
+                  defaultValue={field.value}
                 >
                   <FormControl>
                     <SelectTrigger>
@@ -203,18 +161,16 @@ export function FormSetpOne() {
             name='dateOfBirth'
             render={() => (
               <FormItem>
+                <FormLabel>Data de nascimento*</FormLabel>
                 <DateOfBirth onSelectedDate={handleSelectDate} />
                 <FormMessage />
               </FormItem>
             )}
           />
-          {/* <FormItem>
-            <DateOfBirth onSelectedDate={handleSelectDate} />
-            <FormMessage />
-          </FormItem> */}
           <div className='text-center'>
             <Button
-              className='h-full max-h-14 w-full max-w-[214px] text-base'
+              disabled={!form.formState.isValid}
+              className='h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
               variant='default'
               type='submit'
             >
