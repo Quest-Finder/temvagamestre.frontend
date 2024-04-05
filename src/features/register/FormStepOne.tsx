@@ -89,7 +89,7 @@ export function FormSetpOne() {
                   <FormInputField>
                     <Input
                       disabled={!isLoaded}
-                      error={form.formState.errors.name}
+                      isError={form.formState.errors.name}
                       className='disabled:bg-neutral-300 disabled:placeholder:text-transparent'
                       placeholder='Exemplo: Pedro da Silva Sauro'
                       {...field}
@@ -118,7 +118,7 @@ export function FormSetpOne() {
                 <FormControl>
                   <FormInputField>
                     <Input
-                      error={form.formState.errors.username}
+                      isError={form.formState.errors.username}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
