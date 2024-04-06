@@ -24,16 +24,14 @@ import { useEffect, useState } from 'react'
 
 import { useUser } from '@clerk/nextjs'
 
-import { DateOfBirth } from './components/DateOfBirth'
+import { Arrow } from '@/components/icons/Arrow'
 
-import { Arrow } from '../../../components/icons/Arrow'
-import { NotValid } from '../../../components/icons/NotValid'
+import { NotValid } from '@/components/icons/NotValid'
+import { Update } from '@/components/icons/Update'
 
 import { FormStepOneSchema } from './validation'
-import { FormTitle } from './components/FormTitle'
-import { FormInputField } from './components/FormInputField'
-import { Update } from '../../../components/icons/Update'
-import { InputIcon } from './components/InputIcon'
+
+import { FormStepOne } from '.'
 
 export function FormSetpOne() {
   const [date, setDate] = useState('')
@@ -72,9 +70,9 @@ export function FormSetpOne() {
   }
 
   return (
-    <section className='flex flex-col items-center'>
-      <FormTitle>Deixe-nos sabes mais sobre você</FormTitle>
+    <FormStepOne.Root>
       <Form {...form}>
+        <FormStepOne.Title>Deixe-nos sabes mais sobre você</FormStepOne.Title>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className='w-full max-w-[340px] space-y-5'
@@ -86,7 +84,7 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Nome*</FormLabel>
                 <FormControl>
-                  <FormInputField>
+                  <FormStepOne.InputField>
                     <Input
                       disabled={!isLoaded}
                       isError={form.formState.errors.name}
@@ -95,15 +93,15 @@ export function FormSetpOne() {
                       {...field}
                     />
                     {form.formState.errors.name && (
-                      <InputIcon icon={NotValid} />
+                      <FormStepOne.InputIcon icon={NotValid} />
                     )}
                     {!isLoaded && (
-                      <InputIcon
+                      <FormStepOne.InputIcon
                         icon={Update}
                         className='motion-safe:animate-pulse'
                       />
                     )}
-                  </FormInputField>
+                  </FormStepOne.InputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,16 +114,16 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Username*</FormLabel>
                 <FormControl>
-                  <FormInputField>
+                  <FormStepOne.InputField>
                     <Input
                       isError={form.formState.errors.username}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
                     {form.formState.errors.username && (
-                      <InputIcon icon={NotValid} />
+                      <FormStepOne.InputIcon icon={NotValid} />
                     )}
-                  </FormInputField>
+                  </FormStepOne.InputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -162,7 +160,7 @@ export function FormSetpOne() {
             render={() => (
               <FormItem>
                 <FormLabel>Data de nascimento*</FormLabel>
-                <DateOfBirth onSelectedDate={handleSelectDate} />
+                <FormStepOne.DateOfBirth onSelectedDate={handleSelectDate} />
                 <FormMessage />
               </FormItem>
             )}
@@ -180,6 +178,6 @@ export function FormSetpOne() {
           </div>
         </form>
       </Form>
-    </section>
+    </FormStepOne.Root>
   )
 }
