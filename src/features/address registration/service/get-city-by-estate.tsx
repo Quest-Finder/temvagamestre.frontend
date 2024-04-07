@@ -9,7 +9,8 @@ interface GetCityByEstateProps {
   uf: string
 }
 export default function GetCityByEstate({ uf }: GetCityByEstateProps) {
-  const path = `https://brasilapi.com.br/api/ibge/municipios/v1/${uf}`
+  const path = `https://brasilapi.com.br/
+  /ibge/municipios/v1/${uf}`
   const [data, setData] = useState<ICidade[]>([])
   const [isLoading, setLoading] = useState(true)
 
