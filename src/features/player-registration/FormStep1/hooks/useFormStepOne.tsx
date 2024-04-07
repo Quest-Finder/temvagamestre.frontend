@@ -1,46 +1,38 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import * as z from 'zod'
 import { useEffect, useState } from 'react'
-
 import { useUser } from '@clerk/nextjs'
-
+// import { useRouter } from 'next/router'
 import { zodResolver } from '@hookform/resolvers/zod'
+
 import { FormStepOneSchema, FormStepOneType } from '../validation'
 import { defaultValues } from '../helper/defaultValues'
-import { getLocalStorage } from '../helper/getLocalStorage'
+import {
+  getSecureLocalStorage,
+  setSecureLocalStorage,
+} from '../helper/getLocalStorage'
 
 export function useFormStepOne() {
   const [date, setDate] = useState('')
   const { user } = useUser()
-  const defaultData = getLocalStorage<FormStepOneType>(
-    'form_step_one',
-    defaultValues,
-  )
+  const savedData = getSecureLocalStorage<FormStepOneType>('form_step_one')
+  const [nameLoading, setNameLoading] = useState(!savedData)
 
-  const [nameLoading, setNameLoading] = useState(() => {
-    if (defaultData.name !== '') {
-      return false
-    }
-    return true
-  })
+  // const router = useRouter()
 
   const form = useForm<FormStepOneType>({
     resolver: zodResolver(FormStepOneSchema),
-    defaultValues: defaultData,
+    defaultValues: savedData || defaultValues,
     mode: 'all',
   })
 
   useEffect(() => {
-    if (defaultData.name !== '') {
-      return
-    }
-    if (user?.fullName) {
+    if (!savedData && user?.fullName) {
       form.setValue('name', user?.fullName)
       setNameLoading(() => false)
     }
-  }, [user, form, defaultData])
+  }, [user?.fullName, form, savedData])
 
   useEffect(() => {
     form.setValue('dateOfBirth', date)
@@ -49,12 +41,10 @@ export function useFormStepOne() {
     }
   }, [date, form])
 
-  const onSubmit = (data: z.infer<typeof FormStepOneSchema>) => {
-    let newData = data
-    if (data.pronoun === '') {
-      newData = { ...data, pronoun: 'none' }
-    }
-    localStorage.setItem('form_step_one', JSON.stringify(newData))
+  const onSubmit = (data: FormStepOneType) => {
+    const newData = { ...data, pronoun: data.pronoun || 'none' }
+    setSecureLocalStorage('form_step_one', newData)
+    // router.push('/player-registration/step2')
   }
 
   const handleSelectDate = (selectedDate: string) => {
