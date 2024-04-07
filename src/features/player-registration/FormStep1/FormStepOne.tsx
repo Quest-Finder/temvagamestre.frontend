@@ -34,7 +34,7 @@ export function FormSetpOne() {
         <FormStepOne.Title>Deixe-nos sabes mais sobre você</FormStepOne.Title>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className='w-full max-w-[340px] space-y-5'
+          className='w-full max-w-[340px] space-y-4'
         >
           <FormField
             control={form.control}
@@ -127,7 +127,7 @@ export function FormSetpOne() {
           <div className='text-center'>
             <Button
               disabled={!form.formState.isValid}
-              className='h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
               variant='default'
               type='submit'
             >

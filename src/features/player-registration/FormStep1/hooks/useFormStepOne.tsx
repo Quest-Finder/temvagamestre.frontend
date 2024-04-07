@@ -1,5 +1,3 @@
-'use client'
-
 import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/nextjs'
