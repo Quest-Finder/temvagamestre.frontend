@@ -1,19 +1,21 @@
 'use client'
 
-import React from 'react'
 import { Button } from '@/components/ui/button'
 import { FormProvider } from 'react-hook-form'
-import useFormAddressRegistration from './hooks/useFormAddressRegistration'
-import InputState from './components/input-state'
-import InputCity from './components/input-city'
 import InputLiveInBrazil from './components/input-checkbox-live-in-brazil'
+import InputCity from './components/input-city'
+import InputState from './components/input-state'
+import useFormAddressRegistration from './hooks/useFormAddressRegistration'
+import useSubmitFormAddressRegistration from './service/submitFormAddressRegistration'
 
 export default function FormAddressRegistration() {
-  const { form, onSubmit } = useFormAddressRegistration()
+  const { form } = useFormAddressRegistration()
   return (
     <FormProvider {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(
+          useSubmitFormAddressRegistration(form, '/'),
+        )}
         className='mx-auto flex  min-h-[31.25rem] w-full max-w-[23.1875rem] flex-col items-center justify-between'
       >
         <div className='flex w-full flex-col gap-2'>
