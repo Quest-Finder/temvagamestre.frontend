@@ -1,5 +1,4 @@
 import { useFormContext } from 'react-hook-form'
-import useModalWithOptionsCity from '../hooks/useModalWithOptionsCity'
 import GetCityByEstate from '../service/get-city-by-estate'
 import { addressRegistrationValidationT } from '../types/address-registration'
 import { removeAccents } from '../utils/remove-accents'
@@ -15,10 +14,11 @@ interface OptionsCityProps {
 export default function OptionsCity({ uf }: OptionsCityProps) {
   const { data, isLoading } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
-  const { handleSelectCity } = useModalWithOptionsCity()
   const valueFieldCity = form.getValues('city')
   const fieldCityIsEmpty = valueFieldCity.length !== 0
-
+  const handleSelectCity = (city: string) => {
+    form.setValue('city', city)
+  }
   if (isLoading)
     return (
       <div className=' mx-auto mt-5 h-5 w-5 animate-spin rounded-full  border-r-2 border-neutral-200' />
