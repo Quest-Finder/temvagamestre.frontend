@@ -1,5 +1,3 @@
-import React from 'react'
-import { useFormContext } from 'react-hook-form'
 import { FormField, FormLabel } from '@/components/ui/form'
 import {
   Select,
@@ -9,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useFormContext } from 'react-hook-form'
 import { addressRegistrationValidationT } from '../types/address-registration'
 import { states } from '../utils/estates'
 
@@ -30,11 +29,8 @@ export default function InputState() {
             Em qual estado você mora?
           </FormLabel>
 
-          <SelectTrigger className='mt-2'>
-            <SelectValue
-              placeholder='Selecione seu estado'
-              onClick={() => form.clearErrors('state')}
-            />
+          <SelectTrigger className='mt-2 focus-visible:ring-transparent'>
+            <SelectValue placeholder='Selecione seu estado' />
           </SelectTrigger>
           <SelectContent className=' bg-neutral-50'>
             <SelectGroup>
