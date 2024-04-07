@@ -1,5 +1,5 @@
 import Filter from 'bad-words'
-import { portugueseBadWords } from './badWords'
+import { portugueseBadWords } from './portugueseBadWords'
 
 const filter = new Filter()
 

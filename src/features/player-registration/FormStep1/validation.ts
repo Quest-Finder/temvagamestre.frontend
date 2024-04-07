@@ -1,6 +1,6 @@
 import * as z from 'zod'
 import moment from 'moment'
-import { filter } from './helper/badWordsFilter'
+import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
 
 export const FormStepOneSchema = z.object({
   name: z
@@ -34,3 +34,5 @@ export const FormStepOneSchema = z.object({
       },
     ),
 })
+
+export type FormStepOneType = z.infer<typeof FormStepOneSchema>
