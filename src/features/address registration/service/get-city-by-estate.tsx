@@ -1,38 +1,37 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export interface ICidade {
+  id: string
   nome: string
-  codigo_ibge: string
 }
 
 interface GetCityByEstateProps {
   uf: string
 }
 export default function GetCityByEstate({ uf }: GetCityByEstateProps) {
-  const path = `https://brasilapi.com.br/
-  /ibge/municipios/v1/${uf}`
   const [data, setData] = useState<ICidade[]>([])
   const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(path)
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`)
-        }
-
-        const resJson: ICidade[] = await res.json()
-        setData(resJson)
-        setLoading(false)
-      } catch (error) {
-        setLoading(false)
+  const fetchData = useCallback(async () => {
+    const path = `${process.env.NEXT_PUBLIC_API_CIDADES_URL}localidades/estados/${uf}/distritos`
+    try {
+      const res = await fetch(path)
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
       }
-    }
-    if (!uf) return
 
+      const resJson: ICidade[] = await res.json()
+      setData(resJson)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+    }
+  }, [uf])
+
+  useEffect(() => {
+    if (!uf) return
     fetchData()
-  }, [uf, path])
+  }, [uf, fetchData])
 
   return { data, isLoading }
 }
