@@ -26,12 +26,12 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
   }, [dayForm, monthForm, yearForm, onSelectedDate])
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between gap-2'>
       <Select onValueChange={e => setDayForm(e)}>
         <SelectTrigger className='w-16'>
           <SelectValue placeholder='Dia' />
         </SelectTrigger>
-        <SelectContent className='w-16'>
+        <SelectContent>
           {generateDaysOfAMonth().map(day => {
             return (
               <SelectItem

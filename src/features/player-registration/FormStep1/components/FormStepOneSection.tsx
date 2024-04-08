@@ -8,7 +8,7 @@ interface FormStepOneRootProps
 
 export function FormStepOneRoot({ children, className }: FormStepOneRootProps) {
   return (
-    <section className={cn('flex flex-col items-center', className)}>
+    <section className={cn('mx-3 flex flex-col items-center', className)}>
       {children}
     </section>
   )
