@@ -5,7 +5,7 @@ interface RootPros {
 }
 export function Root({ children }: RootPros) {
   return (
-    <section className='mb-7 flex flex-col items-center  justify-center gap-7'>
+    <section className='inline-flex w-full flex-col items-center justify-center gap-8'>
       {children}
     </section>
   )

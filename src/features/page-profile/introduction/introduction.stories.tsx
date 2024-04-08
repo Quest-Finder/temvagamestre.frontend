@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Separator } from '@/components/ui/separator'
 import { Card } from '@/components/ui/card'
 import { UserIntroduction } from '.'
 import { UserIntroductionMock } from './mock'
@@ -19,49 +18,15 @@ export default meta
 
 type Story = StoryObj<typeof UserIntroduction>
 
-export const FullIntroduction: Story = {
+export const Introduction: Story = {
   render: () => (
-    <>
-      <UserIntroduction.SectionTitle
-        title='Bio'
-        className='mb-4 block sm:hidden'
-      />
-      <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
-        <UserIntroduction.UserTitle
-          userName={UserIntroductionMock.user.first_name}
-          userNickname={UserIntroductionMock.user.nickname}
-          userRole={UserIntroductionMock.user.role}
-        />
-        <Separator className='hidden sm:block' />
-        <UserIntroduction.Quote text={UserIntroductionMock.user.info.quote} />
-        <UserIntroduction.Section>
-          <UserIntroduction.SectionTitle
-            title='Bio'
-            className='hidden sm:block'
-          />
-          <UserIntroduction.Bio
-            description={UserIntroductionMock.user.info.bio}
-          />
-        </UserIntroduction.Section>
-      </Card>
-    </>
-  ),
-}
-
-export const MissingIntroduction: Story = {
-  render: () => (
-    <Card className='flex max-w-[862px] flex-col rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'>
-      <UserIntroduction.UserTitle
-        userName={UserIntroductionMock.user.first_name}
-        userRole='Jogador'
-      />
-      <Separator className='hidden sm:block' />
-      <UserIntroduction.Section>
-        <UserIntroduction.SectionTitle title='Bio' />
+    <UserIntroduction.Section>
+      <UserIntroduction.SectionTitle title='Bio' />
+      <Card className='flex flex-col gap-4 rounded-2xl border-neutral-200 px-4 py-6'>
         <UserIntroduction.Bio
           description={UserIntroductionMock.user.info.bio}
         />
-      </UserIntroduction.Section>
-    </Card>
+      </Card>
+    </UserIntroduction.Section>
   ),
 }

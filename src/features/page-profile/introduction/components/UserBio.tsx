@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useResize } from '../hooks/useResize'
 
 interface UserBioProps {
   description: string
 }
 
 export function UserBio({ description }: UserBioProps) {
+  const { width } = useResize()
   const truncatedTextRef = useRef<HTMLParagraphElement | null>(null)
   const [showMore, setShowMore] = useState(false)
   const [truncateText, setTruncateText] = useState(true)
@@ -16,8 +18,10 @@ export function UserBio({ description }: UserBioProps) {
     const text = truncatedTextRef.current
     if (text && text.offsetHeight < text.scrollHeight) {
       setShowMore(true)
+    } else {
+      setShowMore(false)
     }
-  }, [])
+  }, [width])
 
   return (
     <>
@@ -25,19 +29,15 @@ export function UserBio({ description }: UserBioProps) {
         ref={truncatedTextRef}
         className={`${
           truncateText ? 'truncated-text ' : ''
-        } text-sm leading-6 text-neutral-500 sm:text-xl`}
+        } font-notoSans text-sm leading-6 text-neutral-400 sm:text-base`}
       >
-        {description.length === 0 || description === '' ? (
-          <span className='block text-center'>Nenhuma bio cadastrada</span>
-        ) : (
-          description
-        )}
+        {description}
       </p>
       {showMore && (
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='hover:bg-transparent my-[9px] ml-auto h-auto max-w-max p-0 text-base font-medium leading-none text-neutral-950'
+          className='my-[5px] h-auto justify-end p-0 font-notoSans text-base font-semibold text-neutral-950 hover:bg-transparent'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>

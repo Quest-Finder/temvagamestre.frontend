@@ -8,12 +8,10 @@ interface CardWithImgProps {
 }
 export function CardWithImg({ urlImgs }: CardWithImgProps) {
   return (
-    <Card
-      key={new Date().getTime().toString()}
-      className='invisible-scrollbar flex min-h-[280px] max-w-[862px] gap-4 overflow-auto rounded-xl border-[1px] px-4 py-6 sm:px-6 sm:pt-4'
-    >
+    <Card className='flex w-full items-center justify-center gap-4 overflow-x-auto rounded-xl border-none pl-[68%]'>
       {urlImgs.map(url => (
         <Image
+          key={new Date().getTime() * Math.random()}
           src={url}
           alt=''
           width={259}

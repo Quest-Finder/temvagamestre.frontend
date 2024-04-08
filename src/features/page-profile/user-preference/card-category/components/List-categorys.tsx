@@ -1,5 +1,6 @@
 'use client'
 
+import { Card } from '@/components/ui/card'
 import React from 'react'
 
 export default function ListCategorys({
@@ -8,18 +9,18 @@ export default function ListCategorys({
   children: React.ReactNode
 }) {
   return (
-    <>
-      {Array.from({ length: 2 }, (_, i) => i + 1).map(i => (
+    <Card>
+      {Array.from({ length: 1 }, (_, i) => i + 1).map(i => (
         <div
           key={i}
-          className='flex w-full items-center justify-start gap-4 p-4'
+          className='flex w-full items-center justify-center gap-4 p-4 md:justify-start'
         >
-          <h3 className="mr-auto min-w-[90px] font-['Roboto'] text-base font-normal leading-[48px] text-neutral-700">
+          <h3 className='mr-auto min-w-[95px] font-mono text-base font-normal leading-[48px] text-neutral-700'>
             Categoria #{i}
           </h3>
           {children}
         </div>
       ))}
-    </>
+    </Card>
   )
 }
