@@ -10,9 +10,9 @@ export default function useSubmitFormAboutYouRegistration(
   const router = useRouter()
 
   return useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (values: TValidation) => {
       //   uselocalStorageSetItem('form_data_adress', values)
-      console.table(values)
       router.push(pathUrl)
     },
     [pathUrl, router],
