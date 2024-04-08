@@ -31,10 +31,12 @@ export default function FormAboutYou() {
               name='titulo'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='font-normal'>Título</FormLabel>
+                  <FormLabel className='text-xl font-normal leading-4'>
+                    Título
+                  </FormLabel>
                   <FormControl>
                     <Input
-                      className='focus-visible:ring-transparent'
+                      className='h-9 focus-visible:ring-transparent'
                       placeholder='Exemplo: Jogador combeiro safado'
                       maxLength={50}
                       {...field}
@@ -48,12 +50,14 @@ export default function FormAboutYou() {
               name='bio'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='font-normal'>Bio</FormLabel>
+                  <FormLabel className='text-xl font-normal leading-4'>
+                    Bio
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       maxLength={500}
                       placeholder='Explorador das terras mágicas de Aldoria, mestre em interpretar personagens épicos e mergulhar em histórias de fantasia medieval. Pronto para embarcar em jornadas de roleplay intensas no mundo dos RPGs de mesa.'
-                      className='invisible-scrollbar h-[7.25rem] resize-none focus-visible:ring-transparent'
+                      className='invisible-scrollbar h-[7.25rem] resize-none px-4 py-2 text-sm leading-5 shadow-xl focus-visible:ring-transparent'
                       {...field}
                     />
                   </FormControl>
