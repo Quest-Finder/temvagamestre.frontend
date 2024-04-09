@@ -11,6 +11,9 @@ export default function Home() {
         <Link href='/user/profile?show=profile'>
           <Button>profile</Button>
         </Link>
+        <Link href='/register/form?show=form'>
+          <Button>formulario</Button>
+        </Link>
       </div>
     </main>
   )
