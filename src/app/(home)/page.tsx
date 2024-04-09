@@ -1,5 +1,4 @@
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import FormAboutYou from '@/features/about-you/form-about-you'
 
 export default function Home() {
   return (
