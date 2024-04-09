@@ -11,6 +11,9 @@ export default function Home() {
         <Link href='/user/profile?show=profile'>
           <Button>profile</Button>
         </Link>
+        <Link href='/registration/final?show=final'>
+          <Button>conclusion</Button>
+        </Link>
       </div>
     </main>
   )
