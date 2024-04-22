@@ -3,7 +3,6 @@
 import { HeaderProfile } from '@/features/page-profile/header/header'
 import { UserIntroductionComponent } from '@/features/page-profile/introduction/UserIntroduction'
 import { userMock } from '@/features/page-profile/mocks/mock'
-import { PlayerProfileSection } from '@/features/page-profile/playerProfileSection/PlayerProfileSection'
 import { SelectPage } from '@/features/page-profile/select-page/selectPage'
 import UserDescriptionComponent from '@/features/page-profile/user-description/user-description'
 import UserPreferenceCategorys from '@/features/page-profile/user-preference/userPreferences'
@@ -22,7 +21,7 @@ export default function Profile() {
   return (
     <>
       <HeaderProfile />
-      <section className='mx-auto mt-4 grid min-h-screen max-w-[1440px] grid-cols-1 gap-2 px-3 pb-5 md:grid-cols-12 md:grid-rows-none'>
+      <div className='mx-auto mt-4 grid min-h-screen max-w-[90rem] grid-cols-1 px-6 pb-5 md:grid-cols-12 md:grid-rows-none md:space-x-14 md:px-[4.844rem]'>
         <aside className='-mt-24 flex flex-col gap-8 md:col-span-4'>
           <div className=' flex flex-col items-center justify-start gap-2'>
             <Avatar className={cn(' flex h-36 w-36')}>
@@ -43,43 +42,36 @@ export default function Profile() {
               rpgStyle={userMock.preferences.rpgStyles}
               badges={userMock.badges}
             />
-            <PlayerProfileSection />
           </div>
         </aside>
-        <main className='hidden  flex-col gap-2 md:col-span-7 md:col-start-5 md:flex'>
+        <section className='hidden flex-col gap-2 md:col-span-8 md:col-start-5 md:flex'>
           <UserIntroductionComponent />
           <CardWithImgs.Root>
             <CardWithImgs.Text content='Titulo - imagens' />
             <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
           </CardWithImgs.Root>
-        </main>
+        </section>
         {/* mobile */}
-        <div className='min-h-screen md:hidden'>
-          <aside>
-            <SelectPage />
-          </aside>
-          <main className='col-span-12  flex items-center justify-center'>
-            <div className='flex w-full max-w-[400px] flex-col items-center justify-center'>
-              {showElemnt === 'profile' && (
-                <div className='flex w-full flex-col gap-8'>
-                  <UserIntroductionComponent />
-                  <UserPreferenceCategorys
-                    rpgStyle={userMock.preferences.rpgStyles}
-                    badges={userMock.badges}
-                  />
-                </div>
-              )}
-              {showElemnt === 'profile' && <PlayerProfileSection />}
-              {showElemnt === 'images' && (
-                <CardWithImgs.Root>
-                  <CardWithImgs.Text content='Titulo - imagens' />
-                  <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
-                </CardWithImgs.Root>
-              )}
-            </div>
-          </main>
+        <div className='mx-auto mt-8 flex min-h-screen w-full max-w-[28.125rem] flex-col gap-8 md:mt-0 md:hidden'>
+          <SelectPage />
+
+          {showElemnt === 'profile' && (
+            <>
+              <UserIntroductionComponent />
+              <UserPreferenceCategorys
+                rpgStyle={userMock.preferences.rpgStyles}
+                badges={userMock.badges}
+              />
+            </>
+          )}
+          {showElemnt === 'images' && (
+            <CardWithImgs.Root>
+              <CardWithImgs.Text content='Titulo - imagens' />
+              <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
+            </CardWithImgs.Root>
+          )}
         </div>
-      </section>
+      </div>
     </>
   )
 }
