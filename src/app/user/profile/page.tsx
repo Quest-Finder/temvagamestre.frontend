@@ -1,22 +1,21 @@
 'use client'
 
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { CardWithImgs } from '@/features/page-profile/box-image'
 import { HeaderProfile } from '@/features/page-profile/header/header'
+import useEnsureRouteParams from '@/features/page-profile/hooks/ensure-route-parameters'
 import { UserIntroductionComponent } from '@/features/page-profile/introduction/UserIntroduction'
 import { userMock } from '@/features/page-profile/mocks/mock'
 import { SelectPage } from '@/features/page-profile/select-page/selectPage'
 import UserDescriptionComponent from '@/features/page-profile/user-description/user-description'
 import UserPreferenceCategorys from '@/features/page-profile/user-preference/userPreferences'
-import { useSearchParams } from 'next/navigation'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { CardWithImgs } from '@/features/page-profile/box-image'
 import { cn } from '@/lib/utils'
 import img from '../../../features/page-profile/header/assets/Rectangle.svg'
 
 const arrayImgsMock: string[] = [img, img, img, img, img]
+
 export default function Profile() {
-  const searchParams = useSearchParams()
-  type ShowElement = 'profile' | 'images' | 'dates' | null
-  const showElemnt: ShowElement = searchParams.get('show') as ShowElement
+  const showElement = useEnsureRouteParams()
 
   return (
     <>
@@ -55,7 +54,7 @@ export default function Profile() {
         <div className='mx-auto mt-8 flex min-h-screen w-full max-w-[28.125rem] flex-col gap-8 md:mt-0 md:hidden'>
           <SelectPage />
 
-          {showElemnt === 'profile' && (
+          {showElement === 'profile' && (
             <>
               <UserIntroductionComponent />
               <UserPreferenceCategorys
@@ -64,7 +63,7 @@ export default function Profile() {
               />
             </>
           )}
-          {showElemnt === 'images' && (
+          {showElement === 'images' && (
             <CardWithImgs.Root>
               <CardWithImgs.Text content='Titulo - imagens' />
               <CardWithImgs.CardWithImg urlImgs={arrayImgsMock} />
