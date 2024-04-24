@@ -13,6 +13,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
 import { getError } from '../utils/getError'
+import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
 import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
 
@@ -28,6 +29,8 @@ export default function FormAboutYou() {
           )}
           className='flex flex-col items-center justify-center gap-4'
         >
+          <FormTitle>Conte-nos mais sobre quem é você no mundo RPG!</FormTitle>
+
           <div className='grid w-full max-w-[21.25rem] gap-4'>
             <FormField
               control={form.control}

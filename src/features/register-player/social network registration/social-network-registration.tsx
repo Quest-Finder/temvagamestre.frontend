@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import { FormTitle } from '../utils/title-form'
 import { Input } from './components'
 import useFormSocialMedia from './hook/useFormSocialNetWork'
 import useSubmitSocialNetWokr from './hook/useSubmitSocialNetWokr'
@@ -21,6 +22,7 @@ export default function SocialNetworkRegistration() {
         id='form-social-media'
         className='flex min-h-screen flex-col items-center justify-center gap-14 '
       >
+        <FormTitle>Insita suas redes sociais</FormTitle>
         {socialMediaMap.map(({ name }) => (
           <Input.Wrapper key={name}>
             <Input.Icon IconName={getIconByName(name)} />
