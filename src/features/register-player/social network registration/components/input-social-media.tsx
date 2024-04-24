@@ -1,7 +1,6 @@
-import React from 'react'
-import { useFormContext } from 'react-hook-form'
 import { FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { useFormContext } from 'react-hook-form'
 import { TsocialNetworkValidation } from '../types/social-network'
 import { keysFieldValues } from '../utils/parse-validation-in-array'
 
@@ -23,7 +22,7 @@ export default function InputSocialMedia({
         <FormItem className=''>
           <FormControl>
             <Input
-              className='w-[10.625rem] min-[415px]:w-[20.375rem]'
+              className='w-full min-[415px]:w-[20.375rem]'
               placeholder={placeholder}
               onChange={field.onChange}
               onBlur={field.onBlur}
