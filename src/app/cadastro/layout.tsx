@@ -25,13 +25,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
     // usuario não autenticado
     return redirect(PublicRoutes.SignIn)
   }
-
   // aqui vai verificar se o usuario esta cadastrado no nosso DB
   const userRegistration = false
 
   if (userRegistration) {
     // usuario autenticado e registrado no nosso DB
-    return redirect(PublicRoutes.Home)
+    return redirect(PublicRoutes.PlayerProfile)
   }
   // usuario autenticado e não registrado no nosso DB
   return <FormLayout>{children}</FormLayout>
