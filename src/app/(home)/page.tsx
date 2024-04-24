@@ -1,4 +1,5 @@
 import { PublicRoutes, RegisterRoutes } from '@/services/routers'
+import { SignOutButton } from '@clerk/nextjs'
 import Link from 'next/link'
 
 export default function Home() {
@@ -7,10 +8,10 @@ export default function Home() {
       <div className='flex flex-col gap-3'>
         <Link href={PublicRoutes.SignIn}>sign-in</Link>
         <Link href={PublicRoutes.PlayerProfile}>perfil do jogador</Link>
-        <Link href={RegisterRoutes.PlayerData}>dados jogador</Link>
-        <Link href={RegisterRoutes.SocialNetworks}>redes sociais</Link>
-        <Link href={RegisterRoutes.AboutYou}>sobre voce</Link>
-        <Link href={RegisterRoutes.Adress}>endereço</Link>
+        <Link href={RegisterRoutes.PlayerData}>Cadastro do jogador</Link>
+        <SignOutButton>
+          <button>Sign out</button>
+        </SignOutButton>
       </div>
     </main>
   )
