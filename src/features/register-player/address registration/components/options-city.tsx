@@ -42,7 +42,7 @@ export default function OptionsCity({ uf }: OptionsCityProps) {
               className='w-full cursor-pointer px-4 py-2 text-left font-serif text-[0.625rem] font-medium  hover:bg-gray-200'
               onClick={() => handleSelectCity(city.nome)}
             >
-              {fieldCityIsEmpty && city.nome}
+              <p className='text-base'>{fieldCityIsEmpty && city.nome}</p>
             </button>
           </ul>
         ))}
