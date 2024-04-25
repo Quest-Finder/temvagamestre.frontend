@@ -10,7 +10,8 @@ import { useResetFieldsWhenLiveInBrazil } from './useResetFieldsWhenLiveInBrazil
 import { useSetLiveInBrazilWhenStateOrCitySet } from './useSetLiveInBrazilWhenStateOrCitySet'
 
 export default function useFormAddressRegistration() {
-  const parsedData = useLocalStorageGetItem('form_data_adress')
+  const parsedData =
+    useLocalStorageGetItem<addressRegistrationValidationT>('form_data_adress')
   const form = useForm<addressRegistrationValidationT>({
     resolver: zodResolver(addressRegistrationValidation),
     defaultValues: parsedData || DEFAULT_VALEUS_ADDRESS_REGISTRATION,
