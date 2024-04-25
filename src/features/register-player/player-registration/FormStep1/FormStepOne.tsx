@@ -24,16 +24,17 @@ import { Update } from '@/components/icons/Update'
 
 import { FormStepOne } from '.'
 import { useFormStepOne } from './hooks/useFormStepOne'
+import useSubmitStepOne from './hooks/useSubmitStepOne'
 
 export function FormSetpOne() {
-  const { nameLoading, onSubmit, handleSelectDate, form } = useFormStepOne()
+  const { nameLoading, form, handleSelectDate } = useFormStepOne()
 
   return (
     <FormStepOne.Root>
       <Form {...form}>
         <FormStepOne.Title>Deixe-nos sabes mais sobre você</FormStepOne.Title>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={form.handleSubmit(useSubmitStepOne())}
           className='w-full max-w-[340px] space-y-4'
         >
           <FormField
