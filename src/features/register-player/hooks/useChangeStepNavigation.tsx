@@ -23,6 +23,9 @@ export function useChangeStepNavigation() {
       case '/cadastro/estilos-de-jogo':
         setCurrentStep(5)
         break
+      case '/cadastro/sucesso':
+        setCurrentStep(7)
+        break
 
       default:
         break

@@ -1,3 +1,11 @@
+import ButtonNavigation from '@/hooks/ButtonNavigation'
+import { RegisterRoutes } from '@/services/routers'
+
 export default function PagesStylesPlay() {
-  return <div>hello</div>
+  return (
+    <ButtonNavigation
+      href={RegisterRoutes.Sucess}
+      content='sucesso'
+    />
+  )
 }

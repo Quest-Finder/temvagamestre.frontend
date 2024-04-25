@@ -9,14 +9,16 @@ const formTextArray = [
   'Sobre Você',
   'Local',
   'Estilo de Jogo',
+  'Perfil do jogador',
 ]
 
 export function MultiStepRegisterForm() {
   const { currentStep } = useChangeStepNavigation()
+  console.log(currentStep)
 
   return (
     <Multistep
-      size={5}
+      size={6}
       currentStep={currentStep}
       arrayText={formTextArray}
     />

@@ -11,6 +11,7 @@ export enum RegisterRoutes {
   AboutYou = '/cadastro/sobre-voce',
   Adress = '/cadastro/local',
   StylesPlay = '/cadastro/estilos-de-jogo',
+  Sucess = '/cadastro/sucesso',
 }
 
 export const publicRoutes = [
