@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { PublicRoutes } from '@/services/routers'
+import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
 import { FormTitle } from '../utils/title-form'
 import InputLiveInBrazil from './components/input-checkbox-live-in-brazil'
@@ -17,7 +17,7 @@ export default function FormAddressRegistration() {
       <FormTitle>Conte-nos de onde você é</FormTitle>
       <form
         onSubmit={form.handleSubmit(
-          useSubmitFormAddressRegistration(form, PublicRoutes.Home),
+          useSubmitFormAddressRegistration(form, RegisterRoutes.StylesPlay),
         )}
         className='mx-auto flex  min-h-[31.25rem] w-full max-w-[23.1875rem] flex-col items-center justify-between'
       >
