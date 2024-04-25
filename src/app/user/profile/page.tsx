@@ -36,7 +36,7 @@ export default function Profile() {
               age='35 anos'
             />
           </div>
-          <div className='hidden flex-col gap-2 md:flex'>
+          <div className='hidden flex-col gap-2 md:flex '>
             <UserPreferenceCategorys
               rpgStyle={userMock.preferences.rpgStyles}
               badges={userMock.badges}

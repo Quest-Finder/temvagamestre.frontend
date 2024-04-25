@@ -19,7 +19,6 @@ import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
 
 export default function FormAboutYou() {
   const form = useHookFormAboutYou()
-
   return (
     <FormProvider {...form}>
       <Form {...form}>

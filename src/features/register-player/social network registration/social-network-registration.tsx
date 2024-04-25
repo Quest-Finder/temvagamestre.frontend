@@ -22,7 +22,7 @@ export default function SocialNetworkRegistration() {
         id='form-social-media'
         className='flex min-h-screen flex-col items-center justify-center gap-14 '
       >
-        <FormTitle>Insita suas redes sociais</FormTitle>
+        <FormTitle>Insira suas redes sociais</FormTitle>
         {socialMediaMap.map(({ name }) => (
           <Input.Wrapper key={name}>
             <Input.Icon IconName={getIconByName(name)} />
