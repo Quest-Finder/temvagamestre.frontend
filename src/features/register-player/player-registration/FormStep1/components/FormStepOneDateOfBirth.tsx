@@ -5,29 +5,31 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { generateDaysOfAMonth } from '../helper/generateDaysOfAMonth'
-import { monthsArray } from '../helper/monthsArray'
 import { generateXYearsUntillToday } from '../helper/generateXYearsUntillToday'
+import { monthsArray } from '../helper/monthsArray'
+import { useStateDateOfBirth } from '../hooks/useStateDateOfBirth'
 
 interface DateOfBirthProps {
   onSelectedDate: (date: string) => void
 }
 
 export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
-  const [dayForm, setDayForm] = useState('')
-  const [monthForm, setMonthForm] = useState('')
-  const [yearForm, setYearForm] = useState('')
+  const { handleDay, handleMonth, handleYear, dateForm } = useStateDateOfBirth()
 
   useEffect(() => {
-    if (dayForm !== '' && monthForm !== '' && yearForm !== '') {
-      onSelectedDate(`${monthForm}-${dayForm}-${yearForm}`)
+    if (dateForm.day !== '' && dateForm.month !== '' && dateForm.yaer !== '') {
+      onSelectedDate(`${dateForm.month}-${dateForm.day}-${dateForm.yaer}`)
     }
-  }, [dayForm, monthForm, yearForm, onSelectedDate])
+  }, [dateForm, onSelectedDate])
 
   return (
     <div className='flex justify-between gap-2'>
-      <Select onValueChange={e => setDayForm(e)}>
+      <Select
+        onValueChange={e => handleDay(e)}
+        value={dateForm.day}
+      >
         <SelectTrigger className='w-16'>
           <SelectValue placeholder='Dia' />
         </SelectTrigger>
@@ -45,7 +47,10 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
         </SelectContent>
       </Select>
 
-      <Select onValueChange={e => setMonthForm(e)}>
+      <Select
+        onValueChange={e => handleMonth(e)}
+        value={dateForm.month}
+      >
         <SelectTrigger className='w-40'>
           <SelectValue placeholder='Selecionar mes' />
         </SelectTrigger>
@@ -63,7 +68,10 @@ export function DateOfBirth({ onSelectedDate }: DateOfBirthProps) {
         </SelectContent>
       </Select>
 
-      <Select onValueChange={e => setYearForm(e)}>
+      <Select
+        onValueChange={e => handleYear(e)}
+        value={dateForm.yaer}
+      >
         <SelectTrigger className='w-20'>
           <SelectValue placeholder='Ano' />
         </SelectTrigger>
