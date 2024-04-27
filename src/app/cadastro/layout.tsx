@@ -22,15 +22,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
     )
   }
   const userRegistration = false
-  if (!user && userRegistration) {
+  if (!user) {
     // usuario não fez login no clerk
     return redirect(PublicRoutes.SignIn)
   }
   // aqui vai verificar se o usuario esta cadastrado no nosso DB
+
   if (user && userRegistration) {
     // usuario autenticado e registrado no nosso DB
     return redirect(PublicRoutes.PlayerProfile)
   }
-  // usuario autenticado e não registrado no nosso DB
+
   return <FormLayout>{children}</FormLayout>
 }
