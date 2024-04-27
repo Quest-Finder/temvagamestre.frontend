@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { CheckComponent } from '../icons/checkComponent'
 
 interface MultiStepSkeletonProps {
@@ -36,14 +36,13 @@ interface MultiStepProps {
 
 function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
   return (
-    <Suspense fallback={<MultistepSkeleton size={size} />}>
-      <div className='flex min-h-[40px] items-center justify-center  gap-2 '>
-        {Array.from({ length: size }, (_, i) => i + 1).map(step => {
-          return (
-            <React.Fragment key={step}>
-              <div className='mb-auto flex flex-wrap  items-center justify-center gap-2 max-[450px]:w-14'>
-                <div
-                  className={`
+    <div className='flex min-h-[40px] items-center justify-center  gap-2 overflow-auto max-[420px]:pl-[30%] '>
+      {Array.from({ length: size }, (_, i) => i + 1).map(step => {
+        return (
+          <React.Fragment key={step}>
+            <div className='mb-auto flex flex-wrap  items-center justify-center gap-2 max-[450px]:w-14'>
+              <div
+                className={`
                             ${
                               currentStep === step
                                 ? 'border-primary-900 bg-primary-900'
@@ -51,36 +50,35 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                             } 
                             ${currentStep > step && 'bg-primary-600'} 
                             flex h-10 w-10 items-center justify-center rounded-full border`}
-                >
-                  {currentStep <= step && (
-                    <p
-                      className={`${
-                        currentStep === step
-                          ? 'text-neutral-50'
-                          : 'text-primary-600'
-                      }  m-4 text-center font-mono font-extrabold`}
-                    >
-                      {step}
-                    </p>
-                  )}
-                  {currentStep >= step && <CheckComponent />}
-                </div>
-                {arrayText && arrayText[step - 1] && (
-                  <p className='text-center font-mono text-primary-900 '>
-                    {arrayText[step - 1]}
+              >
+                {currentStep <= step && (
+                  <p
+                    className={`${
+                      currentStep === step
+                        ? 'text-neutral-50'
+                        : 'text-primary-600'
+                    }  m-4 text-center font-mono font-extrabold`}
+                  >
+                    {step}
                   </p>
                 )}
+                {currentStep >= step && <CheckComponent />}
               </div>
-              <div
-                className={`w-6 border  border-neutral-200 min-[450px]:w-8  ${
-                  step !== size ? 'block' : 'hidden'
-                }`}
-              />
-            </React.Fragment>
-          )
-        })}
-      </div>
-    </Suspense>
+              {arrayText && arrayText[step - 1] && (
+                <p className='text-center font-mono text-primary-900 '>
+                  {arrayText[step - 1]}
+                </p>
+              )}
+            </div>
+            <div
+              className={`w-6 border  border-neutral-200 min-[450px]:w-8  ${
+                step !== size ? 'block' : 'hidden'
+              }`}
+            />
+          </React.Fragment>
+        )
+      })}
+    </div>
   )
 }
 
