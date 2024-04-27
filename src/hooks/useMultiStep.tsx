@@ -14,7 +14,6 @@ const formTextArray = [
 
 export function MultiStepRegisterForm() {
   const { currentStep } = useChangeStepNavigation()
-  console.log(currentStep)
 
   return (
     <Multistep

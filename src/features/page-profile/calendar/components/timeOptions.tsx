@@ -1,9 +1,9 @@
 'use client'
 
-import useWindowDimensions from '@/hooks/useWindowWidth'
-import { useMemo } from 'react'
 import { Button } from '@/components/ui/button'
+import useWindowDimensions from '@/hooks/useWindowWidth'
 import { cn } from '@/lib/utils'
+import { useMemo } from 'react'
 import { getButtonVariants } from '../js/getButtonVariantsTimeOptions'
 import { Text } from './typograph'
 
@@ -15,8 +15,8 @@ export function TimeOptions({
   onSubmitForm: (hour: string) => void
   availableTimeSlots?: string[]
 }) {
-  const { isWidthMobile } = useWindowDimensions(835)
-  const isMobile = isWidthMobile
+  const { width } = useWindowDimensions()
+  const isMobile = width < 835
 
   const timeSlotElements = useMemo(() => {
     return availableTimeSlots.map((time, index) => {
