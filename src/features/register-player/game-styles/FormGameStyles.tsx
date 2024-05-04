@@ -18,17 +18,35 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormGameStylesType, FormGameStylesSchema } from './validation'
 import { Arrow } from "@/components/icons/Arrow";
 
-import { mockGameStyles } from './mock'
+import { mockGameStyles, GameStyle } from './mock'
 
 import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
+import { useEffect, useState } from "react";
 
 export function FormGameStyles() {
+  const [gameStyles, setGameStyles] = useState<GameStyle[]>([])
+
   const form = useForm<FormGameStylesType>({
     defaultValues: {
       rpgStyles: [],
     },
     resolver: zodResolver(FormGameStylesSchema),
   })
+
+  async function getData() {
+    try {
+      const response = await fetch('https://tem-vaga-mestre-api-nnf7bytugq-uc.a.run.app/rpg-style')
+      const data = await response.json()
+      setGameStyles(data)
+    } catch (error) {
+      console.log(error)
+      throw new Error(`Error ${error}`)
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   function onSubmit(data: FormGameStylesType) {
     console.log(data)
@@ -49,7 +67,7 @@ export function FormGameStyles() {
           render={() => (
             <FormItem>
               <FormItem className="flex flex-wrap justify-center max-w-[44.063rem] space-y-0 gap-2">
-                {mockGameStyles.map((item) => (
+                {gameStyles.map((item) => (
                   <FormField
                     key={item.id}
                     control={form.control}

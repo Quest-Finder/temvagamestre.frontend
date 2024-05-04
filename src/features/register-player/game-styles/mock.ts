@@ -1,4 +1,4 @@
-interface GameStyle {
+export interface GameStyle {
   id: string,
   name: string
 }
