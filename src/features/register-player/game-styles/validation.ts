@@ -2,10 +2,10 @@ import * as z from 'zod'
 
 export const FormGameStylesSchema = z.object({
   rpgStyles: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one item.",
+    message: "Você precisa escolher no mínimo 1 opção.",
   })
     .refine((array) => array.length <=  3, {
-    message: "No máximo 3 opções"
+    message: "No pode escolher máximo 3 opções"
   }),
 })
 
