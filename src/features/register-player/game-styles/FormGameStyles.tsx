@@ -34,8 +34,6 @@ export function FormGameStyles() {
     console.log(data)
   }
 
-  console.log(form.getValues('rpgStyles').length)
-
   return (
     <Form {...form}>
       <FormAditionalText className="text-center">
@@ -50,7 +48,7 @@ export function FormGameStyles() {
           name="rpgStyles"
           render={() => (
             <FormItem>
-              <FormItem className="flex flex-wrap justify-center max-w-[705px] space-y-0 gap-2">
+              <FormItem className="flex flex-wrap justify-center max-w-[44.063rem] space-y-0 gap-2">
                 {mockGameStyles.map((item) => (
                   <FormField
                     key={item.id}
@@ -87,7 +85,9 @@ export function FormGameStyles() {
                   />
                 ))}
               </FormItem>
-              <FormMessage />
+              <div className="w-fit mx-auto [&>ul]:mt-5">
+                <FormMessage/>
+              </div>
             </FormItem>
           )}
         />
