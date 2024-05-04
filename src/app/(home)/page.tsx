@@ -19,6 +19,10 @@ export default function Home() {
           href={RegisterRoutes.PlayerData}
           content='Cadastro do jogador'
         />
+        <ButtonNavigation
+          href={RegisterRoutes.StylesPlay}
+          content='Estilos de jogo'
+        />
         <SignOutButton>
           <Button>Sign out</Button>
         </SignOutButton>
