@@ -12,9 +12,13 @@ import { Arrow } from '@/components/icons/Arrow'
 import { useForm } from "react-hook-form"
 import { FormPlayerProfileType, FormPlayerProfileSchema } from './validation'
 import { zodResolver } from "@hookform/resolvers/zod"
-// import Image from 'next/image'
+import Image from 'next/image'
 
 import { mockFormPlayerProfile } from './mock'
+
+import { getRpgImage, getRpgStyling, getRpgImageColor } from './helpers/getRpgStyle'
+import { FormTitle } from "./components/FormTitle"
+import { FormAditionalText } from "./components/FormAditionalText"
 
 export function FormPlayerProfile() {
   const form = useForm<FormPlayerProfileType>({
@@ -28,14 +32,22 @@ export function FormPlayerProfile() {
     console.log(data)
   }
 
+  console.log(form.getValues('playerProfileId'))
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <FormAditionalText>
+        Olá! Para aprimorarmos sua experiência no TVM, por favor, responda algumas perguntas.
+      </FormAditionalText>
+      <FormTitle>
+        Escolha o perfil de jogador que mais se alinha com seus interesses.
+      </FormTitle>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col items-center">
         <FormField
           control={form.control}
           name='playerProfileId'
           render={() => (
-            <FormItem>
+            <FormItem className="flex gap-[1.625rem] space-y-0 max-w-[1125px]">
               {mockFormPlayerProfile.map((item) => (
                 <FormField
                   key={item.id}
@@ -45,16 +57,20 @@ export function FormPlayerProfile() {
                     return (
                       <FormItem
                         key={item.id}
-                        className="flex"
+                        className="basis-1/3"
                       >
                         <FormControl>
                           <Card
+                            className={`${getRpgStyling(item.title)} py-4 px-6`}
                             onClick={(selected) => {
                               return selected ? field.onChange(item.id) : field.onChange(field.value === '')
                             }}
                           >
-                            <div>
-                              
+                            <div className={`${getRpgImageColor(item.title)} rounded-full p-4 h-24 w-24 flex justify-center items-center`}>
+                              <Image
+                                src={getRpgImage(item.title)}
+                                alt={item.title}
+                              />
                             </div>
                             <CardTitle>{item.title}</CardTitle>
                             <CardDescription>{item.description}</CardDescription>
