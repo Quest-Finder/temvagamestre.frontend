@@ -7,7 +7,7 @@ interface FormAditionalTextProps extends React.HTMLAttributes<HTMLHeadingElement
 export function FormAditionalText({ className, children, ...props }: FormAditionalTextProps) {
   return (
     <h1
-      className={cn('mb-4 text-[32px] text-neutral-950', className)}
+      className={cn('mb-4 text-base text-neutral-600 text-center', className)}
       {...props}
     >
       {children}
