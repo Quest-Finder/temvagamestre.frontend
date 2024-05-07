@@ -101,14 +101,14 @@ export function FormSetpOne() {
                 >
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder='Selecione uma opção' />
+                      <SelectValue placeholder='Selecione uma opção'/>
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value='ele/dele'>Ele / Dele</SelectItem>
-                    <SelectItem value='ela/dela'>Ela / Dela</SelectItem>
-                    <SelectItem value='elu/delu'>Elu / Delu</SelectItem>
-                    <SelectItem value='none'>Prefiro não responder</SelectItem>
+                    <SelectItem value='he/his'>Ele / Dele</SelectItem>
+                    <SelectItem value='she/her'>Ela / Dela</SelectItem>
+                    <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
+                    <SelectItem value="I don't want to share any pronouns">Prefiro não responder</SelectItem>
                   </SelectContent>
                 </Select>
               </FormItem>
