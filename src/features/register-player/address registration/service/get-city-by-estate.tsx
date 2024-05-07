@@ -33,5 +33,10 @@ export default function GetCityByEstate({ uf }: GetCityByEstateProps) {
     fetchData()
   }, [uf, fetchData])
 
-  return { data, isLoading }
+  const cityList = data.map(c => c.nome.toLowerCase())
+  const isCityInList = (value: string) => {
+    return !!cityList.includes(value.toLowerCase())
+  }
+
+  return { data, isLoading, isCityInList }
 }

@@ -25,8 +25,14 @@ function getFormsInLocalStrage() {
     ...dateFormTree,
     ...dateFormFour,
   }
-
   return { mergedData }
+}
+
+function clearFormsInLocalStorage() {
+  localStorage.removeItem('form_step_one')
+  localStorage.removeItem('form_data_adress')
+  localStorage.removeItem('form_data_social_network')
+  localStorage.removeItem('form_data_about_you')
 }
 
 export default async function useSubmitFormRegister() {
@@ -38,11 +44,16 @@ export default async function useSubmitFormRegister() {
     return null
   }
   try {
-    const response = await fetch('/api', {
+    const token = ''
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user`, {
       method: 'POST',
       body: JSON.stringify({ mergedData }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
+    clearFormsInLocalStorage()
     const data = await response.json()
     return data
   } catch (error) {

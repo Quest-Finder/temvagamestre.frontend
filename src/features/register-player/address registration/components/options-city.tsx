@@ -10,14 +10,20 @@ export interface ICidade {
 
 interface OptionsCityProps {
   uf: string
+  handleValueCity: (city: string) => void
+  cityValue: string
 }
-export default function OptionsCity({ uf }: OptionsCityProps) {
+export default function OptionsCity({
+  uf,
+  handleValueCity,
+  cityValue,
+}: OptionsCityProps) {
   const { data, isLoading } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
-  const valueFieldCity = form.getValues('city')
-  const fieldCityIsEmpty = valueFieldCity.length !== 0
+  const fieldCityIsEmpty = cityValue.length !== 0
   const handleSelectCity = (city: string) => {
     form.setValue('city', city)
+    handleValueCity(city)
   }
   if (isLoading)
     return (
@@ -28,7 +34,7 @@ export default function OptionsCity({ uf }: OptionsCityProps) {
       {data
         .filter(city =>
           removeAccents(city.nome.toLowerCase()).includes(
-            form.watch('city').toLowerCase(),
+            cityValue.toLowerCase(),
           ),
         )
         .slice(0, 1)
