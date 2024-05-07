@@ -165,12 +165,12 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, FormMessageProps>(
 
     return (
       <ul className='list-inside rounded-md bg-red-100 px-4 py-2'>
-        <li className='list-disc text-red-500 marker:text-xs'>
+        <li className='list-disc text-red-700 marker:text-xs'>
           <p
             ref={ref}
             id={formMessageId}
             className={cn(
-              'inline-block text-xs font-medium text-red-500 dark:text-red-900',
+              'inline-block text-xs font-medium text-red-700 dark:text-red-900',
               className,
             )}
             {...props}
