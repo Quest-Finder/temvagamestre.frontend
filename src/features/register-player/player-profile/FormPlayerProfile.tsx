@@ -61,9 +61,11 @@ export function FormPlayerProfile() {
                       >
                         <FormControl>
                           <Card
-                            className={`${getRpgStyling(item.title)} py-4 px-6`}
-                            onClick={(selected) => {
-                              return selected ? field.onChange(item.id) : field.onChange(field.value === '')
+                            aria-disabled={form.getValues("playerProfileId").length !== 0 && (form.getValues('playerProfileId') !== item.id)}
+                            className={`${getRpgStyling(item.title)} py-4 px-6 aria-disabled:opacity-50 cursor-pointer`}
+                            onClick={() => {
+                              console.log(form.getValues('playerProfileId'))
+                              return field.onChange(item.id)
                             }}
                           >
                             <div className={`${getRpgImageColor(item.title)} rounded-full p-4 h-24 w-24 flex justify-center items-center`}>
@@ -92,7 +94,7 @@ export function FormPlayerProfile() {
             variant='default'
             type='submit'
           >
-            Próximo
+            Salvar e continuar
             <Arrow />
           </Button>
         </div>
