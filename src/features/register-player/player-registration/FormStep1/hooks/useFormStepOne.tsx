@@ -15,7 +15,7 @@ export function useFormStepOne() {
   const form = useForm<FormStepOneType>({
     resolver: zodResolver(FormStepOneSchema),
     defaultValues: savedData || defaultValues,
-    mode: 'all',
+    mode: 'onSubmit',
   })
   useGetNameByClerk(savedData, form, setNameLoading)
   useSetValueDateOfBirth(form, date)

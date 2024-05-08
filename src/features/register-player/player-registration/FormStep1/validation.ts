@@ -1,6 +1,7 @@
 import * as z from 'zod'
 import moment from 'moment'
 import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
+import { checkUniqueUsername } from './helper/checkUniqueUsername'
 
 export const FormStepOneSchema = z.object({
   name: z
@@ -18,6 +19,9 @@ export const FormStepOneSchema = z.object({
     .min(1, 'Campo obrigatório')
     .max(15, 'O username deve conter no máximo 15 caracteres')
     .regex(/^[a-zA-Z0-9'-]*$/, 'Caracteres especiais não são disponiveis')
+    .refine((username) => checkUniqueUsername(username), {
+      message: "Username ja existente"
+    })
     .refine(username => !filter.isProfane(username), {
       message: 'Palavras de baixo calão não são permitidas',
     }),
