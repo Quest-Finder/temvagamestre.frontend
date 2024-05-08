@@ -128,7 +128,8 @@ export function FormSetpOne() {
           <div className='text-center'>
             <Button
               disabled={!form.formState.isValid}
-              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+              aria-disabled={form.formState.isValidating}
+              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:animate-pulse aria-disabled:pointer-events-none aria-disabled:cursor-wait'
               variant='default'
               type='submit'
             >
