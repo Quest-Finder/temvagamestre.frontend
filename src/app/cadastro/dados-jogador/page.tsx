@@ -1,4 +1,4 @@
-import { FormSetpOne } from '@/features/register-player/player-registration/FormStep1/FormStepOne'
+import { FormSetpOne } from '@/features/register-player/player-registration/FormStepOne'
 
 export default function Page() {
   return <FormSetpOne />

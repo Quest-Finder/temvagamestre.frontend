@@ -1,6 +1,6 @@
 'use client'
 
-import { FormLayout } from '@/features/register-player/player-registration/FormStep1/FormLayout'
+import { FormLayout } from '@/features/register-player/player-registration/FormLayout'
 import { PublicRoutes } from '@/services/routers'
 import { useUser } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'

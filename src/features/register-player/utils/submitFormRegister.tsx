@@ -6,7 +6,7 @@ import { addressRegistrationValidationT } from '../address registration/types/ad
 import {
   FormStepOneSchema,
   FormStepOneType,
-} from '../player-registration/FormStep1/validation'
+} from '../player-registration/validation'
 import { TsocialNetworkValidation } from '../social network registration/types/social-network'
 import { socialNetworkValidation } from '../social network registration/utils/social-network-registration-validation'
 

@@ -101,7 +101,7 @@ export function FormSetpOne() {
                 >
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder='Selecione uma opção'/>
+                      <SelectValue placeholder='Selecione uma opção' />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

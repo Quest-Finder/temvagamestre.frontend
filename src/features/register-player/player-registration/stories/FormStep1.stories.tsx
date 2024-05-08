@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FormSetpOne } from '@/features/register-player/player-registration/FormStep1/FormStepOne'
+import { FormSetpOne } from '@/features/register-player/player-registration/FormStepOne'
 
 const meta: Meta<typeof FormSetpOne> = {
   title: 'Register/FormSetpOne',
