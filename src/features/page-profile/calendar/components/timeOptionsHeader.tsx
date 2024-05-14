@@ -1,7 +1,6 @@
 import { formatDate } from '@/helpers/formatDate'
 import useWindowDimensions from '@/hooks/useWindowWidth'
 import { cn } from '@/lib/utils'
-import React from 'react'
 import { Text } from './typograph'
 
 export default function TimeOptionsHeader({
@@ -10,8 +9,8 @@ export default function TimeOptionsHeader({
   date: Date | undefined
 }) {
   const dateToStringFormat = formatDate(date)
-  const { isWidthMobile } = useWindowDimensions(835)
-  const isMobile: boolean = isWidthMobile
+  const { width } = useWindowDimensions()
+  const isMobile = width < 835
   return (
     <section className='mt-auto flex flex-col items-center justify-center'>
       <Text
