@@ -22,17 +22,17 @@ import { Arrow } from '@/components/icons/Arrow'
 import { NotValid } from '@/components/icons/NotValid'
 import { Update } from '@/components/icons/Update'
 
-import { FormStepOne } from '.'
+import { FormFirstStep } from '.'
 import { useFormStepOne } from './hooks/useFormStepOne'
 import useSubmitStepOne from './hooks/useSubmitStepOne'
 
-export function FormSetpOne() {
+export function FormStepOne() {
   const { nameLoading, form, handleSelectDate } = useFormStepOne()
 
   return (
-    <FormStepOne.Root>
+    <FormFirstStep.Root>
       <Form {...form}>
-        <FormStepOne.Title>Deixe-nos sabes mais sobre você</FormStepOne.Title>
+        <FormFirstStep.Title>Deixe-nos sabes mais sobre você</FormFirstStep.Title>
         <form
           onSubmit={form.handleSubmit(useSubmitStepOne())}
           className='w-full max-w-[340px] space-y-4'
@@ -44,7 +44,7 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Nome*</FormLabel>
                 <FormControl>
-                  <FormStepOne.InputField>
+                  <FormFirstStep.InputField>
                     <Input
                       disabled={nameLoading}
                       isError={form.formState.errors.name}
@@ -53,15 +53,15 @@ export function FormSetpOne() {
                       {...field}
                     />
                     {form.formState.errors.name && (
-                      <FormStepOne.InputIcon icon={NotValid} />
+                      <FormFirstStep.InputIcon icon={NotValid} />
                     )}
                     {nameLoading && (
-                      <FormStepOne.InputIcon
+                      <FormFirstStep.InputIcon
                         icon={Update}
                         className='motion-safe:animate-pulse'
                       />
                     )}
-                  </FormStepOne.InputField>
+                  </FormFirstStep.InputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -74,16 +74,16 @@ export function FormSetpOne() {
               <FormItem>
                 <FormLabel>Username*</FormLabel>
                 <FormControl>
-                  <FormStepOne.InputField>
+                  <FormFirstStep.InputField>
                     <Input
                       isError={form.formState.errors.username}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
                     {form.formState.errors.username && (
-                      <FormStepOne.InputIcon icon={NotValid} />
+                      <FormFirstStep.InputIcon icon={NotValid} />
                     )}
-                  </FormStepOne.InputField>
+                  </FormFirstStep.InputField>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -105,10 +105,10 @@ export function FormSetpOne() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value='ele/dele'>Ele / Dele</SelectItem>
-                    <SelectItem value='ela/dela'>Ela / Dela</SelectItem>
-                    <SelectItem value='elu/delu'>Elu / Delu</SelectItem>
-                    <SelectItem value='none'>Prefiro não responder</SelectItem>
+                    <SelectItem value='he/his'>Ele / Dele</SelectItem>
+                    <SelectItem value='she/her'>Ela / Dela</SelectItem>
+                    <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
+                    <SelectItem value="I don't want to share any pronouns">Prefiro não responder</SelectItem>
                   </SelectContent>
                 </Select>
               </FormItem>
@@ -120,7 +120,7 @@ export function FormSetpOne() {
             render={() => (
               <FormItem>
                 <FormLabel>Data de nascimento*</FormLabel>
-                <FormStepOne.DateOfBirth onSelectedDate={handleSelectDate} />
+                <FormFirstStep.DateOfBirth onSelectedDate={handleSelectDate} />
                 <FormMessage />
               </FormItem>
             )}
@@ -128,7 +128,8 @@ export function FormSetpOne() {
           <div className='text-center'>
             <Button
               disabled={!form.formState.isValid}
-              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+              aria-disabled={form.formState.isValidating}
+              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:animate-pulse aria-disabled:pointer-events-none aria-disabled:cursor-wait'
               variant='default'
               type='submit'
             >
@@ -138,6 +139,6 @@ export function FormSetpOne() {
           </div>
         </form>
       </Form>
-    </FormStepOne.Root>
+    </FormFirstStep.Root>
   )
 }

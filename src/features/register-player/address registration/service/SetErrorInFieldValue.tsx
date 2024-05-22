@@ -6,7 +6,7 @@ export default function SetErrorInFieldValue(
   values: addressRegistrationValidationT,
   field: 'city' | 'state',
 ) {
-  const liveInBrazilIsFalse = values.liveInBrazil === false
+  const liveInBrazilIsFalse = !values.liveInBrazil
   const valuesFieldIsEmpty = values[field] === ''
   if (liveInBrazilIsFalse && valuesFieldIsEmpty) {
     return form.setError(field, {

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FormSetpOne } from '@/features/register-player/player-registration/FormStep1/FormStepOne'
+import { FormStepOne } from '@/features/register-player/player-registration/FormStepOne'
 
-const meta: Meta<typeof FormSetpOne> = {
+const meta: Meta<typeof FormStepOne> = {
   title: 'Register/FormSetpOne',
-  component: FormSetpOne,
+  component: FormStepOne,
   parameters: {
     design: {
       type: 'figma',
@@ -15,10 +15,10 @@ const meta: Meta<typeof FormSetpOne> = {
 
 export default meta
 
-type Story = StoryObj<typeof FormSetpOne>
+type Story = StoryObj<typeof FormStepOne>
 
 const template: Story = {
-  render: () => <FormSetpOne />,
+  render: () => <FormStepOne />,
 }
 
 export const Form: Story = {

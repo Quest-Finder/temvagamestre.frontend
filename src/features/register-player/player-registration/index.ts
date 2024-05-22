@@ -4,7 +4,7 @@ import { FormInputField } from './components/FormStepOneInputField'
 import { DateOfBirth } from './components/FormStepOneDateOfBirth'
 import { InputIcon } from './components/FormInputIcon'
 
-export const FormStepOne = {
+export const FormFirstStep = {
   Root: FormStepOneRoot,
   Title: FormTitle,
   InputField: FormInputField,
