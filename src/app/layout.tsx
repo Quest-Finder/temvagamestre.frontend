@@ -1,7 +1,8 @@
-import { Metadata } from 'next'
-import { Inter, Roboto, Noto_Sans as NotoSans } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
 import { ptBR } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
+import { Metadata } from 'next'
+import { Inter, Noto_Sans as NotoSans, Roboto } from 'next/font/google'
+
 import './globals.css'
 
 const inter = Inter({
@@ -36,7 +37,7 @@ export default function RootLayout({
         <body
           className={`${inter.variable} ${roboto.variable} ${notoSans.variable}`}
         >
-          {children}
+          <main>{children}</main>
         </body>
       </ClerkProvider>
     </html>
