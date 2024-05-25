@@ -1,7 +1,5 @@
 import Search from '@/components/icons/searchIcon'
-import { useFormContext } from 'react-hook-form'
 import GetCityByEstate from '../service/get-city-by-estate'
-import { addressRegistrationValidationT } from '../types/address-registration'
 import { removeAccents } from '../utils/remove-accents'
 
 export interface ICidade {
@@ -21,9 +19,7 @@ export default function OptionsCity({
 }: OptionsCityProps) {
   const { data, isLoading } = GetCityByEstate({ uf })
   const disable = true
-  const form = useFormContext<addressRegistrationValidationT>()
   const handleSelectCity = (city: string) => {
-    console.log('ols')
     handleValueCity(city)
   }
 
