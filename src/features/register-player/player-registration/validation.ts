@@ -1,6 +1,7 @@
 import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
 import moment from 'moment'
 import * as z from 'zod'
+import { calculateAge } from './helper/calculateAge'
 import { checkUniqueUsername } from './helper/checkUniqueUsername'
 
 export const FormStepOneSchema = z.object({
@@ -36,7 +37,10 @@ export const FormStepOneSchema = z.object({
       {
         message: 'Data invalida',
       },
-    ),
+    )
+    .refine(dateOfBirth => calculateAge(new Date(dateOfBirth)) >= 18, {
+      message: 'Você precisar ser maior de 18 anos',
+    }),
 })
 
 export type FormStepOneType = z.infer<typeof FormStepOneSchema>
