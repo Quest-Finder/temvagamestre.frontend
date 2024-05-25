@@ -13,12 +13,18 @@ import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
 import { getError } from '../utils/getError'
+import ReplyBtnLatter from '../utils/reply-button-later'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
 import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
 
 export default function FormAboutYou() {
   const form = useHookFormAboutYou()
+
+  const formWatch = form.watch(['titulo', 'bio'])
+
+  const isAnyFieldFilled = formWatch[0].length > 0 && formWatch[1].length > 0
+
   return (
     <FormProvider {...form}>
       <Form {...form}>
@@ -41,7 +47,7 @@ export default function FormAboutYou() {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className={`h-9 focus-visible:ring-transparent ${getError(
+                      className={`h-9  ${getError(
                         form.formState.errors.titulo,
                       )}`}
                       placeholder='Exemplo: Jogador combeiro safado'
@@ -64,7 +70,7 @@ export default function FormAboutYou() {
                     <Textarea
                       maxLength={500}
                       placeholder='Explorador das terras mágicas de Aldoria, mestre em interpretar personagens épicos e mergulhar em histórias de fantasia medieval. Pronto para embarcar em jornadas de roleplay intensas no mundo dos RPGs de mesa.'
-                      className={`invisible-scrollbar h-[7.25rem] resize-none px-4 py-2 text-sm leading-5 shadow-xl focus-visible:ring-transparent ${getError(
+                      className={`invisible-scrollbar h-[7.25rem] resize-none px-4 py-2 text-sm leading-5 shadow-xl  ${getError(
                         form.formState.errors.titulo,
                       )}`}
                       {...field}
@@ -75,11 +81,10 @@ export default function FormAboutYou() {
             />
           </div>
           <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
-            <p className='text-center text-sm font-normal leading-5 text-neutral-500'>
-              Não responder nesse momento
-            </p>
+            <ReplyBtnLatter router={RegisterRoutes.Adress} />
             <Button
               type='submit'
+              disabled={!isAnyFieldFilled}
               className='animate-wiggle min-h-[3.5rem] min-w-[12.1875rem] max-w-[13.375rem] px-8 py-4'
             >
               Salvar e Continuar
