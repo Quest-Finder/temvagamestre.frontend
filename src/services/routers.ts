@@ -15,7 +15,4 @@ export enum RegisterRoutes {
   Sucess = '/cadastro/sucesso',
 }
 
-export const publicRoutes = [
-  ...Object.values(PublicRoutes),
-  ...Object.values(RegisterRoutes),
-]
+export const publicRoutes = [...Object.values(PublicRoutes)]
