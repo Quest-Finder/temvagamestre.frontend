@@ -1,8 +1,13 @@
-import { FormField, FormLabel } from '@/components/ui/form'
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -12,39 +17,50 @@ import { addressRegistrationValidationT } from '../types/address-registration'
 import { states } from '../utils/estates'
 
 export default function InputState() {
-  const form = useFormContext<addressRegistrationValidationT>()
-
+  const {
+    control,
+    watch,
+    formState: { errors },
+  } = useFormContext<addressRegistrationValidationT>()
+  const valueInputLiveIBrazil = watch('liveInBrazil')
   return (
     <FormField
+      control={control}
       name='state'
-      control={form.control}
       render={({ field }) => (
-        <Select
-          onValueChange={field.onChange}
-          defaultValue={field.value}
-        >
+        <FormItem>
           <FormLabel
-            className={` ${form.formState.errors.state && 'text-red-500'} `}
+            className={`
+            ${valueInputLiveIBrazil && 'text-neutral-300'}
+            ${errors.state && 'text-red-500'}
+            `}
           >
-            Em qual estado você mora?
+            Insira seu estado
           </FormLabel>
-
-          <SelectTrigger className='mt-2 focus-visible:ring-transparent'>
-            <SelectValue placeholder='Selecione seu estado' />
-          </SelectTrigger>
-          <SelectContent className=' bg-neutral-50'>
-            <SelectGroup>
-              {states.map(option => (
+          <Select
+            onValueChange={field.onChange}
+            value={field.value}
+            disabled={valueInputLiveIBrazil}
+          >
+            <FormControl>
+              <SelectTrigger>
+                <SelectValue placeholder='Selecione seu estado' />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent>
+              {states.map(({ label, value }) => (
                 <SelectItem
-                  key={option.value}
-                  value={option.value}
+                  key={value}
+                  value={value}
                 >
-                  {option.label}
+                  {label}
                 </SelectItem>
               ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+            </SelectContent>
+          </Select>
+
+          <FormMessage />
+        </FormItem>
       )}
     />
   )
