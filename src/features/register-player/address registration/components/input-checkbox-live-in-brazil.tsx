@@ -1,41 +1,49 @@
-import React from 'react'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
-  FormField,
-  FormLabel,
   FormControl,
+  FormDescription,
+  FormField,
   FormItem,
+  FormLabel,
 } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
-import { addressRegistrationValidationT } from '../types/address-registration'
+import { useIsDisabled } from '../store/store'
 
 export default function InputLiveInBrazil() {
-  const form = useFormContext<addressRegistrationValidationT>()
+  const { control, setValue } = useFormContext()
+  const { setIsDisabled } = useIsDisabled()
+  function handleIsDisabled() {
+    setValue('state', undefined)
+    setValue('city', undefined)
+    setIsDisabled(false)
+  }
 
   return (
-    <div className=''>
-      <FormField
-        control={form.control}
-        name='liveInBrazil'
-        render={({ field }) => (
-          <FormItem className='mr-auto flex flex-row items-start space-x-3  space-y-0 p-4'>
+    <FormField
+      control={control}
+      name='liveInBrazil'
+      render={({ field }) => (
+        <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md  p-4'>
+          <FormLabel
+            htmlFor='liveInBrazil'
+            className='flex cursor-pointer items-start space-x-3 space-y-0  rounded-md p-4'
+            onChange={() => handleIsDisabled()}
+          >
             <FormControl>
-              <FormLabel
-                className='flex cursor-pointer items-center gap-2'
-                htmlFor='liveInBrazil'
-              >
-                <input
-                  id='liveInBrazil'
-                  type='checkbox'
-                  checked={field.value}
-                  onChange={field.onChange}
-                  className='h-4 w-4 p-1 accent-primary-900 transition-colors'
-                />
-                Não moro no Brasil
-              </FormLabel>
+              <Checkbox
+                id='liveInBrazil'
+                checked={field.value}
+                onCheckedChange={field.onChange}
+              />
             </FormControl>
-          </FormItem>
-        )}
-      />
-    </div>
+            <div className='space-y-1 leading-none'>
+              <FormDescription className='text-neutral-400'>
+                Não moro no Brasil
+              </FormDescription>
+            </div>
+          </FormLabel>
+        </FormItem>
+      )}
+    />
   )
 }
