@@ -1,11 +1,11 @@
-import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 leading-5',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 leading-5 disabled:cursor-not-allowed',
   {
     variants: {
       variant: {
@@ -19,14 +19,13 @@ const buttonVariants = cva(
           'bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90',
         outline:
           'border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
-        ghost:
-          'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
+        ghost: 'font-notoSans text-sm font-normal leading-3 hover:bg-[#CCFBF1]',
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
       },
       size: {
         default: 'h-10 px-8 py-4',
         sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
+        lg: 'h-14 rounded-md px-8',
         icon: 'h-10 w-10',
       },
     },
@@ -36,7 +35,6 @@ const buttonVariants = cva(
     },
   },
 )
-
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
