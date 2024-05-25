@@ -1,27 +1,15 @@
-'use client'
-
 import { FormLayout } from '@/features/register-player/player-registration/FormLayout'
-import { PublicRoutes } from '@/services/routers'
-import { useUser } from '@clerk/nextjs'
-import { redirect } from 'next/navigation'
+import { auth, clerkClient } from '@clerk/nextjs/server'
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  const { user } = useUser()
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const { userId } = auth().protect()
 
-  const userRegistration = false
-  if (!user) {
-    // usuario não fez login no clerk
-    return redirect(PublicRoutes.SignIn)
-  }
-  // aqui vai verificar se o usuario esta cadastrado no nosso DB
+  const user = await clerkClient.users.getUser(userId)
 
-  if (user && userRegistration) {
-    // usuario autenticado e registrado no nosso DB
-    return redirect(PublicRoutes.PlayerProfile)
-  }
+  if (!user) return null
   return <FormLayout>{children}</FormLayout>
 }
