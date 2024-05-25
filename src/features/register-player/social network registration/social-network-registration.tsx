@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import ReplyBtnLatter from '../utils/reply-button-later'
 import { FormTitle } from '../utils/title-form'
 import { Input } from './components'
 import useFormSocialMedia from './hook/useFormSocialNetWork'
@@ -13,6 +14,17 @@ import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
 export default function SocialNetworkRegistration() {
   const socialMediaMap = parseSocialValidationInArray()
   const form = useFormSocialMedia()
+  const socialNetworks = form.watch([
+    'facebook',
+    'instagram',
+    'reddit',
+    'twitter',
+    'discord',
+  ])
+  const isAnyFieldFilled = Object.values(socialNetworks).some(network => {
+    return network && (network.username?.length as number) >= 3
+  })
+
   return (
     <FormProvider {...form}>
       <form
@@ -37,11 +49,10 @@ export default function SocialNetworkRegistration() {
           </Input.Wrapper>
         ))}
         <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
-          <p className='text-sm font-normal leading-5 text-neutral-500'>
-            Não responder nesse momento
-          </p>
+          <ReplyBtnLatter router={RegisterRoutes.AboutYou} />
           <Button
             type='submit'
+            disabled={!isAnyFieldFilled}
             className='animate-wiggle min-h-[3.5rem] min-w-[200px] max-w-[13.375rem] px-8 py-4'
           >
             Salvar e Continuar
