@@ -4,7 +4,7 @@ export const FormGameStylesSchema = z.object({
   rpgStyles: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "Você precisa escolher no mínimo 1 opção.",
   })
-    .refine((array) => array.length <=  3, {
+    .refine((array) => array.length >  3, {
     message: "No pode escolher máximo 3 opções"
   }),
 })
