@@ -79,42 +79,46 @@ export function FormGameStyles() {
                         <FormItem
                           key={item.id}
                           aria-disabled={validationCheckBoxLimitation(form.getValues('rpgStyles'), item.id, 3)}
-                          className="flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 aria-disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed"
+                          className="group/checkbox aria-disabled:cursor-not-allowed"
                         >
-                          <FormLabel className="font-medium text-sm font-mono text-primary-900">
+                          <FormLabel
+                            className={`${field.value?.includes(item.id) ? 'border-primary-900' : 'border-transparent'} flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 group-aria-disabled/checkbox:opacity-50 group-aria-disabled/checkbox:pointer-events-none cursor-pointer border-[1px] font-medium text-sm font-mono text-primary-900`}
+                          >
                             {item.name}
-                          </FormLabel>
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value?.includes(item.id)}
-                              className="border-primary-900 data-[state=checked]:bg-primary-900 data-[state=checked]:rounded-full"
-                              onCheckedChange={(checked) => {
-                                return checked
-                                  ? field.onChange([...field.value, item.id])
-                                  : field.onChange(
-                                    field.value?.filter(
-                                      (value) => value !== item.id
+                            <FormControl>
+                              <Checkbox
+                                checked={field.value?.includes(item.id)}
+                                className="border-primary-900 data-[state=checked]:bg-primary-900 data-[state=checked]:rounded-full"
+                                onCheckedChange={(checked) => {
+                                  return checked
+                                    ? field.onChange([...field.value, item.id])
+                                    : field.onChange(
+                                      field.value?.filter(
+                                        (value) => value !== item.id
+                                      )
                                     )
-                                  )
-                              }}
-                            />
-                          </FormControl>
+                                }}
+                              />
+                            </FormControl>
+                          </FormLabel>
                         </FormItem>
                       )
                     }}
                   />
                 ))}
               </FormItem>
-              <div className="w-fit mx-auto [&>ul]:mt-5">
-                <FormMessage/>
-              </div>
+              {form.formState.errors.rpgStyles?.message &&
+                <div className="w-fit mx-auto [&>ul]:mt-5">
+                  <FormMessage/>
+                </div>
+              }
             </FormItem>
           )}
         />
         <div className='text-center'>
           <Button
             disabled={!form.formState.isValid}
-            className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+            className='h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
             variant='default'
             type='submit'
           >
