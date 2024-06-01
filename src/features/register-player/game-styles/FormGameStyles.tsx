@@ -54,12 +54,14 @@ export function FormGameStyles() {
 
   return (
     <Form {...form}>
-      <FormAditionalText className="text-center">
-        Olá! Para aprimorarmos sua experiência no TVM, por favor, responda algumas perguntas.
-      </FormAditionalText>
-      <FormTitle>
-        Escolha o estilo de jogo que mais se alinha com seus interesses.
-      </FormTitle>
+      <div>
+        <FormAditionalText className="text-center">
+          Olá! Para aprimorarmos sua experiência no TVM, por favor, responda algumas perguntas.
+        </FormAditionalText>
+        <FormTitle className="mb-0">
+          Escolha o estilo de jogo que mais se alinha com seus interesses.
+        </FormTitle>
+      </div>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col items-center">
         <FormField
           control={form.control}
@@ -67,7 +69,7 @@ export function FormGameStyles() {
           render={() => (
             <FormItem>
               <FormItem className="flex flex-wrap justify-center max-w-[44.063rem] space-y-0 gap-2">
-                {gameStyles.map((item) => (
+                {mockGameStyles.map((item) => (
                   <FormField
                     key={item.id}
                     control={form.control}
@@ -77,7 +79,7 @@ export function FormGameStyles() {
                         <FormItem
                           key={item.id}
                           aria-disabled={validationCheckBoxLimitation(form.getValues('rpgStyles'), item.id, 3)}
-                          className="flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 aria-disabled:opacity-50 aria-disabled:pointer-events-none"
+                          className="flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 aria-disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed"
                         >
                           <FormLabel className="font-medium text-sm font-mono text-primary-900">
                             {item.name}
