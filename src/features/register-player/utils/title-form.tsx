@@ -7,7 +7,7 @@ interface FormTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
 export function FormTitle({ className, children, ...props }: FormTitleProps) {
   return (
     <h1
-      className={cn('mb-4 text-center text-[32px] text-neutral-950', className)}
+      className={cn('text-center text-[32px] text-neutral-950 max-w-[46.023rem] mx-auto font-semibold leading-none', className)}
       {...props}
     >
       {children}
