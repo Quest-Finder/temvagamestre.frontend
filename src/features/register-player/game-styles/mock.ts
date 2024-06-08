@@ -1,7 +1,4 @@
-export interface GameStyle {
-  id: string,
-  name: string
-}
+import { GameStyle } from './types/gameStyles'
 
 export const mockGameStyles: GameStyle[] = [
   {

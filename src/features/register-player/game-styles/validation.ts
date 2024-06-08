@@ -8,5 +8,3 @@ export const FormGameStylesSchema = z.object({
     message: "Escolher no máximo 3 opções"
   }),
 })
-
-export type FormGameStylesType = z.infer<typeof FormGameStylesSchema>
