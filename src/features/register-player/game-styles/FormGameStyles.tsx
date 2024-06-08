@@ -13,44 +13,17 @@ import {
 } from "@/components/ui/form"
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FormGameStylesType, FormGameStylesSchema } from './validation'
 import { Arrow } from "@/components/icons/Arrow";
 
-import { mockGameStyles, GameStyle } from './mock'
+import { mockGameStyles } from './mock'
 
 import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import useSubmitGameStyles from "./hooks/useSubmitGameStyles";
+import { useFormGameStyles } from "./hooks/useFormGameStyles";
 
 export function FormGameStyles() {
-  const [gameStyles, setGameStyles] = useState<GameStyle[]>([])
-
-  const form = useForm<FormGameStylesType>({
-    defaultValues: {
-      rpgStyles: [],
-    },
-    resolver: zodResolver(FormGameStylesSchema),
-  })
-
-  async function getData() {
-    try {
-      const response = await fetch('https://tem-vaga-mestre-api-nnf7bytugq-uc.a.run.app/rpg-style')
-      const data = await response.json()
-      setGameStyles(data)
-    } catch (error) {
-      console.log(error)
-      throw new Error(`Error ${error}`)
-    }
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
-
-  function onSubmit(data: FormGameStylesType) {
-    console.log(data)
-  }
+  const {gameStyles, isLoading, form} = useFormGameStyles()
 
   return (
     <Form {...form}>
@@ -62,7 +35,7 @@ export function FormGameStyles() {
           Escolha o estilo de jogo que mais se alinha com seus interesses.
         </FormTitle>
       </div>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col items-center">
+      <form onSubmit={form.handleSubmit(useSubmitGameStyles())} className="space-y-8 flex flex-col items-center">
         <FormField
           control={form.control}
           name="rpgStyles"
@@ -82,7 +55,7 @@ export function FormGameStyles() {
                           className="group/checkbox aria-disabled:cursor-not-allowed"
                         >
                           <FormLabel
-                            className={`${field.value?.includes(item.id) ? 'border-primary-900' : 'border-transparent'} flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 group-aria-disabled/checkbox:opacity-50 group-aria-disabled/checkbox:pointer-events-none cursor-pointer border-[1px] font-medium text-sm font-mono text-primary-900`}
+                            className={cn("flex items-center bg-primary-50 w-fit py-3 px-4 rounded-full gap-2.5 space-y-0 group-aria-disabled/checkbox:opacity-50 group-aria-disabled/checkbox:pointer-events-none cursor-pointer border-[1px] font-medium text-sm font-mono text-primary-900", field.value?.includes(item.id) ? 'border-primary-900' : 'border-transparent')}
                           >
                             {item.name}
                             <FormControl>
