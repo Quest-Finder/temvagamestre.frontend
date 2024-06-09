@@ -15,12 +15,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Arrow } from "@/components/icons/Arrow";
 
-import { mockGameStyles } from './mock'
-
 import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
 import { cn } from "@/lib/utils";
 import useSubmitGameStyles from "./hooks/useSubmitGameStyles";
 import { useFormGameStyles } from "./hooks/useFormGameStyles";
+import { Skeleton } from "../utils/Skeleton";
 
 export function FormGameStyles() {
   const {gameStyles, isLoading, form} = useFormGameStyles()
@@ -42,7 +41,8 @@ export function FormGameStyles() {
           render={() => (
             <FormItem>
               <FormItem className="flex flex-wrap justify-center max-w-[44.063rem] space-y-0 gap-2">
-                {mockGameStyles.map((item) => (
+                {isLoading && <Skeleton height="[2.875rem]" width={40} quantity={10} className="rounded-full"/>}
+                {(!isLoading && gameStyles) && gameStyles.map((item) => (
                   <FormField
                     key={item.id}
                     control={form.control}
