@@ -9,23 +9,19 @@ import {
 import { Card, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from "@/components/ui/button"
 import { Arrow } from '@/components/icons/Arrow'
-import { FormPlayerProfileType } from './types/palyerProfileTypes'
 import Image from 'next/image'
 
 import { mockFormPlayerProfile } from './mock'
 
-import { getRpgImage, getRpgStyling, getRpgImageColor } from './helpers/getRpgStyle'
+import { getRpgStyling } from './helpers/getRpgStyle'
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from "./components/FormAditionalText"
 import { cn } from "@/lib/utils"
 import { useFormPlayerProfile } from "./hooks/useFormPlayerProfile"
+import useSubmitFormRegister from "../utils/submitFormRegister"
 
 export function FormPlayerProfile() {
   const { palyerProfileTypes, isLoading, form} = useFormPlayerProfile()
-
-  function onSubmit(data: FormPlayerProfileType) {
-    console.log(data)
-  }
 
   return (
     <Form {...form}>
@@ -37,7 +33,7 @@ export function FormPlayerProfile() {
           Escolha o perfil de jogador que mais se alinha com seus interesses.
         </FormTitle>
       </div>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col items-center">
+      <form onSubmit={form.handleSubmit(useSubmitFormRegister)} className="space-y-8 flex flex-col items-center">
         <FormField
           control={form.control}
           name='playerProfileId'
@@ -57,16 +53,16 @@ export function FormPlayerProfile() {
                         <FormControl>
                           <Card
                             aria-disabled={form.getValues("playerProfileId").length !== 0 && (form.getValues('playerProfileId') !== item.id)}
-                            className={cn("py-4 px-6 space-y-6 h-full aria-disabled:opacity-50 cursor-pointer transition ease-in-out duration-300", getRpgStyling(item.title), field.value === item.id && 'shadow-[10px_10px_10px_0_rgb(0,0,0,0.25)]' )}
+                            className={cn("py-4 px-6 space-y-6 h-full aria-disabled:opacity-50 cursor-pointer transition ease-in-out duration-300", getRpgStyling(item.title).stylingClass, field.value === item.id && 'shadow-[10px_10px_10px_0_rgb(0,0,0,0.25)]' )}
                             onClick={() => {
                               return field.value === item.id ? field.onChange('') : field.onChange(item.id)
                             }}
                           >
                             <div
-                              className={cn("rounded-full p-4 h-24 w-24 flex justify-center items-center", getRpgImageColor(item.title))}
+                              className={cn("rounded-full p-4 h-24 w-24 flex justify-center items-center", getRpgStyling(item.title).colorClass)}
                             >
                               <Image
-                                src={getRpgImage(item.title)}
+                                src={getRpgStyling(item.title).image}
                                 className={`${field.value === item.id && 'drop-shadow-lg'}`}
                                 alt={item.title}
                               />
