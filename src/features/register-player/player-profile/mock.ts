@@ -1,10 +1,6 @@
-interface profileType {
-  id: string,
-  title: string,
-  description: string
-}
+import { PlayerProfileType } from './types/palyerProfileTypes'
 
-export const mockFormPlayerProfile: profileType[] = [
+export const mockFormPlayerProfile: PlayerProfileType[] = [
   {
     id: '9228a9a0-c7e0-4d62-80bb-458dd772c4f9',
     title: 'Exploração',
