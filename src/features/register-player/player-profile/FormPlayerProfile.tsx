@@ -9,9 +9,7 @@ import {
 import { Card, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from "@/components/ui/button"
 import { Arrow } from '@/components/icons/Arrow'
-import { useForm } from "react-hook-form"
-import { FormPlayerProfileType, FormPlayerProfileSchema } from './validation'
-import { zodResolver } from "@hookform/resolvers/zod"
+import { FormPlayerProfileType } from './types/palyerProfileTypes'
 import Image from 'next/image'
 
 import { mockFormPlayerProfile } from './mock'
@@ -20,14 +18,10 @@ import { getRpgImage, getRpgStyling, getRpgImageColor } from './helpers/getRpgSt
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from "./components/FormAditionalText"
 import { cn } from "@/lib/utils"
+import { useFormPlayerProfile } from "./hooks/useFormPlayerProfile"
 
 export function FormPlayerProfile() {
-  const form = useForm<FormPlayerProfileType>({
-    resolver: zodResolver(FormPlayerProfileSchema),
-    defaultValues: {
-      playerProfileId: '',
-    },
-  })
+  const { palyerProfileTypes, isLoading, form} = useFormPlayerProfile()
 
   function onSubmit(data: FormPlayerProfileType) {
     console.log(data)
@@ -69,7 +63,6 @@ export function FormPlayerProfile() {
                             }}
                           >
                             <div
-                              // className={`${getRpgImageColor(item.title)} rounded-full p-4 h-24 w-24 flex justify-center items-center`}
                               className={cn("rounded-full p-4 h-24 w-24 flex justify-center items-center", getRpgImageColor(item.title))}
                             >
                               <Image
