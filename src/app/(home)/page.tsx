@@ -19,10 +19,6 @@ export default function Home() {
           href={RegisterRoutes.PlayerData}
           content='Cadastro do jogador'
         />
-        <ButtonNavigation
-          href={RegisterRoutes.PlayerProfile}
-          content='Cadastro preferencia de perfil'
-        />
         <SignOutButton>
           <Button>Sign out</Button>
         </SignOutButton>

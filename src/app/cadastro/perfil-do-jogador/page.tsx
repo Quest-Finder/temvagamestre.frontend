@@ -10,11 +10,6 @@ export default function PagesPlayerProfile() {
   return (
     <>
       <FormPlayerProfile />
-      <ButtonNavigation
-        href={RegisterRoutes.Sucess}
-        content='sucesso'
-        onClick={useSubmitFormRegister}
-      />
     </>
   )
 }
