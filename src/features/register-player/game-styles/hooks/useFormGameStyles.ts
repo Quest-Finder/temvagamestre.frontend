@@ -12,7 +12,7 @@ export function useFormGameStyles() {
   const { data: gameStyles, isLoading, error } = useFetchData<GameStyle[]>(
     "https://tem-vaga-mestre-api-nnf7bytugq-uc.a.run.app/rpg-style"
   )
-  const savedData = useLocalStorageGetItem<FormGameStylesType>('game-styles')
+  const savedData = useLocalStorageGetItem<FormGameStylesType>('game_styles')
 
   const initalValue = savedData ? savedData : defaultValues
 

@@ -62,7 +62,7 @@ export function FormGameStyles() {
                               <Checkbox
                                 checked={field.value?.includes(item.id)}
                                 className="border-primary-900 data-[state=checked]:bg-primary-900 data-[state=checked]:rounded-full"
-                                onCheckedChange={(checked) => {
+                                onCheckedChange={(checked: boolean) => {
                                   return checked
                                     ? field.onChange([...field.value, item.id])
                                     : field.onChange(
