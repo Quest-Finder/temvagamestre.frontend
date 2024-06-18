@@ -15,17 +15,17 @@ import { socialNetworkValidation } from '../social network registration/utils/so
 
 function getFormsInLocalStrage() {
   const dateFormOne = useLocalStorageGetItem<FormStepOneType>('form_step_one')
-  const dateFormTwo =
-    useLocalStorageGetItem<TsocialNetworkValidation>('form_data_social_network')
+  const dateFormTwo = useLocalStorageGetItem<TsocialNetworkValidation>(
+    'form_data_social_network',
+  )
   const dateFormTree = useLocalStorageGetItem<TValidation>(
     'form_data_about_you',
   )
   const dateFormFour =
     useLocalStorageGetItem<addressRegistrationValidationT>('form_data_adress')
-  // const dateFormFive = 
+  // const dateFormFive =
   //   useLocalStorageGetItem('game_styles')
-  const dateFormSix = 
-    getPlayerGameStylesData()
+  const dateFormSix = getPlayerGameStylesData()
   const mergedData = {
     ...dateFormOne,
     ...dateFormTwo,
@@ -53,7 +53,13 @@ export default async function useSubmitFormRegister() {
   const resultFour = addressRegistrationValidation.safeParse(mergedData)
   // const resultFive = FormGameStylesSchema.safeParse(mergedData)
   const resultSix = FormPlayerProfileSchema.safeParse(mergedData)
-  if (!resultOne.success && !resultTwo.success && !resultThree.success && !resultFour && !resultSix) {
+  if (
+    !resultOne.success &&
+    !resultTwo.success &&
+    !resultThree.success &&
+    !resultFour &&
+    !resultSix
+  ) {
     return null
   }
   try {
