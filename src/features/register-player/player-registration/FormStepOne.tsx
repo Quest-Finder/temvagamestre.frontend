@@ -32,7 +32,9 @@ export function FormStepOne() {
   return (
     <FormFirstStep.Root>
       <Form {...form}>
-        <FormFirstStep.Title>Deixe-nos sabes mais sobre você</FormFirstStep.Title>
+        <FormFirstStep.Title>
+          Deixe-nos sabes mais sobre você
+        </FormFirstStep.Title>
         <form
           onSubmit={form.handleSubmit(useSubmitStepOne())}
           className='w-full max-w-[340px] space-y-4'
@@ -108,7 +110,9 @@ export function FormStepOne() {
                     <SelectItem value='he/his'>Ele / Dele</SelectItem>
                     <SelectItem value='she/her'>Ela / Dela</SelectItem>
                     <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
-                    <SelectItem value="I don't want to share any pronouns">Prefiro não responder</SelectItem>
+                    <SelectItem value="I don't want to share any pronouns">
+                      Prefiro não responder
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </FormItem>
@@ -129,7 +133,7 @@ export function FormStepOne() {
             <Button
               disabled={!form.formState.isValid}
               aria-disabled={form.formState.isValidating}
-              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:animate-pulse aria-disabled:pointer-events-none aria-disabled:cursor-wait'
+              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:animate-pulse aria-disabled:cursor-wait'
               variant='default'
               type='submit'
             >
