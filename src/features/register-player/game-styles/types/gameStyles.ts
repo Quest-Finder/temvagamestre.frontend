@@ -1,8 +1,8 @@
-import { z } from "zod"
-import { FormGameStylesSchema } from "../validation"
+import { z } from 'zod'
+import { FormGameStylesSchema } from '../validation'
 
 export interface GameStyle {
-  id: string,
+  id: string
   name: string
 }
 
