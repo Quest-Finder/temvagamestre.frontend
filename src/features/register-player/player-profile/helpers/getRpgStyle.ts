@@ -4,8 +4,8 @@ import Interpretacao from '../assets/Interpretacao.svg'
 
 import { RpgStyles, RpgStyleData } from '../types/palyerProfileTypes'
 
-const rpgStyles: { [key in RpgStyles]: RpgStyleData} = {
-  'Exploração': {
+const rpgStyles: { [key in RpgStyles]: RpgStyleData } = {
+  Exploração: {
     image: Exploracao,
     colorClass: 'bg-primary-100',
     stylingClass: 'border-primary-500 bg-primary-50',
@@ -15,11 +15,11 @@ const rpgStyles: { [key in RpgStyles]: RpgStyleData} = {
     colorClass: 'bg-secondary-100',
     stylingClass: 'border-secondary-500 bg-secondary-50',
   },
-  'Interpretação': {
+  Interpretação: {
     image: Interpretacao,
     colorClass: 'bg-accent-100',
     stylingClass: 'border-accent-500 bg-accent-50',
-  }
+  },
 }
 
 export function getRpgStyling(rpgStyle: RpgStyles) {
