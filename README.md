@@ -19,7 +19,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Login
 - [ ] Mesas
 
-
 ## 😄 Seja um dos contribuidores
 
 Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
