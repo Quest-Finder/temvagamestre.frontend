@@ -102,6 +102,37 @@ Sugestões de melhorias são rastreadas como [issues do GitHub](https://github.c
 - **Explique por que esta melhoria seria útil** para a maioria dos usuários do Tem Vaga Mestre?. Você também pode querer destacar outros projetos que resolveram melhor o problema e que poderiam servir como inspiração.
 
 ### Sua Primeira Contribuição de Código
+
+#### Estrutura de Pastas
+
+```txt
+├── CODE_OF_CONDUCT.md -> código de conduta
+├── CONTRIBUTING.md -> como contribuir para o TVM
+├── LICENSE 
+├── README.md
+├── components.json
+├── docker-compose.yml
+├── dockerfile
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── prettier.config.js 
+├── src
+│   ├── app
+│   ├── assets
+│   ├── components -> componentes globais
+│   ├── context
+│   ├── features -> funcionalidades da aplicação
+│   ├── helpers -> código auxiliar como máscaras
+│   ├── hooks -> hooks personalizados
+│   ├── lib
+│   ├── middleware.ts -> middleware do clerk
+│   └── services -> conexões com serviços externos
+├── tailwind.config.js
+└── tsconfig.json
+```
+
 <!-- TODO
 incluir configuração do ambiente, IDE e instruções típicas de início?
 
