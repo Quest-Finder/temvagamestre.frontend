@@ -2,26 +2,30 @@
 
 Primeiramente, obrigado por dedicar seu tempo para contribuir! ❤️
 
-Todos os tipos de contribuições são incentivados e valorizados. Consulte o [Índice](#índice) para ver as diferentes maneiras de ajudar e obter detalhes sobre como este projeto lida com elas. Certifique-se de ler a seção relevante antes de fazer sua contribuição. Isso facilitará muito para nós, mantenedores, e proporcionará uma experiência mais tranquila para todos os envolvidos. A comunidade aguarda ansiosamente suas contribuições. 🎉
+Todos os tipos de contribuições são incentivados e valorizados. Consulte o [Índice](#📌-índice) para ver as diferentes maneiras de ajudar e obter detalhes sobre como este projeto lida com elas. Certifique-se de ler a seção relevante antes de fazer sua contribuição. Isso facilitará muito para nós, mantenedores, e proporcionará uma experiência mais tranquila para todos os envolvidos. A comunidade aguarda ansiosamente suas contribuições. 🎉
 
-> E se você gosta do projeto, mas simplesmente não tem tempo para contribuir, tudo bem. Existem outras maneiras fáceis de apoiar o projeto e mostrar seu apreço, o que também nos deixaria muito felizes:
-> - Dê uma estrela no projeto
-> - Tweet sobre ele
-> - Siga nossa página no [linkedin](https://www.linkedin.com/company/tem-vaga-mestre/)
-> - Fale sobre o projeto em meetups locais e conte para seus amigos/colegas
+E se você gosta do projeto, mas simplesmente não tem tempo para contribuir, tudo bem. Existem outras maneiras fáceis de apoiar o projeto e mostrar seu apreço, o que também nos deixaria muito felizes:
+
+- Dê uma estrela no projeto
+
+- Tweet sobre ele
+
+- Siga nossa página no [linkedin](https://www.linkedin.com/company/tem-vaga-mestre/)
+
+- Fale sobre o projeto em meetups locais e conte para seus amigos/colegas
 
 ## 📌 Índice
 
-- [Código de Conduta](#código-de-conduta)
-- [Eu Tenho uma Pergunta](#eu-tenho-uma-pergunta)
-- [Eu Quero Contribuir](#eu-quero-contribuir)
+- [Código de Conduta](#📜-código-de-conduta)
+- [Eu Tenho uma Pergunta](#🤔-eu-tenho-uma-pergunta)
+- [Eu Quero Contribuir](#💡-eu-quero-contribuir)
   - [Reportar Bugs](#reportar-bugs)
   - [Sugerir Melhorias](#sugerir-melhorias)
   - [Sua Primeira Contribuição de Código](#sua-primeira-contribuição-de-código)
   - [Melhorando a Documentação](#melhorando-a-documentação)
-- [Guia de Estilo](#guia-de-estilo)
+- [Guia de Estilo](#📊-guia-de-estilo)
   - [Mensagens de Commit](#mensagens-de-commit)
-- [Junte-se à Equipe do Projeto](#junte-se-à-equipe-do-projeto)
+- [Junte-se à Equipe do Projeto](#🔎-junte-se-à-equipe-do-projeto)
 
 ## 📜 Código de Conduta
 
@@ -43,7 +47,7 @@ Cuidaremos do problema o mais rápido possível.
 
 ## 💡 Eu Quero Contribuir
 
-> ### Aviso Legal
+> Aviso Legal
 > Ao contribuir para este projeto, você deve concordar que é autor de 100% do conteúdo, que possui os direitos necessários sobre o conteúdo e que o conteúdo que você contribui pode ser fornecido sob a licença do projeto.
 
 ### Reportar Bugs
@@ -53,7 +57,7 @@ Cuidaremos do problema o mais rápido possível.
 Um bom relatório de bug não deve deixar os outros precisando buscar mais informações com você. Portanto, pedimos que você investigue cuidadosamente, colete informações e descreva o problema em detalhes em seu relatório. Por favor, complete as etapas a seguir para nos ajudar a corrigir qualquer bug em potencial o mais rápido possível.
 
 - Certifique-se de que está usando a versão mais recente.
-- Determine se seu bug é realmente um bug e não um erro de sua parte, por exemplo, usando componentes/versões de ambiente incompatíveis (certifique-se de ter lido a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend.wiki.git). Se você está procurando suporte, talvez queira verificar [esta seção](#eu-tenho-uma-pergunta)).
+- Determine se seu bug é realmente um bug e não um erro de sua parte, por exemplo, usando componentes/versões de ambiente incompatíveis (certifique-se de ter lido a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend.wiki.git). Se você está procurando suporte, talvez queira verificar [esta seção](#🤔-eu-tenho-uma-pergunta)).
 - Para ver se outros usuários já experimentaram (e possivelmente já resolveram) o mesmo problema que você está enfrentando, verifique se já existe um relatório de bug para o seu problema no [rastreador de bugs](https://github.com/Quest-Finder/temvagamestre.frontendissues?q=label%3Abug).
 - Também certifique-se de procurar na internet (incluindo Stack Overflow) para ver se usuários fora da comunidade do GitHub discutiram o problema.
 - Colete informações sobre o bug:
@@ -158,5 +162,5 @@ Para fazer parte da equipe que mantém o Tem Vaga Mestre? é necessário aguarda
 Este projeto faz parte da iniciativa [SouJuniorLabs](https://github.com/SouJunior), lá você encontra outros projetos open source voluntários.
 
 <!-- omit in toc -->
-## 💙 Atribuição
+### 💙 Atribuição
 Este guia é baseado no **contributing-gen**. [Crie o seu próprio](https://github.com/bttger/contributing-gen)!
