@@ -8,10 +8,10 @@ echo 'Done'
 
 file_count=$(git diff --cached --name-only | wc -l)
 
-max_files=1
+max_files=3
 
 if [ $file_count -gt $max_files ]; then
-    echo "ERRO: Mais de um arquivo modificado no commit."
+    echo "ERRO: Mais de três arquivos modificado no commit."
     exit 1
 fi
 
