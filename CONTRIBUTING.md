@@ -2,7 +2,7 @@
 
 Primeiramente, obrigado por dedicar seu tempo para contribuir! ❤️
 
-Todos os tipos de contribuições são incentivados e valorizados. Consulte o [Índice](#📌-índice) para ver as diferentes maneiras de ajudar e obter detalhes sobre como este projeto lida com elas. Certifique-se de ler a seção relevante antes de fazer sua contribuição. Isso facilitará muito para nós, mantenedores, e proporcionará uma experiência mais tranquila para todos os envolvidos. A comunidade aguarda ansiosamente suas contribuições. 🎉
+Todos os tipos de contribuições são incentivados e valorizados. Consulte o [Índice](#índice) para ver as diferentes maneiras de ajudar e obter detalhes sobre como este projeto lida com elas. Certifique-se de ler a seção relevante antes de fazer sua contribuição. Isso facilitará muito para nós, mantenedores, e proporcionará uma experiência mais tranquila para todos os envolvidos. A comunidade aguarda ansiosamente suas contribuições. 🎉
 
 E se você gosta do projeto, mas simplesmente não tem tempo para contribuir, tudo bem. Existem outras maneiras fáceis de apoiar o projeto e mostrar seu apreço, o que também nos deixaria muito felizes:
 
@@ -162,5 +162,5 @@ Para fazer parte da equipe que mantém o Tem Vaga Mestre? é necessário aguarda
 Este projeto faz parte da iniciativa [SouJuniorLabs](https://github.com/SouJunior), lá você encontra outros projetos open source voluntários.
 
 <!-- omit in toc -->
-## Atribuição
+## Créditos
 Este guia é baseado no **contributing-gen**. [Crie o seu próprio](https://github.com/bttger/contributing-gen)!
