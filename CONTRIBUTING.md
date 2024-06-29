@@ -163,4 +163,5 @@ Este projeto faz parte da iniciativa [SouJuniorLabs](https://github.com/SouJunio
 
 <!-- omit in toc -->
 ## Créditos
+
 Este guia é baseado no **contributing-gen**. [Crie o seu próprio](https://github.com/bttger/contributing-gen)!

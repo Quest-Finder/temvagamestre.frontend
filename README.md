@@ -1,4 +1,4 @@
-<img src="https://imgur.com/HisaR2D.png" alt="Logo Tem Vaga Mestre?"/>
+![Logo Tem Vaga Mestre?](https://imgur.com/HisaR2D.png)
 
 ## 💻 Pré-requisitos
 
