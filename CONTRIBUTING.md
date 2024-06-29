@@ -14,26 +14,26 @@ E se você gosta do projeto, mas simplesmente não tem tempo para contribuir, tu
 
 - Fale sobre o projeto em meetups locais e conte para seus amigos/colegas
 
-## 📌 Índice
+## Índice
 
-- [Código de Conduta](#📜código-de-conduta)
-- [Eu Tenho uma Pergunta](#🤔-eu-tenho-uma-pergunta)
-- [Eu Quero Contribuir](#💡-eu-quero-contribuir)
+- [Código de Conduta](#código-de-conduta)
+- [Eu Tenho uma Pergunta](#eu-tenho-uma-pergunta)
+- [Eu Quero Contribuir](#eu-quero-contribuir)
   - [Reportar Bugs](#reportar-bugs)
   - [Sugerir Melhorias](#sugerir-melhorias)
   - [Sua Primeira Contribuição de Código](#sua-primeira-contribuição-de-código)
   - [Melhorando a Documentação](#melhorando-a-documentação)
-- [Guia de Estilo](#📊-guias-de-estilo)
+  - [Guia de Estilo](#guias-de-estilo)
   - [Mensagens de Commit](#mensagens-de-commit)
-- [Junte-se à Equipe do Projeto](#🔎-junte-se-à-equipe-do-projeto)
+- [Junte-se à Equipe do Projeto](#junte-se-à-equipe-do-projeto)
 
-## 📜 Código de Conduta
+## Código de Conduta
 
-Este projeto e todos os participantes estão sujeitos ao [Código de Conduta do Tem Vaga Mestre?](https://github.com/Quest-Finder/temvagamestre.frontendblob/master/CODE_OF_CONDUCT.md). Ao participar, espera-se que você mantenha esse código. Por favor, reporte comportamentos inaceitáveis para <>.
+Este projeto e todos os participantes estão sujeitos ao [Código de Conduta do Tem Vaga Mestre?](https://github.com/Quest-Finder/temvagamestre.frontendblob/develop/CODE_OF_CONDUCT.md). Ao participar, espera-se que você mantenha esse código. Por favor, reporte comportamentos inaceitáveis para <>.
 
-## 🤔 Eu Tenho uma Pergunta
+## Eu Tenho uma Pergunta
 
-> Se você quiser fazer uma pergunta, assumimos que você já leu a [Documentação](https://github.com/Quest-Finder/temvagamestre.frontend.wiki.git) disponível.
+> Se você quiser fazer uma pergunta, assumimos que você já leu a [Documentação](https://github.com/Quest-Finder/temvagamestre.frontend/wiki) disponível.
 
 Antes de fazer uma pergunta, é melhor procurar por [Issues](https://github.com/Quest-Finder/temvagamestre.frontend/issues) existentes que possam ajudá-lo. Caso encontre um issue relevante e ainda precise de esclarecimento, você pode escrever sua pergunta nesse issue. Também é aconselhável buscar respostas na internet primeiro.
 
@@ -45,7 +45,7 @@ Se ainda assim você sentir a necessidade de fazer uma pergunta e precisar de es
 
 Cuidaremos do problema o mais rápido possível.
 
-## 💡 Eu Quero Contribuir
+## Eu Quero Contribuir
 
 > Aviso Legal
 > Ao contribuir para este projeto, você deve concordar que é autor de 100% do conteúdo, que possui os direitos necessários sobre o conteúdo e que o conteúdo que você contribui pode ser fornecido sob a licença do projeto.
@@ -57,7 +57,7 @@ Cuidaremos do problema o mais rápido possível.
 Um bom relatório de bug não deve deixar os outros precisando buscar mais informações com você. Portanto, pedimos que você investigue cuidadosamente, colete informações e descreva o problema em detalhes em seu relatório. Por favor, complete as etapas a seguir para nos ajudar a corrigir qualquer bug em potencial o mais rápido possível.
 
 - Certifique-se de que está usando a versão mais recente.
-- Determine se seu bug é realmente um bug e não um erro de sua parte, por exemplo, usando componentes/versões de ambiente incompatíveis (certifique-se de ter lido a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend.wiki.git). Se você está procurando suporte, talvez queira verificar [esta seção](#🤔-eu-tenho-uma-pergunta)).
+- Determine se seu bug é realmente um bug e não um erro de sua parte, por exemplo, usando componentes/versões de ambiente incompatíveis (certifique-se de ter lido a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend/wiki). Se você está procurando suporte, talvez queira verificar [esta seção](#eu-tenho-uma-pergunta)).
 - Para ver se outros usuários já experimentaram (e possivelmente já resolveram) o mesmo problema que você está enfrentando, verifique se já existe um relatório de bug para o seu problema no [rastreador de bugs](https://github.com/Quest-Finder/temvagamestre.frontendissues?q=label%3Abug).
 - Também certifique-se de procurar na internet (incluindo Stack Overflow) para ver se usuários fora da comunidade do GitHub discutiram o problema.
 - Colete informações sobre o bug:
@@ -91,7 +91,7 @@ Esta seção orienta você sobre como enviar uma sugestão de melhoria para o Te
 #### Antes de Enviar uma Sugestão de Melhoria
 
 - Certifique-se de que está usando a versão mais recente.
-- Leia a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend.wiki.git) com atenção e veja se a funcionalidade já está coberta, talvez por uma configuração individual.
+- Leia a [documentação](https://github.com/Quest-Finder/temvagamestre.frontend/wiki.git) com atenção e veja se a funcionalidade já está coberta, talvez por uma configuração individual.
 - Realize uma [pesquisa](https://github.com/Quest-Finder/temvagamestre.frontend/issues) para ver se a melhoria já foi sugerida. Se já foi, adicione um comentário ao issue existente em vez de abrir um novo.
 - Descubra se sua ideia se encaixa no escopo e nos objetivos do projeto. Cabe a você fazer um caso forte para convencer os desenvolvedores do projeto dos méritos deste recurso. Lembre-se de que queremos recursos que sejam úteis para a maioria dos nossos usuários e não apenas para um pequeno subconjunto. Se você está apenas direcionando uma minoria de usuários, considere escrever uma biblioteca de add-on/plugin.
 
@@ -148,19 +148,19 @@ Atualizando, melhorando e corrigindo a documentação
 
 -->
 
-## 📊 Guias de Estilo
+## Guias de Estilo
 
 ### Mensagens de Commit
 <!-- TODO
 
 -->
 
-## 🔎 Junte-se à Equipe do Projeto
+## Junte-se à Equipe do Projeto
 
 Para fazer parte da equipe que mantém o Tem Vaga Mestre? é necessário aguardar a abertura de vagas. Elas estarão listadas na nossa página da wiki e são ocupadas através de um processo seletivo. 
 
 Este projeto faz parte da iniciativa [SouJuniorLabs](https://github.com/SouJunior), lá você encontra outros projetos open source voluntários.
 
 <!-- omit in toc -->
-## 💙 Atribuição
+## Atribuição
 Este guia é baseado no **contributing-gen**. [Crie o seu próprio](https://github.com/bttger/contributing-gen)!
