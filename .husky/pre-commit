@@ -1,1 +1,18 @@
-npm run lint
+echo 'Check for linting errors...'
+npm run check || 
+(echo 'Linting errors or tests failed. Please fix them before commiting.' && exit 1)
+
+
+
+echo 'Done'
+
+file_count=$(git diff --cached --name-only | wc -l)
+
+max_files=1
+
+if [ $file_count -gt $max_files ]; then
+    echo "ERRO: Mais de um arquivo modificado no commit."
+    exit 1
+fi
+
+exit 0
