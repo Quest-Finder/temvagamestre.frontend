@@ -12,7 +12,7 @@ export function FormAditionalText({
 }: FormAditionalTextProps) {
   return (
     <h1
-      className={cn('mb-4 text-center text-base text-neutral-600', className)}
+      className={cn('mb-6 text-center text-base text-neutral-600', className)}
       {...props}
     >
       {children}
