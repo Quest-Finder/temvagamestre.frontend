@@ -1,3 +1,4 @@
+// eslint-disable-next-line consistent-return
 export async function checkUniqueUsername(username: string) {
   try {
     const response = await fetch(

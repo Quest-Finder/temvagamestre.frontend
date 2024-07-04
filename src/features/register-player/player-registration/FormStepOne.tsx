@@ -33,7 +33,7 @@ export function FormStepOne() {
     <FormFirstStep.Root>
       <Form {...form}>
         <FormFirstStep.Title>
-          Deixe-nos sabes mais sobre você
+          Deixe-nos saber mais sobre você
         </FormFirstStep.Title>
         <form
           onSubmit={form.handleSubmit(useSubmitStepOne())}
