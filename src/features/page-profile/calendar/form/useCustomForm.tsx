@@ -1,6 +1,6 @@
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import useWindowDimensions from '@/hooks/useWindowWidth'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 import { Schema } from './calendar-types'
 import { schema } from './validation'
 
@@ -13,8 +13,8 @@ export default function useCustomForm() {
   } = useForm<Schema>({
     resolver: zodResolver(schema),
   })
-  const { isWidthMobile } = useWindowDimensions(835)
-  const isMobile = isWidthMobile
+  const { width } = useWindowDimensions()
+  const isMobile = width < 835
 
   // aqui e necessario passar o data: Schema como paramentro da função,nesse momento foi removido para evitar erros de lint
   function onSubmit(): void {

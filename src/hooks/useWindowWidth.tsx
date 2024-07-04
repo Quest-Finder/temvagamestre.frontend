@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 interface WindowDimensions {
   width: number
   height: number
 }
 
-export default function useWindowDimensions(width: number) {
+export default function useWindowDimensions(): WindowDimensions {
   const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -29,6 +29,5 @@ export default function useWindowDimensions(width: number) {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-  const isWidthMobile: boolean = windowDimensions.width <= width
-  return { windowDimensions, isWidthMobile }
+  return windowDimensions
 }
