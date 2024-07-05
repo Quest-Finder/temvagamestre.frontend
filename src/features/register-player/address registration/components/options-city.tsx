@@ -16,10 +16,8 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
   const { data } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
   const fieldCityIsEmpty = cityValue.length !== 0
-  const { setIsDisabled } = useDisbledButton()
   const handleSelectCity = (city: string) => {
     form.setValue('city', city)
-    setIsDisabled(false)
   }
 
   return (
