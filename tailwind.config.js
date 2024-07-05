@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        custom:
+          '0px 1px 1px rgba(0, 0, 0, 0.12), 0px 2px 5px rgba(60, 66, 87, 0.08)',
+      },
       colors: {
         neutral: {
           50: '#FFFFFF',
@@ -87,6 +91,7 @@ module.exports = {
       fontFamily: {
         mono: ['var(--font-roboto)'],
         notoSans: ['var(--font-notoSans)'],
+        raleway: ['var(----font-raleway)'],
       },
       keyframes: {
         'accordion-down': {

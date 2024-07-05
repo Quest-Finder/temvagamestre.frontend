@@ -1,7 +1,7 @@
-import { Metadata } from 'next'
-import { Inter, Roboto, Noto_Sans as NotoSans } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
 import { ptBR } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
+import { Metadata } from 'next'
+import { Inter, Noto_Sans as NotoSans, Raleway, Roboto } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -16,6 +16,11 @@ const roboto = Roboto({
 const notoSans = NotoSans({
   subsets: ['latin'],
   variable: '--font-notoSans',
+  weight: ['400'],
+})
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
   weight: ['400'],
 })
 
@@ -34,7 +39,7 @@ export default function RootLayout({
     <html lang='pt-Br'>
       <ClerkProvider localization={ptBR}>
         <body
-          className={`${inter.variable} ${roboto.variable} ${notoSans.variable}`}
+          className={`${inter.variable} ${roboto.variable} ${notoSans.variable}  ${raleway.variable}`}
         >
           {children}
         </body>
