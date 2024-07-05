@@ -23,6 +23,9 @@ import { Skeleton } from '../utils/Skeleton'
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
 
+  const baseClasses = 'flex w-fit cursor-pointer items-center gap-2.5 space-y-0'
+  const borderClasses = 'rounded-full border-[1px]'
+
   return (
     <Form {...form}>
       <div>
@@ -72,7 +75,9 @@ export function FormGameStyles() {
                           >
                             <FormLabel
                               className={cn(
-                                'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 rounded-full border-[1px] bg-primary-50 px-4 py-3 font-mono text-sm font-medium text-primary-900 group-aria-disabled/checkbox:pointer-events-none group-aria-disabled/checkbox:opacity-50',
+                                baseClasses,
+                                borderClasses,
+                                'group-aria-disabled/checkbox:pointer-events-none group-aria-disabled/checkbox:opacity-50',
                                 field.value?.includes(item.id)
                                   ? 'border-primary-900'
                                   : 'border-transparent',
