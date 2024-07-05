@@ -1,5 +1,6 @@
 import Exploracao from '../assets/Exploracao.svg'
 import Interpretacao from '../assets/Interpretacao.svg'
+import MatarEPilhar from '../assets/MatarEPilhar.svg'
 
 import { RpgStyleData, RpgStyles } from '../types/palyerProfileTypes'
 
