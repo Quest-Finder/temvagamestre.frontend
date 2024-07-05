@@ -1,14 +1,14 @@
 import { cn } from '@/lib/utils'
 
 interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
-  quantity: number
+  quantity?: number
   height: number | string
   width: number | string
 }
 
 export function Skeleton({
   className,
-  quantity,
+  quantity = 1,
   height,
   width,
   ...props
