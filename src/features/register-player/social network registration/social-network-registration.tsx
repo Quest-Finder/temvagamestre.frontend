@@ -9,6 +9,7 @@ import useFormSocialMedia from './hook/useFormSocialNetWork'
 import useSubmitSocialNetWokr from './hook/useSubmitSocialNetWokr'
 import { getIconByName } from './utils/get-icon-by-name'
 import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
+import * as FormText from '../FormText.json'
 
 export default function SocialNetworkRegistration() {
   const socialMediaMap = parseSocialValidationInArray()
@@ -22,7 +23,7 @@ export default function SocialNetworkRegistration() {
         id='form-social-media'
         className='flex min-h-screen flex-col items-center justify-center gap-14 '
       >
-        <FormTitle>Insira suas redes sociais</FormTitle>
+        <FormTitle>{FormText.socialMedia.title}</FormTitle>
         {socialMediaMap.map(({ name }) => (
           <Input.Wrapper key={name}>
             <Input.Icon IconName={getIconByName(name)} />

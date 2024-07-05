@@ -16,6 +16,7 @@ import { getError } from '../utils/getError'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
 import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
+import * as FormText from '../FormText.json'
 
 export default function FormAboutYou() {
   const form = useHookFormAboutYou()
@@ -28,7 +29,7 @@ export default function FormAboutYou() {
           )}
           className='flex flex-col items-center justify-center gap-4'
         >
-          <FormTitle>Conte-nos mais sobre quem é você no mundo RPG!</FormTitle>
+          <FormTitle>{FormText.aboutYou.title}</FormTitle>
 
           <div className='grid w-full max-w-[21.25rem] gap-4'>
             <FormField
