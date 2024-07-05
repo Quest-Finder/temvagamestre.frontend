@@ -7,6 +7,7 @@ const envVariables = z.object({
   NEXT_PUBLIC_CLERK_SIGN_IN_URL: z.string(),
   NEXT_PUBLIC_BASE_URL: z.string(),
   REACT_APP_RPG_STYLE_API_URL: z.string(),
+  REACT_APP_CHECK_USERNAME: z.string(),
 })
 
 envVariables.parse(process.env)
