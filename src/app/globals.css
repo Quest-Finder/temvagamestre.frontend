@@ -31,7 +31,10 @@
     line-clamp: var(--max-lines);
     -webkit-box-orient: vertical;
   }
-.font-feature-settings {
-  font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
-}
+  .font-feature-settings {
+    font-feature-settings:
+      'pnum' on,
+      'lnum' on,
+      'liga' off;
+  }
 }
