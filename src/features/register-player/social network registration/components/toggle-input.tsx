@@ -10,7 +10,7 @@ import { useFormContext } from 'react-hook-form'
 import { TsocialNetworkValidation } from '../types/social-network'
 
 interface FormFieldInputProps {
-  fieldName: 'facebook' | 'instagram' | 'reddit' | 'x' | 'discord'
+  fieldName: 'facebook' | 'instagram' | 'reddit' | 'twitter' | 'discord'
 }
 
 export default function ToggleInput({ fieldName }: FormFieldInputProps) {

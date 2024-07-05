@@ -4,7 +4,7 @@
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão  de `<linguagem / dependência / requeridos>`
+- Você instalou a versão de `<linguagem / dependência / requeridos>`
 - Você leu [Como Contribuir?](CONTRIBUTING.md).
 
 ## 🚀 Instalando

@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { mockFormPlayerProfile } from './mock'
 
-import { useSubmitFormRegister } from '../utils/submitFormRegister'
+import useSubmitFormRegister from '../utils/submitFormRegister'
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from './components/FormAditionalText'
 import { getRpgStyling } from './helpers/getRpgStyle'
