@@ -5,42 +5,21 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import Image from 'next/image'
-import { useForm } from 'react-hook-form'
-import { FormPlayerProfileSchema, FormPlayerProfileType } from './validation'
 
 import { cn } from '@/lib/utils'
 import { mockFormPlayerProfile } from './mock'
 
-import useSubmitFormRegister from '../utils/submitFormRegister'
+import { useSubmitFormRegister } from '../utils/submitFormRegister'
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from './components/FormAditionalText'
 import { getRpgStyling } from './helpers/getRpgStyle'
 import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
 
 export function FormPlayerProfile() {
-  const form = useForm<FormPlayerProfileType>({
-    resolver: zodResolver(FormPlayerProfileSchema),
-    defaultValues: {
-      playerProfileId: '',
-    },
-  })
-
-  function onSubmit() {}
   const { form } = useFormPlayerProfile()
 
   return (
     <Form {...form}>
-      <FormAditionalText>
-        Olá! Para aprimorarmos sua experiência no TVM, por favor, responda
-        algumas perguntas.
-      </FormAditionalText>
-      <FormTitle>
-        Escolha o perfil de jogador que mais se alinha com seus interesses.
-      </FormTitle>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className='flex flex-col items-center space-y-8'
-      >
       <div>
         <FormAditionalText>
           Olá! Para aprimorarmos sua experiência no TVM, por favor, responda
