@@ -11,6 +11,7 @@ export default function useHookFormAboutYou() {
   const form = useForm<TValidation>({
     resolver: zodResolver(validateAboutYou),
     defaultValues: parsedData || defaultValuesAboutYou,
+    mode: 'onChange',
   })
   return form
 }
