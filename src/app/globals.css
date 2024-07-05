@@ -7,10 +7,12 @@
     box-shadow: 0px 2px 4px 0px rgba(30, 41, 59, 0.25);
   }
 }
+
 @layer utilities {
   .invisible-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .backgroundHeaderProfile {
     background-image: url('../features/page-profile/header/assets/background.svg');
     background-size: cover;
@@ -29,4 +31,7 @@
     line-clamp: var(--max-lines);
     -webkit-box-orient: vertical;
   }
+.font-feature-settings {
+  font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+}
 }
