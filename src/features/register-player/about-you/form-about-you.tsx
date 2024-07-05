@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import ButtonNextPage from '../utils/button-next-page'
 import { getError } from '../utils/getError'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
@@ -36,12 +37,12 @@ export default function FormAboutYou() {
               name='titulo'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='text-xl font-normal leading-4'>
+                  <FormLabel className='font-notoSans text-sm font-normal leading-5 text-[#000000]'>
                     Título
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className={`h-9 focus-visible:ring-transparent ${getError(
+                      className={`min-h-[40px] w-full max-w-[340px] rounded-md border border-[#BDBDBD] bg-[#FFFFFF] px-4 py-2 placeholder:font-notoSans placeholder:text-sm placeholder:font-normal placeholder:leading-5 placeholder:text-[#D4D4D4] ${getError(
                         form.formState.errors.titulo,
                       )}`}
                       placeholder='Exemplo: Jogador combeiro safado'
@@ -57,14 +58,14 @@ export default function FormAboutYou() {
               name='bio'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='text-xl font-normal leading-4'>
+                  <FormLabel className='font-notoSans text-sm font-normal leading-5 text-[#000000]'>
                     Bio
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       maxLength={500}
                       placeholder='Explorador das terras mágicas de Aldoria, mestre em interpretar personagens épicos e mergulhar em histórias de fantasia medieval. Pronto para embarcar em jornadas de roleplay intensas no mundo dos RPGs de mesa.'
-                      className={`invisible-scrollbar h-[7.25rem] resize-none px-4 py-2 text-sm leading-5 shadow-xl focus-visible:ring-transparent ${getError(
+                      className={` placeholder: font-feature-settings min-h-[190px] w-full max-w-[340px]  resize-none p-4 leading-5 placeholder:font-raleway placeholder:text-sm placeholder:text-[#525252] ${getError(
                         form.formState.errors.titulo,
                       )}`}
                       {...field}
@@ -75,12 +76,11 @@ export default function FormAboutYou() {
             />
           </div>
           <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
-            <p className='text-center text-sm font-normal leading-5 text-neutral-500'>
-              Não responder nesse momento
-            </p>
+            <ButtonNextPage path={RegisterRoutes.Adress} />
             <Button
               type='submit'
               className='animate-wiggle min-h-[3.5rem] min-w-[12.1875rem] max-w-[13.375rem] px-8 py-4'
+              disabled={!form.formState.isValid}
             >
               Salvar e Continuar
               {/* <ArrowLeft /> */}
