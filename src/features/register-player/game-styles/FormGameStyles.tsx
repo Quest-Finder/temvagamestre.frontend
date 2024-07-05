@@ -19,6 +19,7 @@ import { FormTitle } from '../utils/title-form'
 import useSubmitGameStyles from './hooks/useSubmitGameStyles'
 import { useFormGameStyles } from './hooks/useFormGameStyles'
 import { Skeleton } from '../utils/Skeleton'
+import * as FormText from './FormText.json'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
@@ -30,12 +31,9 @@ export function FormGameStyles() {
     <Form {...form}>
       <div>
         <FormAditionalText className='text-center'>
-          Olá! Para aprimorarmos sua experiência no TVM, por favor, responda
-          algumas perguntas.
+          {FormText.formGameStyles.additionalText}
         </FormAditionalText>
-        <FormTitle className='mb-0'>
-          Escolha o estilo de jogo que mais se alinha com seus interesses.
-        </FormTitle>
+        <FormTitle className='mb-0'>{FormText.formGameStyles.title}</FormTitle>
       </div>
       <form
         onSubmit={form.handleSubmit(useSubmitGameStyles())}
