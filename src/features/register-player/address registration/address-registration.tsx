@@ -3,27 +3,27 @@
 import { Button } from '@/components/ui/button'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import ButtonNextPage from '../utils/button-next-page'
 import { FormTitle } from '../utils/title-form'
 import InputLiveInBrazil from './components/input-checkbox-live-in-brazil'
 import InputCity from './components/input-city'
 import InputState from './components/input-state'
 import useFormAddressRegistration from './hooks/useFormAddressRegistration'
-import useSubmitFormAddressRegistration from './service/submitFormAddressRegistration'
 
 export default function FormAddressRegistration() {
-  const { form } = useFormAddressRegistration()
+  const { form, onSubmit } = useFormAddressRegistration()
   return (
     <FormProvider {...form}>
       <FormTitle>Conte-nos de onde você é</FormTitle>
       <form
-        onSubmit={form.handleSubmit(
-          useSubmitFormAddressRegistration(form, RegisterRoutes.StylesPlay),
-        )}
+        onSubmit={form.handleSubmit(onSubmit)}
         className='mx-auto flex  min-h-[31.25rem] w-full max-w-[23.1875rem] flex-col items-center justify-between'
       >
-        <div className='flex w-full flex-col gap-2'>
+        <div className='flex w-full flex-col items-center justify-center gap-2'>
           <InputState />
-          <InputCity />
+          <div className='flex w-full max-w-[340px] flex-col items-center justify-center gap-2'>
+            <InputCity />
+          </div>
         </div>
 
         <div className=' flex w-full flex-col gap-8'>
@@ -32,13 +32,12 @@ export default function FormAddressRegistration() {
             <Button
               type='submit'
               className=' min-h-[3.5rem] w-full min-w-[6.25rem] max-w-[13.375rem] flex-wrap px-8 py-4'
+              disabled={!form.formState.isValid}
             >
               Salvar e Continuar
               {/* <ArrowLeft /> */}
             </Button>
-            <p className='text-center text-sm font-normal leading-5 text-neutral-500 '>
-              Prefiro responder em outro momento
-            </p>
+            <ButtonNextPage path={RegisterRoutes.StylesPlay} />
           </div>
         </div>
       </form>

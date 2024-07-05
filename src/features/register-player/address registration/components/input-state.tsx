@@ -13,6 +13,7 @@ import { states } from '../utils/estates'
 
 export default function InputState() {
   const form = useFormContext<addressRegistrationValidationT>()
+  const valueInputLiveIBrazil = form.watch('liveInBrazil')
 
   return (
     <FormField
@@ -21,15 +22,14 @@ export default function InputState() {
       render={({ field }) => (
         <Select
           onValueChange={field.onChange}
-          defaultValue={field.value}
+          value={field.value}
+          disabled={valueInputLiveIBrazil}
         >
-          <FormLabel
-            className={` ${form.formState.errors.state && 'text-red-500'} `}
-          >
+          <FormLabel className='w-full font-raleway text-base	 font-bold text-[#000000]'>
             Em qual estado você mora?
           </FormLabel>
 
-          <SelectTrigger className='mt-2 focus-visible:ring-transparent'>
+          <SelectTrigger className='font-feature-settings min-h-[40px] max-w-[371px] rounded-md border border-[#D4D4D4] bg-[#FFFFFF] font-raleway text-base font-normal leading-6 text-[#262626]'>
             <SelectValue placeholder='Selecione seu estado' />
           </SelectTrigger>
           <SelectContent className=' bg-neutral-50'>
