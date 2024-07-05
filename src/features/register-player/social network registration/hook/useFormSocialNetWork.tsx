@@ -1,8 +1,11 @@
 'use client'
 
+import { RegisterRoutes } from '@/services/routers'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import useLocalStorageGetItem from '../../address registration/hooks/useLocalStorageGetItem'
+import uselocalStorageSetItem from '../../address registration/hooks/uselocalStorageSetItem'
 import { TsocialNetworkValidation } from '../types/social-network'
 import { DEFAULT_VALUES_SOCIAL_MEDIA } from '../utils/defaul-values-social-media'
 import { socialNetworkValidation } from '../utils/social-network-registration-validation'
@@ -16,6 +19,7 @@ export default function useFormSocialMedia() {
     defaultValues: parsedData || DEFAULT_VALUES_SOCIAL_MEDIA,
     mode: 'onChange',
   })
+  const router = useRouter()
 
   const socialNetworks = form.watch([
     'facebook',
@@ -29,7 +33,8 @@ export default function useFormSocialMedia() {
   })
 
   function onSubmit(values: TsocialNetworkValidation) {
-    console.log(values)
+    uselocalStorageSetItem('form_step_two', values)
+    router.push(RegisterRoutes.AboutYou)
   }
 
   return { form, isDisabled, onSubmit }
