@@ -1,35 +1,26 @@
 import { z } from 'zod'
 
-export const socialNetworkValidation = z.object({
-  facebook: z
-    .object({
-      username: z.string().max(255).optional(),
-      visible: z.boolean().optional(),
-    })
-    .optional(),
-  instagram: z
-    .object({
-      username: z.string().max(255).optional(),
-      visible: z.boolean().optional().default(false),
-    })
-    .optional(),
-
-  reddit: z
-    .object({
-      username: z.string().max(255).optional(),
-      visible: z.boolean().optional().default(false),
-    })
-    .optional(),
-  twitter: z
-    .object({
-      username: z.string().max(255).optional(),
-      visible: z.boolean().optional().default(false),
-    })
-    .optional(),
-  discord: z
-    .object({
-      username: z.string().max(255).optional(),
-      visible: z.boolean().optional().default(false),
-    })
-    .optional(),
+const socialNetworkValidation = z.object({
+  facebook: z.object({
+    username: z.string().max(255).optional(),
+    visible: z.boolean().optional(),
+  }),
+  instagram: z.object({
+    username: z.string().max(255).optional(),
+    visible: z.boolean().optional(),
+  }),
+  reddit: z.object({
+    username: z.string().max(255).optional(),
+    visible: z.boolean().optional(),
+  }),
+  twitter: z.object({
+    username: z.string().max(255).optional(),
+    visible: z.boolean().optional(),
+  }),
+  discord: z.object({
+    username: z.string().max(255).optional(),
+    visible: z.boolean().optional(),
+  }),
 })
+
+export { socialNetworkValidation }

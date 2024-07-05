@@ -10,17 +10,7 @@ import { useFormContext } from 'react-hook-form'
 import { TsocialNetworkValidation } from '../types/social-network'
 
 interface FormFieldInputProps {
-  fieldName:
-    | 'facebook.username'
-    | 'facebook.visible'
-    | 'instagram.username'
-    | 'instagram.visible'
-    | 'reddit.username'
-    | 'reddit.visible'
-    | 'twitter.username'
-    | 'twitter.visible'
-    | 'discord.username'
-    | 'discord.visible'
+  fieldName: 'facebook' | 'instagram' | 'reddit' | 'twitter' | 'discord'
 }
 
 export default function ToggleInput({ fieldName }: FormFieldInputProps) {
@@ -28,13 +18,13 @@ export default function ToggleInput({ fieldName }: FormFieldInputProps) {
   return (
     <FormField
       control={control}
-      name={fieldName}
+      name={`${fieldName}.visible`}
       render={({ field }) => (
         <FormItem>
           <Toogle.ToogleLabel fieldName={fieldName}>
             <FormControl>
               <Input
-                className='peer sr-only outline-none'
+                className='peer sr-only outline-none '
                 type='checkbox'
                 id={fieldName}
                 {...field}

@@ -22,7 +22,7 @@ export default function InputSocialMedia({
         <FormItem className=''>
           <FormControl>
             <Input
-              className='w-full min-[415px]:w-[20.375rem]'
+              className=' w-full text-sm font-normal leading-3 placeholder:font-raleway placeholder:text-neutral-300 min-[415px]:w-[20.375rem]'
               placeholder={placeholder}
               onChange={field.onChange}
               onBlur={field.onBlur}

@@ -11,9 +11,26 @@ export default function useFormSocialMedia() {
   // recupera os valores do local storage
   const parsedData =
     useLocalStorageGetItem<TsocialNetworkValidation>('form_data_adress')
-
-  return useForm<TsocialNetworkValidation>({
+  const form = useForm<TsocialNetworkValidation>({
     resolver: zodResolver(socialNetworkValidation),
     defaultValues: parsedData || DEFAULT_VALUES_SOCIAL_MEDIA,
+    mode: 'onChange',
   })
+
+  const socialNetworks = form.watch([
+    'facebook',
+    'instagram',
+    'discord',
+    'reddit',
+    'twitter',
+  ])
+  const isDisabled = Object.values(socialNetworks).some(network => {
+    return network && (network.username?.length as number) >= 3
+  })
+
+  function onSubmit(values: TsocialNetworkValidation) {
+    console.log(values)
+  }
+
+  return { form, isDisabled, onSubmit }
 }
