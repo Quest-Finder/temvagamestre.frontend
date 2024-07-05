@@ -1,5 +1,4 @@
 import { useFormContext } from 'react-hook-form'
-import { useDisbledButton } from '../hooks/useDIsbleButton'
 import GetCityByEstate from '../service/get-city-by-estate'
 import { addressRegistrationValidationT } from '../types/address-registration'
 import { removeAccents } from '../utils/remove-accents'
