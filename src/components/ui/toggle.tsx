@@ -37,7 +37,11 @@ interface ToogleDescripriptionProps {
   text: string
 }
 function ToogleDescripription({ text }: ToogleDescripriptionProps) {
-  return <p className='pl-2'>{text}</p>
+  return (
+    <p className='pl-3 font-notoSans text-sm font-normal leading-6 text-[#BDBDBD]'>
+      {text}
+    </p>
+  )
 }
 
 export const Toogle = {
