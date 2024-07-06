@@ -12,8 +12,8 @@ on:
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
-  REGISTRY: sou-junior # repositorio artifact
-  SERVICE: sou-junior # cloud run
+  REGISTRY: frontend # repositorio artifact
+  SERVICE: frontend # cloud run
   REGION: us-central1
 
 # Jobs são os trabalhos que serão executados neste fluxo
@@ -55,8 +55,8 @@ jobs:
           # run roda comandos de terminal
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest .
-          docker push us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest
+          docker build -t us-central1-docker.pkg.dev/soujunior-416113/frontend/homolog:latest .
+          docker push us-central1-docker.pkg.dev/soujunior-416113/frontend/homolog:latest
 
   deploy-to-gcp-cloud-run:
     if: github.ref == 'refs/heads/homolog'
@@ -78,5 +78,5 @@ jobs:
 
         with:
           service: ${{ env.SERVICE }}
-          image: us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/homolog:latest
+          image: us-central1-docker.pkg.dev/soujunior-416113/frontend/homolog:latest
           region: ${{ env.REGION }}
