@@ -1,14 +1,15 @@
 import { cn } from '@/lib/utils'
 
-interface FormTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+interface FormAdditionalTextProps
+  extends React.HTMLAttributes<HTMLHeadingElement> {
   children: string
 }
 
-export function FormAditionalText({
+export function FormAdditionalText({
   className,
   children,
   ...props
-}: FormTitleProps) {
+}: FormAdditionalTextProps) {
   return (
     <h1
       className={cn('mb-6 text-base text-neutral-600', className)}

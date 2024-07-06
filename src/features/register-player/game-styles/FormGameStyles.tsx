@@ -14,7 +14,7 @@ import { Arrow } from '@/components/icons/Arrow'
 
 import { cn } from '@/lib/utils'
 import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
-import { FormAditionalText } from './components/FormAditionalText'
+import { FormAdditionalText } from './components/FormAdditionalText'
 import { FormTitle } from '../utils/title-form'
 import useSubmitGameStyles from './hooks/useSubmitGameStyles'
 import { useFormGameStyles } from './hooks/useFormGameStyles'
@@ -30,9 +30,9 @@ export function FormGameStyles() {
   return (
     <Form {...form}>
       <div>
-        <FormAditionalText className='text-center'>
+        <FormAdditionalText className='text-center'>
           {FormText.formGameStyles.additionalText}
-        </FormAditionalText>
+        </FormAdditionalText>
         <FormTitle className='mb-0'>{FormText.formGameStyles.title}</FormTitle>
       </div>
       <form

@@ -12,7 +12,7 @@ import { FormPlayerProfileSchema, FormPlayerProfileType } from './validation'
 import { mockFormPlayerProfile } from './mock'
 
 import { FormAditionalText } from './components/FormAditionalText'
-import { FormTitle } from './components/FormTitle'
+import { FormTitle } from '../utils/title-form'
 import {
   getRpgImage,
   getRpgImageColor,
