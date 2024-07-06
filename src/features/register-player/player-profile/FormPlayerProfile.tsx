@@ -5,10 +5,8 @@ import { Card, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Arrow } from '@/components/icons/Arrow'
 import Image from 'next/image'
-
 import { cn } from '@/lib/utils'
 import { mockFormPlayerProfile } from './mock'
-
 import { getRpgStyling } from './helpers/getRpgStyle'
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from './components/FormAditionalText'

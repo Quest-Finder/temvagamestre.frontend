@@ -6,7 +6,6 @@ export async function checkUniqueUsername(username: string) {
     )
     return response.status === 200
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error)
+    return false
   }
 }
