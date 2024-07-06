@@ -9,9 +9,10 @@ import { cn } from '@/lib/utils'
 import { mockFormPlayerProfile } from './mock'
 import { getRpgStyling } from './helpers/getRpgStyle'
 import { FormTitle } from '../utils/title-form'
-import { FormAditionalText } from './components/FormAditionalText'
+import { FormAdditionalText } from './components/FormAdditionalText'
 import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
 import useSubmitFormRegister from '../utils/submitFormRegister'
+import * as FormText from '../FormText.json'
 
 export function FormPlayerProfile() {
   const { form } = useFormPlayerProfile()
@@ -19,13 +20,10 @@ export function FormPlayerProfile() {
   return (
     <Form {...form}>
       <div>
-        <FormAditionalText>
-          Olá! Para aprimorarmos sua experiência no TVM, por favor, responda
-          algumas perguntas.
-        </FormAditionalText>
-        <FormTitle>
-          Escolha o perfil de jogador que mais se alinha com seus interesses.
-        </FormTitle>
+        <FormAdditionalText>
+          {FormText.playerProfile.additionalText}
+        </FormAdditionalText>
+        <FormTitle>{FormText.playerProfile.title}</FormTitle>
       </div>
       <form
         onSubmit={form.handleSubmit(useSubmitFormRegister)}
@@ -73,9 +71,9 @@ export function FormPlayerProfile() {
                             >
                               <Image
                                 src={getRpgStyling(item.title).image}
-                                className={`${
-                                  field.value === item.id && 'drop-shadow-lg'
-                                }`}
+                                className={cn(
+                                  field.value === item.id && 'drop-shadow-lg',
+                                )}
                                 alt={item.title}
                               />
                             </div>
