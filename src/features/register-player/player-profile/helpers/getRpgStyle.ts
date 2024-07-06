@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/no-unresolved
 import Exploracao from '../assets/Exploracao.svg'
+// eslint-disable-next-line import/no-unresolved
 import Interpretacao from '../assets/Interpretacao.svg'
+// eslint-disable-next-line import/no-unresolved
 import MatarEPilhar from '../assets/MatarEPilhar.svg'
 
 export function getRpgImage(rpgStyle: string) {
