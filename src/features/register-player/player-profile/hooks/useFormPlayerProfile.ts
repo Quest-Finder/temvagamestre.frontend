@@ -13,7 +13,7 @@ export function useFormPlayerProfile() {
     isLoading,
     error,
   } = useFetchData<PlayerProfileType[]>(
-    'https://tem-vaga-mestre-api-nnf7bytugq-uc.a.run.app/', // rota ainda nao feita
+    process.env.REACT_APP_REGISTRATION_PLAYER_PROFILE_TYPE, // rota ainda nao feita
   )
 
   const form = useForm<FormPlayerProfileType>({
