@@ -24,7 +24,7 @@ export function Skeleton({
         <div
           key={index}
           className={cn(
-            'animate-pulse bg-neutral-200',
+            'animate-pulse rounded-md bg-neutral-200',
             `h-${height}`,
             `w-${width}`,
             className,
