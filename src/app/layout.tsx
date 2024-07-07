@@ -7,21 +7,26 @@ import './globals.css'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+  weight: ['100', '300', '400', '500', '700', '900'],
 })
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
-  weight: ['400'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 const notoSans = NotoSans({
   subsets: ['latin'],
   variable: '--font-notoSans',
-  weight: ['400'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 const raleway = Raleway({
   subsets: ['latin'],
   variable: '--font-raleway',
-  weight: ['400'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 
 export const metadata: Metadata = {
