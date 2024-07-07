@@ -12,10 +12,7 @@ export function useFormPlayerProfile() {
     data: palyerProfileTypes,
     isLoading,
     error,
-  } = useFetchData<PlayerProfileType[]>(
-    process.env.REACT_APP_REGISTRATION_PLAYER_PROFILE_TYPE, // rota ainda nao feita
-  )
-
+  } = useFetchData<PlayerProfileType[]>('/rpg-player-profile') // rota ainda ão feita
   const form = useForm<FormPlayerProfileType>({
     resolver: zodResolver(FormPlayerProfileSchema),
     defaultValues: {
