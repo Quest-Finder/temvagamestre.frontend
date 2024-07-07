@@ -9,7 +9,7 @@ import {
 import { useFormContext } from 'react-hook-form'
 import { addressRegistrationValidationT } from '../types/address-registration'
 
-export default function InputLiveInBrazil() {
+export function CheckboxLiveAbroad() {
   const { control, setValue } = useFormContext<addressRegistrationValidationT>()
   function handleIsDisabled() {
     setValue('state', '')
@@ -19,7 +19,7 @@ export default function InputLiveInBrazil() {
   return (
     <FormField
       control={control}
-      name='liveInBrazil'
+      name='liveAbroad'
       render={({ field }) => (
         <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md  p-4'>
           <FormLabel

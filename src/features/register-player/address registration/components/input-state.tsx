@@ -13,7 +13,7 @@ import { states } from '../utils/estates'
 
 export default function InputState() {
   const form = useFormContext<addressRegistrationValidationT>()
-  const valueInputLiveIBrazil = form.watch('liveInBrazil')
+  const liveAbroad = form.watch('liveAbroad')
 
   return (
     <FormField
@@ -23,7 +23,7 @@ export default function InputState() {
         <Select
           onValueChange={field.onChange}
           value={field.value}
-          disabled={valueInputLiveIBrazil}
+          disabled={liveAbroad}
         >
           <FormLabel className='w-full font-raleway text-base	 font-bold text-[#000000]'>
             Em qual estado você mora?

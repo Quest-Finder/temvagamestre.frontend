@@ -5,13 +5,15 @@ import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
 import ButtonNextPage from '../utils/button-next-page'
 import { FormTitle } from '../utils/title-form'
-import InputLiveInBrazil from './components/input-checkbox-live-in-brazil'
+import { CheckboxLiveAbroad } from './components/ checkbox-live-abroad'
 import InputCity from './components/input-city'
 import InputState from './components/input-state'
 import useFormAddressRegistration from './hooks/useFormAddressRegistration'
 
 export default function FormAddressRegistration() {
   const { form, onSubmit } = useFormAddressRegistration()
+
+  const isDisable = !form.formState.isValid
   return (
     <FormProvider {...form}>
       <FormTitle>Conte-nos de onde você é</FormTitle>
@@ -27,12 +29,12 @@ export default function FormAddressRegistration() {
         </div>
 
         <div className=' flex w-full flex-col gap-8'>
-          <InputLiveInBrazil />
+          <CheckboxLiveAbroad />
           <div className='flex flex-col items-center gap-8'>
             <Button
               type='submit'
               className=' min-h-[3.5rem] w-full min-w-[6.25rem] max-w-[13.375rem] flex-wrap px-8 py-4'
-              disabled={!form.formState.isValid}
+              disabled={isDisable}
             >
               Salvar e Continuar
               {/* <ArrowLeft /> */}

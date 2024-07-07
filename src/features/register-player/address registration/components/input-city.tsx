@@ -15,7 +15,7 @@ import OptionsCity from './options-city'
 export default function InputCity() {
   const form = useFormContext<addressRegistrationValidationT>()
   const stateValue = form.watch('state')
-  const isDisabled = form.watch('state').length > 1
+  const isDisabled = form.watch('state').length <= 0
   const valueOfTheStateInputForTheRequest = stateValue
 
   return (
@@ -36,7 +36,8 @@ export default function InputCity() {
                     {...field}
                     autoComplete='off'
                     value={field.value}
-                    disabled={!isDisabled}
+                    disabled={isDisabled}
+                    defaultChecked={false}
                     className='font-feature-settings min-h-[40px] max-w-[371px] rounded-md border border-[#D4D4D4] bg-[#FFFFFF] font-notoSans text-base font-normal   text-[#737373] placeholder:font-raleway placeholder:text-base'
                   />
                   <Search className='absolute left-[85%] top-[35%] translate-x-2/4	 bg-slate-50' />
