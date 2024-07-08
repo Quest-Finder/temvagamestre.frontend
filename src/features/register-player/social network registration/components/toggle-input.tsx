@@ -8,13 +8,15 @@ import { Input } from '@/components/ui/input'
 import { Toogle } from '@/components/ui/toggle'
 import { useFormContext } from 'react-hook-form'
 import { TsocialNetworkValidation } from '../types/social-network'
+import { FielName } from './input-social-media'
 
 interface FormFieldInputProps {
-  fieldName: 'facebook' | 'instagram' | 'reddit' | 'twitter' | 'discord'
+  fieldName: FielName
 }
 
 export default function ToggleInput({ fieldName }: FormFieldInputProps) {
   const { control } = useFormContext<TsocialNetworkValidation>()
+
   return (
     <FormField
       control={control}

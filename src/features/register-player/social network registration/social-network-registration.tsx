@@ -6,9 +6,9 @@ import { FormProvider } from 'react-hook-form'
 import ButtonNextPage from '../utils/button-next-page'
 import { FormTitle } from '../utils/title-form'
 import { Input as CustomInput } from './components'
-import { FielName } from './components/input-social-media'
 import { FetchSocialNetworks } from './hook/fecth-social-networks'
 import useFormSocialMedia from './hook/useFormSocialNetWork'
+import { FielName } from './types/social-network'
 import { getIconByName } from './utils/get-icon-by-name'
 
 export default function SocialNetworkRegistration() {

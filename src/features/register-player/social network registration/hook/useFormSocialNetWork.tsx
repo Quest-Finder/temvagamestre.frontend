@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import useLocalStorageGetItem from '../../address registration/hooks/useLocalStorageGetItem'
 import uselocalStorageSetItem from '../../address registration/hooks/uselocalStorageSetItem'
-import { TsocialNetworkValidation } from '../types/social-network'
+import { FielName, TsocialNetworkValidation } from '../types/social-network'
 import { DEFAULT_VALUES_SOCIAL_MEDIA } from '../utils/defaul-values-social-media'
 import { socialNetworkValidation } from '../utils/social-network-registration-validation'
 
@@ -16,7 +16,7 @@ export default function useFormSocialMedia() {
     useLocalStorageGetItem<TsocialNetworkValidation>('form_data_adress')
   const form = useForm<TsocialNetworkValidation>({
     resolver: zodResolver(socialNetworkValidation),
-    defaultValues: parsedData || DEFAULT_VALUES_SOCIAL_MEDIA,
+    defaultValues: DEFAULT_VALUES_SOCIAL_MEDIA || parsedData,
     mode: 'onChange',
   })
   const router = useRouter()
@@ -26,10 +26,10 @@ export default function useFormSocialMedia() {
     'instagram',
     'discord',
     'reddit',
-    'twitter',
+    'x',
   ])
   const isDisabled = Object.values(socialNetworks).some(network => {
-    return network && (network.username?.length as number) >= 3
+    return network && (network.userLink?.length as number) >= 3
   })
 
   function onSubmit(values: TsocialNetworkValidation) {
@@ -37,5 +37,9 @@ export default function useFormSocialMedia() {
     router.push(RegisterRoutes.AboutYou)
   }
 
-  return { form, isDisabled, onSubmit }
+  function setValueId(fieldName: FielName, id: string) {
+    form.setValue(`${fieldName}.socialMediaId`, id)
+  }
+
+  return { form, isDisabled, onSubmit, setValueId }
 }
