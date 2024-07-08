@@ -2,23 +2,28 @@ import { TsocialNetworkValidation } from '../types/social-network'
 
 export const DEFAULT_VALUES_SOCIAL_MEDIA: TsocialNetworkValidation = {
   facebook: {
-    username: '',
+    socialMediaId: '',
+    userLink: '',
     visible: false,
   },
   instagram: {
-    username: '',
+    socialMediaId: '',
+    userLink: '',
     visible: false,
   },
   reddit: {
-    username: '',
+    socialMediaId: '',
+    userLink: '',
     visible: false,
   },
-  twitter: {
-    username: '',
+  x: {
+    socialMediaId: '',
+    userLink: '',
     visible: false,
   },
   discord: {
-    username: '',
+    socialMediaId: '',
+    userLink: '',
     visible: false,
   },
 }
