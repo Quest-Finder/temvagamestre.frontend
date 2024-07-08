@@ -10,7 +10,7 @@ export default function ButtonBack() {
   return (
     <Button
       variant='ghost'
-      className='gap-2.5 text-neutral-400'
+      className='gap-2.5 text-neutral-400 hover:bg-transparent'
       onClick={() => {
         router.back()
       }}
