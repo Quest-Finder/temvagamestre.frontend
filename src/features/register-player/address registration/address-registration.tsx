@@ -9,12 +9,13 @@ import InputCity from './components/input-city'
 import InputState from './components/input-state'
 import useFormAddressRegistration from './hooks/useFormAddressRegistration'
 import useSubmitFormAddressRegistration from './service/submitFormAddressRegistration'
+import * as FormText from '../FormText.json'
 
 export default function FormAddressRegistration() {
   const { form } = useFormAddressRegistration()
   return (
     <FormProvider {...form}>
-      <FormTitle>Conte-nos de onde você é</FormTitle>
+      <FormTitle>{FormText.addressRegistration.title}</FormTitle>
       <form
         onSubmit={form.handleSubmit(
           useSubmitFormAddressRegistration(form, RegisterRoutes.StylesPlay),
