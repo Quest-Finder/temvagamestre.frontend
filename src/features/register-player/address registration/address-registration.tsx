@@ -9,6 +9,8 @@ import { CheckboxLiveAbroad } from './components/ checkbox-live-abroad'
 import InputCity from './components/input-city'
 import InputState from './components/input-state'
 import useFormAddressRegistration from './hooks/useFormAddressRegistration'
+import useSubmitFormAddressRegistration from './service/submitFormAddressRegistration'
+import * as FormText from '../FormText.json'
 
 export default function FormAddressRegistration() {
   const { form, onSubmit } = useFormAddressRegistration()
@@ -16,7 +18,7 @@ export default function FormAddressRegistration() {
   const isDisable = !form.formState.isValid
   return (
     <FormProvider {...form}>
-      <FormTitle>Conte-nos de onde você é</FormTitle>
+      <FormTitle>{FormText.addressRegistration.title}</FormTitle>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className='mx-auto flex  min-h-[31.25rem] w-full max-w-[23.1875rem] flex-col items-center justify-between'

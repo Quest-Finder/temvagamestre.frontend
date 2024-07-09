@@ -1,8 +1,6 @@
 'use client'
 
-import { Arrow } from '@/components/icons/Arrow'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
+
 import {
   Form,
   FormControl,
@@ -12,27 +10,33 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 
+import { Checkbox } from '@/components/ui/checkbox'
+import { Button } from '@/components/ui/button'
+import { Arrow } from '@/components/icons/Arrow'
+
 import { cn } from '@/lib/utils'
-import { Skeleton } from '../utils/Skeleton'
-import { FormTitle } from '../utils/title-form'
-import { FormAditionalText } from './components/FormAditionalText'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
-import { useFormGameStyles } from './hooks/useFormGameStyles'
+import { FormAdditionalText } from './components/FormAdditionalText'
+import { FormTitle } from '../utils/title-form'
 import useSubmitGameStyles from './hooks/useSubmitGameStyles'
+import { useFormGameStyles } from './hooks/useFormGameStyles'
+import * as FormText from '../FormText.json'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
 
+
+  const baseClasses = 'flex w-fit cursor-pointer items-center gap-2.5 space-y-0'
+  const borderClasses = 'rounded-full border-[1px]'
+
   return (
     <Form {...form}>
       <div>
-        <FormAditionalText className='text-center'>
-          Olá! Para aprimorarmos sua experiência no TVM, por favor, responda
-          algumas perguntas.
-        </FormAditionalText>
-        <FormTitle className='mb-0'>
-          Escolha o estilo de jogo que mais se alinha com seus interesses.
-        </FormTitle>
+        <FormAdditionalText className='text-center'>
+          {FormText.formGameStyles.additionalText}
+        </FormAdditionalText>
+        <FormTitle className='mb-0'>{FormText.formGameStyles.title}</FormTitle>
       </div>
       <form
         onSubmit={form.handleSubmit(useSubmitGameStyles())}
@@ -73,6 +77,9 @@ export function FormGameStyles() {
                             <FormLabel
                               className={cn(
                                 'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 rounded-full border-[1px] bg-primary-50 px-4 py-3 font-mono text-sm font-medium text-primary-900 group-aria-disabled/checkbox:pointer-events-none group-aria-disabled/checkbox:opacity-50',
+                                baseClasses,
+                                borderClasses,
+                                'group-aria-disabled/checkbox:pointer-events-none group-aria-disabled/checkbox:opacity-50',
                                 field.value?.includes(item.id)
                                   ? 'border-primary-900'
                                   : 'border-transparent',
@@ -115,7 +122,7 @@ export function FormGameStyles() {
         <div className='text-center'>
           <Button
             disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+            className='h-full max-h-14 w-full max-w-[13.375rem] text-base disabled:opacity-50'
             variant='default'
             type='submit'
           >

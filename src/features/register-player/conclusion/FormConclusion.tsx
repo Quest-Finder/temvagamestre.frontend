@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { PlayerFormConclusion } from '.'
 import { ConclusionBadge } from './components/ConclusionBadge'
+import * as FormText from '../FormText.json'
 
 export function FormConclusion() {
   return (
@@ -8,22 +9,21 @@ export function FormConclusion() {
       <ConclusionBadge />
 
       <PlayerFormConclusion.Title>
-        Parabéns, jogador!
+        {FormText.conclusion.title}
       </PlayerFormConclusion.Title>
 
       <PlayerFormConclusion.Text>
-        🎉 Você desbloqueou a Insígnia do Destino!
+        {FormText.conclusion.textTitle}
         <br />
-        Este é um símbolo de honra entre os contadores de histórias e mestres do
-        jogo. Use-a com orgulho e mostre ao mundo o poder da sua imaginação.
+        {FormText.conclusion.textContent}
       </PlayerFormConclusion.Text>
 
-      <Button className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base'>
+      <Button className='mt-4 h-full max-h-14 w-full max-w-[13.375rem] text-base'>
         Agendar uma Partida
       </Button>
 
       <PlayerFormConclusion.Text>
-        Seu cadastro está completo, descubra novas partidas, encontre jogadores
+        {FormText.conclusion.additionalText}
       </PlayerFormConclusion.Text>
     </PlayerFormConclusion.Root>
   )

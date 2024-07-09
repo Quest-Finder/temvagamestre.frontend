@@ -12,8 +12,13 @@ import { mockFormPlayerProfile } from './mock'
 import useSubmitFormRegister from '../utils/submitFormRegister'
 import { FormTitle } from '../utils/title-form'
 import { FormAditionalText } from './components/FormAditionalText'
-import { getRpgStyling } from './helpers/getRpgStyle'
-import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
+
+import { FormTitle } from '../utils/title-form'
+import {
+  getRpgImage,
+  getRpgImageColor,
+  getRpgStyling,
+} from './helpers/getRpgStyle'
 
 export function FormPlayerProfile() {
   const { form } = useFormPlayerProfile()

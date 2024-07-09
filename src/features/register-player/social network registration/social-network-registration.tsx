@@ -10,6 +10,8 @@ import { FetchSocialNetworks } from './hook/fecth-social-networks'
 import useFormSocialMedia from './hook/useFormSocialNetWork'
 import { FielName } from './types/social-network'
 import { getIconByName } from './utils/get-icon-by-name'
+import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
+import * as FormText from '../FormText.json'
 
 export default function SocialNetworkRegistration() {
   const { form, isDisabled, onSubmit, setValueId } = useFormSocialMedia()

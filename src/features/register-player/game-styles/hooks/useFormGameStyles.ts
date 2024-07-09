@@ -1,17 +1,18 @@
-import useLocalStorageGetItem from '@/features/register-player/address registration/hooks/useLocalStorageGetItem'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { defaultValues } from '../helpers/defaultValues'
-import { FormGameStylesType, GameStyle } from '../types/gameStyles'
+import useLocalStorageGetItem from '@/features/register-player/address registration/hooks/useLocalStorageGetItem'
 import { FormGameStylesSchema } from '../validation'
+import { GameStyle, FormGameStylesType } from '../types/gameStyles'
 import { useFetchData } from './useFetchData'
+import { defaultValues } from '../helpers/defaultValues'
 
 export function useFormGameStyles() {
   const {
     data: gameStyles,
     isLoading,
     error,
-  } = useFetchData<GameStyle[]>(`${process.env.NEXT_PUBLIC_BASE_URL}/rpg-style`)
+  } = useFetchData<GameStyle[]>('/rpg-style')
   const savedData = useLocalStorageGetItem<FormGameStylesType>('game_styles')
 
   const initalValue = savedData || defaultValues

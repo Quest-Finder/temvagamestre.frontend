@@ -1,11 +1,11 @@
 // eslint-disable-next-line consistent-return
+import { api } from '@/lib/api'
+
 export async function checkUniqueUsername(username: string) {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/user/check-username/${username}`,
-    )
+    const response = await api(`/user/check-username/${username}`)
     return response.status === 200
   } catch (error) {
-    return false
+    return new Error(`Error: ${error}`)
   }
 }
