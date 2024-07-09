@@ -8,7 +8,7 @@ export function FormTitle({ className, children, ...props }: FormTitleProps) {
   return (
     <h1
       className={cn(
-        'mx-auto mb-4 max-w-[46.023rem] text-center text-[32px] font-semibold leading-none text-neutral-950',
+        'mx-auto mb-4 max-w-[46.023rem] text-center text-[2rem] font-semibold leading-none text-neutral-950',
         className,
       )}
       {...props}

@@ -118,7 +118,7 @@ export function FormGameStyles() {
         <div className='text-center'>
           <Button
             disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50'
+            className='h-full max-h-14 w-full max-w-[13.375rem] text-base disabled:opacity-50'
             variant='default'
             type='submit'
           >
