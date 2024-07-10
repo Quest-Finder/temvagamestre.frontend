@@ -1,9 +1,6 @@
-// eslint-disable-next-line import/no-unresolved
-import Exploracao from '../assets/Exploracao.svg'
-// eslint-disable-next-line import/no-unresolved
-import Interpretacao from '../assets/Interpretacao.svg'
-// eslint-disable-next-line import/no-unresolved
-import MatarEPilhar from '../assets/MatarEPilhar.svg'
+import Exploracao from '@/assets/RpgProfile/Exploracao.svg'
+import Interpretacao from '@/assets/RpgProfile/Interpretacao.svg'
+import MatarEPilhar from '@/assets/RpgProfile/MatarEPilhar.svg'
 
 import { RpgStyles, RpgStyleData } from '../types/palyerProfileTypes'
 
