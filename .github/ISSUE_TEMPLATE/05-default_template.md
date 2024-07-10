@@ -10,6 +10,7 @@ Forneça detalhes aqui. A descrição deve conter o contexto geral, seu objetivo
 ## Checklist
 
 Se necessário, crie uma checklist com as tarefas ou pontos que merecem atenção. Exemplo:
+
 - [ ] Adicionar botão X
 - [ ] Incluir campos Y e Z
 - [ ] Alterar título da página N
