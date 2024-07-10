@@ -78,10 +78,10 @@ export function FormPlayerProfile() {
                               />
                             </div>
                             <div>
-                              <CardTitle className='mb-1 text-base'>
+                              <CardTitle className='mb-1 font-notoSans text-base'>
                                 {item.title}
                               </CardTitle>
-                              <CardDescription className='break- text-base leading-6 text-neutral-700'>
+                              <CardDescription className='break- font-notoSans text-base leading-6 text-neutral-700'>
                                 {item.description}
                               </CardDescription>
                             </div>
