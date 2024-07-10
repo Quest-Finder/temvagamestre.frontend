@@ -19,7 +19,7 @@ import { FormAdditionalText } from './components/FormAdditionalText'
 import { FormTitle } from '../utils/title-form'
 import useSubmitGameStyles from './hooks/useSubmitGameStyles'
 import { useFormGameStyles } from './hooks/useFormGameStyles'
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()

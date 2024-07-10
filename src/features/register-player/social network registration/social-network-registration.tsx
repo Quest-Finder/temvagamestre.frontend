@@ -9,7 +9,7 @@ import useFormSocialMedia from './hook/useFormSocialNetWork'
 import useSubmitSocialNetWokr from './hook/useSubmitSocialNetWokr'
 import { getIconByName } from './utils/get-icon-by-name'
 import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 
 export default function SocialNetworkRegistration() {
   const socialMediaMap = parseSocialValidationInArray()

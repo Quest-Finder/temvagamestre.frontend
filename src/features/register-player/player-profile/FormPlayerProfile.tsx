@@ -12,7 +12,7 @@ import { FormTitle } from '../utils/title-form'
 import { FormAdditionalText } from './components/FormAdditionalText'
 import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
 import useSubmitFormRegister from '../utils/submitFormRegister'
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 
 export function FormPlayerProfile() {
   const { form } = useFormPlayerProfile()
