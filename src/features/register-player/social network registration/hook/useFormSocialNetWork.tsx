@@ -26,10 +26,7 @@ export default function useFormSocialMedia() {
   const [isDisabled, setIsDisabled] = useState(true)
   const form = useForm<FormSchemaT>({
     resolver: zodResolver(FormSchema),
-    defaultValues:
-      {
-        socialMedias: [],
-      } || parsedData,
+    defaultValues: parsedData ?? { socialMedias: [] },
     mode: 'onChange',
   })
   const router = useRouter()
