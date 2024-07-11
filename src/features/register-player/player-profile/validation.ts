@@ -5,5 +5,3 @@ export const FormPlayerProfileSchema = z.object({
     .string()
     .min(1, { message: 'Necessário escolher pelo menos uma opção' }),
 })
-
-export type FormPlayerProfileType = z.infer<typeof FormPlayerProfileSchema>
