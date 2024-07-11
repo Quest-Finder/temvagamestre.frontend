@@ -10,7 +10,7 @@ export const FormStepOneSchema = z.object({
     .min(3, 'Nome deve conter no minimo 3 caracteres')
     .max(30, 'Nome deve conter no máximo 30 caracteres')
     .regex(
-      /^[A-Za-z]+( [A-Za-z]+)*$/,
+      /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/,
       'Caracteres especiais e numeros não são disponiveis',
     )
     .regex(/\w+(?:\s+\w+)+/, 'Necessário preencher nome e sobrenome'),
