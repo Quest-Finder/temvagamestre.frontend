@@ -1,6 +1,6 @@
 ![Logo Tem Vaga Mestre?](https://imgur.com/HisaR2D.png)
 
-<center>A plataforma que conecta a comunidade RPG, valorizando a simplicidade, a diversidade e a paixão pelo jogo.</center>
+A plataforma que conecta a comunidade RPG, valorizando a simplicidade, a diversidade e a paixão pelo jogo.
 
 ---
 
