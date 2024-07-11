@@ -38,7 +38,7 @@ export default function InputCity() {
                     value={field.value}
                     disabled={isDisabled}
                     defaultChecked={false}
-                    className='font-feature-settings placeholder:font-raleway min-h-[40px] max-w-[371px] rounded-md border border-[#D4D4D4] bg-[#FFFFFF] font-notoSans text-base   font-normal text-[#737373] placeholder:text-base'
+                    className='placeholder:font-raleway min-h-[40px] max-w-[371px] rounded-md border border-[#D4D4D4] bg-[#FFFFFF] font-notoSans text-base   font-normal text-[#737373] placeholder:text-base'
                   />
                   <Search className='absolute left-[85%] top-[35%] translate-x-2/4	 bg-slate-50' />
                 </div>
