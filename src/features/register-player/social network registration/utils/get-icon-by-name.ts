@@ -1,7 +1,7 @@
 import Discord from '@/components/icons/discord'
 import FacebookIcon from '@/components/icons/facebookIcon'
 import { InstagramIcon } from '@/components/icons/instagram'
-import reeditIcon from '@/components/icons/reeditIcon'
+import RedditIcon from '@/components/icons/reeditIcon'
 import XIcon from '@/components/icons/xIcon'
 
 export function getIconByName(socialMedia: string) {
@@ -13,7 +13,7 @@ export function getIconByName(socialMedia: string) {
     case 'x':
       return XIcon
     case 'reddit':
-      return reeditIcon
+      return RedditIcon
     case 'discord':
       return Discord
     default:
