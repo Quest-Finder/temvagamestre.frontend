@@ -35,7 +35,6 @@ const raleway = Raleway({
     '900',
   ],
   style: ['italic', 'normal'],
-  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 
 export const metadata: Metadata = {
