@@ -30,7 +30,7 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
         )
         .slice(0, 1)
         .map(city => (
-          <ul
+          <li
             key={city.id}
             className='relative flex min-h-[40px] w-full cursor-pointer items-center px-4 py-2  '
           >
@@ -43,7 +43,7 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
                 {fieldCityIsEmpty && city.nome}
               </p>
             </button>
-          </ul>
+          </li>
         ))}
     </ul>
   )
