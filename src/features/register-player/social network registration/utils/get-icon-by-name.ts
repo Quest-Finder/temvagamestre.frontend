@@ -12,8 +12,6 @@ export function getIconByName(socialMedia: string) {
       return InstagramIcon
     case 'x':
       return XIcon
-    case 'reddit':
-      return RedditIcon
     case 'discord':
       return Discord
     default:
