@@ -87,6 +87,7 @@ module.exports = {
       fontFamily: {
         mono: ['var(--font-roboto)'],
         notoSans: ['var(--font-notoSans)'],
+        raleway: ['var(--font-raleway)'],
       },
       keyframes: {
         'accordion-down': {
