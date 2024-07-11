@@ -28,7 +28,7 @@ export default function CheckboxLiveAbroad() {
           >
             <FormControl>
               <Checkbox
-                id='liveInBrazil'
+                id='liveAbroad'
                 checked={field.value}
                 onCheckedChange={field.onChange}
                 className='bg-[#FAFAFA]'
