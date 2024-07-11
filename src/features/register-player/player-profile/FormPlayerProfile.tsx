@@ -78,7 +78,7 @@ export function FormPlayerProfile() {
                               />
                             </div>
                             <div>
-                              <CardTitle className='mb-1 font-notoSans text-base'>
+                              <CardTitle className='mb-1 font-notoSans text-xl font-bold leading-[1.875rem]'>
                                 {item.title}
                               </CardTitle>
                               <CardDescription className='break- font-notoSans text-base leading-6 text-neutral-700'>
