@@ -21,7 +21,7 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
   }
 
   return (
-    <ul className='m z-1 h-[40px]  w-full max-w-[320px] overflow-hidden rounded-md  border border-gray-200 bg-white'>
+    <ul className='z-1 h-[40px] w-full max-w-[320px] overflow-hidden rounded-md  border border-gray-200 bg-white'>
       {data
         .filter(city =>
           removeAccents(city.nome.toLowerCase()).includes(
@@ -36,12 +36,10 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
           >
             <button
               type='button'
-              className='w-full cursor-pointer px-4  text-left font-serif text-[0.625rem] font-medium  '
+              className='w-full cursor-pointer px-4 text-left font-notoSans font-serif text-[0.625rem] text-base font-medium font-normal leading-6 text-[#737373]'
               onClick={() => handleSelectCity(city.nome)}
             >
-              <p className='font-notoSans text-base font-normal leading-6 text-[#737373]'>
-                {fieldCityIsEmpty && city.nome}
-              </p>
+              {fieldCityIsEmpty && city.nome}
             </button>
           </li>
         ))}
