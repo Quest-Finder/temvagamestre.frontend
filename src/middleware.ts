@@ -1,10 +1,10 @@
-import { authMiddleware } from '@clerk/nextjs'
-import { publicRoutes } from './services/routers'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-export default authMiddleware({
-  publicRoutes,
+const isProtectedRoute = createRouteMatcher([])
+// const isProtectedRoute = createRouteMatcher(['/cadastro(.*)'])
+export default clerkMiddleware((auth, req) => {
+  if (isProtectedRoute(req)) auth().protect()
 })
-
 export const config = {
   matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 }
