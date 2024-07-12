@@ -1,7 +1,11 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 const isProtectedRoute = createRouteMatcher([])
-// const isProtectedRoute = createRouteMatcher(['/cadastro(.*)'])
+/**
+ * If you want to block one or more routes
+ * const isProtectedRoute = createRouteMatcher(['/cadastro(.*)'])
+ */
+
 export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) auth().protect()
 })
