@@ -1,0 +1,45 @@
+name: 💠 Solicitar ou sugerir funcionalidade
+description: Sugira novas funcionalidades e contribua com o aprimoramento da aplicação
+title: "[Feature]: "
+labels: [feature, enhancement]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar seu tempo para preencher esta sugestão!
+
+        Não se esqueça de atualizar o título acima para descrever seu pedido de forma concisa.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: |
+        Forneça uma descrição objetiva e clara da funcionalidade sugerida. Se possível, inclua imagens ou vídeos para melhor compreensão.
+        Dica: você pode anexar imagens clicando nesta área para destacá-la e arrastando os arquivos para dentro dela.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivação e benefícios
+      description: Descreva a motivação da sua sugestão. Quais melhorias e benefícios ela traz à aplicação ou em seu uso?
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações adicionais
+      description: Se possível, forneça imagens, links, referências ou contextos para ajudar a compreender melhor sua sugestão.
+    validations:
+      required: false
