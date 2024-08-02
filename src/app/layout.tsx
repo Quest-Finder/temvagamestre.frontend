@@ -23,16 +23,7 @@ const raleway = Raleway({
   variable: '--font-raleway',
   fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
   weight: [
-    '100',
-    '200',
-    '300',
     '400',
-    '500',
-    '600',
-    '600',
-    '700',
-    '800',
-    '900',
   ],
   style: ['italic', 'normal'],
 })
