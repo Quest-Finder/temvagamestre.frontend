@@ -20,7 +20,8 @@ export default function InputState() {
   const valueState = form.getValues('state')
   useEffect(() => {
     form.setValue('city', '')
-  }, [form, valueState])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [valueState])
   return (
     <FormField
       name='state'
