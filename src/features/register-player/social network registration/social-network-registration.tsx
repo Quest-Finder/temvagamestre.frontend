@@ -18,7 +18,7 @@ export interface SocialMedia {
 }
 export default function SocialNetworkRegistration() {
   const { form, isDisabled, onSubmit, setValueUserLink } = useFormSocialMedia()
-  const { data } = useFetchData<SocialMedia[]>('/social-media')
+  const { data: socialMedias } = useFetchData<SocialMedia[]>('/social-media')
 
   return (
     <FormProvider {...form}>
@@ -34,7 +34,7 @@ export default function SocialNetworkRegistration() {
             </FormTitle>
           </div>
 
-          {data?.map(({ id, name, baseUri }, i) => {
+          {socialMedias?.map(({ id, name, baseUri }, i) => {
             const networkName = name.toLocaleLowerCase()
             const fieldName = `${i}.userLink`
 
