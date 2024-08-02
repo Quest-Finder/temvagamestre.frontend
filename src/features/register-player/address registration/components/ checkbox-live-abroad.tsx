@@ -22,7 +22,7 @@ export default function CheckboxLiveAbroad() {
       render={({ field }) => (
         <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md pb-8 pt-6'>
           <FormLabel
-            htmlFor='liveInBrazil'
+            htmlFor='liveAbroad'
             className='flex cursor-pointer items-start justify-center space-x-3  space-y-0 rounded-md'
             onChange={() => handleIsDisabled()}
           >
