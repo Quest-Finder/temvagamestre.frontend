@@ -20,15 +20,15 @@ export default function CheckboxLiveAbroad() {
       control={control}
       name='liveAbroad'
       render={({ field }) => (
-        <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md pt-6 pb-8'>
+        <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md pb-8 pt-6'>
           <FormLabel
             htmlFor='liveInBrazil'
-            className='flex cursor-pointer items-start space-x-3 space-y-0  rounded-md justify-center'
+            className='flex cursor-pointer items-start justify-center space-x-3  space-y-0 rounded-md'
             onChange={() => handleIsDisabled()}
           >
             <FormControl>
               <Checkbox
-                id='liveAbroad'         
+                id='liveAbroad'
                 checked={field.value}
                 onCheckedChange={field.onChange}
                 className='bg-[#FAFAFA]'

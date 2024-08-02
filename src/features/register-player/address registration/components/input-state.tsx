@@ -1,4 +1,6 @@
-"use client"
+'use client'
+
+import { useEffect } from 'react'
 import { FormField, FormLabel } from '@/components/ui/form'
 import {
   Select,
@@ -11,14 +13,14 @@ import {
 import { useFormContext } from 'react-hook-form'
 import { addressRegistrationValidationT } from '../types/address-registration'
 import { states } from '../utils/estates'
-import { useEffect } from 'react'
 
 export default function InputState() {
   const form = useFormContext<addressRegistrationValidationT>()
   const liveAbroad = form.watch('liveAbroad')
-  useEffect(()=>{
-    form.setValue('city','')
-  },[form.getValues('state')])
+  const valueState = form.getValues('state')
+  useEffect(() => {
+    form.setValue('city', '')
+  }, [form, valueState])
   return (
     <FormField
       name='state'
@@ -27,7 +29,7 @@ export default function InputState() {
         <Select
           onValueChange={field.onChange}
           value={field.value}
-          disabled={liveAbroad}       
+          disabled={liveAbroad}
         >
           <FormLabel className='font-raleway w-full text-base	 font-bold text-[#000000]'>
             Em qual estado você mora?
