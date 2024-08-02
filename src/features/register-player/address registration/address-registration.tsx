@@ -17,7 +17,7 @@ export default function FormAddressRegistration() {
       <FormTitle>{FormText.addressRegistration.title}</FormTitle>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='mx-auto flex  min-h-[31.25rem] w-full max-w-[23.1875rem] flex-col items-center justify-between'
+        className='mx-auto flex  w-full max-w-[23.1875rem] flex-col items-center justify-between'
       >
         <div className='flex w-full flex-col items-center justify-center gap-2'>
           <InputState />
