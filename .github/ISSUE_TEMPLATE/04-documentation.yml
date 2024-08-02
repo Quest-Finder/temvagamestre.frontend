@@ -1,0 +1,28 @@
+name: 📚 Alteração na documentação
+description: Solicite ou sugira alteração na documentação do projeto
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar seu tempo para preencher esta solicitação!
+        
+        Não se esqueça de atualizar o título acima para descrever a alteração de forma concisa.
+        
+  - type: input
+    id: doc-link
+    attributes:
+      label: Link da documentação
+      description: Por favor, informe o link da documentação.
+      placeholder: "ex: https://temvagamestre.com/docs"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: Forneça uma descrição objetiva e clara da alteração.
+    validations:
+      required: true

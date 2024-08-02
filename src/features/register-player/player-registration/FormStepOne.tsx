@@ -110,7 +110,7 @@ export function FormStepOne() {
                     <SelectItem value='she/her'>Ela / Dela</SelectItem>
                     <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
                     <SelectItem value="I don't want to share any pronouns">
-                      Prefiro não responder
+                      Não me sinto confortável em responder
                     </SelectItem>
                   </SelectContent>
                 </Select>
