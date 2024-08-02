@@ -12,7 +12,7 @@ interface OptionsCityProps {
   uf: string
   cityValue: string
 }
-export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
+export default function OptionsCity({ uf, cityValue }: Readonly<OptionsCityProps>) {
   const { data } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
   const fieldCityIsEmpty = cityValue.length !== 0
@@ -36,10 +36,10 @@ export default function OptionsCity({ uf, cityValue }: OptionsCityProps) {
           >
             <button
               type='button'
-              className='w-full cursor-pointer px-4 text-left font-serif text-[0.625rem] font-medium font-notoSans text-base font-normal leading-6 text-[#737373]'
+              className='w-full cursor-pointer  text-left  text-[0.625rem] font-notoSans text-base font-normal leading-6 text-[#737373]'
               onClick={() => handleSelectCity(city.nome)}
             >
-                {fieldCityIsEmpty && city.nome}
+                {fieldCityIsEmpty? city.nome:form.getValues('city')}
             </button>
           </li>
         ))}
