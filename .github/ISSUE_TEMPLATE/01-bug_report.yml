@@ -1,0 +1,66 @@
+name: 🐞 Reportar um problema
+description: Reporte um problema e contribua com o aprimoramento da aplicação
+title: "[Bug]: "
+labels: [bug]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar seu tempo para preencher este relatório de bug!
+
+        Não se esqueça de atualizar o título acima para descrever o problema de forma concisa.
+
+  - type: input
+    id: system-version
+    attributes:
+      label: Seu sistema e versão
+      description: Por favor, informe qual sistema e versão você está usando.
+      placeholder: "ex: Windows 11, macOS 13.6, iOS 16, Android 13"
+    validations:
+      required: false
+
+  - type: input
+    id: browser
+    attributes:
+      label: Seu navegador e versão
+      description: Por favor, informe qual navegador e versão você está usando.
+      placeholder: "ex: Chrome 126.0, Safari 16.6"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: |
+        Forneça uma descrição objetiva e clara do problema. Se possível, inclua imagens ou vídeos para melhor compreensão.
+        Dica: você pode anexar imagens clicando nesta área para destacá-la e arrastando os arquivos para dentro dela.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproduzir o problema
+      description: O problema será corrigido muito mais rápido se pudermos reproduzi-lo facilmente. Problemas sem etapas de reprodução podem ser imediatamente encerrados como não acionáveis.
+      placeholder: |
+        1. Visite a página "..."
+        2. Clique em "..."
+        3. Veja o erro em "..."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: current-behaviour
+    attributes:
+      label: Comportamento atual
+    validations:
+      required: false
+  
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: false

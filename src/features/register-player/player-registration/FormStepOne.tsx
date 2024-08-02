@@ -21,6 +21,7 @@ import {
 import { Arrow } from '@/components/icons/Arrow'
 import { NotValid } from '@/components/icons/NotValid'
 import { Update } from '@/components/icons/Update'
+import * as FormText from '../FormText.json'
 
 import { FormFirstStep } from '.'
 import { useFormStepOne } from './hooks/useFormStepOne'
@@ -32,9 +33,7 @@ export function FormStepOne() {
   return (
     <FormFirstStep.Root>
       <Form {...form}>
-        <FormFirstStep.Title>
-          Deixe-nos sabes mais sobre você
-        </FormFirstStep.Title>
+        <FormFirstStep.Title>{FormText.formStepOne.title}</FormFirstStep.Title>
         <form
           onSubmit={form.handleSubmit(useSubmitStepOne())}
           className='w-full max-w-[340px] space-y-4'
@@ -111,7 +110,7 @@ export function FormStepOne() {
                     <SelectItem value='she/her'>Ela / Dela</SelectItem>
                     <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
                     <SelectItem value="I don't want to share any pronouns">
-                      Prefiro não responder
+                      Não me sinto confortável em responder
                     </SelectItem>
                   </SelectContent>
                 </Select>

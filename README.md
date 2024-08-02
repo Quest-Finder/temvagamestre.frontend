@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Logo Tem Vaga Mestre?](https://imgur.com/HisaR2D.png)
 
-## Getting Started
+A plataforma que conecta a comunidade RPG, valorizando a simplicidade, a diversidade e a paixão pelo jogo.
 
-First, run the development server:
+---
+
+O projeto está sendo desenvolvido com as seguintes tecnologias:
+
+![typescript](https://img.shields.io/badge/typescript-292b36?style=for-the-badge&logo=typescript)
+![react](https://img.shields.io/badge/react-292b36?style=for-the-badge&logo=react)
+![next](https://img.shields.io/badge/next.js-292b36?style=for-the-badge&logo=next.js)
+![tailwind css](https://img.shields.io/badge/tailwind_css-292b36?style=for-the-badge&logo=tailwindcss)
+![shadcn-ui](https://img.shields.io/badge/shadcn--ui-292b36?style=for-the-badge&logo=shadcnui)
+![clerk](https://img.shields.io/badge/clerk-292b36?style=for-the-badge&logo=clerk)
+![react hook form](https://img.shields.io/badge/react_hook_form-292b36?style=for-the-badge&logo=reacthookform)
+![zod](https://img.shields.io/badge/zod-292b36?style=for-the-badge&logo=zod)
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você atende aos seguintes requisitos:
+
+- Você leu [Como Contribuir](CONTRIBUTING.md)?
+- Para rodar o projeto, você precisa ter o `Node` instalado. Se não tiver, [faça sua instalação](https://nodejs.org/en/download/package-manager). _Recomendamos instalar sempre a versão LTS_.
+
+## 🚀 Instalando
+
+Clone este repositório, acesse a pasta do projeto e instale as dependências locais. Faça isso executando os seguintes comandos:
+
+```bash
+git clone https://github.com/Quest-Finder/temvagamestre.frontend.git
+
+cd temvagamestre.frontend.git
+
+npm install
+```
+
+### Variáveis de ambiente
+
+1. Solicite à sua equipe as variáveis de ambiente para rodar o projeto localmente.
+2. Em seguida, crie um arquivo na pasta raíz com o nome `.env.local`, ou renomeie o arquivo `.env.default`, e preencha os dados de cada variável conforme o exemplo abaixo:
+
+```bash
+# Clerk
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+# API
+NEXT_PUBLIC_API_BASE_URL=
+
+# IBGE
+NEXT_PUBLIC_API_CIDADES_URL=
+```
+
+### Rodando o projeto
+
+Rode o projeto localmente executando o comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível através do endereço informado em seu terminal, por exemplo: [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Ajustes e melhorias
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-## Learn More
+- [ ] Cadastro
+- [ ] Login
+- [ ] Mesas
 
-To learn more about Next.js, take a look at the following resources:
+## 😄 Seja um dos contribuidores
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📝 Licença
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
