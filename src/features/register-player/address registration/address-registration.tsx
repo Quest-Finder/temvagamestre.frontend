@@ -26,7 +26,7 @@ export default function FormAddressRegistration() {
           </div>
         </div>
 
-        <div className=' flex w-full flex-col gap-8'>
+        <div className=' flex w-full flex-col'>
           <CheckboxLiveAbroad />
           <div className='flex flex-col items-center gap-8'>
             <Button
