@@ -10,27 +10,21 @@ export interface ICidade {
 
 interface OptionsCityProps {
   uf: string
-  handleValueCity: (city: string) => void
   cityValue: string
 }
 export default function OptionsCity({
   uf,
-  handleValueCity,
   cityValue,
-}: OptionsCityProps) {
-  const { data, isLoading } = GetCityByEstate({ uf })
+}: Readonly<OptionsCityProps>) {
+  const { data } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
   const fieldCityIsEmpty = cityValue.length !== 0
   const handleSelectCity = (city: string) => {
     form.setValue('city', city)
-    handleValueCity(city)
   }
-  if (isLoading)
-    return (
-      <div className=' mx-auto mt-5 h-5 w-5 animate-spin rounded-full  border-r-2 border-neutral-200' />
-    )
+
   return (
-    <ul className='invisible-scrollbar absolute top-20 z-10 max-h-60 w-full overflow-y-auto rounded-md  border border-gray-200 bg-white'>
+    <ul className='z-1 h-[40px] w-full max-w-[320px] overflow-hidden rounded-md  border border-gray-200 bg-white'>
       {data
         .filter(city =>
           removeAccents(city.nome.toLowerCase()).includes(
@@ -39,18 +33,18 @@ export default function OptionsCity({
         )
         .slice(0, 1)
         .map(city => (
-          <ul
+          <li
             key={city.id}
-            className='relative flex min-h-[40px] w-full cursor-pointer items-center px-4 py-2 hover:bg-gray-200 '
+            className='relative flex min-h-[40px] w-full cursor-pointer items-center px-4 py-2  '
           >
             <button
               type='button'
-              className='w-full cursor-pointer px-4 py-2 text-left font-serif text-[0.625rem] font-medium  hover:bg-gray-200'
+              className='w-full cursor-pointer  text-left  font-notoSans text-[0.625rem] text-base font-normal leading-6 text-[#737373]'
               onClick={() => handleSelectCity(city.nome)}
             >
-              <p className='text-base'>{fieldCityIsEmpty && city.nome}</p>
+              {fieldCityIsEmpty ? city.nome : form.getValues('city')}
             </button>
-          </ul>
+          </li>
         ))}
     </ul>
   )

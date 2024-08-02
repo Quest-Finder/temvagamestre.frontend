@@ -1,6 +1,6 @@
-{ 
+{
   "formStepOne": {
-     "title": "Deixe-nos saber mais sobre você"
+    "title": "Deixe-nos saber mais sobre você"
   },
   "socialMedia": {
     "title": "Insira suas redes sociais"
@@ -20,9 +20,9 @@
     "additionalText": "Olá! Para aprimorarmos sua experiência no TVM, por favor, responda algumas perguntas."
   },
   "conclusion": {
-     "title": "Parabéns, jogador!",
-     "textTitle": "🎉 Você desbloqueou a Insígnia do Destino!",
-     "textContent": "Este é um símbolo de honra entre os contadores de histórias e mestres do jogo. Use-a com orgulho e mostre ao mundo o poder da sua imaginação.",
-     "additionalText": "Seu cadastro está completo, descubra novas partidas, encontre jogadores"
+    "title": "Parabéns, jogador!",
+    "textTitle": "🎉 Você desbloqueou a Insígnia do Destino!",
+    "textContent": "Este é um símbolo de honra entre os contadores de histórias e mestres do jogo. Use-a com orgulho e mostre ao mundo o poder da sua imaginação.",
+    "additionalText": "Seu cadastro está completo, descubra novas partidas, encontre jogadores"
   }
 }

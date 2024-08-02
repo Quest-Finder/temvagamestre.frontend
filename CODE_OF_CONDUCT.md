@@ -8,19 +8,19 @@ No interesse de fomentar um ambiente aberto e acolhedor, nós, como colaboradore
 
 Exemplos de comportamentos que contribuem para um ambiente positivo para nossa comunidade incluem:
 
-* Demonstrar empatia e gentileza com as outras pessoas
-* Respeitar opiniões, pontos de vista e experiências diferentes
-* Oferecer e aceitar feedback construtivo de forma graciosa
-* Assumir responsabilidade e pedir desculpas àqueles afetados por nossos erros, aprendendo com a experiência
-* Focar no que é melhor não apenas para nós como indivíduos, mas para a comunidade em geral
+- Demonstrar empatia e gentileza com as outras pessoas
+- Respeitar opiniões, pontos de vista e experiências diferentes
+- Oferecer e aceitar feedback construtivo de forma graciosa
+- Assumir responsabilidade e pedir desculpas àqueles afetados por nossos erros, aprendendo com a experiência
+- Focar no que é melhor não apenas para nós como indivíduos, mas para a comunidade em geral
 
 Exemplos de comportamentos inaceitáveis incluem:
 
-* Uso de linguagem ou imagens sexualizadas, bem como atenção ou avanços sexuais indesejados
-* Trolagem, insultos ou comentários depreciativos, e ataques pessoais ou políticos
-* Assédio público ou privado
-* Publicação de informações privadas de outros, como endereço físico ou de e-mail, sem sua permissão explícita
-* Outras condutas que poderiam ser razoavelmente consideradas inadequadas em um ambiente profissional
+- Uso de linguagem ou imagens sexualizadas, bem como atenção ou avanços sexuais indesejados
+- Trolagem, insultos ou comentários depreciativos, e ataques pessoais ou políticos
+- Assédio público ou privado
+- Publicação de informações privadas de outros, como endereço físico ou de e-mail, sem sua permissão explícita
+- Outras condutas que poderiam ser razoavelmente consideradas inadequadas em um ambiente profissional
 
 ## Nossas Responsabilidades
 
