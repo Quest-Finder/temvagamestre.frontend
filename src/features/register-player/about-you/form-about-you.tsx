@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { ButtonSkipForm } from '@/components/ui/button-skip-form'
 import {
   Form,
   FormControl,
@@ -12,11 +13,11 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import * as FormText from '../FormText.json'
 import { getError } from '../utils/getError'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
 import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
-import * as FormText from '../FormText.json'
 
 export default function FormAboutYou() {
   const form = useHookFormAboutYou()
@@ -76,9 +77,10 @@ export default function FormAboutYou() {
             />
           </div>
           <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
-            <p className='text-center text-sm font-normal leading-5 text-neutral-500'>
-              Não responder nesse momento
-            </p>
+            <ButtonSkipForm
+              content='Não responder nesse momento'
+              href={RegisterRoutes.Adress}
+            />
             <Button
               type='submit'
               className='animate-wiggle min-h-[3.5rem] min-w-[12.1875rem] max-w-[13.375rem] px-8 py-4'

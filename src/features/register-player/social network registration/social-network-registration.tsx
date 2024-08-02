@@ -1,15 +1,16 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { ButtonSkipForm } from '@/components/ui/button-skip-form'
 import { RegisterRoutes } from '@/services/routers'
 import { FormProvider } from 'react-hook-form'
+import * as FormText from '../FormText.json'
 import { FormTitle } from '../utils/title-form'
 import { Input } from './components'
 import useFormSocialMedia from './hook/useFormSocialNetWork'
 import useSubmitSocialNetWokr from './hook/useSubmitSocialNetWokr'
 import { getIconByName } from './utils/get-icon-by-name'
 import { parseSocialValidationInArray } from './utils/parse-validation-in-array'
-import * as FormText from '../FormText.json'
 
 export default function SocialNetworkRegistration() {
   const socialMediaMap = parseSocialValidationInArray()
@@ -38,9 +39,10 @@ export default function SocialNetworkRegistration() {
           </Input.Wrapper>
         ))}
         <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
-          <p className='text-sm font-normal leading-5 text-neutral-500'>
-            Não responder nesse momento
-          </p>
+          <ButtonSkipForm
+            content='Não responder nesse momento'
+            href={RegisterRoutes.AboutYou}
+          />
           <Button
             type='submit'
             className='animate-wiggle min-h-[3.5rem] min-w-[200px] max-w-[13.375rem] px-8 py-4'
