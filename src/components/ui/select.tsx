@@ -23,7 +23,7 @@ const SelectTrigger = React.forwardRef<
   const borderClasses =
     'rounded-md border border-slate-200 dark:border-slate-800'
   const focusClasses =
-    'focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2    dark:focus:ring-slate-300 '
+    'focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 dark:focus:ring-slate-300 '
 
   return (
     <SelectPrimitive.Trigger
@@ -92,7 +92,7 @@ const SelectContent = React.forwardRef<
   const baseClasses =
     'relative z-50 max-h-96 min-w-fit overflow-hidden bg-white text-slate-950 shadow-md dark:bg-slate-950 dark:text-slate-50'
   const borderClasses =
-    'rounded-md border border-slate-200  dark:border-slate-800'
+    'rounded-md border border-slate-200 dark:border-slate-800'
   const stateClasses =
     'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2'
 
@@ -144,13 +144,15 @@ const SelectLabel = React.forwardRef<
 SelectLabel.displayName = SelectPrimitive.Label.displayName
 
 interface SelectItemProps
-  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {}
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
+  checkPosition?: 'left' | 'right'
+}
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   SelectItemProps
->(({ className, children, ...props }, ref) => {
+>(({ className, children, checkPosition = 'right', ...props }, ref) => {
   const baseClasses =
-    'relative flex w-full cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm outline-none rounded-sm'
+    'relative flex w-full cursor-default select-none items-center py-1.5 px-2 text-sm outline-none rounded-sm'
   const focusClasses =
     'focus:bg-primary-50 focus:text-slate-900 dark:focus:bg-slate-800 dark:focus:text-slate-50'
   const stateClasses =
@@ -162,7 +164,12 @@ const SelectItem = React.forwardRef<
       className={cn(baseClasses, focusClasses, stateClasses, className)}
       {...props}
     >
-      <span className='absolute left-2 flex h-3.5 w-3.5 items-center justify-center'>
+      <span
+        className={cn(
+          'absolute flex h-3.5 w-3.5 items-center justify-center',
+          checkPosition === 'right' ? 'right-2' : 'left-2',
+        )}
+      >
         <SelectPrimitive.ItemIndicator>
           <Check className='h-4 w-4' />
         </SelectPrimitive.ItemIndicator>
