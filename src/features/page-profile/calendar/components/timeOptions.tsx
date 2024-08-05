@@ -1,9 +1,11 @@
 'use client'
 
+import { useMemo } from 'react'
+
 import { Button } from '@/components/ui/button'
 import useWindowDimensions from '@/hooks/useWindowWidth'
 import { cn } from '@/lib/utils'
-import { useMemo } from 'react'
+
 import { getButtonVariants } from '../js/getButtonVariantsTimeOptions'
 import { Text } from './typograph'
 

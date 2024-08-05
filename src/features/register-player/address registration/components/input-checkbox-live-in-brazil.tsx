@@ -1,11 +1,13 @@
 import React from 'react'
-import {
-  FormField,
-  FormLabel,
-  FormControl,
-  FormItem,
-} from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
+
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from '@/components/ui/form'
+
 import { addressRegistrationValidationT } from '../types/address-registration'
 
 export default function InputLiveInBrazil() {
@@ -17,7 +19,7 @@ export default function InputLiveInBrazil() {
         control={form.control}
         name='liveInBrazil'
         render={({ field }) => (
-          <FormItem className='mr-auto flex flex-row items-start space-x-3  space-y-0 p-4'>
+          <FormItem className='mr-auto flex flex-row items-start space-x-3 space-y-0 p-4'>
             <FormControl>
               <FormLabel
                 className='flex cursor-pointer items-center gap-2'

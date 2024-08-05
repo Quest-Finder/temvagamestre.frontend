@@ -1,8 +1,9 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { ArrowBack } from '@/components/icons/ArrowBack'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
 
 export default function ButtonBack() {
   const router = useRouter()

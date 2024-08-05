@@ -1,10 +1,11 @@
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 import { UseFormReturn } from 'react-hook-form'
+
 import uselocalStorageSetItem from '../hooks/uselocalStorageSetItem'
 import { addressRegistrationValidationT } from '../types/address-registration'
-import SetErrorInFieldValue from './SetErrorInFieldValue'
 import GetCityByEstate from './get-city-by-estate'
+import SetErrorInFieldValue from './SetErrorInFieldValue'
 
 export default function useSubmitFormAddressRegistration(
   form: UseFormReturn<addressRegistrationValidationT>,

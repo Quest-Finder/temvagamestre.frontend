@@ -1,6 +1,8 @@
-import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
 import moment from 'moment'
 import * as z from 'zod'
+
+import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
+
 import { checkUniqueUsername } from './helper/checkUniqueUsername'
 
 export const FormStepOneSchema = z.object({

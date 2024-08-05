@@ -1,5 +1,8 @@
 'use client'
 
+import { Arrow } from '@/components/icons/Arrow'
+import { NotValid } from '@/components/icons/NotValid'
+import { Update } from '@/components/icons/Update'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -18,11 +21,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { Arrow } from '@/components/icons/Arrow'
-import { NotValid } from '@/components/icons/NotValid'
-import { Update } from '@/components/icons/Update'
 import * as FormText from '../FormText.json'
-
 import { FormFirstStep } from '.'
 import { useFormStepOne } from './hooks/useFormStepOne'
 import useSubmitStepOne from './hooks/useSubmitStepOne'

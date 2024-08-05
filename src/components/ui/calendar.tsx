@@ -1,12 +1,12 @@
 'use client'
 
-import * as React from 'react'
+import { ptBR } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import * as React from 'react'
 import { DayPicker, StyledElement } from 'react-day-picker'
 
-import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
-import { ptBR } from 'date-fns/locale'
+import { cn } from '@/lib/utils'
 
 type CalendarProps = React.ComponentPropsWithoutRef<typeof DayPicker> & {
   className?: string
@@ -65,7 +65,7 @@ function Calendar({
       components={{
         IconLeft: ({ ...iconProps }) => (
           <ChevronLeft
-            className='h-10 w-10  border-none'
+            className='h-10 w-10 border-none'
             {...iconProps}
           />
         ),

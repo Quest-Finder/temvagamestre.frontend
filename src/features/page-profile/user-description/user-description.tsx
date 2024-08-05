@@ -40,7 +40,7 @@ export default function UserDescriptionComponent({
       <UserDescription.BoxWithIcons />
       <UserDescription.Typography
         as='h2'
-        className=' text-neutral-600 '
+        className='text-neutral-600'
         content={`${description}`}
       />
       <UserDescription.Typography

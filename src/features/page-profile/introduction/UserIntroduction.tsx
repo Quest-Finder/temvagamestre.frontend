@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card'
+
 import { UserIntroduction } from '.'
 import { UserIntroductionMock } from './mock'
 

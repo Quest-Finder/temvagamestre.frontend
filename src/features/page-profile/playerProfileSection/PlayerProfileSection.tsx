@@ -1,9 +1,10 @@
 'use client'
 
 import { Card } from '@/components/ui/card'
-import { MockGraphLegend } from './mock'
+
 import { PlayerProfile } from '.'
 import { filteredGraphData } from './helpers/filterGraphData'
+import { MockGraphLegend } from './mock'
 
 export function PlayerProfileSection() {
   const filteredData = filteredGraphData(MockGraphLegend)

@@ -1,8 +1,8 @@
-import { UserTitle } from './components/UserTitle'
-import { UserQuote } from './components/UserQuote'
 import { UserBio } from './components/UserBio'
+import { UserQuote } from './components/UserQuote'
 import { UserSection } from './components/UserSection'
 import { UserSectionTitle } from './components/UserSectionTitle'
+import { UserTitle } from './components/UserTitle'
 
 export const UserIntroduction = {
   UserTitle,

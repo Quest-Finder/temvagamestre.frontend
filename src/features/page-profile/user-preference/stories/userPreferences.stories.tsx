@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import UserPreferenceComponent, {
   UserPreferenceCompoenteProps,
 } from '@/features/page-profile/user-preference/userPreferences'
+
 import { userMock } from '../../mocks/mock'
 import { UserPreference } from '..'
 

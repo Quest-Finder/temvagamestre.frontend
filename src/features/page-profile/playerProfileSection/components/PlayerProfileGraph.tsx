@@ -1,6 +1,7 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
-import { PlayerProfileDataProps } from '../helpers/interfaces'
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
+
 import { getColor } from '../helpers/getColor'
+import { PlayerProfileDataProps } from '../helpers/interfaces'
 import { totalPercentage } from '../helpers/totalPercentage'
 import { CustomTooltip } from './CustomTooltip'
 

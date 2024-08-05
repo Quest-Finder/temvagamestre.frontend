@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button'
+
+import * as FormText from '../FormText.json'
 import { PlayerFormConclusion } from '.'
 import { ConclusionBadge } from './components/ConclusionBadge'
-import * as FormText from '../FormText.json'
 
 export function FormConclusion() {
   return (
