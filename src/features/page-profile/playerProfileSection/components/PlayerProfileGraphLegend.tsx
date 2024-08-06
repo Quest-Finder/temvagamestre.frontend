@@ -1,5 +1,5 @@
-import { PlayerProfileDataProps } from '../helpers/interfaces'
 import { getIcon } from '../helpers/getIcon'
+import { PlayerProfileDataProps } from '../helpers/interfaces'
 import { LegendItem } from './LegendItem'
 
 export function PlayerProfileGraphLegend({

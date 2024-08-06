@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { Meta, StoryObj } from '@storybook/react'
+
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 

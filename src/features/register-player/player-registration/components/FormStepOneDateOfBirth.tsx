@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import {
   Select,
   SelectContent,
@@ -5,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { useEffect } from 'react'
+
 import { generateDaysOfAMonth } from '../helper/generateDaysOfAMonth'
 import { generateXYearsUntillToday } from '../helper/generateXYearsUntillToday'
 import { monthsArray } from '../helper/monthsArray'

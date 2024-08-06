@@ -1,7 +1,8 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { FormPlayerProfile } from '../FormPlayerProfile'
+import React from 'react'
+
 import { FormLayout } from '../../player-registration/FormLayout'
+import { FormPlayerProfile } from '../FormPlayerProfile'
 
 export default {
   title: 'Register/Cadastro perfil do jogador',

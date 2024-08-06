@@ -9,7 +9,7 @@ export function CalendarDesktop({ date, setDate }: CalendarDesktopProps) {
   const { handleCalendarSelect, handleGetValueHour } = useCustomForm()
   return (
     <div className='flex justify-between gap-4'>
-      <div className='mr-auto '>
+      <div className='mr-auto'>
         <CalendarScheduling.Calendar
           date={date}
           setDate={setDate}

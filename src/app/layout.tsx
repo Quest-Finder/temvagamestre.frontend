@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
-import { Inter, Roboto, Noto_Sans as NotoSans } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
-import { ptBR } from '@clerk/localizations'
 import './globals.css'
+
+import { ptBR } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
+import { Metadata } from 'next'
+import { Inter, Noto_Sans as NotoSans, Roboto } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],

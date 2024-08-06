@@ -1,9 +1,10 @@
 'use client'
 
-import useWindowDimensions from '@/hooks/useWindowWidth'
-import { PublicRoutes } from '@/services/routers'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
+
+import useWindowDimensions from '@/hooks/useWindowWidth'
+import { PublicRoutes } from '@/services/routers'
 
 export default function useEnsureRouteParams() {
   const router = useRouter()

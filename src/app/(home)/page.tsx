@@ -1,7 +1,8 @@
+import { SignOutButton } from '@clerk/nextjs'
+
 import { Button } from '@/components/ui/button'
 import ButtonNavigation from '@/hooks/ButtonNavigation'
 import { PublicRoutes, RegisterRoutes } from '@/services/routers'
-import { SignOutButton } from '@clerk/nextjs'
 
 export default function Home() {
   return (

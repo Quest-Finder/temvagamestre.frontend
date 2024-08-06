@@ -1,8 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { RadioGroup, RadioGroupItem } from '../ui/radio-group'
+
 import { Label } from '../ui/label'
+import { RadioGroup, RadioGroupItem } from '../ui/radio-group'
 
 export default {
   title: 'Ui/ RadioGroup',

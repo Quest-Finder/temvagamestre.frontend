@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { Meta, StoryObj } from '@storybook/react'
+
 import { Separator } from '../ui/separator'
 
 export default {
@@ -32,7 +33,7 @@ export const SeparatorDefault: StoryObj = {
 }
 export const SeparatorVertical: StoryObj = {
   render: () => (
-    <div className=' flex h-96 w-96 items-center justify-center'>
+    <div className='flex h-96 w-96 items-center justify-center'>
       <Separator orientation='vertical' />
     </div>
   ),

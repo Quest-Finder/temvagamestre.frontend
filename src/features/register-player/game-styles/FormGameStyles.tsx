@@ -1,5 +1,8 @@
 'use client'
 
+import { Arrow } from '@/components/icons/Arrow'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
   FormControl,
@@ -8,18 +11,15 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Button } from '@/components/ui/button'
-import { Arrow } from '@/components/icons/Arrow'
-
-import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/Skeleton'
-import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
-import { FormAdditionalText } from './components/FormAdditionalText'
-import { FormTitle } from '../utils/title-form'
-import useSubmitGameStyles from './hooks/useSubmitGameStyles'
-import { useFormGameStyles } from './hooks/useFormGameStyles'
+import { cn } from '@/lib/utils'
+
 import * as FormText from '../FormText.json'
+import { FormTitle } from '../utils/title-form'
+import { FormAdditionalText } from './components/FormAdditionalText'
+import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
+import { useFormGameStyles } from './hooks/useFormGameStyles'
+import useSubmitGameStyles from './hooks/useSubmitGameStyles'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
