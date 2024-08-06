@@ -1,0 +1,51 @@
+name: 📋 Adicionar nova tarefa
+description: Adicione nova tarefa de desenvolvimento
+title: "[Task]: "
+
+body:
+  - type: markdown
+    attributes:
+      value: Não se esqueça de atualizar o título acima para descrever a tarefa de forma concisa.
+
+  - type: input
+    id: task-link
+    attributes:
+      label: Link da tarefa
+      description: Por favor, informe o link da tarefa.
+      placeholder: "ex: https://temvagamestre.com/task/1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: Forneça uma descrição objetiva e clara da tarefa.
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefícios
+      description: Descreva os benefícios e melhorias que a tarefa proporcionará.
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações adicionais
+      description: |
+        Se possível, forneça imagens, links, referência ou contextos para ajudar a compreender melhor a tarefa.
+
+        Dica: você pode anexar imagens clicando na área para destacá-la e arrastando os arquivos para dentro dela.
+    validations:
+      required: false

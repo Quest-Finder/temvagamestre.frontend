@@ -1,5 +1,8 @@
 'use client'
 
+import { Arrow } from '@/components/icons/Arrow'
+import { NotValid } from '@/components/icons/NotValid'
+import { Update } from '@/components/icons/Update'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -18,9 +21,6 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { Arrow } from '@/components/icons/Arrow'
-import { NotValid } from '@/components/icons/NotValid'
-import { Update } from '@/components/icons/Update'
 import FormText from '../FormText.json'
 
 import { FormFirstStep } from '.'
@@ -110,7 +110,7 @@ export function FormStepOne() {
                     <SelectItem value='she/her'>Ela / Dela</SelectItem>
                     <SelectItem value='they/theirs'>Elu / Delu</SelectItem>
                     <SelectItem value="I don't want to share any pronouns">
-                      Prefiro não responder
+                      Não me sinto confortável em responder
                     </SelectItem>
                   </SelectContent>
                 </Select>

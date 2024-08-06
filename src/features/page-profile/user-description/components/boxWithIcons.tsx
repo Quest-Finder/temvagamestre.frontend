@@ -1,9 +1,10 @@
+import React, { ElementType } from 'react'
+
 import Discord from '@/components/icons/discord'
 import FacebookIcon from '@/components/icons/facebookIcon'
 import { InstagramIcon } from '@/components/icons/instagram'
 import ReeditIcon from '@/components/icons/reeditIcon'
 import XIcon from '@/components/icons/xIcon'
-import React, { ElementType } from 'react'
 
 const socialMedia: ElementType[] = [
   InstagramIcon,
@@ -14,7 +15,7 @@ const socialMedia: ElementType[] = [
 ]
 export function BoxWithIcons() {
   return (
-    <section className='flex flex-wrap items-center justify-center gap-3 '>
+    <section className='flex flex-wrap items-center justify-center gap-3'>
       {socialMedia.map(icon => {
         const IconName = icon
         return (

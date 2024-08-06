@@ -1,6 +1,8 @@
-import useWindowDimensions from '@/hooks/useWindowWidth'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+
+import useWindowDimensions from '@/hooks/useWindowWidth'
+
 import { Schema } from './calendar-types'
 import { schema } from './validation'
 

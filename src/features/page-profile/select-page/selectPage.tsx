@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+
 import { useSelectPage } from './useSelectPage'
 
 export function SelectPage() {
@@ -14,14 +15,14 @@ export function SelectPage() {
         return (
           <li
             key={text}
-            className={` flex items-center rounded-md px-4 py-2 font-notoSans ${bgBLink} w-[50px] min-w-[100px]`}
+            className={`flex items-center rounded-md px-4 py-2 font-notoSans ${bgBLink} w-[50px] min-w-[100px]`}
           >
             <Link
               href={path}
               className='flex w-full items-center justify-center'
               onClick={() => handleSetParams(text)}
             >
-              <span className={`text-center text-xs capitalize  ${bgText}`}>
+              <span className={`text-center text-xs capitalize ${bgText}`}>
                 {text}
               </span>
             </Link>

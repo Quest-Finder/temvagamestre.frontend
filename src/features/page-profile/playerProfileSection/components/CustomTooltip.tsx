@@ -1,7 +1,7 @@
 import { TooltipProps } from 'recharts'
 import {
-  ValueType,
   NameType,
+  ValueType,
 } from 'recharts/types/component/DefaultTooltipContent'
 
 interface CustomToolTipProps extends TooltipProps<ValueType, NameType> {

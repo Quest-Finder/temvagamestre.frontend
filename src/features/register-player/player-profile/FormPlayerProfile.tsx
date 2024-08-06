@@ -1,18 +1,20 @@
 'use client'
 
-import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
-import { Card, CardTitle, CardDescription } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Arrow } from '@/components/icons/Arrow'
 import Image from 'next/image'
+
+import { Arrow } from '@/components/icons/Arrow'
+import { Button } from '@/components/ui/button'
+import { Card, CardDescription, CardTitle } from '@/components/ui/card'
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { cn } from '@/lib/utils'
-import { mockFormPlayerProfile } from './mock'
-import { getRpgStyling } from './helpers/getRpgStyle'
+
+import FormText from '../FormText.json'
+import useSubmitFormRegister from '../utils/submitFormRegister'
 import { FormTitle } from '../utils/title-form'
 import { FormAdditionalText } from './components/FormAdditionalText'
+import { getRpgStyling } from './helpers/getRpgStyle'
 import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
-import useSubmitFormRegister from '../utils/submitFormRegister'
-import FormText from '../FormText.json'
+import { mockFormPlayerProfile } from './mock'
 
 export function FormPlayerProfile() {
   const { form } = useFormPlayerProfile()

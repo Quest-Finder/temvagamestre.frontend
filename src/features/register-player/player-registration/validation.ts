@@ -1,6 +1,8 @@
-import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
 import moment from 'moment'
 import * as z from 'zod'
+
+import { filter } from '@/helpers/badWordsFilter/badWordsFilter'
+
 import { checkUniqueUsername } from './helper/checkUniqueUsername'
 
 export const FormStepOneSchema = z.object({
@@ -10,7 +12,7 @@ export const FormStepOneSchema = z.object({
     .min(3, 'Nome deve conter no minimo 3 caracteres')
     .max(30, 'Nome deve conter no máximo 30 caracteres')
     .regex(
-      /^[A-Za-z]+( [A-Za-z]+)*$/,
+      /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/,
       'Caracteres especiais e numeros não são disponiveis',
     )
     .regex(/\w+(?:\s+\w+)+/, 'Necessário preencher nome e sobrenome'),

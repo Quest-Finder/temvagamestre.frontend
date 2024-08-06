@@ -1,5 +1,8 @@
 'use client'
 
+import { useState } from 'react'
+import { useFormContext } from 'react-hook-form'
+
 import Search from '@/components/icons/searchIcon'
 import {
   FormControl,
@@ -8,8 +11,7 @@ import {
   FormLabel,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useState } from 'react'
-import { useFormContext } from 'react-hook-form'
+
 import useLocalStorageGetItem from '../hooks/useLocalStorageGetItem'
 import { addressRegistrationValidationT } from '../types/address-registration'
 import OptionsCity from './options-city'

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 import colors from 'tailwindcss/colors'
 
 export default {
