@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 import { PlayerFormConclusion } from '.'
 import { ConclusionBadge } from './components/ConclusionBadge'
 
