@@ -22,7 +22,6 @@ import {
 } from '@/components/ui/select'
 
 import FormText from '../FormText.json'
-
 import { FormFirstStep } from '.'
 import { useFormStepOne } from './hooks/useFormStepOne'
 import useSubmitStepOne from './hooks/useSubmitStepOne'
