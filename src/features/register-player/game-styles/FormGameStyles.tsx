@@ -15,7 +15,7 @@ import { Skeleton } from '@/components/ui/Skeleton'
 import { cn } from '@/lib/utils'
 
 import FormText from '../FormText.json'
-import { FormTitle } from '../utils/title-form'
+import { FormTitle } from '../utils'
 import { FormAdditionalText } from './components/FormAdditionalText'
 import { validationCheckBoxLimitation } from './helpers'
 import { useFormGameStyles, useSubmitGameStyles } from './hooks'
