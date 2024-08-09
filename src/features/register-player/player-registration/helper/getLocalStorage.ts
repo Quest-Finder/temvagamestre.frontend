@@ -1,4 +1,4 @@
-import { decode, encode } from './encrypton'
+import { decode, encode } from './'
 
 export function getSecureLocalStorage<T>(key: string): T {
   const savedData = localStorage.getItem(key)

@@ -17,9 +17,8 @@ import { cn } from '@/lib/utils'
 import FormText from '../FormText.json'
 import { FormTitle } from '../utils/title-form'
 import { FormAdditionalText } from './components/FormAdditionalText'
-import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
-import { useFormGameStyles } from './hooks/useFormGameStyles'
-import useSubmitGameStyles from './hooks/useSubmitGameStyles'
+import { validationCheckBoxLimitation } from './helpers'
+import { useFormGameStyles, useSubmitGameStyles } from './hooks'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()

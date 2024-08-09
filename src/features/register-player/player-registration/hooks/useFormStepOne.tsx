@@ -4,10 +4,9 @@ import { useForm } from 'react-hook-form'
 
 import useLocalStorageGetItem from '@/features/register-player/address-registration/hooks/useLocalStorageGetItem'
 
-import { defaultValues } from '../helper/defaultValues'
+import { defaultValues } from '../helper'
 import { FormStepOneSchema, FormStepOneType } from '../validation'
-import { useGetNameByClerk } from './useGetNameByClerk'
-import { useSetValueDateOfBirth } from './useSetValueDateOfBirth'
+import { useGetNameByClerk, useSetValueDateOfBirth } from './'
 
 export function useFormStepOne() {
   const [date, setDate] = useState('')

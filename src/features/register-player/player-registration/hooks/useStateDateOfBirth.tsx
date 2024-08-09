@@ -5,7 +5,7 @@ import { useState } from 'react'
 import useLocalStorageGetItem from '@/features/register-player/address-registration/hooks/useLocalStorageGetItem'
 
 import { FormStepOneType } from '../validation'
-import { useFormStepOne } from './useFormStepOne'
+import { useFormStepOne } from './'
 
 export function useStateDateOfBirth() {
   const savedData = useLocalStorageGetItem<FormStepOneType>('form_step_one')

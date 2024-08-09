@@ -8,10 +8,8 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { generateDaysOfAMonth } from '../helper/generateDaysOfAMonth'
-import { generateXYearsUntillToday } from '../helper/generateXYearsUntillToday'
-import { monthsArray } from '../helper/monthsArray'
-import { useStateDateOfBirth } from '../hooks/useStateDateOfBirth'
+import { generateDaysOfAMonth, generateXYearsUntillToday, monthsArray } from '../helper'
+import { useStateDateOfBirth } from '../hooks'
 
 interface DateOfBirthProps {
   onSelectedDate: (date: string) => void
