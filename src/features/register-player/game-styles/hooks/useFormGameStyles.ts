@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-import useLocalStorageGetItem from '@/features/register-player/address registration/hooks/useLocalStorageGetItem'
+import useLocalStorageGetItem from '@/features/register-player/address-registration/hooks/useLocalStorageGetItem'
 
 import { defaultValues } from '../helpers/defaultValues'
 import { FormGameStylesType, GameStyle } from '../types/gameStyles'

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation'
 
-import uselocalStorageSetItem from '@/features/register-player/address registration/hooks/uselocalStorageSetItem'
+import uselocalStorageSetItem from '@/features/register-player/address-registration/hooks/uselocalStorageSetItem'
 import { RegisterRoutes } from '@/services/routers'
 
 import { FormStepOneType } from '../validation'

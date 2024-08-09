@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { TValidation } from '../about-you/types/validation'
 import { validateAboutYou } from '../about-you/utils/validation'
-import useLocalStorageGetItem from '../address registration/hooks/useLocalStorageGetItem'
-import { addressRegistrationValidationT } from '../address registration/types/address-registration'
-import { addressRegistrationValidation } from '../address registration/utils/address-registration-validation'
+import useLocalStorageGetItem from '../address-registration/hooks/useLocalStorageGetItem'
+import { addressRegistrationValidationT } from '../address-registration/types/address-registration'
+import { addressRegistrationValidation } from '../address-registration/utils/address-registration-validation'
 import { getPlayerGameStylesData } from '../player-profile/helpers/getPlayerGameStylesData'
 import { FormPlayerProfileSchema } from '../player-profile/validation'
 import {
   FormStepOneSchema,
   FormStepOneType,
 } from '../player-registration/validation'
-import { TsocialNetworkValidation } from '../social network registration/types/social-network'
-import { socialNetworkValidation } from '../social network registration/utils/social-network-registration-validation'
+import { TsocialNetworkValidation } from '../social-network-registration/types/social-network'
+import { socialNetworkValidation } from '../social-network-registration/utils/social-network-registration-validation'
 
 function getFormsInLocalStrage() {
   const dateFormOne = useLocalStorageGetItem<FormStepOneType>('form_step_one')
