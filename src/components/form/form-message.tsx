@@ -10,7 +10,7 @@ const formMessageVariants = cva('flex items-center gap-1', {
   variants: {
     variant: {
       info: 'text-info dark:text-info-hard',
-      warning: 'text-warning dark:text-warning-hard',
+      warning: 'text-warning-hard dark:text-warning-hard',
       error: 'text-error dark:text-error-hard',
       success: 'text-success dark:text-success-hard',
     },
