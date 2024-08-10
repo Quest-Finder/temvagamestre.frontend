@@ -8,9 +8,8 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { cn } from '@/lib/utils'
 
-import * as FormText from '../FormText.json'
-import useSubmitFormRegister from '../utils/submitFormRegister'
-import { FormTitle } from '../utils/title-form'
+import FormText from '../FormText.json'
+import { FormTitle, useSubmitFormRegister } from '../utils'
 import { FormAdditionalText } from './components/FormAdditionalText'
 import { getRpgStyling } from './helpers/getRpgStyle'
 import { useFormPlayerProfile } from './hooks/useFormPlayerProfile'
@@ -80,10 +79,10 @@ export function FormPlayerProfile() {
                               />
                             </div>
                             <div>
-                              <CardTitle className='mb-1 text-base'>
+                              <CardTitle className='mb-1 font-notoSans text-xl font-bold leading-[1.875rem]'>
                                 {item.title}
                               </CardTitle>
-                              <CardDescription className='break- text-base leading-6 text-neutral-700'>
+                              <CardDescription className='break- font-notoSans text-base leading-6 text-neutral-700'>
                                 {item.description}
                               </CardDescription>
                             </div>

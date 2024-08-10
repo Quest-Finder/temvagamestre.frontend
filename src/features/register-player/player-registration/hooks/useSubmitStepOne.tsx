@@ -1,11 +1,11 @@
 import { useRouter } from 'next/navigation'
 
-import uselocalStorageSetItem from '@/features/register-player/address registration/hooks/uselocalStorageSetItem'
+import uselocalStorageSetItem from '@/features/register-player/address-registration/hooks/uselocalStorageSetItem'
 import { RegisterRoutes } from '@/services/routers'
 
 import { FormStepOneType } from '../validation'
 
-export default function useSubmitStepOne() {
+export function useSubmitStepOne() {
   const router = useRouter()
   return (values: FormStepOneType) => {
     const notEmptyPronounValues = {

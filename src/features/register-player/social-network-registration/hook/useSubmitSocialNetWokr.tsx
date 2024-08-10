@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 
-import uselocalStorageSetItem from '../../address registration/hooks/uselocalStorageSetItem'
+import uselocalStorageSetItem from '../../address-registration/hooks/uselocalStorageSetItem'
 import { TsocialNetworkValidation } from '../types/social-network'
 
 export default function useSubmitSocialNetWokr(url: string) {
