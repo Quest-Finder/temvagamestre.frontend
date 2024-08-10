@@ -14,9 +14,7 @@ const alertVariants = cva('w-full rounded-lg border border-border p-4', {
         'border-success bg-success-soft/20 text-success dark:text-success-hard',
     },
   },
-  defaultVariants: {
-    variant: 'error',
-  },
+  defaultVariants: { variant: 'default' },
 })
 
 const AlertRoot = React.forwardRef<
@@ -30,7 +28,7 @@ const AlertRoot = React.forwardRef<
     {...props}
   />
 ))
-AlertRoot.displayName = 'Alert'
+AlertRoot.displayName = 'AlertRoot'
 
 export interface AlertTitleProps
   extends React.HTMLAttributes<HTMLHeadingElement> {}
@@ -70,8 +68,8 @@ export const Alert = {
 /* USAGE
 
   <Alert.Root>
-    <Alert.Title/>
-    <Alert.Description/>
+    <Alert.Title />
+    <Alert.Description />
   </Alert.Root>
 
 */
