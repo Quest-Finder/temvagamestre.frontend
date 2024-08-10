@@ -3,6 +3,7 @@ export enum PublicRoutes {
   Home = '/',
   PlayerProfile = '/user/profile',
   SignIn = '/sign-in',
+  SignUp = '/auth/sign-up',
 }
 
 export enum RegisterRoutes {
