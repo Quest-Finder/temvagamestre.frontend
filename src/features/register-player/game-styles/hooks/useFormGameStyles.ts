@@ -6,7 +6,7 @@ import useLocalStorageGetItem from '@/features/register-player/address-registrat
 import { defaultValues } from '../helpers'
 import { FormGameStylesType, GameStyle } from '../types/gameStyles'
 import { FormGameStylesSchema } from '../validation'
-import { useFetchData } from '.'
+import { useFetchData } from './useFetchData'
 
 export function useFormGameStyles() {
   const {

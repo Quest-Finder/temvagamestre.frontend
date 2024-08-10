@@ -1,5 +1,2 @@
 export { useFormStepOne } from './useFormStepOne'
 export { useSubmitStepOne } from './useSubmitStepOne'
-export { useGetNameByClerk } from './useGetNameByClerk'
-export { useSetValueDateOfBirth } from './useSetValueDateOfBirth'
-export { useStateDateOfBirth } from './useStateDateOfBirth'

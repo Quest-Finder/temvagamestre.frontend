@@ -6,7 +6,8 @@ import useLocalStorageGetItem from '@/features/register-player/address-registrat
 
 import { defaultValues } from '../helper'
 import { FormStepOneSchema, FormStepOneType } from '../validation'
-import { useGetNameByClerk, useSetValueDateOfBirth } from './'
+import { useGetNameByClerk } from './useGetNameByClerk'
+import { useSetValueDateOfBirth } from './useSetValueDateOfBirth'
 
 export function useFormStepOne() {
   const [date, setDate] = useState('')
