@@ -6,12 +6,8 @@ import { cn } from '@/lib/utils'
 const alertVariants = cva('w-full rounded-lg border border-border p-4', {
   variants: {
     variant: {
-      default: 'bg-foreground-support/5 text-foreground',
-      info: 'border-info bg-info-soft/20 text-info dark:text-info-hard',
-      warning: 'border-warning bg-warning-soft/20 text-warning-hard',
+      default: 'text-foreground',
       error: 'border-error bg-error-soft/20 text-error dark:text-error-hard',
-      success:
-        'border-success bg-success-soft/20 text-success dark:text-success-hard',
     },
   },
   defaultVariants: {
