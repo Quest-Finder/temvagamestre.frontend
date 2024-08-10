@@ -1,5 +1,7 @@
 'use client'
 
+// TODO: update this component applying the new style guide
+
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { Check, Circle } from 'lucide-react'
 import * as React from 'react'

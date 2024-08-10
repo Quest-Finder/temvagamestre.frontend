@@ -1,3 +1,5 @@
+// TODO: remove this component after migrate all form imports from '@/components/form'
+
 import * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
