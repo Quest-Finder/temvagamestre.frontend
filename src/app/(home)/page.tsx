@@ -1,13 +1,15 @@
-import { SignOutButton } from '@clerk/nextjs'
-
-import { Button } from '@/components/ui/button'
+import { PUBLIC_ROUTES } from '@/constants/routes'
 import ButtonNavigation from '@/hooks/ButtonNavigation'
 import { PublicRoutes, RegisterRoutes } from '@/services/routers'
 
 export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col items-center gap-3'>
+        <ButtonNavigation
+          href={PUBLIC_ROUTES.SIGN_UP}
+          content='sign-up'
+        />
         <ButtonNavigation
           href={PublicRoutes.SignIn}
           content='sign-in'
@@ -20,9 +22,6 @@ export default function Home() {
           href={RegisterRoutes.PlayerData}
           content='Cadastro do jogador'
         />
-        <SignOutButton>
-          <Button>Sign out</Button>
-        </SignOutButton>
       </div>
     </main>
   )
