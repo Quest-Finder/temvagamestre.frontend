@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
 
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 import { getError } from '../utils/getError'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'

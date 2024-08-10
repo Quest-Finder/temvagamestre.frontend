@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import useLocalStorageGetItem from '@/features/register-player/address registration/hooks/useLocalStorageGetItem'
+import useLocalStorageGetItem from '@/features/register-player/address-registration/hooks/useLocalStorageGetItem'
 
 import { FormStepOneType } from '../validation'
 import { useFormStepOne } from './useFormStepOne'

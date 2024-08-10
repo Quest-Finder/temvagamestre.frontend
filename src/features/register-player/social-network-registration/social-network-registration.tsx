@@ -5,7 +5,7 @@ import { FormProvider } from 'react-hook-form'
 import { Button } from '@/components/ui/button'
 import { RegisterRoutes } from '@/services/routers'
 
-import * as FormText from '../FormText.json'
+import FormText from '../FormText.json'
 import { FormTitle } from '../utils/title-form'
 import { Input } from './components'
 import useFormSocialMedia from './hook/useFormSocialNetWork'

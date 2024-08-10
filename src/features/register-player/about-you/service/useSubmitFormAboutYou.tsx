@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
-import uselocalStorageSetItem from '../../address registration/hooks/uselocalStorageSetItem'
+import uselocalStorageSetItem from '../../address-registration/hooks/uselocalStorageSetItem'
 import { TValidation } from '../types/validation'
 
 export default function useSubmitFormAboutYouRegistration(
