@@ -1,5 +1,3 @@
-// TODO: Remove Clerk
-
 import { z } from 'zod'
 
 const envVariables = z.object({

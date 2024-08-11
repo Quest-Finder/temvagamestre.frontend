@@ -1,8 +1,6 @@
 'use client'
 
-// TODO: Remove Clerk
-
-// import { useUser } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 
@@ -13,19 +11,12 @@ export function useGetNameByClerk(
   form: UseFormReturn<FormStepOneType>,
   setNameLoading: Dispatch<SetStateAction<boolean>>,
 ) {
+  const { user } = useUser()
+
   useEffect(() => {
-    if (!savedData) {
-      form.setValue('name', '')
+    if (!savedData && user?.fullName) {
+      form.setValue('name', user?.fullName)
       setNameLoading(() => false)
     }
-  }, [form, savedData, setNameLoading])
-
-  // const { user } = useUser()
-
-  // useEffect(() => {
-  //   if (!savedData && user?.fullName) {
-  //     form.setValue('name', user?.fullName)
-  //     setNameLoading(() => false)
-  //   }
-  // }, [user?.fullName, form, savedData, setNameLoading])
+  }, [user?.fullName, form, savedData, setNameLoading])
 }
