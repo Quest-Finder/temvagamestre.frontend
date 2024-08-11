@@ -12,7 +12,7 @@ export function PatternOverlay({
   darkColor,
   className,
   ...props
-}: PatternOverlayProps) {
+}: Readonly<PatternOverlayProps>) {
   return (
     <div
       className={cn(

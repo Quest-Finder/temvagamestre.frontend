@@ -13,7 +13,7 @@ export function ShowAndHideButton({
   show,
   className,
   ...props
-}: ShowAndHideButtonProps) {
+}: Readonly<ShowAndHideButtonProps>) {
   return (
     <button
       type='button'

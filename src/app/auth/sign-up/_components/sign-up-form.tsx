@@ -22,7 +22,7 @@ import texts from '../locales/pt-BR.json'
 
 export function SignUpForm() {
   const t = texts.SignUpForm
-  const [successMessage, setSucessMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showPasswordConfirmation, setShowPasswordConfirmation] =
     useState(false)
@@ -51,7 +51,7 @@ export function SignUpForm() {
     // TODO: integrate with API when it's ready
 
     if (data.email === 'sucesso@teste.com') {
-      setSucessMessage('Mensagem de sucesso apenas para teste')
+      setSuccessMessage('Mensagem de sucesso apenas para teste')
       form.reset()
       return
     }
