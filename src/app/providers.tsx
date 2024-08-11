@@ -1,3 +1,5 @@
+import { ptBR } from '@clerk/localizations'
+import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from 'next-themes'
 
 export function Providers({
@@ -8,7 +10,7 @@ export function Providers({
       attribute='class'
       disableTransitionOnChange
     >
-      {children}
+      <ClerkProvider localization={ptBR}>{children}</ClerkProvider>
     </ThemeProvider>
   )
 }
