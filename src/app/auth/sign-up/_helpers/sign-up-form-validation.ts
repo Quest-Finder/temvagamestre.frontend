@@ -4,7 +4,14 @@ import texts from '../locales/pt-BR.json'
 
 const t = texts.SignUpForm
 export const MIN_PASSWORD_LENGTH = 6
-const PASSWORD_REGEX = /^(?=.*[\d])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).*$/
+/*
+  (?=.*\d)    should contain at least 1 digit
+  (?=.*[a-z]) should contain at least 1 lowercase letter
+  (?=.*[A-Z]) should contain at least 1 uppercase letter
+  (?=.*\W)    should contain at least 1 special character
+  (?!.*\s)    should not contain any blank space
+*/
+const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).*$/
 
 export const formSchema = z
   .object({
