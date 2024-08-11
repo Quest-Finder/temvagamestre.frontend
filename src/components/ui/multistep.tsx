@@ -65,7 +65,7 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                 {currentStep >= step && <CheckComponent />}
               </div>
               {arrayText && arrayText[step - 1] && (
-                <p className='text-center font-mono text-primary-900'>
+                <p className='text-primary-900 text-center font-mono'>
                   {arrayText[step - 1]}
                 </p>
               )}
