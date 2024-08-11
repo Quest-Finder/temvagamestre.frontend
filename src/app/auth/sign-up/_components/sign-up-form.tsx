@@ -74,6 +74,9 @@ export function SignUpForm() {
               <Form.Control>
                 <Input
                   statusIcon
+                  type='email'
+                  inputMode='email'
+                  autoComplete='email'
                   variant={emailError && 'error'}
                   placeholder={t.email.placeholder}
                   {...field}
