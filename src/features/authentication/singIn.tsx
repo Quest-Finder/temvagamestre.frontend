@@ -1,22 +1,23 @@
-import { SignIn } from '@clerk/nextjs'
+// TODO: Remove Clerk
 
-import { RegisterRoutes } from '@/services/routers'
+// import { SignIn } from '@clerk/nextjs'
+
+// import { RegisterRoutes } from '@/services/routers'
 
 export default function SingIn() {
-  return (
-    <SignIn
-      path='/sign-in'
-      redirectUrl={RegisterRoutes.PlayerData}
-      appearance={{
-        elements: {
-          socialButtons: 'flex flex-col',
-          dividerText: 'hidden',
-          header: 'flex items-center',
-          footer: 'hidden',
-          footerActionText: 'hidden',
-          footerActionLink: 'hidden',
-        },
-      }}
-    />
-  )
+  return null
+  // <SignIn
+  //   path='/sign-in'
+  //   redirectUrl={RegisterRoutes.PlayerData}
+  //   appearance={{
+  //     elements: {
+  //       socialButtons: 'flex flex-col',
+  //       dividerText: 'hidden',
+  //       header: 'flex items-center',
+  //       footer: 'hidden',
+  //       footerActionText: 'hidden',
+  //       footerActionLink: 'hidden',
+  //     },
+  //   }}
+  // />
 }
