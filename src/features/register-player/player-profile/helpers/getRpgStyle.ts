@@ -2,7 +2,7 @@ import Exploracao from '@/assets/RpgProfile/Exploracao.svg'
 import Interpretacao from '@/assets/RpgProfile/Interpretacao.svg'
 import MatarEPilhar from '@/assets/RpgProfile/MatarEPilhar.svg'
 
-import { RpgStyles, RpgStyleData } from '../types/palyerProfileTypes'
+import { RpgStyleData, RpgStyles } from '../types/palyerProfileTypes'
 
 const rpgStyles: { [key in RpgStyles]: RpgStyleData } = {
   Exploração: {

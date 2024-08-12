@@ -1,5 +1,5 @@
-import { ConclusionText } from './components/ConclusionText'
 import { ConclusionRoot } from './components/ConclusionRoot'
+import { ConclusionText } from './components/ConclusionText'
 import { ConclusionTitle } from './components/ConclusionTitle'
 
 export const PlayerFormConclusion = {

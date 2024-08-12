@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils'
 import { ElementType } from 'react'
+
+import { cn } from '@/lib/utils'
 
 interface InputIconProps extends React.SVGProps<SVGSVGElement> {
   icon: ElementType

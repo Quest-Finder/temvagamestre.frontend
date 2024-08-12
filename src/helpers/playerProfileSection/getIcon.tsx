@@ -1,7 +1,8 @@
+import { ElementType } from 'react'
+
 import AngryBearIcon from '@/features/page-profile/playerProfileSection/Icons/AngryBearIcon'
 import SkullIcon from '@/features/page-profile/playerProfileSection/Icons/SkullIcon'
 import UnionIcon from '@/features/page-profile/playerProfileSection/Icons/UnionIcon'
-import { ElementType } from 'react'
 
 interface IconMap {
   [key: string]: ElementType

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import Badge from '@/assets/images/InsigneaDoDestino.png'
 
 export function ConclusionBadge() {

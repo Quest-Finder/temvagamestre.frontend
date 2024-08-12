@@ -12,7 +12,7 @@ export function CalendarMobile({ date, setDate }: CalendarMobileProps) {
   return (
     <>
       <div className='mb-4 flex w-full flex-col items-center justify-center gap-4 pb-4'>
-        <div className=' flex w-full items-center justify-center'>
+        <div className='flex w-full items-center justify-center'>
           <CalendarScheduling.Calendar
             date={date}
             setDate={setDate}

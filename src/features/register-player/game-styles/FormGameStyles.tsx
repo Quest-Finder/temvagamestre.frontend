@@ -1,5 +1,8 @@
 'use client'
 
+import { Arrow } from '@/components/icons/Arrow'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
   FormControl,
@@ -8,24 +11,21 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Button } from '@/components/ui/button'
-import { Arrow } from '@/components/icons/Arrow'
-
-import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/Skeleton'
-import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
+import { cn } from '@/lib/utils'
+
+import FormText from '../FormText.json'
+import { FormTitle } from '../utils'
 import { FormAdditionalText } from './components/FormAdditionalText'
-import { FormTitle } from '../utils/title-form'
-import useSubmitGameStyles from './hooks/useSubmitGameStyles'
-import { useFormGameStyles } from './hooks/useFormGameStyles'
-import * as FormText from '../FormText.json'
+import { validationCheckBoxLimitation } from './helpers'
+import { useFormGameStyles, useSubmitGameStyles } from './hooks'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
 
-  const baseClasses = 'flex w-fit cursor-pointer items-center gap-2.5 space-y-0'
-  const borderClasses = 'rounded-full border-[1px]'
+  const baseClasses =
+    'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 py-3 px-4 bg-primary-50 text-primary-900 text-sm font-mono'
+  const borderClasses = 'rounded-full border-[2px]'
 
   return (
     <Form {...form}>

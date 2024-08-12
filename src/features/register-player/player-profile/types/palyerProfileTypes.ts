@@ -1,5 +1,6 @@
-import { z } from 'zod'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import { z } from 'zod'
+
 import { FormPlayerProfileSchema } from '../validation'
 
 export type RpgStyles = 'Exploração' | 'Matar e pilhar' | 'Interpretação'

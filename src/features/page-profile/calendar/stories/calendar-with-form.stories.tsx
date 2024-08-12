@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import CalendarWithForm from '../calendarWithForm'
+
 import { CalendarScheduling } from '..'
+import CalendarWithForm from '../calendarWithForm'
 import { CalendarDesktop } from '../desktop/calendar-desktop'
 import { CalendarMobile } from '../mobile/calendar-mobile'
 

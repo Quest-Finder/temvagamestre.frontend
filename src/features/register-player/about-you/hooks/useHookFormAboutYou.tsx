@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import useLocalStorageGetItem from '../../address registration/hooks/useLocalStorageGetItem'
+
+import useLocalStorageGetItem from '../../address-registration/hooks/useLocalStorageGetItem'
 import { TValidation } from '../types/validation'
 import { defaultValuesAboutYou } from '../utils/default-values'
 import { validateAboutYou } from '../utils/validation'

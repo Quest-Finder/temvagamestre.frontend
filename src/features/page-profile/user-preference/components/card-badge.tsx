@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Card } from '@/components/ui/card'
+
 import CardAchievements from './card-achievements'
 
 type Badge = {

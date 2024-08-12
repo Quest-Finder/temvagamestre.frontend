@@ -1,6 +1,7 @@
 'use client'
 
 import { MultiStepRegisterForm } from '@/hooks/useMultiStep'
+
 import ButtonBack from '../utils/button-back'
 
 interface FormlayoutProps {
@@ -9,12 +10,12 @@ interface FormlayoutProps {
 
 export function FormLayout({ children }: FormlayoutProps) {
   return (
-    <main className='space-y-8 sm:m-10'>
-      <div className='mx-auto max-w-[880px]'>
+    <main className='flex h-full justify-center bg-primary-50'>
+      <div className='m-6 w-full max-w-[75.313rem] space-y-8 bg-neutral-50 p-3 sm:m-24 sm:p-10'>
         <ButtonBack />
+        <MultiStepRegisterForm />
+        {children}
       </div>
-      <MultiStepRegisterForm />
-      {children}
     </main>
   )
 }

@@ -9,9 +9,9 @@ export default function CardAchievements({ text, src }: CardAchievementsProps) {
   return (
     <>
       {src && (
-        <div className='size-[54px] inline-flex items-center justify-center'>
+        <div className='inline-flex size-[54px] items-center justify-center'>
           <Image
-            className='size-[54px] relative rounded-[999px]'
+            className='relative size-[54px] rounded-[999px]'
             src={src}
             alt={text}
             width={54}

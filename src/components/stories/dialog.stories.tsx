@@ -1,17 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { Meta, StoryObj } from '@storybook/react'
+
 import {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
   DialogClose,
-  DialogTrigger,
   DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
   DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
 } from '../ui/dialog'
 
 export default {

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { PlayerProfileGraph } from '../components/PlayerProfileGraph'
 import { MockGraphLegend } from '../mock'
 

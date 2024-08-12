@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar'
+
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 
 export default {
   title: 'Ui/ Avatar',
