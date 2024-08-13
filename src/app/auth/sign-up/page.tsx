@@ -22,11 +22,12 @@ export default function SignUpPage() {
     <div className='relative flex min-h-svh items-center justify-center bg-player-hard p-4 sm:p-16'>
       <PatternOverlay />
       <div className='z-10 flex w-full max-w-6xl overflow-hidden rounded-4xl max-md:flex-col'>
-        <div className='max-md:h-96 max-sm:h-48 md:flex-1'>
+        <div className='bg-primary max-md:h-96 max-sm:h-48 md:flex-1'>
           <Image
             src={signUpImage}
             alt={SIGN_UP_TEXTS.imageAlt}
             className='size-full object-cover'
+            placeholder='blur'
             priority
           />
         </div>
