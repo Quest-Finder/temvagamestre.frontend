@@ -1,66 +1,33 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-
 import { Form } from '@/components/form'
 import { Alert } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox-new'
 import { Input } from '@/components/ui/input-new'
+import { ShowAndHideButton } from '@/components/ui/show-and-hide-button'
 
-import { ShowAndHideButton } from '../../../../components/ui/show-and-hide-button'
-import { getPasswordStatus } from '../_helpers/get-password-status'
-import {
-  defaultValues,
-  type FormSchema,
-  formSchema,
-  MIN_PASSWORD_LENGTH,
-} from '../_helpers/sign-up-form-validation'
+import { MIN_PASSWORD_LENGTH } from '../_helpers/sign-up-form-validation'
+import { useSignUpForm } from '../_hooks/use-sign-up-form'
 import texts from '../locales/pt-BR.json'
 
+const SIGN_UP_TEXTS = texts.SignUpForm
+
 export function SignUpForm() {
-  const t = texts.SignUpForm
-  const [successMessage, setSuccessMessage] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [showPasswordConfirmation, setShowPasswordConfirmation] =
-    useState(false)
-
-  const form = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
-    defaultValues,
-    mode: 'onBlur',
-  })
-
-  const passwordValue = form.watch('password')
-
-  const emailError = form.formState.errors.email
-  const passwordError = form.formState.errors.password
-  const passwordConfirmationError = form.formState.errors.password_confirmation
-  const formError = form.formState.errors.root
-
-  const passwordStatus = getPasswordStatus({
-    value: passwordValue,
-    error: passwordError,
-  })
-
-  const isFormValid = form.formState.isValid
-
-  function handleRegister(data: FormSchema) {
-    // TODO: integrate with API when it's ready
-
-    if (data.email === 'sucesso@teste.com') {
-      setSuccessMessage('Mensagem de sucesso apenas para teste')
-      form.reset()
-      return
-    }
-
-    form.setError('root', {
-      type: 'api_error',
-      message: t.response.alreadyRegistered,
-    })
-  }
+  const {
+    successMessage,
+    showPassword,
+    setShowPassword,
+    showPasswordConfirmation,
+    setShowPasswordConfirmation,
+    form,
+    emailError,
+    passwordConfirmationError,
+    formError,
+    passwordStatus,
+    isFormValid,
+    handleRegister,
+  } = useSignUpForm()
 
   return (
     <Form.Root {...form}>
@@ -70,7 +37,7 @@ export function SignUpForm() {
           control={form.control}
           render={({ field }) => (
             <Form.Item>
-              <Form.Label>{t.email.label}</Form.Label>
+              <Form.Label>{SIGN_UP_TEXTS.email.label}</Form.Label>
               <Form.Control>
                 <Input
                   statusIcon
@@ -78,7 +45,7 @@ export function SignUpForm() {
                   inputMode='email'
                   autoComplete='email'
                   variant={emailError && 'error'}
-                  placeholder={t.email.placeholder}
+                  placeholder={SIGN_UP_TEXTS.email.placeholder}
                   {...field}
                 />
               </Form.Control>
@@ -92,13 +59,13 @@ export function SignUpForm() {
           control={form.control}
           render={({ field }) => (
             <Form.Item>
-              <Form.Label>{t.password.label}</Form.Label>
+              <Form.Label>{SIGN_UP_TEXTS.password.label}</Form.Label>
               <div className='relative'>
                 <Form.Control>
                   <Input
                     type={showPassword ? 'text' : 'password'}
                     variant={passwordStatus}
-                    placeholder={t.password.placeholder}
+                    placeholder={SIGN_UP_TEXTS.password.placeholder}
                     className='pr-10'
                     {...field}
                     // Override default behaviour to validate on "onChange"
@@ -109,20 +76,20 @@ export function SignUpForm() {
                   />
                 </Form.Control>
                 <ShowAndHideButton
-                  title={t.password.showButton}
+                  title={SIGN_UP_TEXTS.password.showButton}
                   show={showPassword}
                   onClick={() => setShowPassword(!showPassword)}
                 />
               </div>
               {passwordStatus === 'success' ? (
                 <Form.Message variant='success'>
-                  {t.password.messages.sucess}
+                  {SIGN_UP_TEXTS.password.messages.sucess}
                 </Form.Message>
               ) : (
                 <Form.Message variant={passwordStatus} />
               )}
               <Form.Description className='text-xs'>
-                {t.password.description}
+                {SIGN_UP_TEXTS.password.description}
               </Form.Description>
             </Form.Item>
           )}
@@ -133,13 +100,15 @@ export function SignUpForm() {
           control={form.control}
           render={({ field }) => (
             <Form.Item>
-              <Form.Label>{t.passwordConfirmation.label}</Form.Label>
+              <Form.Label>
+                {SIGN_UP_TEXTS.passwordConfirmation.label}
+              </Form.Label>
               <div className='relative'>
                 <Form.Control>
                   <Input
                     type={showPasswordConfirmation ? 'text' : 'password'}
                     variant={passwordConfirmationError && 'error'}
-                    placeholder={t.passwordConfirmation.placeholder}
+                    placeholder={SIGN_UP_TEXTS.passwordConfirmation.placeholder}
                     className='pr-10'
                     {...field}
                     // Override default behaviour to validate on "onChange" and trigger it only after value reaches the minimum length
@@ -152,7 +121,7 @@ export function SignUpForm() {
                   />
                 </Form.Control>
                 <ShowAndHideButton
-                  title={t.password.showButton}
+                  title={SIGN_UP_TEXTS.password.showButton}
                   show={showPasswordConfirmation}
                   onClick={() =>
                     setShowPasswordConfirmation(!showPasswordConfirmation)
@@ -172,12 +141,14 @@ export function SignUpForm() {
               <Checkbox.Wrapper>
                 <Form.Control>
                   <Checkbox.Check
-                    title={t.consent.title}
+                    title={SIGN_UP_TEXTS.consent.title}
                     checked={field.value}
                     onCheckedChange={field.onChange}
                   />
                 </Form.Control>
-                <Form.Label type='checkbox'>{t.consent.statement}</Form.Label>
+                <Form.Label type='checkbox'>
+                  {SIGN_UP_TEXTS.consent.statement}
+                </Form.Label>
               </Checkbox.Wrapper>
               <Form.Message />
             </Form.Item>
@@ -201,7 +172,7 @@ export function SignUpForm() {
           className='mt-4 max-sm:w-full'
           disabled={!isFormValid}
         >
-          {t.submit.create}
+          {SIGN_UP_TEXTS.submit.create}
         </Button>
       </Form.Wrapper>
     </Form.Root>
