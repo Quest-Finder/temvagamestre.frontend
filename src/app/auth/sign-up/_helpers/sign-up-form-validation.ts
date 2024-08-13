@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 import texts from '../locales/pt-BR.json'
 
-const t = texts.SignUpForm
+const SIGN_UP_TEXTS = texts.SignUpForm
 export const MIN_PASSWORD_LENGTH = 6
 /*
   (?=.*\d)    should contain at least 1 digit
@@ -17,22 +17,26 @@ export const formSchema = z
   .object({
     email: z
       .string()
-      .min(1, { message: t.email.messages.required })
-      .email({ message: t.email.messages.invalid }),
+      .min(1, { message: SIGN_UP_TEXTS.email.messages.required })
+      .email({ message: SIGN_UP_TEXTS.email.messages.invalid }),
     password: z
       .string()
-      .min(1, { message: t.password.messages.required })
-      .min(MIN_PASSWORD_LENGTH, { message: t.password.messages.weak })
-      .regex(PASSWORD_REGEX, { message: t.password.messages.warning }),
+      .min(1, { message: SIGN_UP_TEXTS.password.messages.required })
+      .min(MIN_PASSWORD_LENGTH, {
+        message: SIGN_UP_TEXTS.password.messages.weak,
+      })
+      .regex(PASSWORD_REGEX, {
+        message: SIGN_UP_TEXTS.password.messages.warning,
+      }),
     password_confirmation: z.string(),
     consent: z.boolean(),
   })
   .refine(data => data.password === data.password_confirmation, {
-    message: t.passwordConfirmation.errors.mismatch,
+    message: SIGN_UP_TEXTS.passwordConfirmation.errors.mismatch,
     path: ['password_confirmation'],
   })
   .refine(data => data.consent === true, {
-    message: t.consent.error,
+    message: SIGN_UP_TEXTS.consent.error,
     path: ['consent'],
   })
 

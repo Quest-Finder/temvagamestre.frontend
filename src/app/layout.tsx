@@ -8,14 +8,14 @@ import texts from '@/locales/pt-BR.json'
 
 import { Providers } from './providers'
 
-const t = texts.AppLayout
+const APP_TEXTS = texts.AppLayout
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${t.meta.title}`,
-    default: t.meta.title,
+    template: `%s | ${APP_TEXTS.meta.title}`,
+    default: APP_TEXTS.meta.title,
   },
-  description: t.meta.description,
+  description: APP_TEXTS.meta.description,
 }
 
 export default function RootLayout({

@@ -10,11 +10,11 @@ import { SignUpForm } from './_components/sign-up-form'
 import signUpImage from './assets/sign-up-image.jpg'
 import texts from './locales/pt-BR.json'
 
-const t = texts.SignUpPage
+const SIGN_UP_TEXTS = texts.SignUpPage
 
 export const metadata: Metadata = {
-  title: t.meta.title,
-  description: t.meta.description,
+  title: SIGN_UP_TEXTS.meta.title,
+  description: SIGN_UP_TEXTS.meta.description,
 }
 
 export default function SignUpPage() {
@@ -25,7 +25,7 @@ export default function SignUpPage() {
         <div className='max-md:h-96 max-sm:h-48 md:flex-1'>
           <Image
             src={signUpImage}
-            alt={t.imageAlt}
+            alt={SIGN_UP_TEXTS.imageAlt}
             className='size-full object-cover'
             priority
           />
@@ -38,13 +38,15 @@ export default function SignUpPage() {
               className='w-28'
             />
             <div className='text-sm'>
-              {t.hasAccount}{' '}
-              <NavLink href={PUBLIC_ROUTES.SIGN_IN}>{t.signInLink}</NavLink>
+              {SIGN_UP_TEXTS.hasAccount}{' '}
+              <NavLink href={PUBLIC_ROUTES.SIGN_IN}>
+                {SIGN_UP_TEXTS.signInLink}
+              </NavLink>
             </div>
           </header>
 
           <h1 className='text-3xl font-bold text-foreground-hard max-sm:text-center'>
-            {t.title}
+            {SIGN_UP_TEXTS.title}
           </h1>
 
           <SignUpForm />
