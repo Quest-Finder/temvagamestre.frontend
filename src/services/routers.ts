@@ -1,3 +1,5 @@
+// TODO: move this data to '/constants/routes.ts' after define auth strategy and reorganize it
+
 /* eslint-disable no-shadow */
 export enum PublicRoutes {
   Home = '/',
@@ -7,6 +9,7 @@ export enum PublicRoutes {
 }
 
 export enum RegisterRoutes {
+  Onboarding = '/register/onboarding',
   PlayerData = '/cadastro/dados-jogador',
   SocialNetworks = '/cadastro/redes-sociais',
   AboutYou = '/cadastro/sobre-voce',

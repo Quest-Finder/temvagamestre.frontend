@@ -1,4 +1,4 @@
-import { AUTH_ROUTES } from '@/constants/routes'
+import { AUTH_ROUTES, REGISTER_PLAYER_ROUTES } from '@/constants/routes'
 import ButtonNavigation from '@/hooks/ButtonNavigation'
 import { PublicRoutes, RegisterRoutes } from '@/services/routers'
 
@@ -10,6 +10,11 @@ export default function Home() {
           href={AUTH_ROUTES.SIGN_UP}
           content='sign-up'
         />
+        <ButtonNavigation
+          href={REGISTER_PLAYER_ROUTES.ONBOARDING}
+          content='onboarding'
+        />
+
         <ButtonNavigation
           href={PublicRoutes.SignIn}
           content='sign-in'
