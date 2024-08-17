@@ -2,12 +2,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { getPasswordStatus } from '../_helpers/get-password-status'
 import {
   defaultValues,
   type FormSchema,
   formSchema,
-} from '../_helpers/sign-up-form-validation'
+  getPasswordStatus,
+} from '../_helpers'
 import texts from '../locales/pt-BR.json'
 
 const SIGN_UP_TEXTS = texts.SignUpForm
