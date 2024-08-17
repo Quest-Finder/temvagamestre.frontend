@@ -38,10 +38,16 @@ export function useSignUpForm() {
 
   const isFormValid = form.formState.isValid
 
-  function handleRegister(data: FormSchema) {
-    // TODO: integrate with API when it's ready
+  function handleRegister({ email, consent }: FormSchema): void {
+    if (!consent) {
+      return
+    }
 
-    if (data.email === 'sucesso@teste.com') {
+    // TODO: integrate with API when it's ready.
+
+    // The code below is just an example. It'll be changed when the endpoint is available.
+
+    if (email === 'sucesso@teste.com') {
       setSuccessMessage('Mensagem de sucesso apenas para teste')
       form.reset()
       return
