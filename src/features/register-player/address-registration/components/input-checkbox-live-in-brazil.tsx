@@ -30,7 +30,7 @@ export default function InputLiveInBrazil() {
                   type='checkbox'
                   checked={field.value}
                   onChange={field.onChange}
-                  className='h-4 w-4 p-1 accent-primary-900 transition-colors'
+                  className='accent-primary-900 h-4 w-4 p-1 transition-colors'
                 />
                 Não moro no Brasil
               </FormLabel>

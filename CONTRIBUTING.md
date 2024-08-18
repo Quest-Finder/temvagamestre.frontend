@@ -75,7 +75,7 @@ Usamos issues do GitHub para rastrear bugs e erros. Se você encontrar um proble
 
 - Abra um [Issue](https://github.com/Quest-Finder/temvagamestre.frontend/issues/new). (Como não podemos ter certeza neste ponto se é um bug ou não, pedimos que você não fale sobre um bug ainda e não rotule o issue).
 - Explique o comportamento que você esperava e o comportamento real.
-- Forneça o máximo de contexto possível e descreva os *passos de reprodução* que outra pessoa pode seguir para recriar o problema por conta própria. Isso geralmente inclui seu código. Para bons relatórios de bug, você deve isolar o problema e criar um caso de teste reduzido.
+- Forneça o máximo de contexto possível e descreva os _passos de reprodução_ que outra pessoa pode seguir para recriar o problema por conta própria. Isso geralmente inclui seu código. Para bons relatórios de bug, você deve isolar o problema e criar um caso de teste reduzido.
 - Forneça as informações que você coletou na seção anterior.
 
 Uma vez que seja arquivado:
@@ -112,7 +112,7 @@ Sugestões de melhorias são rastreadas como [issues do GitHub](https://github.c
 ```txt
 ├── CODE_OF_CONDUCT.md -> código de conduta
 ├── CONTRIBUTING.md -> como contribuir para o TVM
-├── LICENSE 
+├── LICENSE
 ├── README.md
 ├── components.json
 ├── docker-compose.yml
@@ -121,7 +121,7 @@ Sugestões de melhorias são rastreadas como [issues do GitHub](https://github.c
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.js
-├── prettier.config.js 
+├── prettier.config.js
 ├── src
 │   ├── app
 │   ├── assets
@@ -143,6 +143,7 @@ incluir configuração do ambiente, IDE e instruções típicas de início?
 -->
 
 ### Melhorando a Documentação
+
 <!-- TODO
 Atualizando, melhorando e corrigindo a documentação
 
@@ -151,17 +152,19 @@ Atualizando, melhorando e corrigindo a documentação
 ## Guias de Estilo
 
 ### Mensagens de Commit
+
 <!-- TODO
 
 -->
 
 ## Junte-se à Equipe do Projeto
 
-Para fazer parte da equipe que mantém o Tem Vaga Mestre? é necessário aguardar a abertura de vagas. Elas estarão listadas na nossa página da wiki e são ocupadas através de um processo seletivo. 
+Para fazer parte da equipe que mantém o Tem Vaga Mestre? é necessário aguardar a abertura de vagas. Elas estarão listadas na nossa página da wiki e são ocupadas através de um processo seletivo.
 
 Este projeto faz parte da iniciativa [SouJuniorLabs](https://github.com/SouJunior), lá você encontra outros projetos open source voluntários.
 
 <!-- omit in toc -->
+
 ## Créditos
 
 Este guia é baseado no **contributing-gen**. [Crie o seu próprio](https://github.com/bttger/contributing-gen)!

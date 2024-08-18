@@ -1,6 +1,6 @@
 name: 📋 Adicionar nova tarefa
 description: Adicione nova tarefa de desenvolvimento
-title: "[Task]: "
+title: '[Task]: '
 
 body:
   - type: markdown
@@ -12,7 +12,7 @@ body:
     attributes:
       label: Link da tarefa
       description: Por favor, informe o link da tarefa.
-      placeholder: "ex: https://temvagamestre.com/task/1"
+      placeholder: 'ex: https://temvagamestre.com/task/1'
     validations:
       required: true
 
