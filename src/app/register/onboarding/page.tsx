@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 import logoFull from '@/assets/branding/logo-full-white.svg'
 import logoShort from '@/assets/branding/logo-short-white.svg'
+import backgroundImage from '@/assets/images/onboarding-image.jpg'
 import { NavButton } from '@/components/ui/nav-button'
 import { REGISTER_PLAYER_ROUTES } from '@/constants/routes'
 
-import backgroundImage from './assets/bg-image.jpg'
 import texts from './locales/pt-BR.json'
 
 const ONBOARDING_TEXTS = texts.OnboardingPage
