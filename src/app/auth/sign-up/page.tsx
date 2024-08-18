@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import logo from '@/assets/branding/logo-short.svg'
+import signUpImage from '@/assets/images/sign-up-image.jpg'
 import { NavLink } from '@/components/ui/nav-link'
 import { PatternOverlay } from '@/components/ui/pattern-overlay'
 import { PUBLIC_ROUTES } from '@/constants/routes'
 
 import { SignUpForm } from './_components/sign-up-form'
-import signUpImage from './assets/sign-up-image.jpg'
 import texts from './locales/pt-BR.json'
 
 const SIGN_UP_TEXTS = texts.SignUpPage
