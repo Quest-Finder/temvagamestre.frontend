@@ -12,7 +12,9 @@ export function getPasswordStatus({
   value,
   error,
 }: GetPasswordStatusProps): PasswordStatus {
-  if ((!value || value?.length <= 0) && !error) {
+  const isValueEmpty = !value || value?.length <= 0
+
+  if (isValueEmpty && !error) {
     return undefined
   }
 
@@ -22,12 +24,10 @@ export function getPasswordStatus({
 
   const errorType = error?.type as ZodIssueCode
 
-  switch (errorType) {
-    case 'too_small':
-      return 'error'
-    case 'invalid_string':
-      return 'warning'
-    default:
-      return undefined
+  const errorMessages: Record<string, PasswordStatus> = {
+    too_small: 'error',
+    invalid_string: 'warning',
   }
+
+  return errorMessages[errorType] ?? undefined
 }

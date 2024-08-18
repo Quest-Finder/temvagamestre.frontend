@@ -1,11 +1,17 @@
 import * as React from 'react'
-import { useFormContext } from 'react-hook-form'
+import { type FieldValues, useFormContext } from 'react-hook-form'
 
-import { FormFieldContext, FormItemContext } from './form-context'
+import {
+  FormFieldContext,
+  type FormFieldContextValue,
+  FormItemContext,
+  type FormItemContextValue,
+} from './form-context'
 
 export function useFormField() {
-  const fieldContext = React.useContext(FormFieldContext)
-  const itemContext = React.useContext(FormItemContext)
+  const fieldContext: FormFieldContextValue<FieldValues, string> =
+    React.useContext(FormFieldContext)
+  const itemContext: FormItemContextValue = React.useContext(FormItemContext)
   const { getFieldState, formState } = useFormContext()
 
   const fieldState = getFieldState(fieldContext.name, formState)
@@ -15,10 +21,11 @@ export function useFormField() {
   }
 
   const { id } = itemContext
+  const { name } = fieldContext
 
   return {
     id,
-    name: fieldContext.name,
+    name,
     formItemId: `${id}-form-item`,
     formDescriptionId: `${id}-form-item-description`,
     formMessageId: `${id}-form-item-message`,
