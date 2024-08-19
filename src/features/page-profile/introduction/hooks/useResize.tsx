@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import { resizeDelay } from '../helpers/resizeDelay'
 
 export function useResize() {

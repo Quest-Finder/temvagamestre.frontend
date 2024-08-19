@@ -1,33 +1,32 @@
-import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 leading-5',
+  'inline-flex w-fit items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'bg-primary-900  hover:bg-primary-900/95 text-neutral-50 font-mono text-sm gap-2',
+          'bg-primary text-primary-foreground shadow-sm drop-shadow hover:bg-primary-hard',
         secondary:
-          'bg-primary-300  hover:bg-primary-300/95 text-neutral-900 text-base gap-2 font-notoSans',
-        third:
-          'bg-primary-100  hover:bg-primary-100/95 text-primary-950 text-base gap-2 font-mono',
+          'bg-secondary text-secondary-foreground hover:bg-secondary-hard',
+        third: 'bg-primary-100 hover:bg-primary-100/95 text-primary-950',
         destructive:
           'bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90',
         outline:
-          'border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50',
+          'border border-border bg-background text-foreground hover:bg-background-soft',
         ghost:
           'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',
       },
       size: {
-        default: 'h-10 px-8 py-4',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
-        icon: 'h-10 w-10',
+        default: 'h-10 px-4',
+        sm: 'h-7 rounded-md px-2 text-sm',
+        lg: 'h-16 gap-4 px-6 text-xl',
+        icon: 'size-10',
       },
     },
     defaultVariants: {

@@ -1,11 +1,12 @@
 import React from 'react'
+
 import { Label } from './label'
 
 function BackgroundToogle() {
   return (
     <div
       aria-hidden='true'
-      className='h-6 w-11 cursor-pointer rounded-xl bg-[#E2E8F0] transition-all  peer-checked:bg-[#0F172A] peer-focus:outline-none peer-focus:ring-[#0F172A]'
+      className='h-6 w-11 cursor-pointer rounded-xl bg-[#E2E8F0] transition-all peer-checked:bg-[#0F172A] peer-focus:outline-none peer-focus:ring-[#0F172A]'
     />
   )
 }
@@ -13,7 +14,7 @@ function ButtonToogle() {
   return (
     <span
       aria-hidden='true'
-      className='absolute left-1 top-[2px]  z-10 h-5 w-5 rounded-full bg-[#FFFFFF] shadow-md transition-all peer-checked:left-5'
+      className='absolute left-1 top-[2px] z-10 h-5 w-5 rounded-full bg-[#FFFFFF] shadow-md transition-all peer-checked:left-5'
     />
   )
 }
@@ -25,7 +26,7 @@ interface ToogleLabelProps {
 function ToogleLabel({ fieldName, children }: ToogleLabelProps) {
   return (
     <Label
-      className='relative inline-flex cursor-pointer items-center outline-none '
+      className='relative inline-flex cursor-pointer items-center outline-none'
       htmlFor={fieldName}
     >
       {children}

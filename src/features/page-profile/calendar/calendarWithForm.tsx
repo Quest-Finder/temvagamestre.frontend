@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
+
 import { cn } from '@/lib/utils'
-import useCustomForm from './form/useCustomForm'
+
 import { CalendarScheduling } from '.'
 import { CalendarDesktop } from './desktop/calendar-desktop'
+import useCustomForm from './form/useCustomForm'
 import { CalendarMobile } from './mobile/calendar-mobile'
 
 export default function CalendarWithForm() {
@@ -14,7 +16,7 @@ export default function CalendarWithForm() {
 
   return (
     <CalendarScheduling.Root>
-      <div className='col-span-8 row-span-1 h-8 min-[704px]:col-span-12 '>
+      <div className='col-span-8 row-span-1 h-8 min-[704px]:col-span-12'>
         <CalendarScheduling.Text
           className={cn('h-8 text-2xl font-semibold leading-7 text-zinc-800')}
         >
@@ -29,7 +31,7 @@ export default function CalendarWithForm() {
               setDate={setDate}
             />
           </div>
-          <div className='min-[900px]:hidden '>
+          <div className='min-[900px]:hidden'>
             <CalendarMobile
               date={date}
               setDate={setDate}

@@ -1,6 +1,10 @@
 'use client'
 
 import React from 'react'
+
+import useCategory from '../../components/category'
+import { RPGStyle } from '../../types'
+import { EnumRPGTypes } from '../hooks/enumRPGType'
 // import {
 //   Select,
 //   SelectContent,
@@ -12,9 +16,6 @@ import React from 'react'
 // } from '@/components/ui/select'
 // import { cn } from '@/lib/utils'
 import { useRpgStyle } from '../hooks/useRpgStyle'
-import useCategory from '../../components/category'
-import { RPGStyle } from '../../types'
-import { EnumRPGTypes } from '../hooks/enumRPGType'
 
 export interface RpgStylelistProps {
   rpgStyle: RPGStyle[]

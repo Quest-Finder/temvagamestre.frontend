@@ -1,0 +1,9 @@
+{
+  "Components": {
+    "ThemeToggle": {
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    }
+  }
+}

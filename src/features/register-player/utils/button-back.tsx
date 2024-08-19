@@ -1,8 +1,9 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { ArrowBack } from '@/components/icons/ArrowBack'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
 
 export default function ButtonBack() {
   const router = useRouter()
@@ -10,7 +11,7 @@ export default function ButtonBack() {
   return (
     <Button
       variant='ghost'
-      className='gap-2.5 text-neutral-400'
+      className='h-fit gap-[0.563rem] px-0 py-0 font-notoSans font-semibold text-neutral-400 hover:bg-transparent'
       onClick={() => {
         router.back()
       }}

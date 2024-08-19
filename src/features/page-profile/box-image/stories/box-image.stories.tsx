@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { BoxImage, BoxImageProps } from '../box-image'
-import { CardWithImgs } from '..'
+
 import img from '../../header/assets/Rectangle.svg'
+import { CardWithImgs } from '..'
+import { BoxImage, BoxImageProps } from '../box-image'
 
 const arrayImgsMock: string[] = [img, img, img, img, img]
 
