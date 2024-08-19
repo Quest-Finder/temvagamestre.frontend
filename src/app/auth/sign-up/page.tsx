@@ -5,7 +5,7 @@ import logo from '@/assets/branding/logo-short.svg'
 import signUpImage from '@/assets/images/sign-up-image.jpg'
 import { NavLink } from '@/components/ui/nav-link'
 import { PatternOverlay } from '@/components/ui/pattern-overlay'
-import { PUBLIC_ROUTES } from '@/constants/routes'
+import { AUTH_ROUTES } from '@/constants/routes'
 
 import { SignUpForm } from './_components/sign-up-form'
 import texts from './locales/pt-BR.json'
@@ -40,7 +40,7 @@ export default function SignUpPage() {
             />
             <div className='text-sm'>
               {SIGN_UP_TEXTS.hasAccount}{' '}
-              <NavLink href={PUBLIC_ROUTES.SIGN_IN}>
+              <NavLink href={AUTH_ROUTES.SIGN_IN}>
                 {SIGN_UP_TEXTS.signInLink}
               </NavLink>
             </div>
