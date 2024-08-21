@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import {
+  checkPasswordRequirements,
   defaultValues,
   type FormSchema,
   formSchema,
@@ -10,9 +11,9 @@ import {
 } from '../_helpers'
 import texts from '../locales/pt-BR.json'
 
-const SIGN_UP_TEXTS = texts.SignUpForm
-
 export function useSignUpForm() {
+  const SIGN_UP_TEXTS = texts.SignUpForm
+
   const [successMessage, setSuccessMessage] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showPasswordConfirmation, setShowPasswordConfirmation] =
@@ -35,7 +36,7 @@ export function useSignUpForm() {
     value: passwordValue,
     error: passwordError,
   })
-
+  const passwordRequirements = checkPasswordRequirements(passwordValue)
   const isFormValid = form.formState.isValid
 
   function handleRegister({ email, consent }: FormSchema): void {
@@ -68,6 +69,7 @@ export function useSignUpForm() {
     showPasswordConfirmation,
     setShowPasswordConfirmation,
     form,
+    passwordRequirements,
     emailError,
     passwordConfirmationError,
     formError,

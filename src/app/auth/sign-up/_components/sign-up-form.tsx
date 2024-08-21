@@ -10,6 +10,7 @@ import { ShowAndHideButton } from '@/components/ui/show-and-hide-button'
 import { MIN_PASSWORD_LENGTH } from '../_helpers/sign-up-form-validation'
 import { useSignUpForm } from '../_hooks/use-sign-up-form'
 import texts from '../locales/pt-BR.json'
+import { PasswordRequirements } from './password-requirements'
 
 const SIGN_UP_TEXTS = texts.SignUpForm
 
@@ -21,6 +22,7 @@ export function SignUpForm() {
     showPasswordConfirmation,
     setShowPasswordConfirmation,
     form,
+    passwordRequirements,
     emailError,
     passwordConfirmationError,
     formError,
@@ -88,8 +90,12 @@ export function SignUpForm() {
               ) : (
                 <Form.Message variant={passwordStatus} />
               )}
-              <Form.Description className='text-xs'>
-                {SIGN_UP_TEXTS.password.description}
+              <Form.Description
+                as='div'
+                className='space-y-1 text-xs'
+              >
+                <p>{SIGN_UP_TEXTS.password.description}</p>
+                <PasswordRequirements requirements={passwordRequirements} />
               </Form.Description>
             </Form.Item>
           )}
