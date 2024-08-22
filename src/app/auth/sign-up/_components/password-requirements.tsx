@@ -9,7 +9,7 @@ interface PasswordRequirementsProps {
 
 export function PasswordRequirements({
   requirements,
-}: PasswordRequirementsProps) {
+}: Readonly<PasswordRequirementsProps>) {
   const REQUIREMENT_TEXTS = texts.SignUpForm.password.requirements
 
   return (
