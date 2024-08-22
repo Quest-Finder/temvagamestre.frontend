@@ -1,0 +1,3 @@
+{
+  "*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}": "prettier --check"
+}
