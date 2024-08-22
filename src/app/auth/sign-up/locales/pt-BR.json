@@ -22,7 +22,14 @@
       "label": "Senha",
       "placeholder": "Digite sua senha",
       "showButton": "Mostrar senha",
-      "description": "A senha deve ter 6 ou mais dígitos e incluir letras maíusculas, minúsculas, números e caracteres especiais.",
+      "description": "Sua senha deve conter:",
+      "requirements": {
+        "length": "No mínimo 6 caracteres",
+        "uppercase": "Pelo menos uma letra maiúscula",
+        "lowercase": "Pelo menos uma letra minúscula",
+        "number": "Pelo menos um número",
+        "symbols": "Pelo menos um caractere especial"
+      },
       "messages": {
         "required": "A senha é obrigatória.",
         "weak": "Sua senha não está forte o bastante.",
