@@ -3,7 +3,7 @@
 import { Form } from '@/components/form'
 import { Alert } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox-new'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { ShowAndHideButton } from '@/components/ui/show-and-hide-button'
 
