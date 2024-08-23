@@ -44,9 +44,7 @@ export default function FormAboutYou() {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className={`h-9 focus-visible:ring-transparent ${getError(
-                        form.formState.errors.titulo,
-                      )}`}
+                      variant={form.formState.errors.titulo && 'error'}
                       placeholder='Exemplo: Jogador combeiro safado'
                       maxLength={50}
                       {...field}

@@ -1,7 +1,6 @@
 'use client'
 
 import { Arrow } from '@/components/icons/Arrow'
-import { NotValid } from '@/components/icons/NotValid'
 import { Update } from '@/components/icons/Update'
 import { Button } from '@/components/ui/button'
 import {
@@ -45,15 +44,12 @@ export function FormStepOne() {
                 <FormControl>
                   <FormFirstStep.InputField>
                     <Input
+                      statusIcon
                       disabled={nameLoading}
-                      isError={form.formState.errors.name}
-                      className='disabled:bg-neutral-300 disabled:placeholder:text-transparent'
+                      variant={form.formState.errors.name && 'error'}
                       placeholder='Exemplo: Pedro da Silva Sauro'
                       {...field}
                     />
-                    {form.formState.errors.name && (
-                      <FormFirstStep.InputIcon icon={NotValid} />
-                    )}
                     {nameLoading && (
                       <FormFirstStep.InputIcon
                         icon={Update}
@@ -75,13 +71,11 @@ export function FormStepOne() {
                 <FormControl>
                   <FormFirstStep.InputField>
                     <Input
-                      isError={form.formState.errors.username}
+                      statusIcon
+                      variant={form.formState.errors.username && 'error'}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
-                    {form.formState.errors.username && (
-                      <FormFirstStep.InputIcon icon={NotValid} />
-                    )}
                   </FormFirstStep.InputField>
                 </FormControl>
                 <FormMessage />
