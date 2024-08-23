@@ -10,7 +10,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Skeleton } from '@/components/ui/Skeleton'
+import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 
 import FormText from '../FormText.json'
@@ -46,10 +46,8 @@ export function FormGameStyles() {
               <FormItem className='flex max-w-[44.063rem] flex-wrap justify-center gap-2 space-y-0'>
                 {isLoading && (
                   <Skeleton
-                    height='[2.875rem]'
-                    width={40}
                     quantity={10}
-                    className='rounded-full'
+                    className='h-12 w-40 rounded-full'
                   />
                 )}
                 {!isLoading &&
