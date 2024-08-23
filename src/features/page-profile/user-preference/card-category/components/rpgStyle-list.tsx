@@ -33,7 +33,7 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
             <span
               key={id}
               title={name}
-              className={`min-w-[78px] truncate rounded-[3px] px-3 py-1.5 font-mono text-sm font-medium ${backgroundColor}`}
+              className={`min-w-[78px] truncate rounded-[3px] px-3 py-1.5 text-sm font-medium ${backgroundColor}`}
             >
               {name}
             </span>
@@ -45,7 +45,7 @@ export function RpgStylelist({ rpgStyle }: RpgStylelistProps) {
             //   <SelectTrigger
             //     title={name}
             //     className={cn(
-            //       `h-8 min-w-[150px] rounded-md px-4 py-2 text-center font-[Roboto] text-sm font-medium leading-tight shadow-none focus:outline-none ${backgroundColor}`,
+            //       `h-8 min-w-[150px] rounded-md px-4 py-2 text-center text-sm font-medium leading-tight shadow-none focus:outline-none ${backgroundColor}`,
             //     )}
             //   >
             //     <SelectValue>{name}</SelectValue>

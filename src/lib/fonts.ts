@@ -1,4 +1,4 @@
-import { Inter, Noto_Sans as NotoSans, Raleway, Roboto } from 'next/font/google'
+import { Inter, Noto_Sans as NotoSans, Raleway } from 'next/font/google'
 
 export const raleway = Raleway({
   subsets: ['latin'],
@@ -9,13 +9,6 @@ export const raleway = Raleway({
 export const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-})
-
-export const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: ['400'],
   fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 

@@ -23,7 +23,7 @@ export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
 
   const baseClasses =
-    'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 py-3 px-4 bg-primary-50 text-primary-900 text-sm font-mono'
+    'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 py-3 px-4 bg-primary-50 text-primary-900 text-sm'
   const borderClasses = 'rounded-full border-[2px]'
 
   return (
