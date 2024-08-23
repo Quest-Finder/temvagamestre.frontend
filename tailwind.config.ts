@@ -30,7 +30,6 @@ const config = {
       },
       fontFamily: {
         sans: 'var(--font-raleway)',
-        notoSans: ['var(--font-notoSans)'],
       },
       colors: {
         background: {

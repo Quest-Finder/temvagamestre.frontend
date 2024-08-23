@@ -3,7 +3,7 @@ import './globals.css'
 import { Metadata } from 'next'
 
 import { ThemeToggle } from '@/components/theme-toggle'
-import { inter, notoSans, raleway } from '@/lib/fonts'
+import { inter, raleway } from '@/lib/fonts'
 import texts from '@/locales/pt-BR.json'
 
 import { Providers } from './providers'
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html
       lang='pt-BR'
       suppressHydrationWarning
-      className={`${raleway.variable} ${inter.variable} ${notoSans.variable} antialiased`}
+      className={`${raleway.variable} ${inter.variable} antialiased`}
     >
       <body>
         <Providers>

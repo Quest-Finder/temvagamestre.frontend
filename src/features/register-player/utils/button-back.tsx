@@ -11,7 +11,7 @@ export default function ButtonBack() {
   return (
     <Button
       variant='ghost'
-      className='h-fit gap-[0.563rem] px-0 py-0 font-notoSans font-semibold text-neutral-400 hover:bg-transparent'
+      className='h-fit gap-[0.563rem] px-0 py-0 font-semibold text-neutral-400 hover:bg-transparent'
       onClick={() => {
         router.back()
       }}
