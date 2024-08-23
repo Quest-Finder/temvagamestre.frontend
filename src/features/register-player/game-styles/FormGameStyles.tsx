@@ -1,6 +1,5 @@
 'use client'
 
-import { Arrow } from '@/components/icons/Arrow'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
@@ -117,13 +116,11 @@ export function FormGameStyles() {
         />
         <div className='text-center'>
           <Button
-            disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[13.375rem] text-base disabled:opacity-50'
-            variant='default'
             type='submit'
+            disabled={!form.formState.isValid}
+            size='lg'
           >
             Salvar e Continuar
-            <Arrow />
           </Button>
         </div>
       </form>

@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 
-import { Arrow } from '@/components/icons/Arrow'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
@@ -100,12 +99,10 @@ export function FormPlayerProfile() {
         <div className='text-center'>
           <Button
             disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[214px] text-base transition duration-300 ease-in-out disabled:opacity-50'
-            variant='default'
             type='submit'
+            size='lg'
           >
-            Salvar e continuar
-            <Arrow />
+            Salvar e Continuar
           </Button>
         </div>
       </form>

@@ -1,6 +1,5 @@
 'use client'
 
-import { Arrow } from '@/components/icons/Arrow'
 import { Update } from '@/components/icons/Update'
 import { Button } from '@/components/ui/button'
 import {
@@ -124,12 +123,11 @@ export function FormStepOne() {
             <Button
               disabled={!form.formState.isValid}
               aria-disabled={form.formState.isValidating}
-              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:animate-pulse aria-disabled:cursor-wait'
-              variant='default'
+              size='lg'
+              className='mt-4'
               type='submit'
             >
               Próximo
-              <Arrow />
             </Button>
           </div>
         </form>

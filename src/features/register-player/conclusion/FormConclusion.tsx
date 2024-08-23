@@ -19,9 +19,7 @@ export function FormConclusion() {
         {FormText.conclusion.textContent}
       </PlayerFormConclusion.Text>
 
-      <Button className='mt-4 h-full max-h-14 w-full max-w-[13.375rem] text-base'>
-        Agendar uma Partida
-      </Button>
+      <Button size='lg'>Agendar uma Partida</Button>
 
       <PlayerFormConclusion.Text>
         {FormText.conclusion.additionalText}
