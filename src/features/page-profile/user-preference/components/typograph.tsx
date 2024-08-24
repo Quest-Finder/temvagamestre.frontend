@@ -14,10 +14,7 @@ export function Typography({
 }: TypographyH2Pros) {
   return (
     <Component
-      className={cn(
-        'mb-4 w-full font-mono text-2xl text-neutral-950',
-        className,
-      )}
+      className={cn('mb-4 w-full text-2xl text-neutral-950', className)}
     >
       {children}
     </Component>

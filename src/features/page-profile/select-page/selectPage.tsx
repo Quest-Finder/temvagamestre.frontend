@@ -15,7 +15,7 @@ export function SelectPage() {
         return (
           <li
             key={text}
-            className={`flex items-center rounded-md px-4 py-2 font-notoSans ${bgBLink} w-[50px] min-w-[100px]`}
+            className={`flex items-center rounded-md px-4 py-2 ${bgBLink} w-[50px] min-w-[100px]`}
           >
             <Link
               href={path}

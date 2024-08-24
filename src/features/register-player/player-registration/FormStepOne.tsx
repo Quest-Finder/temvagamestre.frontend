@@ -1,7 +1,5 @@
 'use client'
 
-import { Arrow } from '@/components/icons/Arrow'
-import { NotValid } from '@/components/icons/NotValid'
 import { Update } from '@/components/icons/Update'
 import { Button } from '@/components/ui/button'
 import {
@@ -45,15 +43,12 @@ export function FormStepOne() {
                 <FormControl>
                   <FormFirstStep.InputField>
                     <Input
+                      statusIcon
                       disabled={nameLoading}
-                      isError={form.formState.errors.name}
-                      className='disabled:bg-neutral-300 disabled:placeholder:text-transparent'
+                      variant={form.formState.errors.name && 'error'}
                       placeholder='Exemplo: Pedro da Silva Sauro'
                       {...field}
                     />
-                    {form.formState.errors.name && (
-                      <FormFirstStep.InputIcon icon={NotValid} />
-                    )}
                     {nameLoading && (
                       <FormFirstStep.InputIcon
                         icon={Update}
@@ -75,13 +70,11 @@ export function FormStepOne() {
                 <FormControl>
                   <FormFirstStep.InputField>
                     <Input
-                      isError={form.formState.errors.username}
+                      statusIcon
+                      variant={form.formState.errors.username && 'error'}
                       placeholder='Exemplo: Pedrosauro'
                       {...field}
                     />
-                    {form.formState.errors.username && (
-                      <FormFirstStep.InputIcon icon={NotValid} />
-                    )}
                   </FormFirstStep.InputField>
                 </FormControl>
                 <FormMessage />
@@ -130,12 +123,11 @@ export function FormStepOne() {
             <Button
               disabled={!form.formState.isValid}
               aria-disabled={form.formState.isValidating}
-              className='mt-4 h-full max-h-14 w-full max-w-[214px] text-base disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:animate-pulse aria-disabled:cursor-wait'
-              variant='default'
+              size='lg'
+              className='mt-4'
               type='submit'
             >
               Próximo
-              <Arrow />
             </Button>
           </div>
         </form>

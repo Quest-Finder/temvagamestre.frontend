@@ -20,9 +20,7 @@ export default function CardAchievements({ text, src }: CardAchievementsProps) {
         </div>
       )}
       {text && (
-        <p className='font-mono text-xl leading-[48px] text-neutral-800'>
-          {text}
-        </p>
+        <p className='text-xl leading-[48px] text-neutral-800'>{text}</p>
       )}
     </>
   )

@@ -34,10 +34,9 @@ export default function FormAddressRegistration() {
           <div className='flex flex-col items-center gap-8'>
             <Button
               type='submit'
-              className='min-h-[3.5rem] w-full min-w-[6.25rem] max-w-[13.375rem] flex-wrap px-8 py-4'
+              size='lg'
             >
               Salvar e Continuar
-              {/* <ArrowLeft /> */}
             </Button>
             <p className='text-center text-sm font-normal leading-5 text-neutral-500'>
               Prefiro responder em outro momento

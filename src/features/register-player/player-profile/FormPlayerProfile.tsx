@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 
-import { Arrow } from '@/components/icons/Arrow'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
@@ -79,10 +78,10 @@ export function FormPlayerProfile() {
                               />
                             </div>
                             <div>
-                              <CardTitle className='mb-1 font-notoSans text-xl font-bold leading-[1.875rem]'>
+                              <CardTitle className='mb-1 text-xl font-bold leading-[1.875rem]'>
                                 {item.title}
                               </CardTitle>
-                              <CardDescription className='break- font-notoSans text-base leading-6 text-neutral-700'>
+                              <CardDescription className='break- text-base leading-6 text-neutral-700'>
                                 {item.description}
                               </CardDescription>
                             </div>
@@ -100,12 +99,10 @@ export function FormPlayerProfile() {
         <div className='text-center'>
           <Button
             disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[214px] text-base transition duration-300 ease-in-out disabled:opacity-50'
-            variant='default'
             type='submit'
+            size='lg'
           >
-            Salvar e continuar
-            <Arrow />
+            Salvar e Continuar
           </Button>
         </div>
       </form>
