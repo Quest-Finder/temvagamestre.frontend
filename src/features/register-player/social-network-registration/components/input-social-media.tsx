@@ -24,7 +24,7 @@ export default function InputSocialMedia({
         <FormItem className=''>
           <FormControl>
             <Input
-              className='w-full min-[415px]:w-[20.375rem]'
+              className='min-[415px]:w-[20.375rem]'
               placeholder={placeholder}
               onChange={field.onChange}
               onBlur={field.onBlur}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
 
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   FormControl,
   FormField,
@@ -14,30 +15,23 @@ export default function InputLiveInBrazil() {
   const form = useFormContext<addressRegistrationValidationT>()
 
   return (
-    <div className=''>
-      <FormField
-        control={form.control}
-        name='liveInBrazil'
-        render={({ field }) => (
-          <FormItem className='mr-auto flex flex-row items-start space-x-3 space-y-0 p-4'>
+    <FormField
+      name='liveInBrazil'
+      control={form.control}
+      render={({ field }) => (
+        <FormItem className='mr-auto flex flex-row items-start space-x-3 space-y-0 p-4'>
+          <Checkbox.Wrapper>
             <FormControl>
-              <FormLabel
-                className='flex cursor-pointer items-center gap-2'
-                htmlFor='liveInBrazil'
-              >
-                <input
-                  id='liveInBrazil'
-                  type='checkbox'
-                  checked={field.value}
-                  onChange={field.onChange}
-                  className='h-4 w-4 p-1 accent-primary-900 transition-colors'
-                />
-                Não moro no Brasil
-              </FormLabel>
+              <Checkbox.Check
+                title='Não moro no Brasi'
+                checked={field.value}
+                onCheckedChange={field.onChange}
+              />
             </FormControl>
-          </FormItem>
-        )}
-      />
-    </div>
+            <FormLabel>Não moro no Brasil</FormLabel>
+          </Checkbox.Wrapper>
+        </FormItem>
+      )}
+    />
   )
 }

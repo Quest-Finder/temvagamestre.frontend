@@ -45,10 +45,9 @@ export default function SocialNetworkRegistration() {
           </p>
           <Button
             type='submit'
-            className='animate-wiggle min-h-[3.5rem] min-w-[200px] max-w-[13.375rem] px-8 py-4'
+            size='lg'
           >
             Salvar e Continuar
-            {/* <ArrowLeft /> */}
           </Button>
         </div>
       </form>

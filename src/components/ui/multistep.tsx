@@ -13,7 +13,7 @@ function MultistepSkeleton({ size }: MultiStepSkeletonProps) {
           <React.Fragment key={step}>
             <div className='mb-auto flex flex-wrap items-center justify-center gap-2 sm:w-[135px]'>
               <div className='mr-auto flex h-10 w-10 animate-pulse items-center justify-center rounded-full border bg-gray-200' />
-              <div className='mt-2 h-4 w-20 animate-pulse bg-gray-200 text-center font-mono' />
+              <div className='mt-2 h-4 w-20 animate-pulse bg-gray-200 text-center' />
             </div>
             <div className='flex h-[40px] items-center justify-center'>
               <div
@@ -57,7 +57,7 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                       currentStep === step
                         ? 'text-neutral-50'
                         : 'text-primary-600'
-                    } m-4 text-center font-mono font-extrabold`}
+                    } m-4 text-center font-extrabold`}
                   >
                     {step}
                   </p>
@@ -65,7 +65,7 @@ function Multistep({ size, currentStep = 1, arrayText }: MultiStepProps) {
                 {currentStep >= step && <CheckComponent />}
               </div>
               {arrayText && arrayText[step - 1] && (
-                <p className='text-center font-mono text-primary-900'>
+                <p className='text-primary-900 text-center'>
                   {arrayText[step - 1]}
                 </p>
               )}
