@@ -1,15 +1,13 @@
 // prettier.config.js
 module.exports = {
-  plugins: ['prettier-plugin-tailwindcss'],
-  pluginSearchDirs: false,
-  tailwindFunctions: ['clsx', 'tw', 'cva'],
-  semi: false,
-  singleQuote: true,
   arrowParens: 'avoid',
-  insertFinalNewline: true,
   bracketSpacing: true,
-  tabWidth: 2,
   endOfLine: 'auto',
   jsxSingleQuote: true,
+  plugins: ['prettier-plugin-tailwindcss'],
+  semi: false,
   singleAttributePerLine: true,
+  singleQuote: true,
+  tabWidth: 2,
+  tailwindFunctions: ['clsx', 'tw', 'cva'],
 }
