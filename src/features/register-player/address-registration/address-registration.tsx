@@ -7,7 +7,7 @@ import { RegisterRoutes } from '@/services/routers'
 
 import FormText from '../FormText.json'
 import { FormTitle } from '../utils/title-form'
-import InputLiveInBrazil from './components/input-checkbox-live-in-brazil'
+import CheckboxLiveAbroad from './components/checkbox-live-abroad'
 import InputCity from './components/input-city'
 import InputState from './components/input-state'
 import useFormAddressRegistration from './hooks/useFormAddressRegistration'
@@ -30,7 +30,7 @@ export default function FormAddressRegistration() {
         </div>
 
         <div className='flex w-full flex-col gap-8'>
-          <InputLiveInBrazil />
+          <CheckboxLiveAbroad />
           <div className='flex flex-col items-center gap-8'>
             <Button
               type='submit'
