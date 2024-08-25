@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button'
+
+import FormText from '../FormText.json'
 import { PlayerFormConclusion } from '.'
 import { ConclusionBadge } from './components/ConclusionBadge'
-import * as FormText from '../FormText.json'
 
 export function FormConclusion() {
   return (
@@ -18,9 +19,7 @@ export function FormConclusion() {
         {FormText.conclusion.textContent}
       </PlayerFormConclusion.Text>
 
-      <Button className='mt-4 h-full max-h-14 w-full max-w-[13.375rem] text-base'>
-        Agendar uma Partida
-      </Button>
+      <Button size='lg'>Agendar uma Partida</Button>
 
       <PlayerFormConclusion.Text>
         {FormText.conclusion.additionalText}

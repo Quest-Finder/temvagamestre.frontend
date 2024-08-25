@@ -1,26 +1,41 @@
 'use client'
 
-import * as React from 'react'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
+import * as LabelPrimitive from '@radix-ui/react-label'
 import { Check } from 'lucide-react'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-interface CheckboxProps
-  extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {}
+interface CheckboxWrapperProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-const Checkbox = React.forwardRef<
+const CheckboxWrapper = React.forwardRef<HTMLDivElement, CheckboxWrapperProps>(
+  ({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn('flex items-center gap-2', className)}
+      {...props}
+    />
+  ),
+)
+CheckboxWrapper.displayName = 'CheckboxWrapper'
+
+interface CheckboxCheckProps
+  extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
+  title: string
+}
+
+const CheckboxCheck = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
-  CheckboxProps
->(({ className, ...props }, ref) => {
+  CheckboxCheckProps
+>(({ title, className, ...props }, ref) => {
   const baseClasses =
-    'peer h-4 w-4 shrink-0 ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 dark:ring-offset-slate-950'
-  const borderClasses =
-    'rounded-sm border border-slate-900 dark:border-slate-50'
+    'peer size-5 shrink-0 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50'
+  const borderClasses = 'rounded border-2 border-foreground/50'
   const focusClasses =
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-300'
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
   const stateClasses =
-    'data-[state=checked]:bg-slate-900 data-[state=checked]:text-slate-50  dark:data-[state=checked]:bg-slate-50 dark:data-[state=checked]:text-slate-900'
+    'data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
 
   return (
     <CheckboxPrimitive.Root
@@ -37,12 +52,46 @@ const Checkbox = React.forwardRef<
       <CheckboxPrimitive.Indicator
         className={cn('flex items-center justify-center text-current')}
       >
-        <Check className='h-3 w-3' />
+        <Check
+          className='size-4'
+          strokeWidth={3}
+        />
       </CheckboxPrimitive.Indicator>
+      <span className='sr-only'>{title}</span>
     </CheckboxPrimitive.Root>
   )
 })
+CheckboxCheck.displayName = CheckboxPrimitive.Root.displayName
 
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+interface CheckboxLabelProps
+  extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {}
 
-export { Checkbox }
+const CheckboxLabel = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  CheckboxLabelProps
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(
+      'peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
+      className,
+    )}
+    {...props}
+  />
+))
+CheckboxLabel.displayName = LabelPrimitive.Root.displayName
+
+export const Checkbox = {
+  Wrapper: CheckboxWrapper,
+  Check: CheckboxCheck,
+  Label: CheckboxLabel,
+}
+
+/* USAGE
+
+  <Checkbox.Wrapper>
+    <Checkbox.Check/>
+    <Checkbox.Label/>
+  </Checkbox.Wrapper>
+
+*/

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { PlayerProfileSection } from '../PlayerProfileSection'
 
 const meta: Meta<typeof PlayerProfileSection> = {

@@ -2,7 +2,7 @@
 module.exports = {
   plugins: ['prettier-plugin-tailwindcss'],
   pluginSearchDirs: false,
-  tailwindFunctions: ['clsx', 'tw'],
+  tailwindFunctions: ['clsx', 'tw', 'cva'],
   semi: false,
   singleQuote: true,
   arrowParens: 'avoid',

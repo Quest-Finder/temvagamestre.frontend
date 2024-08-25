@@ -1,6 +1,6 @@
 name: 🐞 Reportar um problema
 description: Reporte um problema e contribua com o aprimoramento da aplicação
-title: "[Bug]: "
+title: '[Bug]: '
 labels: [bug]
 
 body:
@@ -16,7 +16,7 @@ body:
     attributes:
       label: Seu sistema e versão
       description: Por favor, informe qual sistema e versão você está usando.
-      placeholder: "ex: Windows 11, macOS 13.6, iOS 16, Android 13"
+      placeholder: 'ex: Windows 11, macOS 13.6, iOS 16, Android 13'
     validations:
       required: false
 
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Seu navegador e versão
       description: Por favor, informe qual navegador e versão você está usando.
-      placeholder: "ex: Chrome 126.0, Safari 16.6"
+      placeholder: 'ex: Chrome 126.0, Safari 16.6'
     validations:
       required: false
 
@@ -50,14 +50,14 @@ body:
         3. Veja o erro em "..."
     validations:
       required: true
-  
+
   - type: textarea
     id: current-behaviour
     attributes:
       label: Comportamento atual
     validations:
       required: false
-  
+
   - type: textarea
     id: expected-behaviour
     attributes:

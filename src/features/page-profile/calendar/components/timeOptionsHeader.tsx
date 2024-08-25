@@ -1,6 +1,7 @@
 import { formatDate } from '@/helpers/formatDate'
 import useWindowDimensions from '@/hooks/useWindowWidth'
 import { cn } from '@/lib/utils'
+
 import { Text } from './typograph'
 
 export default function TimeOptionsHeader({
@@ -20,11 +21,7 @@ export default function TimeOptionsHeader({
       >
         {isMobile ? 'Horarios dsponiveis' : 'agendar'}
       </Text>
-      <Text
-        className={cn(
-          'font-roboto text-sm font-light leading-loose text-neutral-600',
-        )}
-      >
+      <Text className={cn('text-sm font-light leading-loose text-neutral-600')}>
         {dateToStringFormat}
       </Text>
     </section>

@@ -1,5 +1,6 @@
-import { RegisterRoutes } from '@/services/routers'
 import { SignIn } from '@clerk/nextjs'
+
+import { RegisterRoutes } from '@/services/routers'
 
 export default function SingIn() {
   return (

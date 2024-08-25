@@ -1,44 +1,42 @@
-import { Metadata } from 'next'
-import { Inter, Roboto, Noto_Sans as NotoSans } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
-import { ptBR } from '@clerk/localizations'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: ['400'],
-})
-const notoSans = NotoSans({
-  subsets: ['latin'],
-  variable: '--font-notoSans',
-  weight: ['400'],
-})
+import { Metadata } from 'next'
+
+import { ThemeToggle } from '@/components/theme-toggle'
+import { inter, raleway } from '@/lib/fonts'
+import texts from '@/locales/pt-BR.json'
+
+import { Providers } from './providers'
+
+const APP_TEXTS = texts.AppLayout
 
 export const metadata: Metadata = {
-  title: 'Tem Vaga Mestre',
-  description:
-    'Gerencie seus personagens e campanhas de rpg de maneira simples, rápida e eficiente',
+  title: {
+    template: `%s | ${APP_TEXTS.meta.title}`,
+    default: APP_TEXTS.meta.title,
+  },
+  description: APP_TEXTS.meta.description,
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang='pt-Br'>
-      <ClerkProvider localization={ptBR}>
-        <body
-          className={`${inter.variable} ${roboto.variable} ${notoSans.variable}`}
-        >
+    <html
+      lang='pt-BR'
+      suppressHydrationWarning
+      className={`${raleway.variable} ${inter.variable} antialiased`}
+    >
+      <body>
+        <Providers>
           {children}
-        </body>
-      </ClerkProvider>
+          <div className='fixed bottom-2 left-2 z-50'>
+            <ThemeToggle />
+          </div>
+        </Providers>
+      </body>
     </html>
   )
 }

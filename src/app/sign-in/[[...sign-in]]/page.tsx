@@ -1,9 +1,10 @@
-import SingIn from '@/features/authentication/singIn'
 import Link from 'next/link'
+
+import SingIn from '@/features/authentication/singIn'
 
 export default function SingInPage() {
   return (
-    <div className='flex h-screen flex-col items-center	justify-center'>
+    <div className='flex h-screen flex-col items-center justify-center'>
       <SingIn />
       <Link
         href='/'

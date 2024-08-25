@@ -10,6 +10,7 @@ import { SelectPage } from '@/features/page-profile/select-page/selectPage'
 import UserDescriptionComponent from '@/features/page-profile/user-description/user-description'
 import UserPreferenceCategorys from '@/features/page-profile/user-preference/userPreferences'
 import { cn } from '@/lib/utils'
+
 import img from '../../../features/page-profile/header/assets/Rectangle.svg'
 
 const arrayImgsMock: string[] = [img, img, img, img, img]
@@ -22,8 +23,8 @@ export default function Profile() {
       <HeaderProfile />
       <div className='mx-auto mt-4 grid min-h-screen max-w-[90rem] grid-cols-1 px-6 pb-5 md:grid-cols-12 md:grid-rows-none md:space-x-14 md:px-[4.844rem]'>
         <aside className='-mt-24 flex flex-col gap-8 md:col-span-4'>
-          <div className=' flex flex-col items-center justify-start gap-2'>
-            <Avatar className={cn(' flex h-36 w-36')}>
+          <div className='flex flex-col items-center justify-start gap-2'>
+            <Avatar className={cn('flex h-36 w-36')}>
               <AvatarImage src='https://github.com/shadcn.png' />
               <AvatarFallback>Profile</AvatarFallback>
             </Avatar>
@@ -36,7 +37,7 @@ export default function Profile() {
               age='35 anos'
             />
           </div>
-          <div className='hidden flex-col gap-2 md:flex '>
+          <div className='hidden flex-col gap-2 md:flex'>
             <UserPreferenceCategorys
               rpgStyle={userMock.preferences.rpgStyles}
               badges={userMock.badges}

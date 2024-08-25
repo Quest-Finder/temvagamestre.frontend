@@ -1,5 +1,7 @@
 'use client'
 
+import { FormProvider } from 'react-hook-form'
+
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -11,12 +13,12 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { RegisterRoutes } from '@/services/routers'
-import { FormProvider } from 'react-hook-form'
+
+import FormText from '../FormText.json'
 import { getError } from '../utils/getError'
 import { FormTitle } from '../utils/title-form'
 import useHookFormAboutYou from './hooks/useHookFormAboutYou'
 import useSubmitFormAboutYouRegistration from './service/useSubmitFormAboutYou'
-import * as FormText from '../FormText.json'
 
 export default function FormAboutYou() {
   const form = useHookFormAboutYou()
@@ -42,9 +44,7 @@ export default function FormAboutYou() {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className={`h-9 focus-visible:ring-transparent ${getError(
-                        form.formState.errors.titulo,
-                      )}`}
+                      variant={form.formState.errors.titulo && 'error'}
                       placeholder='Exemplo: Jogador combeiro safado'
                       maxLength={50}
                       {...field}
@@ -75,16 +75,15 @@ export default function FormAboutYou() {
               )}
             />
           </div>
-          <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10  sm:flex-row'>
+          <div className='animate-wiggle mt-10 flex flex-col-reverse items-center gap-10 sm:flex-row'>
             <p className='text-center text-sm font-normal leading-5 text-neutral-500'>
               Não responder nesse momento
             </p>
             <Button
               type='submit'
-              className='animate-wiggle min-h-[3.5rem] min-w-[12.1875rem] max-w-[13.375rem] px-8 py-4'
+              size='lg'
             >
               Salvar e Continuar
-              {/* <ArrowLeft /> */}
             </Button>
           </div>
         </form>

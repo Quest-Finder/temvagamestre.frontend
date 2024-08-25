@@ -1,7 +1,8 @@
 'use client'
 
-import { Button, ButtonProps } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+
+import { Button, ButtonProps } from '@/components/ui/button'
 
 interface BtnProps extends ButtonProps {
   href: string

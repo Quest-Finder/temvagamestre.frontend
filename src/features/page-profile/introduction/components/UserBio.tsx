@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/button'
+
 import { useResize } from '../hooks/useResize'
 
 interface UserBioProps {
@@ -28,8 +30,8 @@ export function UserBio({ description }: UserBioProps) {
       <p
         ref={truncatedTextRef}
         className={`${
-          truncateText ? 'truncated-text ' : ''
-        } font-notoSans text-sm leading-6 text-neutral-400 sm:text-base`}
+          truncateText ? 'truncated-text' : ''
+        } text-sm leading-6 text-neutral-400 sm:text-base`}
       >
         {description}
       </p>
@@ -37,7 +39,7 @@ export function UserBio({ description }: UserBioProps) {
         <Button
           onClick={() => setTruncateText(!truncateText)}
           variant='ghost'
-          className='my-[5px] h-auto justify-end p-0 font-notoSans text-base font-semibold text-neutral-950 hover:bg-transparent'
+          className='my-[5px] h-auto justify-end p-0 text-base font-semibold text-neutral-950 hover:bg-transparent'
         >
           {truncateText ? 'Ver mais' : 'Ver menos'}
         </Button>

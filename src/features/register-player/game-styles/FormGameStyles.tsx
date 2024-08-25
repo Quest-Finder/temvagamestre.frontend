@@ -1,5 +1,7 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
   FormControl,
@@ -8,24 +10,21 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Button } from '@/components/ui/button'
-import { Arrow } from '@/components/icons/Arrow'
-
+import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
-import { Skeleton } from '@/components/ui/Skeleton'
-import { validationCheckBoxLimitation } from './helpers/validationCheckBoxLimitation'
+
+import FormText from '../FormText.json'
+import { FormTitle } from '../utils'
 import { FormAdditionalText } from './components/FormAdditionalText'
-import { FormTitle } from '../utils/title-form'
-import useSubmitGameStyles from './hooks/useSubmitGameStyles'
-import { useFormGameStyles } from './hooks/useFormGameStyles'
-import * as FormText from '../FormText.json'
+import { validationCheckBoxLimitation } from './helpers'
+import { useFormGameStyles, useSubmitGameStyles } from './hooks'
 
 export function FormGameStyles() {
   const { gameStyles, isLoading, form } = useFormGameStyles()
 
-  const baseClasses = 'flex w-fit cursor-pointer items-center gap-2.5 space-y-0'
-  const borderClasses = 'rounded-full border-[1px]'
+  const baseClasses =
+    'flex w-fit cursor-pointer items-center gap-2.5 space-y-0 py-3 px-4 bg-primary-50 text-primary-900 text-sm'
+  const borderClasses = 'rounded-full border-[2px]'
 
   return (
     <Form {...form}>
@@ -47,10 +46,8 @@ export function FormGameStyles() {
               <FormItem className='flex max-w-[44.063rem] flex-wrap justify-center gap-2 space-y-0'>
                 {isLoading && (
                   <Skeleton
-                    height='[2.875rem]'
-                    width={40}
                     quantity={10}
-                    className='rounded-full'
+                    className='h-12 w-40 rounded-full'
                   />
                 )}
                 {!isLoading &&
@@ -83,9 +80,9 @@ export function FormGameStyles() {
                             >
                               {item.name}
                               <FormControl>
-                                <Checkbox
+                                <Checkbox.Check
+                                  title={item.name}
                                   checked={field.value?.includes(item.id)}
-                                  className='border-primary-900 data-[state=checked]:rounded-full data-[state=checked]:bg-primary-900'
                                   onCheckedChange={(checked: boolean) => {
                                     return checked
                                       ? field.onChange([
@@ -117,13 +114,11 @@ export function FormGameStyles() {
         />
         <div className='text-center'>
           <Button
-            disabled={!form.formState.isValid}
-            className='h-full max-h-14 w-full max-w-[13.375rem] text-base disabled:opacity-50'
-            variant='default'
             type='submit'
+            disabled={!form.formState.isValid}
+            size='lg'
           >
             Salvar e Continuar
-            <Arrow />
           </Button>
         </div>
       </form>

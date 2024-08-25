@@ -1,7 +1,8 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { FormGameStyles } from '../FormGameStyles'
+import React from 'react'
+
 import { FormLayout } from '../../player-registration/FormLayout'
+import { FormGameStyles } from '../FormGameStyles'
 
 export default {
   title: 'Register/Cadastro estilos de jogo',

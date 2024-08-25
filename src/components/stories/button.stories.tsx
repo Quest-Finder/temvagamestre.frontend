@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Meta } from '@storybook/react'
+
 import { Button, ButtonProps } from '../ui/button'
 
 interface Props extends ButtonProps {

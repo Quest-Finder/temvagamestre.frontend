@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+
 import { TypeRPGStyle } from '../rpgStyle'
 import { EnumRPGTypes } from './enumRPGType'
 

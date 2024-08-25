@@ -1,0 +1,12 @@
+{
+  "OnboardingPage": {
+    "meta": {
+      "title": "Bem-vindo!",
+      "description": "Entre num mundo de diversão e aventura!"
+    },
+    "title": "Bem-vindo!",
+    "content": "Explore um universo de aventuras e agende suas jogatinas de RPG de maneira fácil e divertida. Encontre mestres talentosos, monte seu grupo de jogadores e mergulhe em histórias épicas. Vamos começar sua jornada!",
+    "button": "Completar meu cadastro",
+    "imageAlt": "Rua de pedras de um vilarejo com casas de madeira mescladas com árvores às suas margens."
+  }
+}

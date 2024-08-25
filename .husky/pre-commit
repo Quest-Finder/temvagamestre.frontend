@@ -1,0 +1,13 @@
+check_linting_errors() {
+  echo 'Checking for linting errors...'
+
+  npx lint-staged || exit 1
+
+  echo 'Linting completed successfully.'
+}
+
+# Add functions to be called on every pre-commit below
+check_linting_errors
+
+echo 'Done'
+exit 0

@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { FormPlayerProfileSchema } from '../validation'
+
 import {
-  PlayerProfileType,
   FormPlayerProfileType,
+  PlayerProfileType,
 } from '../types/palyerProfileTypes'
+import { FormPlayerProfileSchema } from '../validation'
 import { useFetchData } from './useFetchData'
 
 export function useFormPlayerProfile() {

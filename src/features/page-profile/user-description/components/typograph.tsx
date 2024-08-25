@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils'
 import React, { ElementType } from 'react'
+
+import { cn } from '@/lib/utils'
 
 interface TypographyH2Pros {
   content: string
@@ -14,7 +15,7 @@ export function Typography({
   return (
     <Component
       className={cn(
-        'text-center font-notoSans text-xl font-semibold leading-normal',
+        'text-center text-xl font-semibold leading-normal',
         className,
       )}
     >

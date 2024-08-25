@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { UserPreference } from '.'
 import { Badge, RPGStyle } from './types'
 
