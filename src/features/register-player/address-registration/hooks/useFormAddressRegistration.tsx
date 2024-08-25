@@ -1,8 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
 import { RegisterRoutes } from '@/services/routers'
-import { useRouter } from 'next/navigation'
+
 import { addressRegistrationValidationT } from '../types/address-registration'
 import { addressRegistrationValidation } from '../utils/address-registration-validation'
 import { DEFAULT_VALEUS_ADDRESS_REGISTRATION } from '../utils/defaul-values'
