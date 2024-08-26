@@ -18,7 +18,7 @@ export default function OptionsCity({
   uf,
   handleValueCity,
   cityValue,
-}: OptionsCityProps) {
+}: Readonly<OptionsCityProps>) {
   const { data, isLoading } = GetCityByEstate({ uf })
   const form = useFormContext<addressRegistrationValidationT>()
   const fieldCityIsEmpty = cityValue.length !== 0
