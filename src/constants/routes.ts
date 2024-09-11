@@ -10,3 +10,7 @@ export const REGISTER_PLAYER_ROUTES = {
   ONBOARDING: `${REGISTER_PREFIX}/onboarding`,
   PLAYER: `${REGISTER_PREFIX}/player`,
 } as const
+
+export const APP_ROUTES = {
+  DASHBOARD: '/dashboard',
+}
