@@ -1,5 +1,7 @@
 'use client'
 
+import { Loader2 } from 'lucide-react'
+
 import { Form } from '@/components/form'
 import { Alert } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
@@ -28,12 +30,13 @@ export function SignUpForm() {
     formError,
     passwordStatus,
     isFormValid,
-    handleRegister,
+    isSubmitting,
+    signUpWithEmail,
   } = useSignUpForm()
 
   return (
     <Form.Root {...form}>
-      <Form.Wrapper onSubmit={form.handleSubmit(handleRegister)}>
+      <Form.Wrapper onSubmit={form.handleSubmit(signUpWithEmail)}>
         <Form.Field
           name='email'
           control={form.control}
@@ -175,10 +178,17 @@ export function SignUpForm() {
 
         <Button
           type='submit'
-          className='mt-4 max-sm:w-full'
-          disabled={!isFormValid}
+          className='mt-4 w-full'
+          disabled={!isFormValid || isSubmitting}
         >
-          {SIGN_UP_TEXTS.submit.create}
+          {isSubmitting ? (
+            <>
+              <Loader2 className='size-5 animate-spin' />
+              {SIGN_UP_TEXTS.submit.pending}
+            </>
+          ) : (
+            SIGN_UP_TEXTS.submit.default
+          )}
         </Button>
       </Form.Wrapper>
     </Form.Root>

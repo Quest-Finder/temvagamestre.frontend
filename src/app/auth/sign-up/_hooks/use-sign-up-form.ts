@@ -12,7 +12,7 @@ import {
 import texts from '../locales/pt-BR.json'
 
 export function useSignUpForm() {
-  const SIGN_UP_TEXTS = texts.SignUpForm
+  const SIGN_UP_FORM_TEXTS = texts.SignUpForm
 
   const [successMessage, setSuccessMessage] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -27,19 +27,21 @@ export function useSignUpForm() {
 
   const passwordValue = form.watch('password')
 
-  const emailError = form.formState.errors.email
-  const passwordError = form.formState.errors.password
-  const passwordConfirmationError = form.formState.errors.password_confirmation
-  const formError = form.formState.errors.root
+  const {
+    email: emailError,
+    password: passwordError,
+    password_confirmation: passwordConfirmationError,
+    root: formError,
+  } = form.formState.errors
 
   const passwordStatus = getPasswordStatus({
     value: passwordValue,
     error: passwordError,
   })
   const passwordRequirements = checkPasswordRequirements(passwordValue)
-  const isFormValid = form.formState.isValid
+  const { isValid: isFormValid, isSubmitting } = form.formState
 
-  function handleRegister({ email, consent }: FormSchema): void {
+  function signUpWithEmail({ email, consent }: FormSchema): void {
     if (!consent) {
       return
     }
@@ -56,7 +58,7 @@ export function useSignUpForm() {
 
     form.setError('root', {
       type: 'api_error',
-      message: SIGN_UP_TEXTS.response.alreadyRegistered,
+      message: SIGN_UP_FORM_TEXTS.messages.alreadyRegistered,
     })
     form.setFocus('email')
   }
@@ -75,6 +77,7 @@ export function useSignUpForm() {
     formError,
     passwordStatus,
     isFormValid,
-    handleRegister,
+    isSubmitting,
+    signUpWithEmail,
   }
 }
