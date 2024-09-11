@@ -1,16 +1,23 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
+import { isAuthenticated } from './actions/auth'
 import { AUTH_PREFIX } from './constants/routes'
 
-const isPublicRoute = createRouteMatcher(['/', `${AUTH_PREFIX}(.*)`])
+const isPublicRoute = createRouteMatcher([
+  '/',
+  `/api(.*)`,
+  `${AUTH_PREFIX}(.*)`,
+])
 
 export default clerkMiddleware(
-  (auth, request) => {
+  async (auth, request) => {
     const isPrivateRoute = !isPublicRoute(request)
-    if (!auth().userId && isPrivateRoute) auth().redirectToSignIn()
+    const isUserAuthenticated = await isAuthenticated()
+
+    if (!isUserAuthenticated && isPrivateRoute) auth().redirectToSignIn()
   },
-  // Enable terminal logs when in development environment
-  { debug: process.env.NODE_ENV === 'development' },
+  // Enable terminal logs
+  // { debug: true },
 )
 
 export const config = {
