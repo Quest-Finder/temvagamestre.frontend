@@ -14,6 +14,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "5.0.35",
     "@clerk/localizations": "2.6.1",
     "@clerk/nextjs": "5.3.3",
     "@hookform/resolvers": "^3.3.4",
