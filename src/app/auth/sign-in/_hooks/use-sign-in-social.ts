@@ -3,7 +3,7 @@ import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 
 import type { OAuthStrategy } from '@/@types'
-import { AUTH_ROUTES } from '@/constants'
+import { ROUTES } from '@/constants'
 
 export function useSignInSocial() {
   const [isAuthenticating, setIsAuthenticating] =
@@ -18,13 +18,13 @@ export function useSignInSocial() {
 
     setIsAuthenticating(strategy)
 
-    const queryParam = redirectUrl ? `?redirect_url=${redirectUrl}` : ''
-    const socialCallbackUrl = AUTH_ROUTES.SOCIAL_CALLBACK.concat(queryParam)
+    const redirectParam = redirectUrl ? `?redirect_url=${redirectUrl}` : ''
+    const socialCallbackPath = ROUTES.auth.socialCallback.concat(redirectParam)
 
     await signIn.authenticateWithRedirect({
       strategy,
-      redirectUrl: socialCallbackUrl,
-      redirectUrlComplete: socialCallbackUrl,
+      redirectUrl: socialCallbackPath,
+      redirectUrlComplete: socialCallbackPath,
     })
 
     setIsAuthenticating(null)

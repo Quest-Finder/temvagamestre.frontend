@@ -6,7 +6,7 @@ import { isAuthenticated } from '@/actions/auth'
 import logo from '@/assets/branding/logo-short.svg'
 import signUpImage from '@/assets/images/sign-up-image.jpg'
 import { NavLink } from '@/components/ui/nav-link'
-import { AUTH_ROUTES } from '@/constants/routes'
+import { ROUTES } from '@/constants'
 
 import { SignUpForm } from './_components/sign-up-form'
 import texts from './locales/pt-BR.json'
@@ -43,7 +43,7 @@ export default async function SignUpPage() {
           />
           <div className='text-sm'>
             {SIGN_UP_PAGE_TEXTS.hasAccount}{' '}
-            <NavLink href={AUTH_ROUTES.SIGN_IN}>
+            <NavLink href={ROUTES.auth.signIn}>
               {SIGN_UP_PAGE_TEXTS.signInLink}
             </NavLink>
           </div>

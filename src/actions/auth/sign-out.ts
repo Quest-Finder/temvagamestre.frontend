@@ -5,7 +5,7 @@ import { auth } from '@clerk/nextjs/server'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { AUTH_ROUTES, TVM_TOKEN_COOKIE } from '@/constants'
+import { ROUTES, TVM_TOKEN_COOKIE } from '@/constants'
 
 export async function signOut() {
   const { sessionId } = auth()
@@ -16,5 +16,5 @@ export async function signOut() {
 
   cookies().delete(TVM_TOKEN_COOKIE)
 
-  redirect(AUTH_ROUTES.SIGN_IN)
+  redirect(ROUTES.auth.signIn)
 }

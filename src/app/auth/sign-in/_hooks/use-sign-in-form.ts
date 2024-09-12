@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { createSession } from '@/actions/auth'
-import { APP_ROUTES, REGISTER_PLAYER_ROUTES } from '@/constants'
+import { ROUTES } from '@/constants'
 
 import {
   signInDefaultValues,
@@ -59,12 +59,10 @@ export function useSignInForm() {
     if (email === 'sucesso@teste.com' && password === '123') {
       await createSession(JSON.stringify(sampleUser))
       const shouldShowOnboarding = sampleUser.onboarding
-      const redirectToApp = redirectUrl ?? APP_ROUTES.DASHBOARD
+      const redirectToApp = redirectUrl ?? ROUTES.dashboard.overview
 
       router.replace(
-        shouldShowOnboarding
-          ? REGISTER_PLAYER_ROUTES.ONBOARDING
-          : redirectToApp,
+        shouldShowOnboarding ? ROUTES.register.onboarding : redirectToApp,
       )
 
       return
@@ -74,12 +72,10 @@ export function useSignInForm() {
       const session = { ...sampleUser, onboarding: true }
       await createSession(JSON.stringify(session))
       const shouldShowOnboarding = session.onboarding
-      const redirectToApp = redirectUrl ?? APP_ROUTES.DASHBOARD
+      const redirectToApp = redirectUrl ?? ROUTES.dashboard.overview
 
       router.replace(
-        shouldShowOnboarding
-          ? REGISTER_PLAYER_ROUTES.ONBOARDING
-          : redirectToApp,
+        shouldShowOnboarding ? ROUTES.register.onboarding : redirectToApp,
       )
 
       return
