@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server'
 import { type NextRequest, NextResponse } from 'next/server'
 
 import { createSession, signOut } from '@/actions/auth'
-import { ROUTES } from '@/constants'
+import { getRedirectPathAfterSignIn } from '@/helpers'
 
 export async function GET(request: NextRequest) {
   const { userId } = auth()
@@ -28,18 +28,16 @@ export async function GET(request: NextRequest) {
 
   const { protocol, host, searchParams } = request.nextUrl
 
-  const hasRedirectQuery = searchParams.get('redirect_url')
+  const redirectUrl = searchParams.get('redirect_url')
   const baseUrl = `${protocol}//${host}`
-  const redirectPath = hasRedirectQuery?.replace(baseUrl, '')
+  const redirectPath = redirectUrl?.replace(baseUrl, '')
 
-  const redirectToApp = redirectPath ?? ROUTES.dashboard.overview
-  const shouldShowOnboarding = session.onboarding
+  const pathToRedirectAfterSignIn = getRedirectPathAfterSignIn({
+    onboarding: session.onboarding,
+    redirectPath,
+  })
 
-  const pathToRedirect = shouldShowOnboarding
-    ? ROUTES.register.onboarding
-    : redirectToApp
+  const fullRedirectUrl = baseUrl.concat(pathToRedirectAfterSignIn)
 
-  const redirectUrl = baseUrl.concat(pathToRedirect)
-
-  return NextResponse.redirect(redirectUrl)
+  return NextResponse.redirect(fullRedirectUrl)
 }

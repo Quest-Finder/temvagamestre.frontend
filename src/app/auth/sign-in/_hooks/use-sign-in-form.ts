@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { createSession } from '@/actions/auth'
-import { ROUTES } from '@/constants'
+import { getRedirectPathAfterSignIn } from '@/helpers'
 
 import {
   signInDefaultValues,
@@ -19,7 +19,7 @@ export function useSignInForm() {
   const [showPassword, setShowPassword] = useState(false)
 
   const queryParams = useSearchParams()
-  const redirectUrl = queryParams.get('redirect_url')
+  const redirectPath = queryParams.get('redirect_url')
   const router = useRouter()
 
   const form = useForm<SignInFormSchema>({
@@ -58,26 +58,24 @@ export function useSignInForm() {
 
     if (email === 'sucesso@teste.com' && password === '123') {
       await createSession(JSON.stringify(sampleUser))
-      const shouldShowOnboarding = sampleUser.onboarding
-      const redirectToApp = redirectUrl ?? ROUTES.dashboard.overview
+      const pathToRedirectAfterSignIn = getRedirectPathAfterSignIn({
+        onboarding: sampleUser.onboarding,
+        redirectPath,
+      })
 
-      router.replace(
-        shouldShowOnboarding ? ROUTES.register.onboarding : redirectToApp,
-      )
-
+      router.replace(pathToRedirectAfterSignIn)
       return
     }
 
     if (email === 'onboarding@teste.com' && password === '123') {
       const session = { ...sampleUser, onboarding: true }
       await createSession(JSON.stringify(session))
-      const shouldShowOnboarding = session.onboarding
-      const redirectToApp = redirectUrl ?? ROUTES.dashboard.overview
+      const pathToRedirectAfterSignIn = getRedirectPathAfterSignIn({
+        onboarding: session.onboarding,
+        redirectPath,
+      })
 
-      router.replace(
-        shouldShowOnboarding ? ROUTES.register.onboarding : redirectToApp,
-      )
-
+      router.replace(pathToRedirectAfterSignIn)
       return
     }
 
