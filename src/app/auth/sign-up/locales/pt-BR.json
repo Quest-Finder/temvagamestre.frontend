@@ -50,10 +50,10 @@
       "error": "Você deve consentir para criar sua conta."
     },
     "submit": {
-      "create": "Criar minha conta",
-      "creating": "Criando sua conta"
+      "default": "Criar minha conta",
+      "pending": "Criando..."
     },
-    "response": {
+    "messages": {
       "alreadyRegistered": "O e-mail informado já está cadastrado. Por favor, insira um novo e-mail."
     }
   }

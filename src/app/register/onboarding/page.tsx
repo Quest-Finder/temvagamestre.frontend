@@ -5,7 +5,7 @@ import logoFull from '@/assets/branding/logo-full-white.svg'
 import logoShort from '@/assets/branding/logo-short-white.svg'
 import backgroundImage from '@/assets/images/onboarding-image.jpg'
 import { NavButton } from '@/components/ui/nav-button'
-import { REGISTER_PLAYER_ROUTES } from '@/constants/routes'
+import { ROUTES } from '@/constants'
 
 import texts from './locales/pt-BR.json'
 
@@ -37,7 +37,7 @@ export default function SignUpPage() {
           </h2>
           <p className='text-lg md:text-2xl'>{ONBOARDING_TEXTS.content}</p>
           <NavButton
-            href={REGISTER_PLAYER_ROUTES.PLAYER}
+            href={ROUTES.register.player}
             size='lg'
             className='max-md:h-10 max-md:w-full max-md:px-4 max-md:text-base'
           >

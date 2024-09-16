@@ -1,32 +1,22 @@
-import { AUTH_ROUTES, REGISTER_PLAYER_ROUTES } from '@/constants/routes'
-import ButtonNavigation from '@/hooks/ButtonNavigation'
-import { PublicRoutes, RegisterRoutes } from '@/services/routers'
+import { SignOutButton } from '@/components/sign-out-button'
+import { NavButton } from '@/components/ui/nav-button'
+import { ROUTES } from '@/constants'
 
 export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <div className='flex flex-col items-center gap-3'>
-        <ButtonNavigation
-          href={AUTH_ROUTES.SIGN_UP}
-          content='sign-up'
-        />
-        <ButtonNavigation
-          href={REGISTER_PLAYER_ROUTES.ONBOARDING}
-          content='onboarding'
-        />
+        <NavButton href={ROUTES.auth.signIn}>sign-in</NavButton>
+        <NavButton href={ROUTES.auth.signUp}>sign-up</NavButton>
 
-        <ButtonNavigation
-          href={PublicRoutes.SignIn}
-          content='sign-in'
-        />
-        <ButtonNavigation
-          href={PublicRoutes.PlayerProfile}
-          content='perfil do jogador'
-        />
-        <ButtonNavigation
-          href={RegisterRoutes.PlayerData}
-          content='Cadastro do jogador'
-        />
+        <NavButton href={ROUTES.register.onboarding}>onboarding</NavButton>
+        <NavButton href={ROUTES.register.player}>
+          register player profile
+        </NavButton>
+
+        <NavButton href={ROUTES.user.profile}>player profile</NavButton>
+
+        <SignOutButton className='mt-8' />
       </div>
     </main>
   )
