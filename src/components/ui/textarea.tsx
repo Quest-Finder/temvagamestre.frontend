@@ -4,7 +4,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 const textareaClasses = {
-  base: 'min-h-48 w-full bg-background px-3 py-2 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 resize-y',
+  base: 'min-h-32 w-full bg-background px-3 py-2 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 resize-y',
   border: 'rounded-lg border border-border-hard',
   focus:
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
@@ -53,7 +53,7 @@ export { Textarea }
 /* USAGE
 
   <Textarea
-    variant="default | info | warning | error | success
+    variant?="default | info | warning | error | success"
     {...props}
   />
 
