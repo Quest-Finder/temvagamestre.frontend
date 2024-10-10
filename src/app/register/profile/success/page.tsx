@@ -2,17 +2,16 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import badge from '@/assets/badges/destiny.png'
+import { Header } from '@/components/register/profile'
 import { NavButton } from '@/components/ui/nav-button'
 import { ROUTES } from '@/constants'
+import { REGISTER_PROFILE_TEXTS } from '@/locales'
 
-import { Header } from '../_components/header'
-import texts from '../_locales/pt-BR.json'
-
-const SUCCESS_PAGE_TEXTS = texts.SuccessPage
+const successPageTexts = REGISTER_PROFILE_TEXTS.SuccessPage
 
 export const metadata: Metadata = {
-  title: SUCCESS_PAGE_TEXTS.meta.title,
-  description: SUCCESS_PAGE_TEXTS.meta.description,
+  title: successPageTexts.meta.title,
+  description: successPageTexts.meta.description,
 }
 
 export default function ProfileSuccessPage() {
@@ -24,9 +23,9 @@ export default function ProfileSuccessPage() {
           alt=''
           className='mx-auto'
         />
-        <Header.Title>{SUCCESS_PAGE_TEXTS.title}</Header.Title>
+        <Header.Title>{successPageTexts.title}</Header.Title>
         <Header.Description>
-          🎉 {SUCCESS_PAGE_TEXTS.description}
+          🎉 {successPageTexts.description}
         </Header.Description>
       </Header.Root>
 
@@ -34,7 +33,7 @@ export default function ProfileSuccessPage() {
         size='lg'
         href={ROUTES.dashboard.overview}
       >
-        {SUCCESS_PAGE_TEXTS.button}
+        {successPageTexts.button}
       </NavButton>
     </div>
   )

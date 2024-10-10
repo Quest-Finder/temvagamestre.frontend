@@ -1,21 +1,20 @@
 import type { Metadata } from 'next'
 
-import { GameStylesForm } from '../_components/forms/game-styles-form'
-import { Header } from '../_components/header'
-import texts from '../_locales/pt-BR.json'
+import { GameStylesForm, Header } from '@/components/register/profile'
+import { REGISTER_PROFILE_TEXTS } from '@/locales'
 
-const GAMES_PAGE_TEXTS = texts.GameStyles.GameStylesPage
+const gameStylesPageTexts = REGISTER_PROFILE_TEXTS.GameStyles.GameStylesPage
 
 export const metadata: Metadata = {
-  title: GAMES_PAGE_TEXTS.meta.title,
-  description: GAMES_PAGE_TEXTS.meta.description,
+  title: gameStylesPageTexts.meta.title,
+  description: gameStylesPageTexts.meta.description,
 }
 
-export default function ProfileGamesPage() {
+export default function ProfileGameStylesPage() {
   return (
     <div className='flex w-full flex-col items-center gap-12'>
       <Header.Root>
-        <Header.Title>{GAMES_PAGE_TEXTS.title}</Header.Title>
+        <Header.Title>{gameStylesPageTexts.title}</Header.Title>
       </Header.Root>
 
       <GameStylesForm />
